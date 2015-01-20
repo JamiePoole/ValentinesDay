@@ -1,0 +1,47 @@
+<?php
+require('twitteroauth/TwitterOAuth.php');
+
+class sendTweet {
+
+	private $consumer_key;
+	private $consumer_secret;
+	private $access_token;
+	private $access_secret;
+
+	function __construct(){
+	}
+
+	public function setOAuth($ckey, $csec, $atok, $asec){
+		if($ckey)
+			$this->consumer_key = $ckey;
+		if($csec)
+			$this->consumer_secret = $csec;
+		if($atok)
+			$this->access_token = $atok;
+		if($asec)
+			$this->access_secret = $asec;
+	}
+
+	public function postTweet($recipient, $message){
+		$recipient = filter_var($recipient, FILTER_SANITIZE_STRING);
+		$message = filter_var($message, FILTER_SANITIZE_STRING);
+		$twitter = new TwitterOAuth($this->consumer_key, $this->consumer_secret, $this->access_token, $this->access_secret);
+		if(isset($recipient) && trim($recipient) != ''){
+			if(isset($message) && trim($message) != ''){
+				$tweet = '@'.$recipient.' '.$message;
+				$twitter->post('statuses/update', array('status' => $tweet));
+				if(!isset($twitter->errors)){
+					echo 'Tweet "' . $message . '" sent successfully to '. $recipient.'.';
+				} else {
+					echo 'Tweet failed. Errors:';
+					foreach($twitter->errors as $error){
+						echo $error->code . ': ' . $error->message . '.';
+					}
+				}
+			}
+		} else {
+			die('Tweet failed. No recipient specified');
+		}
+	}
+
+}
