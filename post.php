@@ -3,6 +3,7 @@ require('lib/class.tweetqueue.php');
 $queue = new tweetQueue();
 
 session_start();
+$return = new stdClass();
 
 if((isset($_POST['nonce_token']) && isset($_SESSION['nonce'])) && ($_POST['nonce_token'] == $_SESSION['nonce'])){
 
@@ -11,12 +12,19 @@ if((isset($_POST['nonce_token']) && isset($_SESSION['nonce'])) && ($_POST['nonce
 	$message = filter_var($_POST['tweet_message'], FILTER_SANITIZE_STRING);
 
 	if(trim($recipient) != '' && trim($message) != ''){
-		$queue->insert($recipient, $message);
-		header("Location: http://localhost/ValentinesDay/");
+		$tweet = $queue->insert($recipient, $message);
+		
+		$return->status['code'] = 200;
+		$return->status['message'] = 'Tweet added to the queue successfully.';
+		$return->queue['id'] = $tweet;
+		$return->queue['time'] = $queue->time($tweet);
 	}
 
 } else {
-	die('Invalid token');
+	$return->error['code'] = 1;
+	$return->error['message'] = 'Invalid token.';
 }
+
+echo json_encode($return);
 
 unset($_SESSION['nonce']);

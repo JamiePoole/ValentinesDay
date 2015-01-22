@@ -1,5 +1,6 @@
 <?php
 require('twitteroauth/TwitterOAuth.php');
+require('class.tweetdata.php');
 
 class sendTweet {
 
@@ -8,7 +9,10 @@ class sendTweet {
 	private $access_token;
 	private $access_secret;
 
+	private $tweet_data;
+
 	function __construct(){
+		$this->tweet_data = new tweetData();
 	}
 
 	public function setOAuth($ckey, $csec, $atok, $asec){
@@ -41,6 +45,19 @@ class sendTweet {
 			}
 		} else {
 			die('Tweet failed. No recipient specified');
+		}
+	}
+
+	public function getUser($user){
+		$user = filter_var($user, FILTER_SANITIZE_STRING);
+		$twitter = new TwitterOAuth($this->consumer_key, $this->consumer_secret, $this->access_token, $this->access_secret);
+		if(isset($user) && trim($user) != ''){
+			$twitter->get('users/show', array('screen_name' => $user));
+			if(!isset($twitter->errors)){
+				$tweet_data->saveUser($user);
+			} else {
+				// Fail
+			}
 		}
 	}
 
