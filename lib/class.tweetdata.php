@@ -1,24 +1,24 @@
 <?php
-require('class.dbconnection.php');
-
 class tweetData {
+	protected static $instance;
 
 	private $db;
+	private $ut;
 	private $table = 'tweet_recipients';
 
-	public function __construct(){
-		$this->db = new dbConnection();
-		$this->db->connect();
+	public function __construct(dbConnection $db){
+		$this->db = $db;
+		$this->ut = new util($db);
 	}
 
-	public function saveUser($user){
-		if(!isset($user)) die('User not specified.');
+	public function saveUser($user, $user_object){
 		try {
-			$sql = "INSERT INTO `$this->table` (`uid`, `tobject`) VALUES (NULL, '$user')";
+			$user_object = serialize($user_object);
+			$sql = "INSERT INTO `$this->table` (`uid`, `tdate`, `sname`, `tobject`) VALUES (NULL, CURRENT_TIMESTAMP, '$user', '$user_object')";
 			$result = $this->db->prepare($sql);
 			$result->execute();
 		} catch(PDOException $e){
-			die('SQL error: '.$e);
+			$this->ut->log($e);
 		}
 	}
 
@@ -28,9 +28,15 @@ class tweetData {
 			$result = $this->db->prepare($sql);
 			$return->execute();
 		} catch(PDOException $e){
-			die('SQL error: ' . $e);
+			$this->ut->log($e);
 		}
 
 		return $result->fetchAll(PDO::FETCH_ASSOC);
 	}
+
+	public function getInstance(dbConnection $db){
+		if(!self::$instance)
+			self::$instance = new self($db);
+		return self::$instance;
+	} 
 }

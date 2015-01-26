@@ -1,6 +1,5 @@
 <?php
-require('lib/class.sendtweet.php');
-require('lib/class.tweetqueue.php');
+require('lib/lib.php');
 
 $oAuth = array(
 	'ckey'	=> 'P0S5Ph2XqIjWX1dUdx00qIm0c',
@@ -9,13 +8,12 @@ $oAuth = array(
 	'asec'	=> 'El6bNPIwSRBJibwwglmgz6oTrrpkUahKYwnjswINnpnse'
 );
 
-$twitter = new sendTweet();
-$twitter->setOAuth($oAuth['ckey'], $oAuth['csec'], $oAuth['atok'], $oAuth['asec']);
+$_st->setOAuth($oAuth['ckey'], $oAuth['csec'], $oAuth['atok'], $oAuth['asec']);
 
-$queue = new tweetQueue();
-$next = $queue->getNext(); 
+$next = $_tq->getNext(); 
 
 foreach($next as $tweet){
-	$twitter->postTweet($tweet['duser'], $tweet['dmessage']);
-	$queue->delete($tweet['tid']);
+	$_st->postTweet($tweet['duser'], $tweet['dmessage']);
+	$_st->getUser($tweet['duser']);
+	$_tq->delete($tweet['tid']);
 }

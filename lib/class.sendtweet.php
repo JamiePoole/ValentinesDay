@@ -1,18 +1,18 @@
 <?php
-require('twitteroauth/TwitterOAuth.php');
-require('class.tweetdata.php');
-
 class sendTweet {
 
-	private $consumer_key;
-	private $consumer_secret;
-	private $access_token;
-	private $access_secret;
+	protected static $instance;
+
+	public $consumer_key;
+	public $consumer_secret;
+	public $access_token;
+	public $access_secret;
 
 	private $tweet_data;
+	private $ut;
 
-	function __construct(){
-		$this->tweet_data = new tweetData();
+	function __construct(tweetData $td){
+		$this->tweet_data = $td;
 	}
 
 	public function setOAuth($ckey, $csec, $atok, $asec){
@@ -35,7 +35,7 @@ class sendTweet {
 				$tweet = '@'.$recipient.' '.$message;
 				$twitter->post('statuses/update', array('status' => $tweet));
 				if(!isset($twitter->errors)){
-					echo 'Tweet "' . $message . '" sent successfully to '. $recipient.'.';
+					echo 'Tweet "' . $message . '" sent successfully to '. $recipient.'.<br />';
 				} else {
 					echo 'Tweet failed. Errors:';
 					foreach($twitter->errors as $error){
@@ -52,13 +52,19 @@ class sendTweet {
 		$user = filter_var($user, FILTER_SANITIZE_STRING);
 		$twitter = new TwitterOAuth($this->consumer_key, $this->consumer_secret, $this->access_token, $this->access_secret);
 		if(isset($user) && trim($user) != ''){
-			$twitter->get('users/show', array('screen_name' => $user));
+			$user_object = $twitter->get('users/show', array('screen_name' => $user));
 			if(!isset($twitter->errors)){
-				$tweet_data->saveUser($user);
+				$this->tweet_data->saveUser($user, $user_object);
 			} else {
 				// Fail
 			}
 		}
+	}
+
+	public function getInstance(tweetData $td){
+		if(!self::$instance)
+			self::$instance = new self($td);
+		return self::$instance;
 	}
 
 }

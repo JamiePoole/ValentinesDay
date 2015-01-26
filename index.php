@@ -1,11 +1,6 @@
 <?php
-	require('lib/class.tweetqueue.php');
-	$queue = new tweetQueue();
-	$delay = ($queue->time()) ? 'a' . $queue->time() . 'minute' : 'no';
-
-	session_start();
-	$token = uniqid();
-	$_SESSION['nonce'] = $token;
+	require_once('lib/lib.php');
+	$_ut->startSession();
 ?>
 
 <!doctype html>
@@ -34,7 +29,7 @@
 			<input type="submit" id="submit-tweet" />
 		</form>
 
-		<span>There is currently <?php echo $delay; ?> delay delivering Tweets. <sub>(what's this?)</sub></span>
+		<span><?php $_ut->getDelay($_tq->time()); ?></span>
 
 	</section>
 

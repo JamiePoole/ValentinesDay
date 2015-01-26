@@ -1,22 +1,22 @@
 <?php
-require('class.dbconnection.php');
-require('class.tweetdata.php');
-
 class tweetQueue {
 
+	protected static $instance;
+
 	private $db;
+	private $ut;
 	private $db_options;
 	private $queue_table = 'tweet_queue';
 	private $archv_table = 'tweet_archive';
 	private $twitter_api_limit = 2400;
+	private $cron_time = 5;
 	private $tweet_data;
 
-	public function __construct(){
-		$this->db = new dbConnection();
+	public function __construct(dbConnection $db, tweetData $td){
+		$this->db = $db;
+		$this->ut = new util($db);
 		$this->db_options = $this->db->get();
-		$this->db->connect();
-
-		$this->tweet_data = new tweetData();
+		$this->tweet_data = $td;
 	}
 
 	public function insert($recipient, $message){
@@ -33,7 +33,7 @@ class tweetQueue {
 			$result = $this->db->prepare($sql);
 			$result->execute();
 		} catch(PDOException $e){
-			die('SQL error: '.$e);
+			$this->ut->log($e);
 		}
 
 		return $lastid;
@@ -48,7 +48,7 @@ class tweetQueue {
 			$result = $this->db->prepare($sql);
 			$result->execute();
 		} catch(PDOException $e){
-			die('SQL error: '.$e);
+			$this->ut->log($e);
 		}
 
 		return $result;
@@ -62,7 +62,7 @@ class tweetQueue {
 			$result = $this->db->prepare($sql);
 			$result->execute();
 		} catch(PDOException $e){
-			die('SQL error: '.$e);
+			$this->ut->log($e);
 		}
 
 		return $result->fetchAll(PDO::FETCH_ASSOC);
@@ -80,13 +80,11 @@ class tweetQueue {
 						$result->execute();
 						$count = $result->fetch(PDO::FETCH_NUM)[0];
 					} catch(PDOException $e){
-						die('SQL error: ' . $e);
+						$this->ut->log($e);
 					}
-
-					$time_queue = floor(($count / ($this->twitter_api_limit / 24 / 60)) + ($this->twitter_api_limit / 24 / 60));
 				}
 			} catch(PDOException $e){
-				die('SQL error: ' . $e);
+				$this->ut->log($e);
 			}
 		} else {
 			try {
@@ -95,26 +93,33 @@ class tweetQueue {
 				$result->execute();
 				$count = $result->fetch(PDO::FETCH_NUM)[0];
 			} catch (PDOException $e){
-				die('SQL error: ' . $e);
+				$this->ut->log($e);
 			}
 
-			$time_queue = floor($count / ($this->twitter_api_limit / 24 / 60));
 		}
 
+		$time_queue = ceil($count / floor(($this->twitter_api_limit / 24 / 60) * $this->cron_time)) * $this->cron_time;
 		return $time_queue;
 	}
 
 	public function getNext(){
+		$limit = floor(($this->twitter_api_limit / 24 / 60) * $this->cron_time);
 		try {
-			$sql = "SELECT * FROM `$this->queue_table` ORDER BY `dtime` ASC LIMIT 3";
+			$sql = "SELECT * FROM `$this->queue_table` ORDER BY `dtime` ASC LIMIT $limit";
 			$result = $this->db->prepare($sql);
 			$result->execute();
 			$rows = $result->fetchAll(PDO::FETCH_ASSOC);
 		} catch(PDOException $e){
-			die('SQL error: ' . $e);
+			$this->ut->log($e);
 		}
 
 		return $rows;
+	}
+
+	public function getInstance(dbConnection $db, tweetData $td){
+		if(!self::$instance)
+			self::$instance = new self($db, $td);
+		return self::$instance;
 	}
 
 }
