@@ -33,7 +33,7 @@ class dbConnection extends PDO {
 			return $this->options;
 	}
 
-	public function getInstance(){
+	public static function getInstance(){
 		if(!self::$instance)
 			self::$instance = new self();
 		return self::$instance;

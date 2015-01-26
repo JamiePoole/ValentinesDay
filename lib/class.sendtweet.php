@@ -61,7 +61,7 @@ class sendTweet {
 		}
 	}
 
-	public function getInstance(tweetData $td){
+	public static function getInstance(tweetData $td){
 		if(!self::$instance)
 			self::$instance = new self($td);
 		return self::$instance;

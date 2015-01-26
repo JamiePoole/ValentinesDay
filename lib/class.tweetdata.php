@@ -34,7 +34,7 @@ class tweetData {
 		return $result->fetchAll(PDO::FETCH_ASSOC);
 	}
 
-	public function getInstance(dbConnection $db){
+	public static function getInstance(dbConnection $db){
 		if(!self::$instance)
 			self::$instance = new self($db);
 		return self::$instance;

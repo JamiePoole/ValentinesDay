@@ -18,19 +18,22 @@
 <body>
 
 	<section id="send">
-		<form id="send-tweet" method="post" action="post.php">
-			<input type="hidden" name="nonce_token" value="<?php echo $_SESSION['nonce']; ?>" />
-			<label for="tweet-target">Who is your Twitter Romance?</label><br />
-			<input type="text" id="tweet-target" name="tweet_target" />
-			<br />
-			<br />
-			<label for="tweet-message">Send Message to your <span id="target-name">Twitter Romance</span></label><br />
-			<input type="text" id="tweet-message" name="tweet_message" />
-			<input type="submit" id="submit-tweet" />
-		</form>
+		<div id="tweet-form">
+			<form id="send-tweet" method="post" action="post.php">
+				<input type="hidden" name="nonce_token" value="<?php echo $_SESSION['nonce']; ?>" />
+				<label for="tweet-target">Who is your Twitter Romance?</label><br />
+				<input type="text" id="tweet-target" name="tweet_target" />
+				<br />
+				<br />
+				<label for="tweet-message">Send Message to your <span id="target-name">Twitter Romance</span></label><br />
+				<input type="text" id="tweet-message" name="tweet_message" />
+				<input type="submit" id="submit-tweet" />
+			</form>
 
-		<span><?php $_ut->getDelay($_tq->time()); ?></span>
-
+			<span><?php $_ut->getDelay($_tq->time()); ?></span>
+		</div>
+		<div id="tweet-image">
+		</div>
 	</section>
 
 </body>

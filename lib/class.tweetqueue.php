@@ -116,7 +116,7 @@ class tweetQueue {
 		return $rows;
 	}
 
-	public function getInstance(dbConnection $db, tweetData $td){
+	public static function getInstance(dbConnection $db, tweetData $td){
 		if(!self::$instance)
 			self::$instance = new self($db, $td);
 		return self::$instance;

@@ -5,7 +5,7 @@ class util {
 
 	private $db;
 
-	public function getInstance(dbConnection $db){
+	public static function getInstance(dbConnection $db){
 		if(!self::$instance)
 			self::$instance = new self($db);
 		return self::$instance;
@@ -29,7 +29,10 @@ class util {
 	}
 
 	public function getDelay($time){
-		return printf("There is currently %s delay delivering messages.", sprintf(($time < 5) ? 'a %d minute' : 'no', $time));
+		if($time > 0)
+			return printf("There is currently a %s minute delay delivering messages.", $time);
+		else
+			return false;
 	}
 
 	public function log($e){
