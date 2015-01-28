@@ -1,0 +1,67 @@
+body {
+	background: $hot-pink;
+	color: $white;
+	font-family: $special-font;
+	overflow: hidden;
+	font-weight: 400;
+	line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $special-font;
+	font-style: normal;
+	font-weight: 700;
+}
+
+.page-border {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border: 16px solid $white;
+
+	display: none;
+}
+
+.info-wrap {
+	background: $white;
+	color: $mid-gray;
+	position: absolute;
+	z-index: 9999;
+	left: 0;
+	right: 0;
+	top: -500px; // overwrite with js
+	padding: 30px 10%;
+	font-size: 13px;
+}
+
+.info-nav {
+	position: absolute;
+	top: 20px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	height: 30px;
+	.info {
+		color: $white;
+		text-decoration: none;
+		font-weight: bold;
+	}
+}
+
+.intro {
+	background: $light-pink;
+	display: flex;
+	height: 100vh;
+	text-align: center;
+	h1 {
+		
+		margin: auto;
+	}
+}
+
+.site-main {
+	background: $dark-pink;
+	padding: 10vh 0;
+}
