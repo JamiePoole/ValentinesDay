@@ -16,9 +16,26 @@ class util {
 		$this->db = $db;
 	}
 
+	public function startSession(){
+		session_start();
+		if(!isset($this->token))
+			$_SESSION['token'] = uniqid();
+		else
+			$_SESSION['token'] = $this->token;
+	}
+
 	public function closeSession(){
 		unset($_SESSION['token']);
 		session_write_close();
+	}
+
+	public function checkSession($token){
+		if((isset($token) && isset($_SESSION['token']))
+		 && ($token == $_SESSION['token'])):
+			return true;
+		else:
+			return false;
+		endif;
 	}
 
 	public function getDelay($time){

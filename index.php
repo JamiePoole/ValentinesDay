@@ -1,7 +1,6 @@
 <?php
 require_once('require.php');
-session_start();
-$_SESSION['token'] = uniqid();
+$_ut->startSession();
 ?>
 
 <!doctype html>
