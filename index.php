@@ -1,6 +1,7 @@
 <?php
-	require_once('lib/lib.php');
-	$_ut->startSession();
+require_once('require.php');
+session_start();
+$_SESSION['token'] = uniqid();
 ?>
 
 <!doctype html>
@@ -20,7 +21,7 @@
 	<section id="send">
 		<div id="tweet-form">
 			<form id="send-tweet" method="post" action="post.php">
-				<input type="hidden" name="nonce_token" value="<?php echo $_SESSION['nonce']; ?>" />
+				<input type="hidden" name="nonce_token" value="<?php echo $_SESSION['token']; ?>" />
 				<label for="tweet-target">Who is your Twitter Romance?</label><br />
 				<input type="text" id="tweet-target" name="tweet_target" />
 				<br />
@@ -33,6 +34,7 @@
 			<span><?php $_ut->getDelay($_tq->time()); ?></span>
 		</div>
 		<div id="tweet-image">
+			<a href="#" id="tweet-image-upload">Generate an Image!</a>
 		</div>
 	</section>
 

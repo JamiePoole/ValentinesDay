@@ -1,4 +1,5 @@
 <?php
+require('twitteroauth/twitteroauth.php');
 class sendTweet {
 
 	protected static $instance;

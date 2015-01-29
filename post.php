@@ -1,10 +1,10 @@
 <?php
-require('lib/lib.php');
+require('require.php');
 
-$_ut->startSession();
+session_start();
 $return = new stdClass();
 
-if((isset($_POST['nonce_token']) && isset($_SESSION['nonce'])) && ($_POST['nonce_token'] == $_SESSION['nonce'])){
+if((isset($_POST['nonce_token']) && isset($_SESSION['token'])) && ($_POST['nonce_token'] == $_SESSION['token'])){
 
 	$recipient = filter_var($_POST['tweet_target'], FILTER_SANITIZE_STRING);
 	$recipient = str_replace('@', '', $recipient);

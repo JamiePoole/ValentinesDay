@@ -4,6 +4,7 @@ class util {
 	protected static $instance;
 
 	private $db;
+	private $token;
 
 	public static function getInstance(dbConnection $db){
 		if(!self::$instance)
@@ -15,16 +16,8 @@ class util {
 		$this->db = $db;
 	}
 
-	public function startSession(){
-		session_start();
-		if(!isset($_SESSION['nonce'])){
-			$token = uniqid();
-			$_SESSION['nonce'] = $token;
-		}
-	}
-
 	public function closeSession(){
-		unset($_SESSION['nonce']);
+		unset($_SESSION['token']);
 		session_write_close();
 	}
 
