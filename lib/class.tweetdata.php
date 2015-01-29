@@ -1,5 +1,6 @@
 <?php
 class tweetData {
+	
 	protected static $instance;
 
 	private $db;

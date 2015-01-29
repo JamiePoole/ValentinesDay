@@ -1,7 +1,6 @@
 <?php
 class dbConnection extends PDO {
 
-
 	protected static $instance;
 
 	private $options = array();

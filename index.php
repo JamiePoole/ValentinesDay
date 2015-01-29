@@ -33,9 +33,6 @@ $_SESSION['token'] = uniqid();
 
 			<span><?php $_ut->getDelay($_tq->time()); ?></span>
 		</div>
-		<div id="tweet-image">
-			<a href="#" id="tweet-image-upload">Generate an Image!</a>
-		</div>
 	</section>
 
 </body>

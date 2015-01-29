@@ -12,7 +12,7 @@ class sendTweet {
 	private $tweet_data;
 	private $ut;
 
-	function __construct(tweetData $td){
+	public function __construct(tweetData $td){
 		$this->tweet_data = $td;
 	}
 
