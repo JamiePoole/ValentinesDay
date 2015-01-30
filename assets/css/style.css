@@ -649,39 +649,48 @@ p {
   text-align: center;
   cursor: url(../img/cursor-triangle-down.png), auto;
 }
+/* line 106, ../sass/_content.scss */
+.intro-page.heart {
+  cursor: none;
+  background: #ffc5c5 url(../img/heart.png) 50% no-repeat;
+}
+/* line 110, ../sass/_content.scss */
+.intro-page.heart .heading {
+  opacity: 0;
+}
 
-/* line 108, ../sass/_content.scss */
+/* line 116, ../sass/_content.scss */
 .what-page {
   background: #ffc5c5;
   text-align: center;
   cursor: url(../img/cursor-triangle-down.png), auto;
 }
 
-/* line 114, ../sass/_content.scss */
+/* line 122, ../sass/_content.scss */
 .send-page {
   background: #ffc5c5;
   text-align: center;
   cursor: url(../img/cursor-twitter.png), auto;
 }
-/* line 118, ../sass/_content.scss */
+/* line 126, ../sass/_content.scss */
 .send-page .form-step {
   position: relative;
   width: 50%;
   margin: 0 auto;
 }
-/* line 122, ../sass/_content.scss */
+/* line 130, ../sass/_content.scss */
 .send-page .form-step.active {
   display: block;
 }
-/* line 125, ../sass/_content.scss */
+/* line 133, ../sass/_content.scss */
 .send-page .form-step.inactive {
   display: none;
 }
-/* line 128, ../sass/_content.scss */
+/* line 136, ../sass/_content.scss */
 .send-page .form-step .form-control {
   position: relative;
 }
-/* line 131, ../sass/_content.scss */
+/* line 139, ../sass/_content.scss */
 .send-page .form-step label {
   display: block;
   margin: 0 auto 18px;
@@ -692,11 +701,11 @@ p {
   line-height: 1.2;
   letter-spacing: 0.075em;
 }
-/* line 140, ../sass/_content.scss */
+/* line 148, ../sass/_content.scss */
 .send-page .form-step label .fit-text {
   display: block;
 }
-/* line 144, ../sass/_content.scss */
+/* line 152, ../sass/_content.scss */
 .send-page .form-step #tweet-target,
 .send-page .form-step #tweet-message {
   background: white;
@@ -706,17 +715,17 @@ p {
   font-size: 22px;
   letter-spacing: 0.075em;
 }
-/* line 152, ../sass/_content.scss */
+/* line 160, ../sass/_content.scss */
 .send-page .form-step #tweet-target:focus,
 .send-page .form-step #tweet-message:focus {
   outline: none;
 }
-/* line 156, ../sass/_content.scss */
+/* line 164, ../sass/_content.scss */
 .send-page .form-step #tweet-target {
   height: 70px;
   padding-left: 90px;
 }
-/* line 160, ../sass/_content.scss */
+/* line 168, ../sass/_content.scss */
 .send-page .form-step .form-prepend {
   background: white;
   color: #931658;
@@ -731,7 +740,7 @@ p {
   font-weight: 700;
   padding: 2px 0 0 0;
 }
-/* line 174, ../sass/_content.scss */
+/* line 182, ../sass/_content.scss */
 .send-page .form-step .next-step {
   background: #931658;
   border: 5px solid #931658;
@@ -748,7 +757,7 @@ p {
   padding-top: 12px;
   letter-spacing: 0.075em;
 }
-/* line 190, ../sass/_content.scss */
+/* line 198, ../sass/_content.scss */
 .send-page .form-step .prev-step {
   background: white;
   border: 5px solid #931658;
@@ -765,7 +774,7 @@ p {
   text-decoration: none;
   letter-spacing: 2px;
 }
-/* line 206, ../sass/_content.scss */
+/* line 214, ../sass/_content.scss */
 .send-page .form-step #submit-tweet {
   background: #931658;
   border: 5px solid #931658;
@@ -782,32 +791,32 @@ p {
   letter-spacing: 2px;
 }
 
-/* line 224, ../sass/_content.scss */
+/* line 232, ../sass/_content.scss */
 .info-page {
   background: white;
   color: #040201;
   padding: 20px 60px;
 }
-/* line 228, ../sass/_content.scss */
+/* line 236, ../sass/_content.scss */
 .info-page .pic {
   float: left;
   width: 28%;
   margin-left: 80px;
 }
-/* line 232, ../sass/_content.scss */
+/* line 240, ../sass/_content.scss */
 .info-page .pic img {
   border: 16px solid #ffc5c5;
   width: 100%;
   height: auto;
 }
-/* line 238, ../sass/_content.scss */
+/* line 246, ../sass/_content.scss */
 .info-page .copy {
   padding: 40px 80px 0 0;
   margin-left: 38%;
   font-size: 28px;
 }
 
-/* line 245, ../sass/_content.scss */
+/* line 253, ../sass/_content.scss */
 .site-main {
   background: #bb1132;
   padding: 0;

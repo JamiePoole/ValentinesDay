@@ -103,6 +103,14 @@ p {
 	background: $light-pink;
 	text-align: center;
 	cursor: url(../img/cursor-triangle-down.png), auto;
+	&.heart {
+		cursor: none;
+		background: $light-pink url(../img/heart.png) 50% no-repeat;
+		//background-size: contain;
+		.heading {
+			opacity: 0;
+		}
+	}
 }
 
 .what-page {

@@ -49,4 +49,12 @@ jQuery(document).ready(function($) {
 		$('.step-1').removeClass('inactive').addClass('active');
 	});
 
+	$('.intro-page .heading').hover(
+		function() {
+    		$('.intro-page').addClass('heart')
+	  	}, function() {
+	    	$('.intro-page').removeClass('heart')
+	  	}
+	  );
+
 });
