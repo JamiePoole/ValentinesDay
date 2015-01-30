@@ -654,10 +654,6 @@ p {
   cursor: none;
   background: #ffc5c5 url(../img/heart.png) 50% no-repeat;
 }
-/* line 110, ../sass/_content.scss */
-.intro-page.heart .heading {
-  opacity: 0;
-}
 
 /* line 116, ../sass/_content.scss */
 .what-page {
