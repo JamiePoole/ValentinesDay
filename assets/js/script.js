@@ -2,7 +2,10 @@
 // This ready handler passes the $ alias in to avoid conflict with other libraries.
 // ------------------------------------------------------------
 jQuery(document).ready(function($) {
-
+	
+	$('.heading').fitText(0.9);
+	$('.fit-text').fitText(2);
+	
 	$('.nav-btn').hide();
 
 	$('#fullpage').fullpage({
@@ -33,9 +36,6 @@ jQuery(document).ready(function($) {
 	$('.intro-page, .what-page').click(function(e) {
 		$.fn.fullpage.moveSectionDown();
 	});
-
-	$('.heading').fitText(0.9);
-	$('.fit-text').fitText();
 
 	$('.step-2').addClass('inactive');
 	$('.step-1 .next-step').click(function(e){

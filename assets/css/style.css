@@ -534,7 +534,7 @@ Copyright (c) 2014 Daniel Eden
 /* line 1, ../sass/_content.scss */
 html, body {
   background: white;
-  color: #040201;
+  color: #931658;
   font-family: "europa", sans-serif;
   font-weight: 400;
   line-height: 1.4;
@@ -601,8 +601,8 @@ p {
 }
 /* line 59, ../sass/_content.scss */
 .nav-btn a {
-  color: #040201;
-  border-bottom: 3px solid #040201;
+  color: #931658;
+  border-bottom: 3px solid #931658;
   font-size: 22px;
   line-height: 20px;
   padding-bottom: 3px;
@@ -692,31 +692,35 @@ p {
   line-height: 1.2;
   letter-spacing: 0.075em;
 }
-/* line 141, ../sass/_content.scss */
+/* line 140, ../sass/_content.scss */
+.send-page .form-step label .fit-text {
+  display: block;
+}
+/* line 144, ../sass/_content.scss */
 .send-page .form-step #tweet-target,
 .send-page .form-step #tweet-message {
   background: white;
-  border: 5px solid #040201;
+  border: 5px solid #931658;
   width: 100%;
   padding: 20px;
   font-size: 22px;
   letter-spacing: 0.075em;
 }
-/* line 149, ../sass/_content.scss */
+/* line 152, ../sass/_content.scss */
 .send-page .form-step #tweet-target:focus,
 .send-page .form-step #tweet-message:focus {
   outline: none;
 }
-/* line 153, ../sass/_content.scss */
+/* line 156, ../sass/_content.scss */
 .send-page .form-step #tweet-target {
   height: 70px;
   padding-left: 90px;
 }
-/* line 157, ../sass/_content.scss */
+/* line 160, ../sass/_content.scss */
 .send-page .form-step .form-prepend {
   background: white;
-  color: #040201;
-  border: 5px solid #040201;
+  color: #931658;
+  border: 5px solid #931658;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -727,10 +731,10 @@ p {
   font-weight: 700;
   padding: 2px 0 0 0;
 }
-/* line 171, ../sass/_content.scss */
+/* line 174, ../sass/_content.scss */
 .send-page .form-step .next-step {
-  background: #e71840;
-  border: 5px solid #040201;
+  background: #931658;
+  border: 5px solid #931658;
   color: white;
   display: block;
   text-align: center;
@@ -744,11 +748,11 @@ p {
   padding-top: 12px;
   letter-spacing: 0.075em;
 }
-/* line 187, ../sass/_content.scss */
+/* line 190, ../sass/_content.scss */
 .send-page .form-step .prev-step {
-  background: #a1a7b2;
-  border: 5px solid #040201;
-  color: white;
+  background: white;
+  border: 5px solid #931658;
+  color: #931658;
   float: left;
   border-top: none;
   border-right: none;
@@ -761,10 +765,10 @@ p {
   text-decoration: none;
   letter-spacing: 2px;
 }
-/* line 203, ../sass/_content.scss */
+/* line 206, ../sass/_content.scss */
 .send-page .form-step #submit-tweet {
-  background: #e71840;
-  border: 5px solid #040201;
+  background: #931658;
+  border: 5px solid #931658;
   color: white;
   float: right;
   border-top: none;
@@ -778,32 +782,32 @@ p {
   letter-spacing: 2px;
 }
 
-/* line 221, ../sass/_content.scss */
+/* line 224, ../sass/_content.scss */
 .info-page {
   background: white;
   color: #040201;
   padding: 20px 60px;
 }
-/* line 225, ../sass/_content.scss */
+/* line 228, ../sass/_content.scss */
 .info-page .pic {
   float: left;
   width: 28%;
   margin-left: 80px;
 }
-/* line 229, ../sass/_content.scss */
+/* line 232, ../sass/_content.scss */
 .info-page .pic img {
   border: 16px solid #ffc5c5;
   width: 100%;
   height: auto;
 }
-/* line 235, ../sass/_content.scss */
+/* line 238, ../sass/_content.scss */
 .info-page .copy {
   padding: 40px 80px 0 0;
   margin-left: 38%;
   font-size: 28px;
 }
 
-/* line 242, ../sass/_content.scss */
+/* line 245, ../sass/_content.scss */
 .site-main {
   background: #bb1132;
   padding: 0;

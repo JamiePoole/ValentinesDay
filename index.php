@@ -51,7 +51,7 @@
 							<a class="next-step" href="#">next</a>
 						</div>
 					</div>
-					<div class="form-step step-2 inactive">
+					<div class="form-step step-2">
 						<label for="tweet-message">
 							<span class="fit-text">tweet to <span id="target-name">twitterhandle</span></span>
 						</label>

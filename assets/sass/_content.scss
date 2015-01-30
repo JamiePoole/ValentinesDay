@@ -1,6 +1,6 @@
 html, body {
 	background: $white;
-	color: $black;
+	color: $purple;
 	font-family: $special-font;
 	font-weight: 400;
 	line-height: 1.4;
@@ -57,8 +57,8 @@ p {
 	position: fixed;
 	z-index: 999;
 	a {
-		color: $black;
-		border-bottom: 3px solid $black;
+		color: $purple;
+		border-bottom: 3px solid $purple;
 		font-size: 22px;
 		line-height: 20px;
 		padding-bottom: 3px;
@@ -137,11 +137,14 @@ p {
 			font-weight: 700;
 			line-height: 1.2;
 			letter-spacing: 0.075em;
+			.fit-text {
+				display: block;
+			}
 		}
 		#tweet-target,
 		#tweet-message {
 			background: $white;
-			border: 5px solid $black;
+			border: 5px solid $purple;
 			width: 100%;
 			padding: 20px;
 			font-size: 22px;
@@ -156,8 +159,8 @@ p {
 		}
 		.form-prepend {
 			background: $white;
-			color: $black;
-			border: 5px solid $black;
+			color: $purple;
+			border: 5px solid $purple;
 			position: absolute;
 			bottom: 0;
 			left: 0;
@@ -169,8 +172,8 @@ p {
 			padding: 2px 0 0 0;	
 		}
 		.next-step {
-			background: $hot-pink;
-			border: 5px solid $black;
+			background: $purple;
+			border: 5px solid $purple;
 			color: $white;
 			display: block;
 			text-align: center;
@@ -185,9 +188,9 @@ p {
 			letter-spacing: 0.075em;
 		}
 		.prev-step {
-			background: $blue-grey;
-			border: 5px solid $black;
-			color: $white;
+			background: $white;
+			border: 5px solid $purple;
+			color: $purple;
 			float: left;
 			border-top: none;
 			border-right: none;
@@ -201,8 +204,8 @@ p {
 			letter-spacing: 2px;
 		}
 		#submit-tweet {
-			background: $hot-pink;
-			border: 5px solid $black;
+			background: $purple;
+			border: 5px solid $purple;
 			color: $white;
 			float: right;
 			border-top: none;
