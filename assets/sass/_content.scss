@@ -16,8 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: $special-font;
 	font-style: normal;
 	font-weight: 700;
-	line-height: 1;
-	letter-spacing: 0.075em;
+	line-height: 1.05;
 }
 
 p {
@@ -27,6 +26,7 @@ p {
 .page-border {
 	position: fixed;
 	background: $white;
+	display: none;
 	&.top {
 		top: 0;
 		left: 0;
@@ -71,27 +71,35 @@ p {
 }
 
 .home-nav {
-	top: 50px;
+	@include animation-delay(3s);
+	top: 40px;
 	left: 60px;
 	right: 60px;
 	text-align: center;
 }
 
 .info-nav {
+	@include animation-delay(3s);
 	bottom: 55px;
 	left: 60px;
 }
 
 .share-nav {
+	@include animation-delay(3s);
 	bottom: 55px;
 	right: 60px;
 }
 
 .send-nav {
-	
+	a {
+		color: $white;
+		font-weight: 700;
+  		text-decoration: none;
+	}
 }
 
 .section {
+	background: $light-pink;
 	padding: 0 50px;
 	&.intro-page,
 	&.what-page {
@@ -100,29 +108,15 @@ p {
 }
 
 .intro-page {
-	background: $light-pink;
 	text-align: center;
-	cursor: url(../img/cursor-triangle-down.png), auto;
-	&.heart {
-		cursor: none;
-		background: $light-pink url(../img/heart.png) 50% no-repeat;
-		//background-size: contain;
-		.heading {
-			//opacity: 0;
-		}
+	.heading {
+		width: 70%;
+		margin: auto;
 	}
 }
 
-.what-page {
-	background: $light-pink;
-	text-align: center;
-	cursor: url(../img/cursor-triangle-down.png), auto;
-}
-
 .send-page {
-	background: $light-pink;
 	text-align: center;
-	cursor: url(../img/cursor-twitter.png), auto;
 	.form-step {
 		position: relative;
 		width: 50%;
@@ -138,13 +132,12 @@ p {
 		}
 		label {
 			display: block;
-			margin: 0 auto 18px;
+			margin: 0 auto 10px;
 			width: 100%;
 			text-align: center;
 			font-size: 36px;
 			font-weight: 700;
 			line-height: 1.2;
-			letter-spacing: 0.075em;
 			.fit-text {
 				display: block;
 			}
@@ -156,7 +149,6 @@ p {
 			width: 100%;
 			padding: 20px;
 			font-size: 22px;
-			letter-spacing: 0.075em;
 			&:focus {
 				outline: none;
 			}
@@ -209,7 +201,7 @@ p {
 			font-size: 24px;
 			line-height: 64px;
 			text-decoration: none;
-			letter-spacing: 2px;
+			letter-spacing: 0.075em;
 		}
 		#submit-tweet {
 			background: $purple;
@@ -224,7 +216,7 @@ p {
 			font-size: 24px;
 			line-height: 64px;
 			text-decoration: none;
-			letter-spacing: 2px;
+			letter-spacing: 0.075em;
 		}
 	}
 }

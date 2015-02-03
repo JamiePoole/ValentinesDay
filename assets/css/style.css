@@ -200,12 +200,12 @@ textarea {
 
 /* line 103, ../sass/_fullpage.scss */
 #fp-nav.right {
-  right: 17px;
+  right: 20px;
 }
 
 /* line 107, ../sass/_fullpage.scss */
 #fp-nav.left {
-  left: 17px;
+  left: 30px;
 }
 
 /* line 111, ../sass/_fullpage.scss */
@@ -218,12 +218,12 @@ textarea {
 
 /* line 118, ../sass/_fullpage.scss */
 .fp-slidesNav.bottom {
-  bottom: 17px;
+  bottom: 30px;
 }
 
 /* line 122, ../sass/_fullpage.scss */
 .fp-slidesNav.top {
-  top: 17px;
+  top: 30px;
 }
 
 /* line 126, ../sass/_fullpage.scss */
@@ -237,9 +237,9 @@ textarea {
 #fp-nav ul li,
 .fp-slidesNav ul li {
   display: block;
-  width: 14px;
-  height: 13px;
-  margin: 7px;
+  width: 20px;
+  height: 18px;
+  margin: 8px 0;
   position: relative;
 }
 
@@ -261,32 +261,33 @@ textarea {
 }
 
 /* line 156, ../sass/_fullpage.scss */
-#fp-nav ul li a.active span,
-.fp-slidesNav ul li a.active span {
-  background: #333;
-}
-
-/* line 161, ../sass/_fullpage.scss */
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
-  top: 2px;
-  left: 2px;
-  width: 8px;
-  height: 8px;
-  border: 1px solid #000;
-  background: transparent;
-  border-radius: 50%;
+  background: url(../img/heart-stroke-fill-20x18.svg) 0 0 no-repeat;
+  background-size: 20px 18px;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 18px;
   position: absolute;
   z-index: 1;
 }
 
+/* line 168, ../sass/_fullpage.scss */
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li a.active span {
+  background: url(../img/heart-20x18.svg) 0 0 no-repeat;
+  background-size: 20px 18px;
+}
+
 /* line 174, ../sass/_fullpage.scss */
 #fp-nav ul li .fp-tooltip {
+  color: #931658;
   position: absolute;
-  top: -2px;
-  color: #fff;
-  font-size: 14px;
-  font-family: arial, helvetica, sans-serif;
+  top: 0;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 700;
   white-space: nowrap;
   max-width: 220px;
   overflow: hidden;
@@ -295,7 +296,7 @@ textarea {
   width: 0;
 }
 
-/* line 188, ../sass/_fullpage.scss */
+/* line 189, ../sass/_fullpage.scss */
 #fp-nav ul li:hover .fp-tooltip {
   -webkit-transition: opacity 0.2s ease-in;
   transition: opacity 0.2s ease-in;
@@ -303,81 +304,100 @@ textarea {
   opacity: 1;
 }
 
-/* line 195, ../sass/_fullpage.scss */
+/* line 196, ../sass/_fullpage.scss */
 #fp-nav ul li .fp-tooltip.right {
-  right: 20px;
+  right: 27px;
 }
 
-/* line 199, ../sass/_fullpage.scss */
+/* line 200, ../sass/_fullpage.scss */
 #fp-nav ul li .fp-tooltip.left {
-  left: 20px;
+  left: 30px;
 }
 
-/*!
-Animate.css - http://daneden.me/animate
-Licensed under the MIT license - http://opensource.org/licenses/MIT
-
-Copyright (c) 2014 Daniel Eden
-*/
-/* line 9, ../sass/_animate.scss */
+/* line 2, ../sass/_animate.scss */
 .animated {
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
+  -moz-animation-duration: 0.6s;
+  -webkit-animation-duration: 0.6s;
+  animation-duration: 0.6s;
+  -moz-animation-fill-mode: both;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+  -moz-animation-timing-function: ease;
   -webkit-animation-timing-function: ease;
   animation-timing-function: ease;
 }
 
-/* line 18, ../sass/_animate.scss */
-.animated.infinite {
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
+/* line 8, ../sass/_animate.scss */
+.fadeIn {
+  -moz-animation-name: fadeIn;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
 }
 
-/* line 23, ../sass/_animate.scss */
-.animated.hinge {
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-}
-
-@-webkit-keyframes fadeIn {
-  /* line 29, ../sass/_animate.scss */
+@-moz-keyframes fadeIn {
+  /* line 13, ../sass/_animate.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 30, ../sass/_animate.scss */
+  /* line 16, ../sass/_animate.scss */
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  /* line 13, ../sass/_animate.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 16, ../sass/_animate.scss */
   100% {
     opacity: 1;
   }
 }
 @keyframes fadeIn {
-  /* line 34, ../sass/_animate.scss */
+  /* line 13, ../sass/_animate.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 35, ../sass/_animate.scss */
+  /* line 16, ../sass/_animate.scss */
   100% {
     opacity: 1;
   }
 }
-/* line 38, ../sass/_animate.scss */
-.fadeIn {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
+/* line 21, ../sass/_animate.scss */
+.fadeInDown {
+  -moz-animation-name: fadeInDown;
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
 }
 
+@-moz-keyframes fadeInDown {
+  /* line 26, ../sass/_animate.scss */
+  0% {
+    opacity: 0;
+    -moz-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  /* line 30, ../sass/_animate.scss */
+  100% {
+    opacity: 1;
+    -moz-transform: none;
+    transform: none;
+  }
+}
 @-webkit-keyframes fadeInDown {
-  /* line 44, ../sass/_animate.scss */
+  /* line 26, ../sass/_animate.scss */
   0% {
     opacity: 0;
     -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
   }
 
-  /* line 50, ../sass/_animate.scss */
+  /* line 30, ../sass/_animate.scss */
   100% {
     opacity: 1;
     -webkit-transform: none;
@@ -385,35 +405,55 @@ Copyright (c) 2014 Daniel Eden
   }
 }
 @keyframes fadeInDown {
-  /* line 58, ../sass/_animate.scss */
+  /* line 26, ../sass/_animate.scss */
   0% {
     opacity: 0;
+    -moz-transform: translate3d(0, -100%, 0);
     -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
   }
 
-  /* line 64, ../sass/_animate.scss */
+  /* line 30, ../sass/_animate.scss */
   100% {
     opacity: 1;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
     -webkit-transform: none;
     transform: none;
   }
 }
-/* line 71, ../sass/_animate.scss */
-.fadeInDown {
-  -webkit-animation-name: fadeInDown;
-  animation-name: fadeInDown;
+/* line 36, ../sass/_animate.scss */
+.fadeInUp {
+  -moz-animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
 }
 
+@-moz-keyframes fadeInUp {
+  /* line 41, ../sass/_animate.scss */
+  0% {
+    opacity: 0;
+    -moz-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  /* line 45, ../sass/_animate.scss */
+  100% {
+    opacity: 1;
+    -moz-transform: none;
+    transform: none;
+  }
+}
 @-webkit-keyframes fadeInUp {
-  /* line 77, ../sass/_animate.scss */
+  /* line 41, ../sass/_animate.scss */
   0% {
     opacity: 0;
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
   }
 
-  /* line 83, ../sass/_animate.scss */
+  /* line 45, ../sass/_animate.scss */
   100% {
     opacity: 1;
     -webkit-transform: none;
@@ -421,59 +461,91 @@ Copyright (c) 2014 Daniel Eden
   }
 }
 @keyframes fadeInUp {
-  /* line 91, ../sass/_animate.scss */
+  /* line 41, ../sass/_animate.scss */
   0% {
     opacity: 0;
+    -moz-transform: translate3d(0, 100%, 0);
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
   }
 
-  /* line 97, ../sass/_animate.scss */
+  /* line 45, ../sass/_animate.scss */
   100% {
     opacity: 1;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
     -webkit-transform: none;
     transform: none;
   }
 }
-/* line 104, ../sass/_animate.scss */
-.fadeInUp {
-  -webkit-animation-name: fadeInUp;
-  animation-name: fadeInUp;
-}
-
-/* line 110, ../sass/_animate.scss */
--webkit-keyframes fadeOut 0%  {
-  opacity: 1;
-}
-/* line 111, ../sass/_animate.scss */
--webkit-keyframes fadeOut 100%  {
-  opacity: 0;
-}
-
-@keyframes fadeOut {
-  /* line 115, ../sass/_animate.scss */
-  0% {
-    opacity: 1;
-  }
-
-  /* line 116, ../sass/_animate.scss */
-  100% {
-    opacity: 0;
-  }
-}
-/* line 119, ../sass/_animate.scss */
+/* line 51, ../sass/_animate.scss */
 .fadeOut {
+  -moz-animation-name: fadeOut;
   -webkit-animation-name: fadeOut;
   animation-name: fadeOut;
 }
 
-@-webkit-keyframes fadeOutDown {
-  /* line 125, ../sass/_animate.scss */
+@-moz-keyframes fadeOut {
+  /* line 56, ../sass/_animate.scss */
   0% {
     opacity: 1;
   }
 
-  /* line 129, ../sass/_animate.scss */
+  /* line 59, ../sass/_animate.scss */
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeOut {
+  /* line 56, ../sass/_animate.scss */
+  0% {
+    opacity: 1;
+  }
+
+  /* line 59, ../sass/_animate.scss */
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  /* line 56, ../sass/_animate.scss */
+  0% {
+    opacity: 1;
+  }
+
+  /* line 59, ../sass/_animate.scss */
+  100% {
+    opacity: 0;
+  }
+}
+/* line 64, ../sass/_animate.scss */
+.fadeOutDown {
+  -moz-animation-name: fadeOutDown;
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
+
+@-moz-keyframes fadeOutDown {
+  /* line 69, ../sass/_animate.scss */
+  0% {
+    opacity: 1;
+  }
+
+  /* line 72, ../sass/_animate.scss */
+  100% {
+    opacity: 0;
+    -moz-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+@-webkit-keyframes fadeOutDown {
+  /* line 69, ../sass/_animate.scss */
+  0% {
+    opacity: 1;
+  }
+
+  /* line 72, ../sass/_animate.scss */
   100% {
     opacity: 0;
     -webkit-transform: translate3d(0, 100%, 0);
@@ -481,31 +553,46 @@ Copyright (c) 2014 Daniel Eden
   }
 }
 @keyframes fadeOutDown {
-  /* line 137, ../sass/_animate.scss */
+  /* line 69, ../sass/_animate.scss */
   0% {
     opacity: 1;
   }
 
-  /* line 141, ../sass/_animate.scss */
+  /* line 72, ../sass/_animate.scss */
   100% {
     opacity: 0;
+    -moz-transform: translate3d(0, 100%, 0);
     -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
   }
 }
-/* line 148, ../sass/_animate.scss */
-.fadeOutDown {
-  -webkit-animation-name: fadeOutDown;
-  animation-name: fadeOutDown;
+/* line 78, ../sass/_animate.scss */
+.fadeOutUp {
+  -moz-animation-name: fadeOutUp;
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
 }
 
-@-webkit-keyframes fadeOutUp {
-  /* line 154, ../sass/_animate.scss */
+@-moz-keyframes fadeOutUp {
+  /* line 83, ../sass/_animate.scss */
   0% {
     opacity: 1;
   }
 
-  /* line 158, ../sass/_animate.scss */
+  /* line 86, ../sass/_animate.scss */
+  100% {
+    opacity: 0;
+    -moz-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+@-webkit-keyframes fadeOutUp {
+  /* line 83, ../sass/_animate.scss */
+  0% {
+    opacity: 1;
+  }
+
+  /* line 86, ../sass/_animate.scss */
   100% {
     opacity: 0;
     -webkit-transform: translate3d(0, -100%, 0);
@@ -513,24 +600,81 @@ Copyright (c) 2014 Daniel Eden
   }
 }
 @keyframes fadeOutUp {
-  /* line 166, ../sass/_animate.scss */
+  /* line 83, ../sass/_animate.scss */
   0% {
     opacity: 1;
   }
 
-  /* line 170, ../sass/_animate.scss */
+  /* line 86, ../sass/_animate.scss */
   100% {
     opacity: 0;
+    -moz-transform: translate3d(0, -100%, 0);
     -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
   }
 }
-/* line 177, ../sass/_animate.scss */
-.fadeOutUp {
-  -webkit-animation-name: fadeOutUp;
-  animation-name: fadeOutUp;
+/* line 92, ../sass/_animate.scss */
+.typed-cursor {
+  -moz-animation-name: blink;
+  -webkit-animation-name: blink;
+  animation-name: blink;
+  -moz-animation-duration: 0.7s;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  opacity: 1;
 }
 
+@-moz-keyframes blink {
+  /* line 100, ../sass/_animate.scss */
+  0% {
+    opacity: 1;
+  }
+
+  /* line 103, ../sass/_animate.scss */
+  50% {
+    opacity: 0;
+  }
+
+  /* line 106, ../sass/_animate.scss */
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes blink {
+  /* line 100, ../sass/_animate.scss */
+  0% {
+    opacity: 1;
+  }
+
+  /* line 103, ../sass/_animate.scss */
+  50% {
+    opacity: 0;
+  }
+
+  /* line 106, ../sass/_animate.scss */
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blink {
+  /* line 100, ../sass/_animate.scss */
+  0% {
+    opacity: 1;
+  }
+
+  /* line 103, ../sass/_animate.scss */
+  50% {
+    opacity: 0;
+  }
+
+  /* line 106, ../sass/_animate.scss */
+  100% {
+    opacity: 1;
+  }
+}
 /* line 1, ../sass/_content.scss */
 html, body {
   background: white;
@@ -551,19 +695,19 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "europa", sans-serif;
   font-style: normal;
   font-weight: 700;
-  line-height: 1;
-  letter-spacing: 0.075em;
+  line-height: 1.05;
 }
 
-/* line 23, ../sass/_content.scss */
+/* line 22, ../sass/_content.scss */
 p {
   margin-bottom: 1.25em;
 }
 
-/* line 27, ../sass/_content.scss */
+/* line 26, ../sass/_content.scss */
 .page-border {
   position: fixed;
   background: white;
+  display: none;
 }
 /* line 30, ../sass/_content.scss */
 .page-border.top {
@@ -616,92 +760,97 @@ p {
 
 /* line 73, ../sass/_content.scss */
 .home-nav {
-  top: 50px;
+  -moz-animation-delay: 3s;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+  top: 40px;
   left: 60px;
   right: 60px;
   text-align: center;
 }
 
-/* line 80, ../sass/_content.scss */
+/* line 81, ../sass/_content.scss */
 .info-nav {
+  -moz-animation-delay: 3s;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
   bottom: 55px;
   left: 60px;
 }
 
-/* line 85, ../sass/_content.scss */
+/* line 87, ../sass/_content.scss */
 .share-nav {
+  -moz-animation-delay: 3s;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
   bottom: 55px;
   right: 60px;
 }
 
 /* line 94, ../sass/_content.scss */
+.send-nav a {
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* line 101, ../sass/_content.scss */
 .section {
+  background: #ffc5c5;
   padding: 0 50px;
 }
-/* line 96, ../sass/_content.scss */
+/* line 104, ../sass/_content.scss */
 .section.intro-page, .section.what-page {
   padding: 0 150px;
 }
 
-/* line 102, ../sass/_content.scss */
+/* line 110, ../sass/_content.scss */
 .intro-page {
-  background: #ffc5c5;
   text-align: center;
-  cursor: url(../img/cursor-triangle-down.png), auto;
 }
-/* line 106, ../sass/_content.scss */
-.intro-page.heart {
-  cursor: none;
-  background: #ffc5c5 url(../img/heart.png) 50% no-repeat;
+/* line 112, ../sass/_content.scss */
+.intro-page .heading {
+  width: 70%;
+  margin: auto;
 }
 
-/* line 116, ../sass/_content.scss */
-.what-page {
-  background: #ffc5c5;
-  text-align: center;
-  cursor: url(../img/cursor-triangle-down.png), auto;
-}
-
-/* line 122, ../sass/_content.scss */
+/* line 118, ../sass/_content.scss */
 .send-page {
-  background: #ffc5c5;
   text-align: center;
-  cursor: url(../img/cursor-twitter.png), auto;
 }
-/* line 126, ../sass/_content.scss */
+/* line 120, ../sass/_content.scss */
 .send-page .form-step {
   position: relative;
   width: 50%;
   margin: 0 auto;
 }
-/* line 130, ../sass/_content.scss */
+/* line 124, ../sass/_content.scss */
 .send-page .form-step.active {
   display: block;
 }
-/* line 133, ../sass/_content.scss */
+/* line 127, ../sass/_content.scss */
 .send-page .form-step.inactive {
   display: none;
 }
-/* line 136, ../sass/_content.scss */
+/* line 130, ../sass/_content.scss */
 .send-page .form-step .form-control {
   position: relative;
 }
-/* line 139, ../sass/_content.scss */
+/* line 133, ../sass/_content.scss */
 .send-page .form-step label {
   display: block;
-  margin: 0 auto 18px;
+  margin: 0 auto 10px;
   width: 100%;
   text-align: center;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
-  letter-spacing: 0.075em;
 }
-/* line 148, ../sass/_content.scss */
+/* line 141, ../sass/_content.scss */
 .send-page .form-step label .fit-text {
   display: block;
 }
-/* line 152, ../sass/_content.scss */
+/* line 145, ../sass/_content.scss */
 .send-page .form-step #tweet-target,
 .send-page .form-step #tweet-message {
   background: white;
@@ -709,19 +858,18 @@ p {
   width: 100%;
   padding: 20px;
   font-size: 22px;
-  letter-spacing: 0.075em;
 }
-/* line 160, ../sass/_content.scss */
+/* line 152, ../sass/_content.scss */
 .send-page .form-step #tweet-target:focus,
 .send-page .form-step #tweet-message:focus {
   outline: none;
 }
-/* line 164, ../sass/_content.scss */
+/* line 156, ../sass/_content.scss */
 .send-page .form-step #tweet-target {
   height: 70px;
   padding-left: 90px;
 }
-/* line 168, ../sass/_content.scss */
+/* line 160, ../sass/_content.scss */
 .send-page .form-step .form-prepend {
   background: white;
   color: #931658;
@@ -736,7 +884,7 @@ p {
   font-weight: 700;
   padding: 2px 0 0 0;
 }
-/* line 182, ../sass/_content.scss */
+/* line 174, ../sass/_content.scss */
 .send-page .form-step .next-step {
   background: #931658;
   border: 5px solid #931658;
@@ -753,7 +901,7 @@ p {
   padding-top: 12px;
   letter-spacing: 0.075em;
 }
-/* line 198, ../sass/_content.scss */
+/* line 190, ../sass/_content.scss */
 .send-page .form-step .prev-step {
   background: white;
   border: 5px solid #931658;
@@ -768,9 +916,9 @@ p {
   font-size: 24px;
   line-height: 64px;
   text-decoration: none;
-  letter-spacing: 2px;
+  letter-spacing: 0.075em;
 }
-/* line 214, ../sass/_content.scss */
+/* line 206, ../sass/_content.scss */
 .send-page .form-step #submit-tweet {
   background: #931658;
   border: 5px solid #931658;
@@ -784,35 +932,35 @@ p {
   font-size: 24px;
   line-height: 64px;
   text-decoration: none;
-  letter-spacing: 2px;
+  letter-spacing: 0.075em;
 }
 
-/* line 232, ../sass/_content.scss */
+/* line 224, ../sass/_content.scss */
 .info-page {
   background: white;
   color: #040201;
   padding: 20px 60px;
 }
-/* line 236, ../sass/_content.scss */
+/* line 228, ../sass/_content.scss */
 .info-page .pic {
   float: left;
   width: 28%;
   margin-left: 80px;
 }
-/* line 240, ../sass/_content.scss */
+/* line 232, ../sass/_content.scss */
 .info-page .pic img {
   border: 16px solid #ffc5c5;
   width: 100%;
   height: auto;
 }
-/* line 246, ../sass/_content.scss */
+/* line 238, ../sass/_content.scss */
 .info-page .copy {
   padding: 40px 80px 0 0;
   margin-left: 38%;
   font-size: 28px;
 }
 
-/* line 253, ../sass/_content.scss */
+/* line 245, ../sass/_content.scss */
 .site-main {
   background: #bb1132;
   padding: 0;

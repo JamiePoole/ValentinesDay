@@ -101,11 +101,11 @@
 }
 
 #fp-nav.right {
-    right: 17px;
+    right: 20px;
 }
 
 #fp-nav.left {
-    left: 17px;
+    left: 30px;
 }
 
 .fp-slidesNav{
@@ -116,11 +116,11 @@
 }
 
 .fp-slidesNav.bottom {
-    bottom: 17px;
+    bottom: 30px;
 }
 
 .fp-slidesNav.top {
-    top: 17px;
+    top: 30px;
 }
 
 #fp-nav ul,
@@ -132,10 +132,10 @@
 #fp-nav ul li,
 .fp-slidesNav ul li {
     display: block;
-    width: 14px;
-    height: 13px;
-    margin: 7px;
-    position:relative;
+    width: 20px;
+    height: 18px;
+    margin: 8px 0;
+    position: relative;
 }
 
 .fp-slidesNav ul li {
@@ -153,30 +153,31 @@
     text-decoration: none;
 }
 
-#fp-nav ul li a.active span,
-.fp-slidesNav ul li a.active span {
-    background: #333;
-}
-
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
-    top: 2px;
-    left: 2px;
-    width: 8px;
-    height: 8px;
-    border: 1px solid #000;
-    background: rgba(0, 0, 0, 0);
-    border-radius: 50%;
+    background: url(../img/heart-stroke-fill-20x18.svg) 0 0 no-repeat;
+    background-size: 20px 18px;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 18px;
     position: absolute;
     z-index: 1;
 }
 
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li a.active span {
+    background: url(../img/heart-20x18.svg) 0 0 no-repeat;
+    background-size: 20px 18px;
+}
+
 #fp-nav ul li .fp-tooltip {
+    color: $purple;
     position: absolute;
-    top: -2px;
-    color: #fff;
-    font-size: 14px;
-    font-family: arial, helvetica, sans-serif;
+    top: 0;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
     white-space: nowrap;
     max-width: 220px;
     overflow: hidden;
@@ -193,9 +194,9 @@
 }
 
 #fp-nav ul li .fp-tooltip.right {
-    right: 20px;
+    right: 27px;
 }
 
 #fp-nav ul li .fp-tooltip.left {
-    left: 20px;
+    left: 30px;
 }

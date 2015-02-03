@@ -3,39 +3,59 @@
 // ------------------------------------------------------------
 jQuery(document).ready(function($) {
 	
-	$('.heading').fitText(0.9);
+	// Default fit text setting
 	$('.fit-text').fitText(2);
-	
-	$('.nav-btn').hide();
+
+	$('.heading.fit-text').fitText(0.9).height( $('.heading.fit-text .fallback').height() );
+	$('.heading.fit-text .fallback').hide();
+
+	// Type it out effect
+	// http://codepen.io/voronianski/pen/aicwk
+    // text {String} - printing text
+ 	// n {Number} - from what letter to start
+ 	// tweet your twitter crush anonymously
+	function typeWriter(text, n) {
+	  if (n < (text.length)) {
+	    $('.test').html(text.substring(0, n+1));
+	    n++;
+	    setTimeout(function() {
+	      typeWriter(text, n)
+	    }, 100);
+	  }
+	}
+	$('.start').click(function(e) {
+	  e.stopPropagation();
+	  var text = $('.test').data('text');
+	  typeWriter(text, 0);
+	});
 
 	$('#fullpage').fullpage({
 		//Navigation
         menu: true,
-        anchors:['intro', 'what', 'send', 'info'],
-        navigation: false,
+        anchors:['intro', 'send', 'share', 'info'],
+        navigation: true,
         navigationPosition: 'right',
-        navigationTooltips: ['intro', 'what', 'send', 'info'],
+        navigationTooltips: ['intro', 'send', 'share', 'info'],
 		//Scrolling
         loopBottom: false,
         loopTop: false,
         // Design
         fixedElements: '.info-nav, .home-nav, .share-nav',
         // Events
-        afterLoad: function(anchorLink, index){
-        	if(index == 3){
-            	$('.home-nav').removeClass('fadeOutUp').addClass('fadeInDown').show();
-            	$('.info-nav, .share-nav').removeClass('fadeOutDown').addClass('fadeInUp').show();
-            }
-            if(index == 1 || index == 2){
-            	$('.home-nav').removeClass('fadeInDown').addClass('fadeOutUp');
-            	$('.info-nav, .share-nav').removeClass('fadeInUp').addClass('fadeOutDown');
-            }
-        }
+        // afterLoad: function(anchorLink, index){
+        // 	// if(index == 1){
+            	
+        //  	//}
+        //     // if(index == 1 || index == 2){
+        //     // 	$('.home-nav').removeClass('fadeInDown').addClass('fadeOutUp');
+        //     // 	$('.info-nav, .share-nav').removeClass('fadeInUp').addClass('fadeOutDown');
+        //     // }
+        // }
 	});
 
-	$('.intro-page, .what-page').click(function(e) {
-		$.fn.fullpage.moveSectionDown();
-	});
+	// $('.intro-page').click(function(e) {
+	// 	$.fn.fullpage.moveSectionDown();
+	// });
 
 	$('.step-2').addClass('inactive');
 	$('.step-1 .next-step').click(function(e){
@@ -55,6 +75,6 @@ jQuery(document).ready(function($) {
 	  	}, function() {
 	    	$('.intro-page').removeClass('heart')
 	  	}
-	  );
+	);
 
 });

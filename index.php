@@ -13,28 +13,26 @@
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.fittext.js"></script>
 	<script src="assets/js/jquery.fullPage.min.js"></script>
-	<script src="assets/js/jquery.promin.js"></script>	
 </head>
 <body>
 
-	<div class="home-nav nav-btn animated">
+	<!-- <div class="home-nav nav-btn animated fadeInDown">
 		<a href="#intro">twitter crush</a>
 	</div>
-	<div class="info-nav nav-btn animated">
+	<div class="info-nav nav-btn animated fadeInUp">
 		<a href="#info">info</a>
 	</div>
-	<div class="share-nav nav-btn animated">
+	<div class="share-nav nav-btn animated fadeInUp">
 		<a href="#info">share</a>
-	</div>
+	</div> -->
 
 	<div id="fullpage">
 
 		<div class="section intro-page" data-anchor="intro">
-			<h1 class="heading">twitter crush</h1>
-		</div>
-
-		<div class="section what-page" data-anchor="what">
-			<h1 class="heading">tweet your twitter crush anonymously</h1>
+			<h1 class="heading fit-text animated">tweet your twitter crush anonymously</h1>
+			<div class="send-nav animated">
+				<a href="#send">tweet</a>
+			</div>
 		</div>
 
 		<div class="section send-page" data-anchor="send">
@@ -61,9 +59,13 @@
 						</div>
 					</div>
 				</form>
-				<span><?php $_ut->getDelay($_tq->time()); ?></span>
+				<span><?php // $_ut->getDelay($_tq->time()); ?></span>
 			</div>
 			<div id="tweet-image"></div>
+		</div>
+
+		<div class="section share-page" data-anchor="share">
+			Share
 		</div>
 
 		<div class="section info-page" data-anchor="info">
