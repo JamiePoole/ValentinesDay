@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: $special-font;
 	font-style: normal;
 	font-weight: 700;
-	line-height: 1.05;
+	line-height: 1.1;
 }
 
 p {
@@ -26,30 +26,33 @@ p {
 .page-border {
 	position: fixed;
 	background: $white;
-	display: none;
 	&.top {
 		top: 0;
 		left: 0;
 		right: 0;
 		height: 20px;
+		height: 2vw;
 	}
 	&.right {
 		top: 0;
 		bottom: 0;
 		right: 0;
 		width: 20px;
+		width: 2vw;
 	}
 	&.bottom {
 		bottom: 0;
 		left: 0;
 		right: 0;
 		height: 20px;
+		height: 2vw;
 	}
 	&.left {
 		top: 0;
 		bottom: 0;
 		left: 0;
 		width: 20px;
+		width: 2vw;
 	}
 }
 
@@ -58,65 +61,79 @@ p {
 	z-index: 999;
 	a {
 		color: $purple;
-		border-bottom: 3px solid $purple;
-		font-size: 22px;
+		font-size: 16px;
+		font-weight: 700;
 		line-height: 20px;
 		padding-bottom: 3px;
-		letter-spacing: 0.075em;
 		text-decoration: none;
 		&:hover {
 			border-bottom: none;
+		}
+		@include respond-to(m) {
+			font-size: 22px;
 		}
 	}
 }
 
 .home-nav {
-	@include animation-delay(3s);
-	top: 40px;
-	left: 60px;
-	right: 60px;
+	top: 25px;
+	left: 40px;
+	right: 40px;
 	text-align: center;
 }
 
 .info-nav {
-	@include animation-delay(3s);
-	bottom: 55px;
-	left: 60px;
+	@include animation-delay(0.3s);
+	bottom: 5vw;
+	left: 7vw;
 }
 
 .share-nav {
-	@include animation-delay(3s);
-	bottom: 55px;
-	right: 60px;
-}
-
-.send-nav {
-	padding: 40px 0 0;
-	a {
-		background: $white;
-  		border: 3px solid $purple;
-		color: $purple;
-  		display: inline-block;
-  		font-weight: 700;
-  		text-decoration: none;
-  		padding: 8px 20px;
-	}
+	@include animation-delay(0.3s);
+	bottom: 5vw;
+	right: 7vw;
 }
 
 .section {
 	background: $light-pink;
-	padding: 0 50px;
-	&.intro-page,
-	&.what-page {
-		padding: 0 150px;
+	.inner {
+		width: 86vw;
+		margin: auto;
 	}
 }
 
 .intro-page {
 	text-align: center;
 	.heading {
-		width: 70%;
-		margin: auto;
+		font-size: 42px;
+		margin-bottom: 6px;
+		@include respond-to(m) {
+
+		}
+		@include respond-to(l) {
+
+		}
+		@include respond-to(xl) {
+
+		}
+	}
+	.sub-heading {
+		font-size: 28px;
+		font-weight: 300;
+		opacity: 0.75;
+	}
+	.send-nav {
+		margin-top: 8px;
+		a {
+			//background: $white;
+	  		//border: 4px solid $purple;
+			color: $white;
+			display: inline-block;
+			font-size: 16px;
+	  		font-weight: 400;
+	  		text-decoration: none;
+	  		padding: 4px 10px;
+		}
 	}
 }
 
@@ -229,7 +246,6 @@ p {
 .info-page {
 	background: $white;
 	color: $black;
-	padding: 20px 60px;
 	.pic {
 		float: left;
 		width: 28%;
@@ -247,7 +263,12 @@ p {
 	}
 }
 
-.site-main {
-	background: $dark-pink;
-	padding: 0;
+// Slimscroll plugin
+.slimScrollBar,
+.slimScrollRail {
+	border-radius: 0 !important;
+	background: $black !important;
+	opacity: 1 !important;
+	top: 0 !important;
+	right: 0 !important;
 }

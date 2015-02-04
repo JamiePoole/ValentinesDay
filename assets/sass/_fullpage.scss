@@ -52,6 +52,7 @@
     vertical-align: middle;
     width: 100%;
     height: 100%;
+    padding: 2vw; // This should match the page border size
 }
 
 .fp-slidesContainer {
@@ -98,14 +99,20 @@
     margin-top: -32px;
     top: 50%;
     opacity: 1;
+    display: none;
+    @include respond-to(m) {
+        display: block;
+    }
 }
 
 #fp-nav.right {
-    right: 20px;
+    right: 50px;
+    right: 7vw;
 }
 
 #fp-nav.left {
-    left: 30px;
+    left: 50px;
+    left: 7vw;
 }
 
 .fp-slidesNav{

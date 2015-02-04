@@ -17,3 +17,10 @@ $blue-grey      : #A1A7B2;
 
 $normal-font 	: Arial, sans-serif;
 $special-font 	: "europa", sans-serif;
+
+// Responsive mixin in _mixin.scss
+$breakpoints: (
+	'm' 	: 768px,
+	'l'  	: 1024px,
+	'xl' 	: 1280px
+);

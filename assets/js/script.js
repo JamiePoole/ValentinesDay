@@ -2,32 +2,8 @@
 // This ready handler passes the $ alias in to avoid conflict with other libraries.
 // ------------------------------------------------------------
 jQuery(document).ready(function($) {
-	
-	// Default fit text setting
-	$('.fit-text').fitText(2);
 
-	$('.heading.fit-text').fitText(0.9, {maxFontSize: '110px'} ).height( $('.heading.fit-text .fallback').height() );
-	$('.heading.fit-text .fallback').hide();
-
-	// Type it out effect
-	// http://codepen.io/voronianski/pen/aicwk
-    // text {String} - printing text
- 	// n {Number} - from what letter to start
- 	// tweet your twitter crush anonymously
-	function typeWriter(text, n) {
-	  if (n < (text.length)) {
-	    $('.test').html(text.substring(0, n+1));
-	    n++;
-	    setTimeout(function() {
-	      typeWriter(text, n)
-	    }, 100);
-	  }
-	}
-	$('.start').click(function(e) {
-	  e.stopPropagation();
-	  var text = $('.test').data('text');
-	  typeWriter(text, 0);
-	});
+	$('.info-nav, .home-nav, .share-nav').hide();
 
 	$('#fullpage').fullpage({
 		//Navigation
@@ -35,22 +11,27 @@ jQuery(document).ready(function($) {
         anchors:['intro', 'send', 'share', 'info'],
         navigation: true,
         navigationPosition: 'right',
-        navigationTooltips: ['intro', 'send', 'share', 'info'],
+        //navigationTooltips: ['intro', 'send', 'share', 'info'],
 		//Scrolling
+		css3: true,
+		scrollingSpeed: 1000,
         loopBottom: false,
         loopTop: false,
+        scrollOverflow: true,
         // Design
         fixedElements: '.info-nav, .home-nav, .share-nav',
         // Events
-        // afterLoad: function(anchorLink, index){
-        // 	// if(index == 1){
-            	
-        //  	//}
-        //     // if(index == 1 || index == 2){
-        //     // 	$('.home-nav').removeClass('fadeInDown').addClass('fadeOutUp');
-        //     // 	$('.info-nav, .share-nav').removeClass('fadeInUp').addClass('fadeOutDown');
-        //     // }
-        // }
+        onLeave: function(index, nextIndex, direction){
+            if(index == 1){
+                $('.info-nav, .home-nav, .share-nav').show();
+                $('.info-nav, .share-nav').removeClass('fadeOutDown').addClass('fadeInUp');
+            }
+        },
+        afterLoad: function(anchorLink, index){
+        	if(index == 1){
+            	//$('.info-nav, .share-nav').removeClass('fadeInUp').addClass('fadeOutDown');
+         	}
+        }
 	});
 
 	// $('.intro-page').click(function(e) {
