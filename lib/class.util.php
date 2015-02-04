@@ -46,13 +46,22 @@ class util {
 	}
 
 	public function log($e){
-		// DEBUG ERROR MESSAGE
-		// try {
-		// 	$sql = "INSERT INTO `log` (`eid`, `type`, `urgency`, `code`, `message`, `trace`) VALUES (NULL, '$type', $urgency', '$code', '$message', '$trace')";
-		// 	$result = $this->db->prepare($sql);
-		// 	$result->execute();
-		// } catch(PDOException $e){
-		// 	die($e->getMessage());
-		// }
+		/* int $code;
+		 * string $message;
+		 * string $file;
+		 * int $line;
+		 */
+		$code = (isset($e->code)) ? $e->code : null;
+		$message = (isset($e->message)) ? $e->message : null;
+		$file = (isset($e->file)) ? $e->file : null;
+		$line = (isset($e->line)) ? $e->line : null;
+
+		try {
+			$sql = "INSERT INTO `log` (`eid`, `code`, `message`, `file`, `line`) VALUES (NULL, '$code', '$message', '$file', '$line')";
+			$result = $this->db->prepare($sql);
+			$result->execute();
+		} catch(PDOException $e){
+			die($e->getMessage());
+		}
 	}
 }

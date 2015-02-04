@@ -68,7 +68,15 @@ class tweetQueue {
 	}
 
 	public function delete($tid){
-		if(!isset($tid)) die('No ID specified.');
+		if(!isset($tid)){
+			$this->ut->log((object)array(
+				'code' => 1,
+				'message' => 'No ID specified',
+				'file' => __FILE__,
+				'line' => __LINE__
+			));
+			die('No ID specified.');
+		}
 
 		try {
 			$data = $this->db_options['data'];
@@ -175,12 +183,12 @@ class tweetQueue {
 		if(trim($target) != ''){
 			 if(trim($message) != ''){
 		 		// Censor
-		 		$c = new censor();
+		 		$c = new CensorWords();
 
 		 		$return->tweet['code'] = 20;
 		 		$return->tweet['status'] = 'Tweet validated.';
 		 		$return->tweet['target'] = $target;
-		 		$return->tweet['message'] = $c->censor($message);
+		 		$return->tweet['message'] = $c->censorString($message);
 			} else {
 				$return->error['code'] = 22;
 				$return->error['message'] = 'Empty message.';

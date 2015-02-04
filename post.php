@@ -16,6 +16,8 @@ if(isset($_POST['nonce_token']) && $_ut->checkSession($_POST['nonce_token'])):
 else:
 	$return->error['code'] = 1;
 	$return->error['message'] = 'Invalid token.';
+	$return->error['file'] = $user['ip'];
+	$_ut->log((object)$return->error);
 endif;
 
 echo json_encode($return);

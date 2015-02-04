@@ -19,6 +19,9 @@ class cronTasks {
 		return self::$instance;
 	}
 
+	/* This is the main run function
+	 * All calls in here are defined in this class
+	 */
 	public function run(){
 		$this->sendTweets();
 	}

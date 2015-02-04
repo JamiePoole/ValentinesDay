@@ -36,15 +36,24 @@ class sendTweet {
 				$tweet = '@'.$recipient.' '.$message;
 				$twitter->post('statuses/update', array('status' => $tweet));
 				if(!isset($twitter->errors)){
-					echo 'Tweet "' . $message . '" sent successfully to '. $recipient.'.<br />';
+					$this->ut->log((object)array(
+						'code'	=> 200,
+						'message' => 'Tweet "' . $message . '" sent successfully to '. $recipient
+					));
 				} else {
-					echo 'Tweet failed. Errors:';
 					foreach($twitter->errors as $error){
-						echo $error->code . ': ' . $error->message . '.';
+						$this->ut->log((object)array(
+							'code'	=> $error->code,
+							'message' => $error->message
+						));
 					}
 				}
 			}
 		} else {
+			$this->ut->log((object)array(
+				'code'	=> 3,
+				'message' => 'Tweet failed. No recipient specified'
+			));
 			die('Tweet failed. No recipient specified');
 		}
 	}
@@ -57,7 +66,12 @@ class sendTweet {
 			if(!isset($twitter->errors)){
 				$this->tweet_data->saveUser($user, $user_object);
 			} else {
-				// Fail
+				foreach($twitter->errors as $error){
+					$this->ut->log((object)array(
+						'code'	=> $error->code,
+						'message' => $error->message
+					));
+				}
 			}
 		}
 	}
