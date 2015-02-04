@@ -6,7 +6,7 @@ jQuery(document).ready(function($) {
 	// Default fit text setting
 	$('.fit-text').fitText(2);
 
-	$('.heading.fit-text').fitText(0.9).height( $('.heading.fit-text .fallback').height() );
+	$('.heading.fit-text').fitText(0.9, {maxFontSize: '110px'} ).height( $('.heading.fit-text .fallback').height() );
 	$('.heading.fit-text .fallback').hide();
 
 	// Type it out effect

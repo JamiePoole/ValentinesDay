@@ -787,56 +787,64 @@ p {
   right: 60px;
 }
 
-/* line 94, ../sass/_content.scss */
+/* line 93, ../sass/_content.scss */
+.send-nav {
+  padding: 40px 0 0;
+}
+/* line 95, ../sass/_content.scss */
 .send-nav a {
-  color: white;
+  background: white;
+  border: 3px solid #931658;
+  color: #931658;
+  display: inline-block;
   font-weight: 700;
   text-decoration: none;
+  padding: 8px 20px;
 }
 
-/* line 101, ../sass/_content.scss */
+/* line 106, ../sass/_content.scss */
 .section {
   background: #ffc5c5;
   padding: 0 50px;
 }
-/* line 104, ../sass/_content.scss */
+/* line 109, ../sass/_content.scss */
 .section.intro-page, .section.what-page {
   padding: 0 150px;
 }
 
-/* line 110, ../sass/_content.scss */
+/* line 115, ../sass/_content.scss */
 .intro-page {
   text-align: center;
 }
-/* line 112, ../sass/_content.scss */
+/* line 117, ../sass/_content.scss */
 .intro-page .heading {
   width: 70%;
   margin: auto;
 }
 
-/* line 118, ../sass/_content.scss */
+/* line 123, ../sass/_content.scss */
 .send-page {
   text-align: center;
 }
-/* line 120, ../sass/_content.scss */
+/* line 125, ../sass/_content.scss */
 .send-page .form-step {
   position: relative;
   width: 50%;
   margin: 0 auto;
 }
-/* line 124, ../sass/_content.scss */
+/* line 129, ../sass/_content.scss */
 .send-page .form-step.active {
   display: block;
 }
-/* line 127, ../sass/_content.scss */
+/* line 132, ../sass/_content.scss */
 .send-page .form-step.inactive {
   display: none;
 }
-/* line 130, ../sass/_content.scss */
+/* line 135, ../sass/_content.scss */
 .send-page .form-step .form-control {
   position: relative;
 }
-/* line 133, ../sass/_content.scss */
+/* line 138, ../sass/_content.scss */
 .send-page .form-step label {
   display: block;
   margin: 0 auto 10px;
@@ -846,11 +854,11 @@ p {
   font-weight: 700;
   line-height: 1.2;
 }
-/* line 141, ../sass/_content.scss */
+/* line 146, ../sass/_content.scss */
 .send-page .form-step label .fit-text {
   display: block;
 }
-/* line 145, ../sass/_content.scss */
+/* line 150, ../sass/_content.scss */
 .send-page .form-step #tweet-target,
 .send-page .form-step #tweet-message {
   background: white;
@@ -859,17 +867,17 @@ p {
   padding: 20px;
   font-size: 22px;
 }
-/* line 152, ../sass/_content.scss */
+/* line 157, ../sass/_content.scss */
 .send-page .form-step #tweet-target:focus,
 .send-page .form-step #tweet-message:focus {
   outline: none;
 }
-/* line 156, ../sass/_content.scss */
+/* line 161, ../sass/_content.scss */
 .send-page .form-step #tweet-target {
   height: 70px;
   padding-left: 90px;
 }
-/* line 160, ../sass/_content.scss */
+/* line 165, ../sass/_content.scss */
 .send-page .form-step .form-prepend {
   background: white;
   color: #931658;
@@ -884,7 +892,7 @@ p {
   font-weight: 700;
   padding: 2px 0 0 0;
 }
-/* line 174, ../sass/_content.scss */
+/* line 179, ../sass/_content.scss */
 .send-page .form-step .next-step {
   background: #931658;
   border: 5px solid #931658;
@@ -901,7 +909,7 @@ p {
   padding-top: 12px;
   letter-spacing: 0.075em;
 }
-/* line 190, ../sass/_content.scss */
+/* line 195, ../sass/_content.scss */
 .send-page .form-step .prev-step {
   background: white;
   border: 5px solid #931658;
@@ -918,7 +926,7 @@ p {
   text-decoration: none;
   letter-spacing: 0.075em;
 }
-/* line 206, ../sass/_content.scss */
+/* line 211, ../sass/_content.scss */
 .send-page .form-step #submit-tweet {
   background: #931658;
   border: 5px solid #931658;
@@ -935,32 +943,32 @@ p {
   letter-spacing: 0.075em;
 }
 
-/* line 224, ../sass/_content.scss */
+/* line 229, ../sass/_content.scss */
 .info-page {
   background: white;
   color: #040201;
   padding: 20px 60px;
 }
-/* line 228, ../sass/_content.scss */
+/* line 233, ../sass/_content.scss */
 .info-page .pic {
   float: left;
   width: 28%;
   margin-left: 80px;
 }
-/* line 232, ../sass/_content.scss */
+/* line 237, ../sass/_content.scss */
 .info-page .pic img {
   border: 16px solid #ffc5c5;
   width: 100%;
   height: auto;
 }
-/* line 238, ../sass/_content.scss */
+/* line 243, ../sass/_content.scss */
 .info-page .copy {
   padding: 40px 80px 0 0;
   margin-left: 38%;
   font-size: 28px;
 }
 
-/* line 245, ../sass/_content.scss */
+/* line 250, ../sass/_content.scss */
 .site-main {
   background: #bb1132;
   padding: 0;

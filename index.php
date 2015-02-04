@@ -31,7 +31,7 @@
 		<div class="section intro-page" data-anchor="intro">
 			<h1 class="heading fit-text animated">tweet your twitter crush anonymously</h1>
 			<div class="send-nav animated">
-				<a href="#send">tweet</a>
+				<a href="#send">tweet your crush</a>
 			</div>
 		</div>
 
