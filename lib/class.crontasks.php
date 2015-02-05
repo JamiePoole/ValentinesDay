@@ -44,6 +44,7 @@ class cronTasks {
 		foreach($next as $tweet){
 			$this->_st->postTweet($tweet['duser'], $tweet['dmessage']);
 			$this->_st->getUser($tweet['duser']);
+			$this->_tq->updateSent($tweet['tid']);
 			$this->_tq->delete($tweet['tid']);
 		}
 	}

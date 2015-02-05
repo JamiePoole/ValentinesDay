@@ -111,6 +111,27 @@ class tweetQueue {
 		return $result;
 	}
 
+	public function updateSent($tid){
+		if(!isset($tid)){
+			$this->ut->log((object)array(
+				'code'	=> 1,
+				'message'	=> 'No ID Specified',
+				'file'		=> __FILE__,
+				'line'		=> __LINE__
+			));
+			die('No ID specified.');
+		}
+
+		try {
+			$data = $this->db_options['data'];
+			$sql = "UPDATE `$data`.`$this->archv_table` SET `delivered` = 1 WHERE `tid` = $tid";
+			$result = $this->db->prepare($sql);
+			$result->execute();
+		} catch(PDOException $e){
+			$this->ut->log($e);
+		}
+	}
+
 	public function select($tid = null){
 		try {
 			$data = $this->db_options['data'];
