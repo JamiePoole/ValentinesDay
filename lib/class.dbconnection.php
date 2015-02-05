@@ -7,10 +7,12 @@ class dbConnection extends PDO {
 	private $db;
 
 	public function __construct(){
-		$this->options['host'] = 'localhost';
-		$this->options['data'] = 'twitter_romance';
-		$this->options['user'] = 'root';
-		$this->options['pass'] = '';
+		$settings = parse_ini_file('conf/settings.ini', true);
+
+		$this->options['host'] = $settings['database']['host'];
+		$this->options['data'] = $settings['database']['data'];
+		$this->options['user'] = $settings['database']['user'];
+		$this->options['pass'] = $settings['database']['pass'];
 
 		try {
 			parent::__construct('mysql:host='.$this->options['host'].';dbname='.$this->options['data'], $this->options['user'], $this->options['pass']);
