@@ -26,7 +26,7 @@ class tweetQueue {
 		$return = new stdClass();
 
 		if(!isset($recipient) || !isset($message) || !isset($user)){
-			$return->error['code'] = 23;
+			$return->error['code'] = 7;
 			$return->error['message'] = 'Invalid values to insert into queue.';
 			return $return;
 		}
@@ -53,14 +53,14 @@ class tweetQueue {
 			$result->execute();
 
 			// Return Data
-			$return->tweet['code'] = 20;
+			$return->tweet['code'] = 101;
 			$return->tweet['status'] = 'Tweet successfully added to queue.';
 			$return->tweet['tid'] = $lastid;
 			$return->tweet['target'] = $recipient;
 			$return->tweet['message'] = $message;
 
 		} catch(PDOException $e){
-			$return->error['code'] = 24;
+			$return->error['code'] = 8;
 			$return->error['message'] = 'Unable to add Tweet to Queue. ' . $e->getMessage();
 		}
 
