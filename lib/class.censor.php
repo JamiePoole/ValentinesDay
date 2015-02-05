@@ -44,7 +44,7 @@ class CensorWords
 
 		// Whitelist
 		$whitelist = array();
-		if (file_exists(__DIR__ . DIRECTORY_SEPARATOR .'dict/whitelist.php')) {
+		if (file_exists(__DIR__ . DIRECTORY_SEPARATOR .'dict/whitelist.php'))
 			include(__DIR__ . DIRECTORY_SEPARATOR .'dict/whitelist.php');
 		$this->whitelist = $whitelist;
 			 
