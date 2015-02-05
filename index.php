@@ -39,6 +39,7 @@ $_ut->startSession();
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.slimscroll.min.js"></script>
 	<script src="assets/js/jquery.fullPage.min.js"></script>
+	<script src="assets/js/jquery.idealforms.min.js"></script>
 </head>
 <body>
 
@@ -63,33 +64,43 @@ $_ut->startSession();
 
 		<div class="section send-page" data-anchor="send">
 			<div class="inner">
-				<div id="tweet-form">
-					<form id="send-tweet" method="post" action="post.php">
-						<input type="hidden" name="nonce_token" value="<?php echo $_SESSION['token']; ?>" />
-						<div class="form-step pm-step step-1 active">
-							<label for="tweet-target">
-								<span>Twitter name of your crush</span>
-							</label>
-							<div class="form-control">
-								<span class="form-prepend">@</span>
-								<input type="text" id="tweet-target" name="tweet_target" />
-								<a class="next-step" href="#">Next</a>
+				<div id="tweet-form" class="idealsteps-container">
+  					<!-- <nav class="idealsteps-nav"></nav> -->
+					<form id="send-tweet" class="idealforms" novalidate method="post" action="post.php">
+						<div class="idealsteps-wrap">
+							<input type="hidden" name="nonce_token" value="<?php echo $_SESSION['token']; ?>" />
+							<div class="form-step idealsteps-step">
+								<div class="field">
+									<label for="tweet-target">
+										<span>Twitter name of your crush</span>
+									</label>
+									<div class="form-control">
+										<span class="form-prepend">@</span>
+										<input type="text" id="tweet-target" name="tweet_target" />
+										<button type="button" class="next">Next</button>
+									</div>
+									<div class="error"></div>
+								</div>
 							</div>
-						</div>
-						<div class="form-step pm-step step-2">
-							<label for="tweet-message">
-								<span>Tweet to <span id="target-name">twitterhandle</span></span>
-							</label>
-							<div class="form-control">
-								<textarea id="tweet-message" name="tweet_message" rows="3"></textarea>
-								<a class="prev-step" href="#">Back</a> <input type="submit" id="submit-tweet" value="Send tweet" />
+							<div class="form-step idealsteps-step">
+								<div class="field">
+									<label for="tweet-message">
+										<span>Tweet to <span id="target-name">twitterhandle</span></span>
+									</label>
+									<div class="form-control">
+										<textarea id="tweet-message" name="tweet_message" rows="3"></textarea>
+										<button type="button" class="prev">Back</button> 
+										<input type="submit" id="submit-tweet" class="submit" value="Send tweet" />
+									</div>
+									<div class="error"></div>
+								</div>
 							</div>
-						</div>
-						<div class="form-step pm-step step-3">
-							Thanks<br>
-							<a href="#share">Share</a>
-						</div>
-					</form>
+							<div class="form-step idealsteps-step">
+								Thanks<br>
+								<a href="#share">Share</a>
+							</div>
+						</div><!--// .idealsteps-wrap -->
+					</form><!--// .idealforms -->
 					<p class="delay-time"><?php $_ut->getDelay($_tq->time()); ?></p>
 				</div>
 				<div id="tweet-image"></div>

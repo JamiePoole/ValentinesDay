@@ -961,18 +961,10 @@ p {
   clear: both;
 }
 /* line 186, ../sass/_content.scss */
-.send-page .form-step.active {
-  display: block;
-}
-/* line 189, ../sass/_content.scss */
-.send-page .form-step.inactive {
-  display: none;
-}
-/* line 192, ../sass/_content.scss */
 .send-page .form-step .form-control {
   position: relative;
 }
-/* line 195, ../sass/_content.scss */
+/* line 189, ../sass/_content.scss */
 .send-page .form-step label {
   display: block;
   margin: 0 auto 10px;
@@ -982,11 +974,11 @@ p {
   font-weight: 700;
   line-height: 1.2;
 }
-/* line 203, ../sass/_content.scss */
+/* line 197, ../sass/_content.scss */
 .send-page .form-step label .fit-text {
   display: block;
 }
-/* line 207, ../sass/_content.scss */
+/* line 201, ../sass/_content.scss */
 .send-page .form-step #tweet-target,
 .send-page .form-step #tweet-message {
   background: white;
@@ -995,17 +987,17 @@ p {
   padding: 20px;
   font-size: 22px;
 }
-/* line 214, ../sass/_content.scss */
+/* line 208, ../sass/_content.scss */
 .send-page .form-step #tweet-target:focus,
 .send-page .form-step #tweet-message:focus {
   outline: none;
 }
-/* line 218, ../sass/_content.scss */
+/* line 212, ../sass/_content.scss */
 .send-page .form-step #tweet-target {
   height: 70px;
   padding-left: 90px;
 }
-/* line 222, ../sass/_content.scss */
+/* line 216, ../sass/_content.scss */
 .send-page .form-step .form-prepend {
   background: white;
   color: #931658;
@@ -1020,8 +1012,8 @@ p {
   font-weight: 700;
   padding: 2px 0 0 0;
 }
-/* line 236, ../sass/_content.scss */
-.send-page .form-step .next-step {
+/* line 230, ../sass/_content.scss */
+.send-page .form-step .next {
   background: #931658;
   border: 5px solid #931658;
   color: white;
@@ -1034,11 +1026,12 @@ p {
   width: 110px;
   font-size: 24px;
   text-decoration: none;
-  padding-top: 12px;
+  padding: 0;
   letter-spacing: 0.075em;
+  border-radius: 0;
 }
-/* line 252, ../sass/_content.scss */
-.send-page .form-step .prev-step {
+/* line 247, ../sass/_content.scss */
+.send-page .form-step .prev {
   background: white;
   border: 5px solid #931658;
   color: #931658;
@@ -1053,8 +1046,9 @@ p {
   line-height: 64px;
   text-decoration: none;
   letter-spacing: 0.075em;
+  border-radius: 0;
 }
-/* line 268, ../sass/_content.scss */
+/* line 264, ../sass/_content.scss */
 .send-page .form-step #submit-tweet {
   background: #931658;
   border: 5px solid #931658;
@@ -1069,26 +1063,27 @@ p {
   line-height: 64px;
   text-decoration: none;
   letter-spacing: 0.075em;
+  border-radius: 0;
 }
-/* line 284, ../sass/_content.scss */
+/* line 281, ../sass/_content.scss */
 .send-page .delay-time {
   display: none;
 }
 
-/* line 290, ../sass/_content.scss */
+/* line 287, ../sass/_content.scss */
 .share-page .heading {
   margin-bottom: 6px;
 }
-/* line 293, ../sass/_content.scss */
+/* line 290, ../sass/_content.scss */
 .share-page .sub-heading {
   margin-bottom: 36px;
 }
-/* line 296, ../sass/_content.scss */
+/* line 293, ../sass/_content.scss */
 .share-page .share {
   font-size: 22px;
   font-weight: 300;
 }
-/* line 300, ../sass/_content.scss */
+/* line 297, ../sass/_content.scss */
 .share-page .share-btn {
   color: #931658;
   font-weight: 700;
@@ -1096,32 +1091,32 @@ p {
   display: inline-block;
 }
 
-/* line 317, ../sass/_content.scss */
+/* line 314, ../sass/_content.scss */
 .info-page {
   background: white;
   color: #040201;
   text-align: left;
 }
-/* line 321, ../sass/_content.scss */
+/* line 318, ../sass/_content.scss */
 .info-page .pic {
   float: left;
   width: 28%;
   margin-left: 80px;
 }
-/* line 325, ../sass/_content.scss */
+/* line 322, ../sass/_content.scss */
 .info-page .pic img {
   border: 16px solid #ffc5c5;
   width: 100%;
   height: auto;
 }
-/* line 331, ../sass/_content.scss */
+/* line 328, ../sass/_content.scss */
 .info-page .copy {
   padding: 40px 80px 0 0;
   margin-left: 38%;
   font-size: 28px;
 }
 
-/* line 339, ../sass/_content.scss */
+/* line 336, ../sass/_content.scss */
 .slimScrollBar,
 .slimScrollRail {
   border-radius: 0 !important;
@@ -1137,887 +1132,3 @@ p {
  * @version: 3.0
  * @license GPL or MIT
  */
-/* line 357, ../sass/_content.scss */
-.idealforms-field-width {
-  width: 619.3333333333334px;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms {
-  zoom: 1;
-  line-height: 1.5;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms:before, form.idealforms:after {
-  content: "";
-  display: table;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms:after {
-  clear: both;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .field {
-  position: relative;
-  float: left;
-  clear: both;
-  margin: .35em 0;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms label.main, form.idealforms .field > input, form.idealforms select, form.idealforms button, form.idealforms textarea, form.idealforms .field .group {
-  float: left;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms label.main {
-  width: 120px;
-  margin-top: .55em;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms input, form.idealforms textarea, form.idealforms select, form.idealforms .field .group {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  width: 290px;
-  padding: .55em;
-  border: 1px solid #999;
-  outline: 0;
-  background: #fff;
-  -webkit-border-radius: 3.01px;
-  border-radius: 3.01px;
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms input {
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
-  -o-transition: background 0.3s ease-in-out;
-  -ms-transition: background 0.3s ease-in-out;
-  transition: background 0.3s ease-in-out;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms textarea {
-  width: 435px;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms select, form.idealforms button {
-  color: #444;
-  background: #eee;
-  background: -webkit-linear-gradient(white, #dddddd);
-  background: -moz-linear-gradient(white, #dddddd);
-  background: -o-linear-gradient(white, #dddddd);
-  background: -ms-linear-gradient(white, #dddddd);
-  background: linear-gradient(#ffffff, #dddddd);
-  border: 1px solid #aaa;
-  border-bottom-color: #919191;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  -webkit-border-radius: 3.01px;
-  border-radius: 3.01px;
-  padding: .55em 1.5em;
-  cursor: pointer;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms select:hover, form.idealforms button:hover {
-  background: -webkit-linear-gradient(white, #eaeaea);
-  background: -moz-linear-gradient(white, #eaeaea);
-  background: -o-linear-gradient(white, #eaeaea);
-  background: -ms-linear-gradient(white, #eaeaea);
-  background: linear-gradient(#ffffff, #eaeaea);
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms select:active, form.idealforms button:active, form.idealforms select:active:focus, form.idealforms button:active:focus {
-  color: #444;
-  background: #eee;
-  background: -webkit-linear-gradient(white, #dddddd);
-  background: -moz-linear-gradient(white, #dddddd);
-  background: -o-linear-gradient(white, #dddddd);
-  background: -ms-linear-gradient(white, #dddddd);
-  background: linear-gradient(#ffffff, #dddddd);
-  border: 1px solid #aaa;
-  border-bottom-color: #919191;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  -webkit-border-radius: 3.01px;
-  border-radius: 3.01px;
-  background: #ddd;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms select:focus, form.idealforms button:focus {
-  outline: none;
-  border-color: #3f9dcc;
-  -webkit-box-shadow: 0 0 1px #3f9dcc;
-  box-shadow: 0 0 1px #3f9dcc;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms button {
-  width: auto;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms select {
-  padding: .55em;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms select:focus {
-  border: 1px solid #444;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms input[type="file"] {
-  padding: 0;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .field .group {
-  position: relative;
-  padding: 1.25em;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .field .group label {
-  float: left;
-  clear: both;
-  padding: .15em 0;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .field .group input, form.idealforms .field .group label {
-  margin: 0;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .field .group input {
-  width: auto;
-  margin-right: .5em;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .field .group label {
-  margin-right: 1em;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .field .group label:last-of-type {
-  margin: 0;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .field.valid input, form.idealforms .field.valid select, form.idealforms .field.valid textarea, form.idealforms .field.valid .group {
-  color: #18445a;
-  background: #edf7fc;
-  border-color: #3f9dcc;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .field.invalid input, form.idealforms .field.invalid select, form.idealforms .field.invalid textarea, form.idealforms .field.invalid .group {
-  color: #430e08;
-  background: #ffeded;
-  border-color: #cc2a18;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .field.valid .group, form.idealforms .field.invalid .group, form.idealforms .field.valid textarea, form.idealforms .field.invalid textarea, form.idealforms .field.valid select, form.idealforms .field.invalid select {
-  color: inherit;
-  background: none;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .field.valid select, form.idealforms .field.invalid select {
-  background: -webkit-linear-gradient(white, #dddddd);
-  background: -moz-linear-gradient(white, #dddddd);
-  background: -o-linear-gradient(white, #dddddd);
-  background: -ms-linear-gradient(white, #dddddd);
-  background: linear-gradient(#ffffff, #dddddd);
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .field .icon {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  top: 50%;
-  left: 100%;
-  margin-top: -8px;
-  margin-left: 8px;
-  background: url("../img/validation.png") -16px 0 no-repeat;
-  cursor: pointer;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .field.invalid .icon {
-  background-position: -16px 0;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .field.valid .icon {
-  background-position: 0 0;
-  cursor: default;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .field.invalid .group input, form.idealforms .field.valid .group input {
-  border: 0;
-  outline: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .field.ajax input {
-  color: #463a09;
-  background: #faf9e8;
-  border-color: #cfaa19;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .field.ajax .icon {
-  background: url("../img/loading.gif");
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .error {
-  display: none;
-  position: absolute;
-  z-index: 1;
-  left: 100%;
-  top: 50%;
-  padding: 1em 1.5em;
-  width: 193.33333333333334px;
-  margin-left: 40px;
-  background: #285d85;
-  background: -webkit-linear-gradient(#285d85, #3070a0);
-  background: -moz-linear-gradient(#285d85, #3070a0);
-  background: -o-linear-gradient(#285d85, #3070a0);
-  background: -ms-linear-gradient(#285d85, #3070a0);
-  background: linear-gradient(#285d85, #3070a0);
-  color: #fff;
-  font-size: 85%;
-  font-weight: bold;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
-  line-height: 1.35;
-  border: 1px solid #1c425e;
-  -webkit-border-radius: 0 3.01px 3.01px 3.01px;
-  border-radius: 0 3.01px 3.01px 3.01px;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .error:after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: -1px;
-  left: -.7em;
-  border-width: .7em;
-  border-style: solid;
-  border-color: transparent;
-  border-top-color: #285d85;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .idealforms-field-checkbox .icon, form.idealforms .idealforms-field-radio .icon, form.idealforms .idealforms-field-textarea .icon {
-  top: 8px;
-  margin-top: 0;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .idealforms-field-checkbox .error, form.idealforms .idealforms-field-radio .error, form.idealforms .idealforms-field-textarea .error {
-  top: 1.25em;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms.adaptive .field {
-  float: none;
-  max-width: 290px;
-  zoom: 1;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms.adaptive .field:before, form.idealforms.adaptive .field:after {
-  content: "";
-  display: table;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms.adaptive .field:after {
-  clear: both;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms.adaptive label.main {
-  display: block;
-  float: none;
-  width: auto;
-  padding-bottom: .5em;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms.adaptive input, form.idealforms.adaptive textarea, form.idealforms.adaptive select, form.idealforms.adaptive .field .group {
-  width: 100%;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms.adaptive .field .icon {
-  top: 0;
-  margin-top: 3.2em;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms.adaptive .error {
-  position: relative;
-  float: left;
-  clear: both;
-  width: 100%;
-  left: 0;
-  margin-left: 0;
-  margin-top: 3px;
-  -webkit-border-radius: 3.01px;
-  border-radius: 3.01px;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms.adaptive .error:after {
-  top: 2px;
-  left: 50%;
-  margin-top: -1.4em;
-  margin-left: -.35em;
-  border-color: transparent;
-  border-bottom-color: #285d85;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms.adaptive .error.hidden {
-  position: absolute;
-  visibility: hidden;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms.adaptive .idealforms-field-checkbox .error, form.idealforms.adaptive .idealforms-field-radio .error, form.idealforms.adaptive .idealforms-field-textarea .error {
-  top: 0;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-container * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-step {
-  display: none;
-  zoom: 1;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-step:before, .idealsteps-step:after {
-  content: "";
-  display: table;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-step:after {
-  clear: both;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-nav {
-  color: #444;
-  background: #eee;
-  background: -webkit-linear-gradient(white, #dddddd);
-  background: -moz-linear-gradient(white, #dddddd);
-  background: -o-linear-gradient(white, #dddddd);
-  background: -ms-linear-gradient(white, #dddddd);
-  background: linear-gradient(#ffffff, #dddddd);
-  border: 1px solid #aaa;
-  border-bottom-color: #919191;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  -webkit-border-radius: 3.01px;
-  border-radius: 3.01px;
-  overflow: hidden;
-  margin-bottom: 2em;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-nav ul {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  list-style: none;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-nav li {
-  float: left;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-nav a {
-  position: relative;
-  float: left;
-  padding: 0 1.5em 0 2.75em;
-  height: 3.5em;
-  line-height: 3.5em;
-  text-decoration: none;
-  color: #5e5e5e;
-  background: #ddd;
-  -webkit-transition: padding 0.2s ease-in-out;
-  -moz-transition: padding 0.2s ease-in-out;
-  -o-transition: padding 0.2s ease-in-out;
-  -ms-transition: padding 0.2s ease-in-out;
-  transition: padding 0.2s ease-in-out;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-nav a:focus {
-  outline: 0;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-nav a:hover {
-  background: #eaeaea;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-nav a:hover:after {
-  border-left-color: #eaeaea;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-nav a:after, .idealsteps-nav a:before {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: -2em;
-  margin-right: 0;
-  margin-top: -.125em;
-  border-width: 2em 1em;
-  border-style: solid;
-  border-color: transparent;
-  border-left-color: #ddd;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-nav a:before {
-  margin-right: -1px;
-  border-left-color: #aaa;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-nav li:first-child a {
-  padding-left: 1.75em;
-  -webkit-border-top-left-radius: 3.01px;
-  border-top-left-radius: 3.01px;
-  -webkit-border-bottom-left-radius: 3.01px;
-  border-bottom-left-radius: 3.01px;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-nav li.idealsteps-step-active a {
-  padding-right: 3.5em;
-  background: #fff;
-  color: #3f9dcc;
-  font-weight: bold;
-  cursor: default;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-nav li.idealsteps-step-active a:after {
-  border-left-color: #fff;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-nav li.idealsteps-step-active .counter {
-  opacity: 1;
-  -ms-filter: none;
-  filter: none;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-nav .counter {
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  position: absolute;
-  top: 50%;
-  right: 1em;
-  height: 1.5em;
-  width: 1.5em;
-  margin-top: -.75em;
-  line-height: 1.5 !important;
-  text-align: center;
-  color: #cc2a18;
-  border: 1px solid #cc2a18;
-  -webkit-border-radius: 10em;
-  border-radius: 10em;
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  -ms-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-nav .counter.zero {
-  color: #3f9dcc;
-  border-color: #3f9dcc;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-container.adaptive .idealsteps-nav {
-  max-width: 290px;
-  border-bottom: 0;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-container.adaptive .idealsteps-nav li {
-  float: none;
-  overflow: hidden;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-container.adaptive .idealsteps-nav a, .idealsteps-container.adaptive .idealsteps-nav li:first-child a, .idealsteps-container.adaptive .idealsteps-nav li.idealsteps-step-active a {
-  width: 100%;
-  padding: 0 2.5em 0 1.5em;
-  border-bottom: 1px solid #aaa;
-  border-top: 1px solid #f7f7f7;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-container.adaptive .idealsteps-nav a:after, .idealsteps-container.adaptive .idealsteps-nav li:first-child a:after, .idealsteps-container.adaptive .idealsteps-nav li.idealsteps-step-active a:after, .idealsteps-container.adaptive .idealsteps-nav a:before, .idealsteps-container.adaptive .idealsteps-nav li:first-child a:before, .idealsteps-container.adaptive .idealsteps-nav li.idealsteps-step-active a:before {
-  display: none;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-container.adaptive .idealsteps-nav li:first-child a {
-  -webkit-border-top-left-radius: 3.01px;
-  border-top-left-radius: 3.01px;
-  -webkit-border-top-right-radius: 3.01px;
-  border-top-right-radius: 3.01px;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-container.adaptive .idealsteps-nav li:last-child a {
-  -webkit-border-bottom-left-radius: 3.01px;
-  border-bottom-left-radius: 3.01px;
-  -webkit-border-bottom-right-radius: 3.01px;
-  border-bottom-right-radius: 3.01px;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-container.adaptive .idealsteps-nav li.idealsteps-step-active a {
-  padding-right: 1.5em;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealsteps-container.adaptive .idealsteps-nav .counter {
-  position: relative;
-  float: right;
-  right: 0;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .ideal-radiocheck-label {
-  display: inline-block;
-  padding: .25em 0 !important;
-  cursor: pointer;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .ideal-radiocheck-label input {
-  float: left;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .ideal-check, form.idealforms .ideal-radio {
-  float: left;
-  margin-right: 10px !important;
-  width: 20px;
-  height: 20px;
-  background: url("../img/radiocheck.png") 0 0;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .ideal-check.focus {
-  background-position: -20px 0;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .ideal-check.checked {
-  background-position: -40px 0;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .ideal-check.checked.focus {
-  background-position: -60px 0;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .ideal-radio {
-  background-position: 0 bottom;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .ideal-radio.focus {
-  background-position: -20px bottom;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .ideal-radio.checked {
-  background-position: -40px bottom;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .ideal-radio.checked.focus {
-  background-position: -60px bottom;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .ideal-file-wrap {
-  float: left;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .ideal-file-filename {
-  float: left;
-  width: 204px;
-  height: 100%;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-  -webkit-border-top-left-radius: 3.01px;
-  border-top-left-radius: 3.01px;
-  -webkit-border-bottom-left-radius: 3.01px;
-  border-bottom-left-radius: 3.01px;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .ideal-file-upload {
-  color: #444;
-  background: #eee;
-  background: -webkit-linear-gradient(white, #dddddd);
-  background: -moz-linear-gradient(white, #dddddd);
-  background: -o-linear-gradient(white, #dddddd);
-  background: -ms-linear-gradient(white, #dddddd);
-  background: linear-gradient(#ffffff, #dddddd);
-  border: 1px solid #aaa;
-  border-bottom-color: #919191;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  -webkit-border-radius: 3.01px;
-  border-radius: 3.01px;
-  padding: .55em 1.5em;
-  cursor: pointer;
-  overflow: visible;
-  position: relative;
-  float: right;
-  left: -1px;
-  width: 87px;
-  padding-left: 0;
-  padding-right: 0;
-  text-align: center;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-  -webkit-border-top-right-radius: 3.01px;
-  border-top-right-radius: 3.01px;
-  -webkit-border-bottom-right-radius: 3.01px;
-  border-bottom-right-radius: 3.01px;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .ideal-file-upload:hover {
-  background: -webkit-linear-gradient(white, #eaeaea);
-  background: -moz-linear-gradient(white, #eaeaea);
-  background: -o-linear-gradient(white, #eaeaea);
-  background: -ms-linear-gradient(white, #eaeaea);
-  background: linear-gradient(#ffffff, #eaeaea);
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .ideal-file-upload:active, form.idealforms .ideal-file-upload:active:focus {
-  color: #444;
-  background: #eee;
-  background: -webkit-linear-gradient(white, #dddddd);
-  background: -moz-linear-gradient(white, #dddddd);
-  background: -o-linear-gradient(white, #dddddd);
-  background: -ms-linear-gradient(white, #dddddd);
-  background: linear-gradient(#ffffff, #dddddd);
-  border: 1px solid #aaa;
-  border-bottom-color: #919191;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  -webkit-border-radius: 3.01px;
-  border-radius: 3.01px;
-  background: #ddd;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms .ideal-file-upload:focus {
-  outline: none;
-  border-color: #3f9dcc;
-  -webkit-box-shadow: 0 0 1px #3f9dcc;
-  box-shadow: 0 0 1px #3f9dcc;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms.adaptive .ideal-file-wrap {
-  width: 100%;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms.adaptive .ideal-file-filename {
-  width: 70%;
-}
-
-/* line 357, ../sass/_content.scss */
-form.idealforms.adaptive .ideal-file-upload {
-  width: 30%;
-}
-
-/* line 357, ../sass/_content.scss */
-.ideal-file-upload.ie {
-  line-height: 1.15;
-}
-
-/* line 357, ../sass/_content.scss */
-.idealforms input.datepicker.open {
-  border-bottom-color: transparent;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-  -webkit-border-top-left-radius: 3.01px;
-  border-top-left-radius: 3.01px;
-  -webkit-border-top-right-radius: 3.01px;
-  border-top-right-radius: 3.01px;
-}
-
-/* line 357, ../sass/_content.scss */
-.ui-datepicker {
-  display: none;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 290px;
-  margin-top: -2px;
-  padding: .75em;
-  background: #fff;
-  border: 1px solid #999;
-  -webkit-border-bottom-left-radius: 3.01px;
-  border-bottom-left-radius: 3.01px;
-  -webkit-border-bottom-right-radius: 3.01px;
-  border-bottom-right-radius: 3.01px;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-/* line 357, ../sass/_content.scss */
-.ui-datepicker-header {
-  position: relative;
-  padding: .2em 0;
-  margin-bottom: .75em;
-  font-weight: bold;
-}
-
-/* line 357, ../sass/_content.scss */
-.ui-datepicker-header .ui-datepicker-title {
-  text-align: center;
-}
-
-/* line 357, ../sass/_content.scss */
-.ui-datepicker-header .ui-datepicker-prev, .ui-datepicker-header .ui-datepicker-next {
-  text-indent: -9999px;
-  width: 16px;
-  height: 16px;
-  position: absolute;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background: url("../img/datepicker.png") 0 0;
-}
-
-/* line 357, ../sass/_content.scss */
-.ui-datepicker-header .ui-datepicker-prev:active, .ui-datepicker-header .ui-datepicker-next:active {
-  margin-top: 1px;
-}
-
-/* line 357, ../sass/_content.scss */
-.ui-datepicker-header .ui-datepicker-next {
-  background-position: -16px 0;
-}
-
-/* line 357, ../sass/_content.scss */
-.ui-datepicker-header .ui-datepicker-prev {
-  left: 8px;
-}
-
-/* line 357, ../sass/_content.scss */
-.ui-datepicker-header .ui-datepicker-next {
-  right: 8px;
-}
-
-/* line 357, ../sass/_content.scss */
-.ui-datepicker-calendar {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-}
-
-/* line 357, ../sass/_content.scss */
-.ui-datepicker-calendar td {
-  padding: .25em 0;
-  text-align: center;
-}
-
-/* line 357, ../sass/_content.scss */
-.ui-datepicker-calendar a {
-  display: block;
-  text-decoration: none;
-  color: #808080;
-}
-
-/* line 357, ../sass/_content.scss */
-.ui-datepicker-calendar a:hover {
-  color: #3f9dcc;
-  font-weight: bold;
-}
-
-/* line 357, ../sass/_content.scss */
-.ui-datepicker-calendar .ui-datepicker-today a {
-  margin: 0 .25em;
-  background: #eee;
-  -webkit-border-radius: 3.01px;
-  border-radius: 3.01px;
-}

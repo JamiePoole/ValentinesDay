@@ -32,18 +32,21 @@ jQuery(document).ready(function($) {
             	//$('.info-nav, .share-nav').removeClass('fadeInUp').addClass('fadeOutDown');
          	}
         },
+        afterRender: function(){
+			$('#send-tweet').idealforms({
+				iconHtml: false
+			});
+        }
 	});
 
-	$('.step-2').addClass('inactive');
-	$('.step-1 .next-step').click(function(e){
-		e.preventDefault();
-		$('.step-1').removeClass('active').addClass('inactive');
-		$('.step-2').removeClass('inactive').addClass('active');
-	});
-	$('.step-2 .prev-step').click(function(e){
-		e.preventDefault();
-		$('.step-2').removeClass('active').addClass('inactive');
-		$('.step-1').removeClass('inactive').addClass('active');
-	});
+	$('.prev').click(function(){
+      	$('.prev').show();
+      	$('#send-tweet').idealforms('prevStep');
+    });
+
+    $('.next').click(function(){
+      	$('.next').show();
+      	$('#send-tweet').idealforms('nextStep');
+    });
 
 });
