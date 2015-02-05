@@ -4,7 +4,8 @@ $_ut->startSession();
 ?>
 
 <!doctype html>
-<html>
+<!--[if IE 9]> <html class="ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -98,7 +99,7 @@ $_ut->startSession();
 		<div class="section share-page" data-anchor="share">
 			<div class="inner">
 				<h1 class="heading">£1,529</h1>
-				<h2 class="sub-heading">Has been donated £1,529 to Save the Children</h2>
+				<h2 class="sub-heading">Has been donated to Save the Children</h2>
 				<div class="share">
 					<p>Share on <a class="share-btn fb-btn" href="#">Facebook</a> / <a class="share-btn tw-btn" href="#">Twitter</a> / <a class="share-btn gp-btn" href="#">Google +</a></p>
 				</div>
