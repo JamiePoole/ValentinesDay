@@ -37,13 +37,11 @@ $_ut->startSession();
 	<script>try{Typekit.load();}catch(e){}</script>
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.slimscroll.min.js"></script>
+	<script src="assets/js/jquery.promin.js"></script>
 	<script src="assets/js/jquery.fullPage.min.js"></script>
 </head>
 <body>
 
-	<!-- <div class="home-nav nav-btn animated fadeInDown">
-		<a href="#intro">Twitter Crush</a>
-	</div> -->
 	<div class="info-nav nav-btn animated fadeInUp">
 		<a href="#info">Info.</a>
 	</div>
@@ -68,7 +66,7 @@ $_ut->startSession();
 				<div id="tweet-form">
 					<form id="send-tweet" method="post" action="post.php">
 						<input type="hidden" name="nonce_token" value="<?php echo $_SESSION['token']; ?>" />
-						<div class="form-step step-1 active">
+						<div class="form-step pm-step step-1">
 							<label for="tweet-target">
 								<span>Twitter name of your crush</span>
 							</label>
@@ -78,7 +76,7 @@ $_ut->startSession();
 								<a class="next-step" href="#">Next</a>
 							</div>
 						</div>
-						<div class="form-step step-2">
+						<div class="form-step pm-step step-2">
 							<label for="tweet-message">
 								<span>Tweet to <span id="target-name">twitterhandle</span></span>
 							</label>
@@ -87,8 +85,12 @@ $_ut->startSession();
 								<a class="prev-step" href="#">Back</a> <input type="submit" id="submit-tweet" value="Send tweet" />
 							</div>
 						</div>
+						<div class="form-step pm-step step-3">
+							Thanks<br>
+							<a href="#share">Share</a>
+						</div>
 					</form>
-					<span><?php $_ut->getDelay($_tq->time()); ?></span>
+					<p class="delay-time"><?php $_ut->getDelay($_tq->time()); ?></p>
 				</div>
 				<div id="tweet-image"></div>
 			</div><!--// .inner -->
@@ -96,10 +98,10 @@ $_ut->startSession();
 
 		<div class="section share-page" data-anchor="share">
 			<div class="inner">
-				<h1 class="heading">Thanks</h1>
-				<h2 class="sub-heading">We've donated £1 to Save the Children</h2>
+				<h1 class="heading">£1,529</h1>
+				<h2 class="sub-heading">Has been donated £1,529 to Save the Children</h2>
 				<div class="share">
-					<p>Share on <a href="#">Facebook</a> / <a href="#">Twitter</a> / <a href="#">Google +</a></p>
+					<p>Share on <a class="share-btn fb-btn" href="#">Facebook</a> / <a class="share-btn tw-btn" href="#">Twitter</a> / <a class="share-btn gp-btn" href="#">Google +</a></p>
 				</div>
 			</div>
 		</div>

@@ -182,6 +182,7 @@ p {
 		position: relative;
 		width: 50%;
 		margin: 0 auto;
+		clear: both;
 		&.active {
 			display: block;
 		}
@@ -279,6 +280,37 @@ p {
 			text-decoration: none;
 			letter-spacing: 0.075em;
 		}
+	}
+	.delay-time {
+		display: none;
+	}
+}
+
+.share-page {
+	.heading {
+		margin-bottom: 6px;
+	}
+	.sub-heading {
+		margin-bottom: 36px;
+	}
+	.share {
+		font-size: 22px;
+		font-weight: 300;
+	}
+	.share-btn {
+		color: $purple;
+		font-weight: 700;
+		text-decoration: none;
+		display: inline-block;
+	}
+	.fb-btn {
+
+	}
+	.tw-btn {
+		
+	}
+	.gp-btn {
+		
 	}
 }
 

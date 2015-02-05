@@ -958,20 +958,21 @@ p {
   position: relative;
   width: 50%;
   margin: 0 auto;
+  clear: both;
 }
-/* line 185, ../sass/_content.scss */
+/* line 186, ../sass/_content.scss */
 .send-page .form-step.active {
   display: block;
 }
-/* line 188, ../sass/_content.scss */
+/* line 189, ../sass/_content.scss */
 .send-page .form-step.inactive {
   display: none;
 }
-/* line 191, ../sass/_content.scss */
+/* line 192, ../sass/_content.scss */
 .send-page .form-step .form-control {
   position: relative;
 }
-/* line 194, ../sass/_content.scss */
+/* line 195, ../sass/_content.scss */
 .send-page .form-step label {
   display: block;
   margin: 0 auto 10px;
@@ -981,11 +982,11 @@ p {
   font-weight: 700;
   line-height: 1.2;
 }
-/* line 202, ../sass/_content.scss */
+/* line 203, ../sass/_content.scss */
 .send-page .form-step label .fit-text {
   display: block;
 }
-/* line 206, ../sass/_content.scss */
+/* line 207, ../sass/_content.scss */
 .send-page .form-step #tweet-target,
 .send-page .form-step #tweet-message {
   background: white;
@@ -994,17 +995,17 @@ p {
   padding: 20px;
   font-size: 22px;
 }
-/* line 213, ../sass/_content.scss */
+/* line 214, ../sass/_content.scss */
 .send-page .form-step #tweet-target:focus,
 .send-page .form-step #tweet-message:focus {
   outline: none;
 }
-/* line 217, ../sass/_content.scss */
+/* line 218, ../sass/_content.scss */
 .send-page .form-step #tweet-target {
   height: 70px;
   padding-left: 90px;
 }
-/* line 221, ../sass/_content.scss */
+/* line 222, ../sass/_content.scss */
 .send-page .form-step .form-prepend {
   background: white;
   color: #931658;
@@ -1019,7 +1020,7 @@ p {
   font-weight: 700;
   padding: 2px 0 0 0;
 }
-/* line 235, ../sass/_content.scss */
+/* line 236, ../sass/_content.scss */
 .send-page .form-step .next-step {
   background: #931658;
   border: 5px solid #931658;
@@ -1036,7 +1037,7 @@ p {
   padding-top: 12px;
   letter-spacing: 0.075em;
 }
-/* line 251, ../sass/_content.scss */
+/* line 252, ../sass/_content.scss */
 .send-page .form-step .prev-step {
   background: white;
   border: 5px solid #931658;
@@ -1053,7 +1054,7 @@ p {
   text-decoration: none;
   letter-spacing: 0.075em;
 }
-/* line 267, ../sass/_content.scss */
+/* line 268, ../sass/_content.scss */
 .send-page .form-step #submit-tweet {
   background: #931658;
   border: 5px solid #931658;
@@ -1069,33 +1070,58 @@ p {
   text-decoration: none;
   letter-spacing: 0.075em;
 }
+/* line 284, ../sass/_content.scss */
+.send-page .delay-time {
+  display: none;
+}
 
-/* line 285, ../sass/_content.scss */
+/* line 290, ../sass/_content.scss */
+.share-page .heading {
+  margin-bottom: 6px;
+}
+/* line 293, ../sass/_content.scss */
+.share-page .sub-heading {
+  margin-bottom: 36px;
+}
+/* line 296, ../sass/_content.scss */
+.share-page .share {
+  font-size: 22px;
+  font-weight: 300;
+}
+/* line 300, ../sass/_content.scss */
+.share-page .share-btn {
+  color: #931658;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* line 317, ../sass/_content.scss */
 .info-page {
   background: white;
   color: #040201;
   text-align: left;
 }
-/* line 289, ../sass/_content.scss */
+/* line 321, ../sass/_content.scss */
 .info-page .pic {
   float: left;
   width: 28%;
   margin-left: 80px;
 }
-/* line 293, ../sass/_content.scss */
+/* line 325, ../sass/_content.scss */
 .info-page .pic img {
   border: 16px solid #ffc5c5;
   width: 100%;
   height: auto;
 }
-/* line 299, ../sass/_content.scss */
+/* line 331, ../sass/_content.scss */
 .info-page .copy {
   padding: 40px 80px 0 0;
   margin-left: 38%;
   font-size: 28px;
 }
 
-/* line 307, ../sass/_content.scss */
+/* line 339, ../sass/_content.scss */
 .slimScrollBar,
 .slimScrollRail {
   border-radius: 0 !important;
