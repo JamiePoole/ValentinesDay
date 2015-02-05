@@ -6,12 +6,20 @@ Error Codes
 
 These codes *do not* include Exception code responses or those responded by Twitter, only those defined by the application.
 
-_1_		Database Connection Error
-_2_		Invalid token
-_3_		Tweet failed. No recipient specified
-_4_		Validation error. Incomplete form data
-_5_		Empty message
-_6_		Empty recipient
+*1*		Database Connection Error
 
-_100_	Tweet validated
-_101_	Tweet sent successfully
+*2*		Invalid token
+
+*3*		Tweet failed. No recipient specified
+
+*4*		Validation error. Incomplete form data
+
+*5*		Empty message
+
+*6*		Empty recipient
+
+
+
+*100*	Tweet validated
+
+*101*	Tweet sent successfully
