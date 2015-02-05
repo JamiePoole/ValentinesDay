@@ -37,7 +37,6 @@ $_ut->startSession();
 	<script>try{Typekit.load();}catch(e){}</script>
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.slimscroll.min.js"></script>
-	<script src="assets/js/jquery.promin.js"></script>
 	<script src="assets/js/jquery.fullPage.min.js"></script>
 </head>
 <body>
@@ -66,7 +65,7 @@ $_ut->startSession();
 				<div id="tweet-form">
 					<form id="send-tweet" method="post" action="post.php">
 						<input type="hidden" name="nonce_token" value="<?php echo $_SESSION['token']; ?>" />
-						<div class="form-step pm-step step-1">
+						<div class="form-step pm-step step-1 active">
 							<label for="tweet-target">
 								<span>Twitter name of your crush</span>
 							</label>

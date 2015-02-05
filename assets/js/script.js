@@ -4,9 +4,7 @@
 jQuery(document).ready(function($) {
 
 	$('.info-nav, .home-nav, .share-nav').hide();
-	
-	$('#send-tweet').promin();
-	
+		
 	$('#fullpage').fullpage({
 		//Navigation
         menu: true,
