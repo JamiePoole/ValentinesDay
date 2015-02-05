@@ -28,76 +28,61 @@ $_ut->startSession();
 	<link rel="icon" type="image/png" href="assets/img/icons/favicon-16x16.png" sizes="16x16">
 	<link rel="manifest" href="assets/img/icons/manifest.json">
 	<link rel="shortcut icon" href="assets/img/icons/favicon.ico">
-	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileColor" content="#f2206c">
 	<meta name="msapplication-TileImage" content="assets/img/icons/mstile-144x144.png">
 	<meta name="msapplication-config" content="assets/img/icons/browserconfig.xml">
-	<meta name="theme-color" content="#931658">
+	<meta name="theme-color" content="#f2206c">
 
 	<link type="text/css" href="assets/css/style.css" rel="stylesheet">
+
 	<script src="//use.typekit.net/sbe5mrr.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
+
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<script src="assets/js/modernizr.custom.js"></script>
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.slimscroll.min.js"></script>
 	<script src="assets/js/jquery.fullPage.min.js"></script>
 </head>
 <body>
 
-	<div class="info-nav nav-btn animated fadeInUp">
-		<a href="#info">Info.</a>
-	</div>
-	<div class="share-nav nav-btn animated fadeInUp">
-		<a href="#share">Share</a>
-	</div>
-
 	<div id="fullpage">
 
 		<div class="section intro-page" data-anchor="intro">
-			<div class="inner">
-				<h1 class="heading">Twitter Crush</h1>
-				<h2 class="sub-heading">Tweet your crush anonymously</h2>
-				<div class="send-nav">
-					<a href="#send">&darr;</a>
-				</div>
-			</div><!--// .inner -->
+			<div class="artwork">
+				<img src="assets/img/intro-birds.svg">
+			</div>
+			<div class="page">
+				<h1 class="heading">Tweet the love</h1>
+				<h2 class="sub-heading">Anonymously tell your crush how you really feel</h2>
+			</div>
+			<div class="page-nav">
+				<a class="down-btn" href="#send"><span class="wa-hidden">Next</span></a>
+			</div>
 		</div><!--// .intro-page -->
 
 		<div class="section send-page" data-anchor="send">
-			<div class="inner">
+			<div class="page">
 				<div id="tweet-form">
-					<form id="send-tweet" method="post" action="post.php">
+  					<!-- <nav class="idealsteps-nav"></nav> -->
+					<form id="send-tweet" novalidate method="post" action="post.php">
 						<input type="hidden" name="nonce_token" value="<?php echo $_SESSION['token']; ?>" />
-						<div class="form-step pm-step step-1 active">
-							<label for="tweet-target">
-								<span>Twitter name of your crush</span>
-							</label>
-							<div class="form-control">
-								<span class="form-prepend">@</span>
-								<input type="text" id="tweet-target" name="tweet_target" />
-								<a class="next-step" href="#">Next</a>
-							</div>
-						</div>
-						<div class="form-step pm-step step-2">
-							<label for="tweet-message">
-								<span>Tweet to <span id="target-name">twitterhandle</span></span>
-							</label>
-							<div class="form-control">
-								<textarea id="tweet-message" name="tweet_message" rows="3"></textarea>
-								<a class="prev-step" href="#">Back</a> <input type="submit" id="submit-tweet" value="Send tweet" />
-							</div>
-						</div>
-						<div class="form-step pm-step step-3">
-							Thanks<br>
-							<a href="#share">Share</a>
+						<div class="form-error"></div>
+						<div class="form-control">
+							<span class="form-prepend">@</span>
+							<input type="text" id="tweet-target" name="tweet_target" />
+							<textarea id="tweet-message" name="tweet_message" rows="3"></textarea>
+							<input type="submit" id="submit-tweet" class="submit" value="Send tweet" />
 						</div>
 					</form>
 					<p class="delay-time"><?php $_ut->getDelay($_tq->time()); ?></p>
 				</div>
 				<div id="tweet-image"></div>
-			</div><!--// .inner -->
+			</div><!--// .page -->
 		</div><!--// .send-page -->
 
 		<div class="section share-page" data-anchor="share">
-			<div class="inner">
+			<div class="page">
 				<h1 class="heading">£1,529</h1>
 				<h2 class="sub-heading">Has been donated to Save the Children</h2>
 				<div class="share">
@@ -107,7 +92,7 @@ $_ut->startSession();
 		</div>
 
 		<div class="section info-page" data-anchor="info">
-			<div class="inner">
+			<div class="page">
 				<div class="pic">
 					<img src="assets/original/09_1148892.jpg">
 				</div>
@@ -115,7 +100,7 @@ $_ut->startSession();
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis egestas erat, sagittis dapibus elit. Aliquam a accumsan quam. Vestibulum cursus quam mi, eu hendrerit augue consequat eu. Pellentesque id tristique arcu.</p>
 					<p>DISCLAIMER: Donec non enim in risus consequat interdum. Aenean ut ultrices lacus, non maximus massa.</p>
 				</div>
-			</div><!--// .inner -->
+			</div><!--// .page -->
 		</div><!--// .info-page -->
 
 	</div><!--// #fullpage -->

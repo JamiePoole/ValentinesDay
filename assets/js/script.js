@@ -32,18 +32,9 @@ jQuery(document).ready(function($) {
             	//$('.info-nav, .share-nav').removeClass('fadeInUp').addClass('fadeOutDown');
          	}
         },
-	});
-
-	$('.step-2').addClass('inactive');
-	$('.step-1 .next-step').click(function(e){
-		e.preventDefault();
-		$('.step-1').removeClass('active').addClass('inactive');
-		$('.step-2').removeClass('inactive').addClass('active');
-	});
-	$('.step-2 .prev-step').click(function(e){
-		e.preventDefault();
-		$('.step-2').removeClass('active').addClass('inactive');
-		$('.step-1').removeClass('inactive').addClass('active');
+        afterRender: function(){
+			
+        }
 	});
 
 });

@@ -53,6 +53,7 @@
     width: 100%;
     height: 100%;
     padding: 2vw; // This should match the page border size
+    position: relative;
 }
 
 .fp-slidesContainer {
@@ -107,12 +108,12 @@
 
 #fp-nav.right {
     right: 50px;
-    right: 7vw;
+    right: 3vw;
     @include respond-to(m) {
-        right: 6vw;
+        right: 3vw;
     }
     @include respond-to(l) {
-        right: 5vw;
+        right: 3vw;
     }
     @include respond-to(xl) {
         
@@ -121,12 +122,12 @@
 
 #fp-nav.left {
     left: 50px;
-    left: 7vw;
+    left: 3vw;
     @include respond-to(m) {
-         left: 6vw;   
+         left: 3vw;   
     }
     @include respond-to(l) {
-        left: 5vw;
+        left: 3vw;
     }
     @include respond-to(xl) {
         
@@ -157,9 +158,9 @@
 #fp-nav ul li,
 .fp-slidesNav ul li {
     display: block;
-    width: 20px;
+    width: 18px;
     height: 18px;
-    margin: 8px 0;
+    margin: 4px 0;
     position: relative;
 }
 
@@ -180,20 +181,19 @@
 
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
-    background: url(../img/heart-stroke-fill-20x18.svg) 0 0 no-repeat;
-    background-size: 20px 18px;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 18px;
+    background: $hot-pink;
+    top: 3px;
+    left: 3px;
+    width: 12px;
+    height: 12px;
     position: absolute;
     z-index: 1;
+    border-radius: 6px;
 }
 
 #fp-nav ul li a.active span,
 .fp-slidesNav ul li a.active span {
-    background: url(../img/heart-20x18.svg) 0 0 no-repeat;
-    background-size: 20px 18px;
+    background: $white;
 }
 
 #fp-nav ul li .fp-tooltip {

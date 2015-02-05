@@ -8,19 +8,21 @@ $black 			: #040201;
 $purple 		: rgb(147, 22, 88);
 //$purple 	   	: #BB1132;
 $mid-grey  		: #666;
-$hot-pink 		: #E71840;
+$hot-pink 		: #F2206C;
 $dark-pink   	: #BB1132;
 $mid-pink 		: #FF4949;
 $light-pink    	: #FFC5C5;
-$baby-blue 		: #3EA5BB;
+$baby-blue 		: #5FACF9;
 $blue-grey      : #A1A7B2;
 
 $normal-font 	: Arial, sans-serif;
-$special-font 	: "europa", sans-serif;
+$special-font 	: 'europa', sans-serif;
 
 // Responsive mixin in _mixin.scss
 $breakpoints: (
+	's' 	: 480px,
 	'm' 	: 768px,
 	'l'  	: 1024px,
-	'xl' 	: 1280px
+	'xl' 	: 1280px,
+	'xxl' 	: 1440px
 );
