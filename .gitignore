@@ -1,1 +1,3 @@
 lib/conf/*
+.sass-cache/*
+.sass-cache/*/*
