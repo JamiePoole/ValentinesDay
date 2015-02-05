@@ -48,6 +48,10 @@ $_ut->startSession();
 
 	<div id="fullpage">
 
+		<div class="down-nav">
+			<a class="down-btn" href="#"><span class="wa-hidden">Next</span></a>
+		</div>
+
 		<div class="section intro-page" data-anchor="intro">
 			<div class="artwork">
 				<img src="assets/img/intro-birds.svg">
@@ -55,9 +59,6 @@ $_ut->startSession();
 			<div class="page">
 				<h1 class="heading">Tweet the love</h1>
 				<h2 class="sub-heading">Anonymously tell your crush how you really feel</h2>
-			</div>
-			<div class="page-nav">
-				<a class="down-btn" href="#send"><span class="wa-hidden">Next</span></a>
 			</div>
 		</div><!--// .intro-page -->
 
@@ -72,7 +73,7 @@ $_ut->startSession();
 							<span class="form-prepend">@</span>
 							<input type="text" id="tweet-target" name="tweet_target" />
 							<textarea id="tweet-message" name="tweet_message" rows="3"></textarea>
-							<input type="submit" id="submit-tweet" class="submit" value="Send tweet" />
+							<input type="submit" id="submit-tweet" value="Send" />
 						</div>
 					</form>
 					<p class="delay-time"><?php $_ut->getDelay($_tq->time()); ?></p>

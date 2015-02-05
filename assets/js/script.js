@@ -19,7 +19,7 @@ jQuery(document).ready(function($) {
         loopTop: false,
         scrollOverflow: true,
         // Design
-        fixedElements: '.info-nav, .home-nav, .share-nav',
+        fixedElements: '.info-nav, .home-nav, .share-nav, .down-nav',
         // Events
         onLeave: function(index, nextIndex, direction){
             if(index == 1){
@@ -35,6 +35,11 @@ jQuery(document).ready(function($) {
         afterRender: function(){
 			
         }
+	});
+
+	$('.down-nav .down-btn').click(function(e) {
+		e.preventDefault();
+		$.fn.fullpage.moveSectionDown();
 	});
 
 });
