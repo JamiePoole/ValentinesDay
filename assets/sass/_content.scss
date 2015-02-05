@@ -86,42 +86,72 @@ p {
 	@include animation-delay(0.3s);
 	bottom: 5vw;
 	left: 7vw;
+	@include respond-to(m) {
+		left: 6vw;
+	}
+	@include respond-to(l) {
+		left: 5vw;
+	}
+	@include respond-to(xl) {
+		bottom: 4vw;
+	}
 }
 
 .share-nav {
 	@include animation-delay(0.3s);
 	bottom: 5vw;
 	right: 7vw;
+	@include respond-to(m) {
+		right: 6vw;	
+	}
+	@include respond-to(l) {
+		right: 5vw;
+	}
+	@include respond-to(xl) {
+		bottom: 4vw;
+	}
 }
 
 .section {
 	background: $light-pink;
+	text-align: center;
 	.inner {
 		width: 86vw;
 		margin: auto;
 	}
 }
 
+.heading {
+	font-size: 42px;
+	margin-bottom: 6px;
+	@include respond-to(m) {
+		font-size: 72px;
+	}
+	@include respond-to(l) {
+		font-size: 92px;
+		margin-bottom: 0;
+	}
+	@include respond-to(xl) {
+		font-size: 132px;
+	}
+}
+.sub-heading {
+	font-size: 28px;
+	font-weight: 300;
+	opacity: 0.75;
+	@include respond-to(m) {
+		
+	}
+	@include respond-to(l) {
+		font-size: 36px;
+	}
+	@include respond-to(xl) {
+		font-size: 48px;
+	}
+}
+
 .intro-page {
-	text-align: center;
-	.heading {
-		font-size: 42px;
-		margin-bottom: 6px;
-		@include respond-to(m) {
-
-		}
-		@include respond-to(l) {
-
-		}
-		@include respond-to(xl) {
-
-		}
-	}
-	.sub-heading {
-		font-size: 28px;
-		font-weight: 300;
-		opacity: 0.75;
-	}
+	
 	.send-nav {
 		margin-top: 8px;
 		a {
@@ -129,10 +159,19 @@ p {
 	  		//border: 4px solid $purple;
 			color: $white;
 			display: inline-block;
-			font-size: 16px;
+			font-size: 28px;
 	  		font-weight: 400;
 	  		text-decoration: none;
 	  		padding: 4px 10px;
+	  		@include respond-to(m) {
+				font-size: 36px;
+			}
+			@include respond-to(l) {
+				font-size: 48px;
+			}
+			@include respond-to(xl) {
+				font-size: 52px;
+			}
 		}
 	}
 }
@@ -246,6 +285,7 @@ p {
 .info-page {
 	background: $white;
 	color: $black;
+	text-align: left;
 	.pic {
 		float: left;
 		width: 28%;

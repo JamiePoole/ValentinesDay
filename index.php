@@ -62,7 +62,7 @@
 							</label>
 							<div class="form-control">
 								<textarea id="tweet-message" name="tweet_message" rows="3"></textarea>
-								<a class="prev-step" href="#">Back</a> <input type="submit" id="submit-tweet" value="send tweet" />
+								<a class="prev-step" href="#">Back</a> <input type="submit" id="submit-tweet" value="Send tweet" />
 							</div>
 						</div>
 					</form>
@@ -73,7 +73,13 @@
 		</div><!--// .send-page -->
 
 		<div class="section share-page" data-anchor="share">
-			Share
+			<div class="inner">
+				<h1 class="heading">Thanks</h1>
+				<h2 class="sub-heading">We've donated £1 to Save the Children</h2>
+				<div class="share">
+					<p>Share on <a href="#">Facebook</a> / <a href="#">Twitter</a> / <a href="#">Google +</a></p>
+				</div>
+			</div>
 		</div>
 
 		<div class="section info-page" data-anchor="info">
