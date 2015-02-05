@@ -14,7 +14,7 @@ if(isset($_POST['nonce_token']) && $_ut->checkSession($_POST['nonce_token'])):
 		$return = $_tq->insert($return->tweet['target'], $return->tweet['message'], $user);
 	endif;
 else:
-	$return->error['code'] = 1;
+	$return->error['code'] = 2;
 	$return->error['message'] = 'Invalid token.';
 	$return->error['file'] = $user['ip'];
 	$_ut->log((object)$return->error);

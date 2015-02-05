@@ -19,7 +19,7 @@ class dbConnection extends PDO {
 			$this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$this->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 		} catch(PDOException $e){
-			die('Database connection error.');
+			die('Error 1: Database connection error.');
 		}
 	}
 

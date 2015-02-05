@@ -169,8 +169,9 @@ class tweetQueue {
 			$target = $form['tweet_target'];
 			$message = $form['tweet_message'];
 		} else {
-			$return->error['code'] = 21;
+			$return->error['code'] = 4;
 			$return->error['message'] = 'Incomplete form data.';
+			$this->ut->log((object)$return->error);
 			return $return;
 		}
 
@@ -185,18 +186,20 @@ class tweetQueue {
 		 		// Censor
 		 		$c = new CensorWords();
 
-		 		$return->tweet['code'] = 20;
+		 		$return->tweet['code'] = 100;
 		 		$return->tweet['status'] = 'Tweet validated.';
 		 		$return->tweet['target'] = $target;
 		 		$return->tweet['message'] = $c->censorString($message);
 			} else {
-				$return->error['code'] = 22;
+				$return->error['code'] = 5;
 				$return->error['message'] = 'Empty message.';
+				$this->ut->log((object)$return->error);
 				return $return;
 			}
 		} else {
-			$return->error['code'] = 21;
+			$return->error['code'] = 6;
 			$return->error['message'] = 'Empty recipient.';
+			$this->ut->log((object)$return->error);
 			return $return;
 		}
 

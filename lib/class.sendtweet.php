@@ -37,7 +37,7 @@ class sendTweet {
 				$twitter->post('statuses/update', array('status' => $tweet));
 				if(!isset($twitter->errors)){
 					$this->ut->log((object)array(
-						'code'	=> 200,
+						'code'	=> 101,
 						'message' => 'Tweet "' . $message . '" sent successfully to '. $recipient
 					));
 				} else {
