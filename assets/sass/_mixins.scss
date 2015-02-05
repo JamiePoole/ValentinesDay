@@ -1,0 +1,45 @@
+// MIXINS GO IN HERE
+
+// Responsive Breakpoints
+// -------------------------------------------------------
+
+@mixin respond-to($breakpoint) {
+	// Retrieves the value from the key
+  	$value: map-get($breakpoints, $breakpoint);
+  	// If the key exists in the map
+  	@if $value != null {
+    	// Prints a media query based on the value
+    	@media (min-width: $value) {
+      		@content;
+    	}
+  	}
+  	// If the key doesn't exist in the map
+  	@else {
+    	@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        	+ "Please make sure it is defined in `$breakpoints` map.";
+  	}
+}
+
+
+// Clearfix
+// -------------------------------------------------------
+
+@mixin fl-clearfix {
+  	&:after {
+    	content: "";
+    	display: table;
+    	clear: both;
+  	}
+}
+
+
+// WCAG Hidden
+// -------------------------------------------------------
+
+@mixin wa-hide {
+  	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	overflow: hidden;
+	height: 1px;
+}

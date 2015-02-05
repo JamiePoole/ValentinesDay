@@ -1,0 +1,109 @@
+
+.animated {
+  @include animation-duration(0.6s);
+  @include animation-fill-mode(both);
+  @include animation-timing-function(ease);
+}
+
+.fadeIn {
+  @include animation-name(fadeIn);
+}
+
+@include keyframes(fadeIn) {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeInDown {
+  @include animation-name(fadeInDown);
+}
+
+@include keyframes(fadeInDown) {
+  0% {
+    opacity: 0;
+    @include translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    @include transform(none);
+  }
+}
+
+.fadeInUp {
+  @include animation-name(fadeInUp);
+}
+
+@include keyframes(fadeInUp) {
+  0% {
+    opacity: 0;
+    @include translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    @include transform(none);
+  }
+}
+
+.fadeOut {
+  @include animation-name(fadeOut);
+}
+
+@include keyframes(fadeOut) {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeOutDown {
+  @include animation-name(fadeOutDown);
+}
+
+@include keyframes(fadeOutDown) {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    @include translate3d(0, 100%, 0);
+  }
+}
+
+.fadeOutUp {
+  @include animation-name(fadeOutUp);
+}
+
+@include keyframes(fadeOutUp) {
+ 0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    @include translate3d(0, -100%, 0);
+  }
+}
+
+.typed-cursor {
+    @include animation-name(blink);
+    @include animation-duration(0.7s);
+    @include animation-iteration-count(infinite);
+    opacity: 1;
+}
+
+@include keyframes(blink) {
+  0% { 
+    opacity: 1; 
+  }
+  50% { 
+    opacity: 0; 
+  }
+  100% { 
+    opacity: 1; 
+  }
+}
