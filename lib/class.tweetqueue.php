@@ -11,6 +11,7 @@ class tweetQueue {
 	private $queue_table = 'tweet_queue';
 	private $archv_table = 'tweet_archive';
 	private $sender_table = 'tweet_sender';
+	private $flag_table = 'tweet_flagged';
 	private $twitter_api_limit = 2400;
 	private $cron_time = 5;
 	private $tweet_data;
@@ -22,46 +23,66 @@ class tweetQueue {
 		$this->tweet_data = $td;
 	}
 
-	public function insert($recipient, $message, $user){
+	public function insert($recipient, $message, $user, $flag = false){
 		$return = new stdClass();
+
+		$user_ip = ($user['ip'])?: null;
+		$user_agent = ($user['agent'])?: null;
+		$user_location = ($user['location'])?: null;
 
 		if(!isset($recipient) || !isset($message) || !isset($user)){
 			$return->error['code'] = 7;
 			$return->error['message'] = 'Invalid values to insert into queue.';
+			$return->error['file'] = $user_ip;
+			$this->ut->log((object)$return->error);
 			return $return;
 		}
 
 		try {
-			// Add to Queue
-			$data = $this->db_options['data'];
-			$sql = "INSERT INTO `$data`.`$this->queue_table` (`tid`, `dtime`, `duser`, `dmessage`) VALUES (NULL, CURRENT_TIMESTAMP, '$recipient', '$message')";
-			$result = $this->db->prepare($sql);
-			$result->execute();
-			$lastid = $this->db->lastInsertId();
+			if($flag){
+				// It's been flagged
+				$data = $this->db_options['data'];
+				$sql = "INSERT INTO `$data`.`$this->flag_table` (`tid`, `dtime`, `duser`, `dmessage`) VALUES (NULL, CURRENT_TIMESTAMP, '$recipient', '$message')";
+				$result = $this->db->prepare($sql);
+				$result->execute();
+				$lastid = $this->db->lastInsertId();
 
-			// Add to Archive
-			$sql = "INSERT INTO `$data`.`$this->archv_table` (`tid`, `dtime`, `duser`, `dmessage`) VALUES ($lastid, CURRENT_TIMESTAMP, '$recipient', '$message')";
-			$result = $this->db->prepare($sql);
-			$result->execute();
+				$return->tweet['code'] = 101;
+				$return->tweet['status'] = 'Tweet has been flagged.';
+				$return->tweet['tid'] = $lastid;
+				$return->tweet['target'] = $recipient;
+				$return->tweet['message'] = $message;
+			} else {
+				// Add to Queue
+				$data = $this->db_options['data'];
+				$sql = "INSERT INTO `$data`.`$this->queue_table` (`tid`, `dtime`, `duser`, `dmessage`) VALUES (NULL, CURRENT_TIMESTAMP, '$recipient', '$message')";
+				$result = $this->db->prepare($sql);
+				$result->execute();
+				$lastid = $this->db->lastInsertId();
 
-			// Add Sender details
-			$user_ip = ($user['ip'])?: null;
-			$user_agent = ($user['agent'])?: null;
-			$user_location = ($user['location'])?: null;
-			$sql = "INSERT INTO `$data`.`$this->sender_table` (`tid`, `recipient`, `ip`, `agent`, `location`) VALUES ($lastid, '$recipient', '$user_ip', '$user_agent', '$user_location')";
-			$result = $this->db->prepare($sql);
-			$result->execute();
+				// Add to Archive
+				$sql = "INSERT INTO `$data`.`$this->archv_table` (`tid`, `dtime`, `duser`, `dmessage`) VALUES ($lastid, CURRENT_TIMESTAMP, '$recipient', '$message')";
+				$result = $this->db->prepare($sql);
+				$result->execute();
 
-			// Return Data
-			$return->tweet['code'] = 101;
-			$return->tweet['status'] = 'Tweet successfully added to queue.';
-			$return->tweet['tid'] = $lastid;
-			$return->tweet['target'] = $recipient;
-			$return->tweet['message'] = $message;
+				// Add Sender details
+				$sql = "INSERT INTO `$data`.`$this->sender_table` (`tid`, `recipient`, `ip`, `agent`, `location`) VALUES ($lastid, '$recipient', '$user_ip', '$user_agent', '$user_location')";
+				$result = $this->db->prepare($sql);
+				$result->execute();
+
+				// Return Data
+				$return->tweet['code'] = 102;
+				$return->tweet['status'] = 'Tweet successfully added to queue.';
+				$return->tweet['tid'] = $lastid;
+				$return->tweet['target'] = $recipient;
+				$return->tweet['message'] = $message;
+			}
 
 		} catch(PDOException $e){
 			$return->error['code'] = 8;
 			$return->error['message'] = 'Unable to add Tweet to Queue. ' . $e->getMessage();
+			$return->error['file'] = $user_ip;
+			$this->ut->log((object)$return->error);
 		}
 
 		return $return;
@@ -158,7 +179,7 @@ class tweetQueue {
 		return self::$instance;
 	}
 
-	public function validateTweet(array $form){
+	public function validateTweet(array $form, $user){
 		// Set Return Object
 		$return = new stdClass();
 
@@ -171,6 +192,7 @@ class tweetQueue {
 		} else {
 			$return->error['code'] = 4;
 			$return->error['message'] = 'Incomplete form data.';
+			$return->error['file'] = (isset($user['ip'])) ? $user['ip'] : false;
 			$this->ut->log((object)$return->error);
 			return $return;
 		}
@@ -185,20 +207,32 @@ class tweetQueue {
 			 if(trim($message) != ''){
 		 		// Censor
 		 		$c = new CensorWords();
+		 		$msg = $c->censorString($message);
 
-		 		$return->tweet['code'] = 100;
-		 		$return->tweet['status'] = 'Tweet validated.';
-		 		$return->tweet['target'] = $target;
-		 		$return->tweet['message'] = $c->censorString($message);
+		 		// Check if offensive phrase Flag
+		 		if($msg['flag']):
+		 			$return->tweet['code'] = 9;
+		 			$return->tweet['status'] = 'Tweet flagged.';
+		 		else:
+			 		$return->tweet['code'] = 100;
+			 		$return->tweet['status'] = 'Tweet validated.';
+			 	endif;
+
+			 	$return->tweet['target'] = $target;
+			 	$return->tweet['message'] = $msg['clean'];
+			 	$return->tweet['flag'] = $msg['flag'];
+
 			} else {
 				$return->error['code'] = 5;
 				$return->error['message'] = 'Empty message.';
+				$return->error['file'] = (isset($user['ip'])) ? $user['ip'] : false;
 				$this->ut->log((object)$return->error);
 				return $return;
 			}
 		} else {
 			$return->error['code'] = 6;
 			$return->error['message'] = 'Empty recipient.';
+			$return->error['file'] = (isset($user['ip'])) ? $user['ip'] : false;
 			$this->ut->log((object)$return->error);
 			return $return;
 		}

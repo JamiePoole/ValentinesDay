@@ -47,6 +47,12 @@ class CensorWords
 		if (file_exists(__DIR__ . DIRECTORY_SEPARATOR .'dict/whitelist.php'))
 			include(__DIR__ . DIRECTORY_SEPARATOR .'dict/whitelist.php');
 		$this->whitelist = $whitelist;
+
+		// Moderate Phrase List
+		$phrases = array();
+		if (file_exists(__DIR__ . DIRECTORY_SEPARATOR .'dict/phrases.php'))
+			include(__DIR__ . DIRECTORY_SEPARATOR .'dict/phrases.php');
+		$this->phrases = $phrases;
 			 
 	}
 	
@@ -67,6 +73,7 @@ class CensorWords
 	 */
 	public function censorString($string) {
 		$badwords = $this->badwords;
+		$phrases = $this->phrases;
 		
 		$leet_replace = array();
 		$leet_replace['a']= '(a|a\.|a\-|4|@|Á|á|À|Â|à|Â|â|Ä|ä|Ã|ã|Å|å|α|Δ|Λ|λ)';
@@ -104,17 +111,32 @@ class CensorWords
 
 		$newstring = array();
 		$newstring['orig'] = html_entity_decode($string);
+		$newstring['flag'] = self::checkPhrases($newstring['orig']);
 		$newstring['clean'] = preg_replace_callback($badwords, 'self::preserveCase', $newstring['orig']);
 
-		return $newstring['clean'];
+		return $newstring;
 
 	}
 
 	/**
+	 *  Check the message for any prohibited phrases and return a flag.
+	 *  @param 		string 		$string 	boolean
+	 */
+	private function checkPhrases($string){
+		foreach($this->phrases as $phrase){
+			$flag = (strpos($string, $phrase) === false) ? false : true;
+			if($flag) return true;
+		}
+		return false;
+	}
+
+
+	/**
 	 *  Preserve case of input word with the replace word.
-	 *  @param		array		$match		preg_replace match
+	 *  @param		array		$match		preg_replace_callback match
 	 */
 	private function preserveCase($match){
+		// TO DO HERE: Add to statistics class
 		if(ctype_upper($match[0])) return strtoupper($this->replacer);
 		else if(ctype_upper($match[1])) return ucfirst($this->replacer);
 		else return $this->replacer;
