@@ -71,10 +71,10 @@ $_ut->startSession();
 						<div class="form-error"></div>
 						<div class="form-control">
 							<span class="form-prepend">@</span>
-							<input type="text" id="tweet-target" name="tweet_target" />
-							<textarea id="tweet-message" name="tweet_message" rows="3"></textarea>
-							<input type="submit" id="submit-tweet" value="Send" />
+							<input type="text" id="tweet-target" name="tweet_target" placeholder="twitterhandle" />
+							<textarea id="tweet-message" name="tweet_message" placeholder="Roses are red, tweets are nice..." rows="3"></textarea>
 						</div>
+						<input type="submit" id="submit-tweet" value="Send" />
 					</form>
 					<p class="delay-time"><?php $_ut->getDelay($_tq->time()); ?></p>
 				</div>

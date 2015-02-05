@@ -1124,41 +1124,67 @@ p {
   clear: both;
 }
 /* line 326, ../sass/_content.scss */
+.send-page .form-control:before {
+  position: absolute;
+  z-index: 4;
+  left: -109px;
+  bottom: -42px;
+  content: '';
+  width: 156px;
+  height: 87px;
+  background: url(../img/form-ribbon-left-156x87.png) 0 0 no-repeat;
+}
+/* line 336, ../sass/_content.scss */
+.send-page .form-control:after {
+  position: absolute;
+  z-index: 4;
+  right: -109px;
+  bottom: -42px;
+  content: '';
+  width: 156px;
+  height: 87px;
+  background: url(../img/form-ribbon-right-156x87.png) 0 0 no-repeat;
+}
+/* line 346, ../sass/_content.scss */
 .send-page .form-control #tweet-target,
 .send-page .form-control #tweet-message {
+  font-family: "europa", sans-serif;
   background: white;
+  position: relative;
+  z-index: 5;
   border: none;
   width: 100%;
   padding: 20px;
   font-size: 22px;
 }
-/* line 333, ../sass/_content.scss */
+/* line 356, ../sass/_content.scss */
 .send-page .form-control #tweet-target:focus,
 .send-page .form-control #tweet-message:focus {
   outline: none;
 }
-/* line 337, ../sass/_content.scss */
+/* line 360, ../sass/_content.scss */
 .send-page .form-control #tweet-target {
   height: 70px;
-  padding-left: 90px;
+  padding-left: 60px;
   margin-bottom: 2px;
 }
-/* line 342, ../sass/_content.scss */
+/* line 365, ../sass/_content.scss */
 .send-page .form-control .form-prepend {
   background: white;
   color: #f2206c;
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 70px;
-  width: 70px;
+  z-index: 6;
+  top: 5px;
+  left: 5px;
+  height: 50px;
+  width: 50px;
   text-align: center;
   font-size: 40px;
   font-weight: 700;
   padding: 2px 0 0 0;
 }
-/* line 355, ../sass/_content.scss */
-.send-page .form-control #submit-tweet {
+/* line 380, ../sass/_content.scss */
+.send-page #submit-tweet {
   font-family: "europa", sans-serif;
   color: #f2206c;
   font-size: 26px;
@@ -1171,25 +1197,25 @@ p {
   margin-top: 30px;
   text-decoration: none;
 }
-/* line 369, ../sass/_content.scss */
+/* line 393, ../sass/_content.scss */
 .send-page .delay-time {
   display: none;
 }
 
-/* line 375, ../sass/_content.scss */
+/* line 399, ../sass/_content.scss */
 .share-page .heading {
   margin-bottom: 6px;
 }
-/* line 378, ../sass/_content.scss */
+/* line 402, ../sass/_content.scss */
 .share-page .sub-heading {
   margin-bottom: 36px;
 }
-/* line 381, ../sass/_content.scss */
+/* line 405, ../sass/_content.scss */
 .share-page .share {
   font-size: 22px;
   font-weight: 300;
 }
-/* line 385, ../sass/_content.scss */
+/* line 409, ../sass/_content.scss */
 .share-page .share-btn {
   color: #931658;
   font-weight: 700;
@@ -1197,32 +1223,32 @@ p {
   display: inline-block;
 }
 
-/* line 402, ../sass/_content.scss */
+/* line 426, ../sass/_content.scss */
 .info-page {
   background: white;
   color: #040201;
   text-align: left;
 }
-/* line 406, ../sass/_content.scss */
+/* line 430, ../sass/_content.scss */
 .info-page .pic {
   float: left;
   width: 28%;
   margin-left: 80px;
 }
-/* line 410, ../sass/_content.scss */
+/* line 434, ../sass/_content.scss */
 .info-page .pic img {
   border: 16px solid #ffc5c5;
   width: 100%;
   height: auto;
 }
-/* line 416, ../sass/_content.scss */
+/* line 440, ../sass/_content.scss */
 .info-page .copy {
   padding: 40px 80px 0 0;
   margin-left: 38%;
   font-size: 28px;
 }
 
-/* line 424, ../sass/_content.scss */
+/* line 448, ../sass/_content.scss */
 .slimScrollBar,
 .slimScrollRail {
   border-radius: 0 !important;

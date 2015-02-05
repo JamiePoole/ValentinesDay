@@ -323,9 +323,32 @@ p {
 		width: 50%;
 		margin: 0 auto;
 		clear: both;
+		&:before {
+			position: absolute;
+			z-index: 4;
+			left: -109px;
+			bottom: -42px;
+			content: '';
+			width: 156px;
+			height: 87px;
+			background: url(../img/form-ribbon-left-156x87.png) 0 0 no-repeat;
+		}
+		&:after {
+			position: absolute;
+			z-index: 4;
+			right: -109px;
+			bottom: -42px;
+			content: '';
+			width: 156px;
+			height: 87px;
+			background: url(../img/form-ribbon-right-156x87.png) 0 0 no-repeat;
+		}
 		#tweet-target,
 		#tweet-message {
+			font-family: $special-font;
 			background: $white;
+			position: relative;
+			z-index: 5;
 			border: none;
 			width: 100%;
 			padding: 20px;
@@ -336,35 +359,36 @@ p {
 		}
 		#tweet-target {
 			height: 70px;
-			padding-left: 90px;
+			padding-left: 60px;
 			margin-bottom: 2px;
 		}
 		.form-prepend {
 			background: $white;
 			color: $hot-pink;
 			position: absolute;
-			top: 0;
-			left: 0;
-			height: 70px;
-			width: 70px;
+			z-index: 6;
+			top: 5px;
+			left: 5px;
+			height: 50px;
+			width: 50px;
 			text-align: center;
 			font-size: 40px;
 			font-weight: 700;
 			padding: 2px 0 0 0;	
 		}
-		#submit-tweet {
-			font-family: $special-font;
-			color: $hot-pink;
-			font-size: 26px;
-			font-weight: 400;
-			background: transparent url(../img/arrow-170x32.svg) 50% 100% no-repeat;
-			border: none;
-			display: inline-block;
-			width: 170px;
-			padding: 0 0 38px;
-			margin-top: 30px;
-			text-decoration: none;
-		}
+	}
+	#submit-tweet {
+		font-family: $special-font;
+		color: $hot-pink;
+		font-size: 26px;
+		font-weight: 400;
+		background: transparent url(../img/arrow-170x32.svg) 50% 100% no-repeat;
+		border: none;
+		display: inline-block;
+		width: 170px;
+		padding: 0 0 38px;
+		margin-top: 30px;
+		text-decoration: none;
 	}
 	.delay-time {
 		display: none;
