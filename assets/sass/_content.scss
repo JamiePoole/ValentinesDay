@@ -246,10 +246,13 @@ p {
 		font-size: 52px;
 	}
 	@include respond-to(l) {
-		font-size: 52px;
+		font-size: 62px;
 	}
 	@include respond-to(xl) {
-		//font-size: 132px;
+		font-size: 62px;
+	}
+	@include respond-to(xxl) {
+		font-size: 72px;
 	}
 }
 
@@ -261,10 +264,13 @@ p {
   		font-weight: 300;
 	}
 	@include respond-to(l) {
-		//font-size: 36px;
+		font-size: 30px;
 	}
 	@include respond-to(xl) {
-		//font-size: 48px;
+		font-size: 30px;
+	}
+	@include respond-to(xxl) {
+		font-size: 34px;
 	}
 }
 
@@ -319,18 +325,6 @@ p {
 		clear: both;
 		.form-control {
 			position: relative;
-		}
-		label {
-			display: block;
-			margin: 0 auto 10px;
-			width: 100%;
-			text-align: center;
-			font-size: 36px;
-			font-weight: 700;
-			line-height: 1.2;
-			.fit-text {
-				display: block;
-			}
 		}
 		#tweet-target,
 		#tweet-message {

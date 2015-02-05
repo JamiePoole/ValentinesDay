@@ -713,7 +713,7 @@ textarea {
 html, body {
   background: white;
   color: #f2206c;
-  font-family: "Montserrat", sans-serif;
+  font-family: "europa", sans-serif;
   font-weight: 400;
   line-height: 1.4;
   font-smooth: always;
@@ -726,7 +726,7 @@ html, body {
 
 /* line 15, ../sass/_content.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "europa", sans-serif;
   font-style: normal;
   font-weight: 700;
   line-height: 1.1;
@@ -1032,42 +1032,72 @@ p {
 @media (min-width: 1024px) {
   /* line 242, ../sass/_content.scss */
   .heading {
-    font-size: 52px;
+    font-size: 62px;
+  }
+}
+@media (min-width: 1280px) {
+  /* line 242, ../sass/_content.scss */
+  .heading {
+    font-size: 62px;
+  }
+}
+@media (min-width: 1440px) {
+  /* line 242, ../sass/_content.scss */
+  .heading {
+    font-size: 72px;
   }
 }
 
-/* line 256, ../sass/_content.scss */
+/* line 259, ../sass/_content.scss */
 .sub-heading {
   font-size: 12px;
   font-weight: 400;
 }
 @media (min-width: 768px) {
-  /* line 256, ../sass/_content.scss */
+  /* line 259, ../sass/_content.scss */
   .sub-heading {
     font-size: 24px;
     font-weight: 300;
   }
 }
+@media (min-width: 1024px) {
+  /* line 259, ../sass/_content.scss */
+  .sub-heading {
+    font-size: 30px;
+  }
+}
+@media (min-width: 1280px) {
+  /* line 259, ../sass/_content.scss */
+  .sub-heading {
+    font-size: 30px;
+  }
+}
+@media (min-width: 1440px) {
+  /* line 259, ../sass/_content.scss */
+  .sub-heading {
+    font-size: 34px;
+  }
+}
 
-/* line 272, ../sass/_content.scss */
+/* line 278, ../sass/_content.scss */
 .intro-page .artwork {
   width: 80%;
   margin: 0 auto 16px;
   text-align: center;
 }
 @media (min-width: 768px) {
-  /* line 272, ../sass/_content.scss */
+  /* line 278, ../sass/_content.scss */
   .intro-page .artwork {
     max-width: 70vw;
   }
 }
 @media (min-width: 1024px) {
-  /* line 272, ../sass/_content.scss */
+  /* line 278, ../sass/_content.scss */
   .intro-page .artwork {
     max-width: 80vh;
   }
 }
-/* line 288, ../sass/_content.scss */
+/* line 294, ../sass/_content.scss */
 .intro-page .artwork img {
   display: block;
   width: 100%;
@@ -1076,42 +1106,28 @@ p {
   height: auto;
 }
 @media (min-width: 768px) {
-  /* line 288, ../sass/_content.scss */
+  /* line 294, ../sass/_content.scss */
   .intro-page .artwork img {
     max-width: none;
   }
 }
 
-/* line 313, ../sass/_content.scss */
+/* line 319, ../sass/_content.scss */
 .send-page {
   text-align: center;
 }
-/* line 315, ../sass/_content.scss */
+/* line 321, ../sass/_content.scss */
 .send-page .form-step {
   position: relative;
   width: 50%;
   margin: 0 auto;
   clear: both;
 }
-/* line 320, ../sass/_content.scss */
+/* line 326, ../sass/_content.scss */
 .send-page .form-step .form-control {
   position: relative;
 }
-/* line 323, ../sass/_content.scss */
-.send-page .form-step label {
-  display: block;
-  margin: 0 auto 10px;
-  width: 100%;
-  text-align: center;
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 1.2;
-}
-/* line 331, ../sass/_content.scss */
-.send-page .form-step label .fit-text {
-  display: block;
-}
-/* line 335, ../sass/_content.scss */
+/* line 329, ../sass/_content.scss */
 .send-page .form-step #tweet-target,
 .send-page .form-step #tweet-message {
   background: white;
@@ -1120,17 +1136,17 @@ p {
   padding: 20px;
   font-size: 22px;
 }
-/* line 342, ../sass/_content.scss */
+/* line 336, ../sass/_content.scss */
 .send-page .form-step #tweet-target:focus,
 .send-page .form-step #tweet-message:focus {
   outline: none;
 }
-/* line 346, ../sass/_content.scss */
+/* line 340, ../sass/_content.scss */
 .send-page .form-step #tweet-target {
   height: 70px;
   padding-left: 90px;
 }
-/* line 350, ../sass/_content.scss */
+/* line 344, ../sass/_content.scss */
 .send-page .form-step .form-prepend {
   background: white;
   color: #931658;
@@ -1145,7 +1161,7 @@ p {
   font-weight: 700;
   padding: 2px 0 0 0;
 }
-/* line 364, ../sass/_content.scss */
+/* line 358, ../sass/_content.scss */
 .send-page .form-step .next {
   background: #931658;
   border: 5px solid #931658;
@@ -1163,7 +1179,7 @@ p {
   letter-spacing: 0.075em;
   border-radius: 0;
 }
-/* line 381, ../sass/_content.scss */
+/* line 375, ../sass/_content.scss */
 .send-page .form-step .prev {
   background: white;
   border: 5px solid #931658;
@@ -1181,7 +1197,7 @@ p {
   letter-spacing: 0.075em;
   border-radius: 0;
 }
-/* line 398, ../sass/_content.scss */
+/* line 392, ../sass/_content.scss */
 .send-page .form-step #submit-tweet {
   background: #931658;
   border: 5px solid #931658;
@@ -1198,25 +1214,25 @@ p {
   letter-spacing: 0.075em;
   border-radius: 0;
 }
-/* line 415, ../sass/_content.scss */
+/* line 409, ../sass/_content.scss */
 .send-page .delay-time {
   display: none;
 }
 
-/* line 421, ../sass/_content.scss */
+/* line 415, ../sass/_content.scss */
 .share-page .heading {
   margin-bottom: 6px;
 }
-/* line 424, ../sass/_content.scss */
+/* line 418, ../sass/_content.scss */
 .share-page .sub-heading {
   margin-bottom: 36px;
 }
-/* line 427, ../sass/_content.scss */
+/* line 421, ../sass/_content.scss */
 .share-page .share {
   font-size: 22px;
   font-weight: 300;
 }
-/* line 431, ../sass/_content.scss */
+/* line 425, ../sass/_content.scss */
 .share-page .share-btn {
   color: #931658;
   font-weight: 700;
@@ -1224,32 +1240,32 @@ p {
   display: inline-block;
 }
 
-/* line 448, ../sass/_content.scss */
+/* line 442, ../sass/_content.scss */
 .info-page {
   background: white;
   color: #040201;
   text-align: left;
 }
-/* line 452, ../sass/_content.scss */
+/* line 446, ../sass/_content.scss */
 .info-page .pic {
   float: left;
   width: 28%;
   margin-left: 80px;
 }
-/* line 456, ../sass/_content.scss */
+/* line 450, ../sass/_content.scss */
 .info-page .pic img {
   border: 16px solid #ffc5c5;
   width: 100%;
   height: auto;
 }
-/* line 462, ../sass/_content.scss */
+/* line 456, ../sass/_content.scss */
 .info-page .copy {
   padding: 40px 80px 0 0;
   margin-left: 38%;
   font-size: 28px;
 }
 
-/* line 470, ../sass/_content.scss */
+/* line 464, ../sass/_content.scss */
 .slimScrollBar,
 .slimScrollRail {
   border-radius: 0 !important;

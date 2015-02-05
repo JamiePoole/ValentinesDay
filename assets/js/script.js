@@ -33,20 +33,8 @@ jQuery(document).ready(function($) {
          	}
         },
         afterRender: function(){
-			$('#send-tweet').idealforms({
-				iconHtml: false
-			});
+			
         }
 	});
-
-	$('.prev').click(function(){
-      	$('.prev').show();
-      	$('#send-tweet').idealforms('prevStep');
-    });
-
-    $('.next').click(function(){
-      	$('.next').show();
-      	$('#send-tweet').idealforms('nextStep');
-    });
 
 });
