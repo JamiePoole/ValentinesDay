@@ -1657,8 +1657,3 @@ strong {
 .odometer.odometer-auto-theme, .odometer.odometer-theme-default {
   line-height: 1.1em;
 }
-
-/* line 655, ../sass/_content.scss */
-.odometer.odometer-auto-theme .odometer-value, .odometer.odometer-theme-default .odometer-value {
-  text-align: center;
-}
