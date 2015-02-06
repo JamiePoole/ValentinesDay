@@ -124,7 +124,7 @@ class CensorWords
 	 */
 	private function checkPhrases($string){
 		foreach($this->phrases as $phrase){
-			$flag = (strpos($string, $phrase) === false) ? false : true;
+			$flag = (stripos($string, $phrase) === false) ? false : true;
 			if($flag) return true;
 		}
 		return false;
