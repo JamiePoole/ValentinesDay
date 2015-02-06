@@ -350,18 +350,33 @@ textarea {
 
 /* line 2, ../sass/_animate.scss */
 .animated {
-  -moz-animation-duration: 0.6s;
-  -webkit-animation-duration: 0.6s;
-  animation-duration: 0.6s;
+  -moz-animation-duration: 0.3s;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
   -moz-animation-fill-mode: both;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -moz-animation-timing-function: ease;
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
+  -moz-animation-timing-function: cubic-bezier(0.055, 0.34, 0.09, 0.82);
+  -webkit-animation-timing-function: cubic-bezier(0.055, 0.34, 0.09, 0.82);
+  animation-timing-function: cubic-bezier(0.055, 0.34, 0.09, 0.82);
 }
 
-/* line 8, ../sass/_animate.scss */
+/* line 9, ../sass/_animate.scss */
+.cssanimations .fadeIn,
+.cssanimations .fadeInUp,
+.cssanimations .fadeInDown {
+  opacity: 0;
+}
+/* line 14, ../sass/_animate.scss */
+.cssanimations #submit-tweet {
+  opacity: 0;
+}
+/* line 16, ../sass/_animate.scss */
+.cssanimations #submit-tweet.flyOff {
+  opacity: 1;
+}
+
+/* line 22, ../sass/_animate.scss */
 .fadeIn {
   -moz-animation-name: fadeIn;
   -webkit-animation-name: fadeIn;
@@ -369,39 +384,39 @@ textarea {
 }
 
 @-moz-keyframes fadeIn {
-  /* line 13, ../sass/_animate.scss */
+  /* line 27, ../sass/_animate.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 16, ../sass/_animate.scss */
+  /* line 30, ../sass/_animate.scss */
   100% {
     opacity: 1;
   }
 }
 @-webkit-keyframes fadeIn {
-  /* line 13, ../sass/_animate.scss */
+  /* line 27, ../sass/_animate.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 16, ../sass/_animate.scss */
+  /* line 30, ../sass/_animate.scss */
   100% {
     opacity: 1;
   }
 }
 @keyframes fadeIn {
-  /* line 13, ../sass/_animate.scss */
+  /* line 27, ../sass/_animate.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 16, ../sass/_animate.scss */
+  /* line 30, ../sass/_animate.scss */
   100% {
     opacity: 1;
   }
 }
-/* line 21, ../sass/_animate.scss */
+/* line 35, ../sass/_animate.scss */
 .fadeInDown {
   -moz-animation-name: fadeInDown;
   -webkit-animation-name: fadeInDown;
@@ -409,14 +424,14 @@ textarea {
 }
 
 @-moz-keyframes fadeInDown {
-  /* line 26, ../sass/_animate.scss */
+  /* line 40, ../sass/_animate.scss */
   0% {
     opacity: 0;
-    -moz-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
+    -moz-transform: translate3d(0, -35%, 0);
+    transform: translate3d(0, -35%, 0);
   }
 
-  /* line 30, ../sass/_animate.scss */
+  /* line 44, ../sass/_animate.scss */
   100% {
     opacity: 1;
     -moz-transform: none;
@@ -424,14 +439,14 @@ textarea {
   }
 }
 @-webkit-keyframes fadeInDown {
-  /* line 26, ../sass/_animate.scss */
+  /* line 40, ../sass/_animate.scss */
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
+    -webkit-transform: translate3d(0, -35%, 0);
+    transform: translate3d(0, -35%, 0);
   }
 
-  /* line 30, ../sass/_animate.scss */
+  /* line 44, ../sass/_animate.scss */
   100% {
     opacity: 1;
     -webkit-transform: none;
@@ -439,15 +454,15 @@ textarea {
   }
 }
 @keyframes fadeInDown {
-  /* line 26, ../sass/_animate.scss */
+  /* line 40, ../sass/_animate.scss */
   0% {
     opacity: 0;
-    -moz-transform: translate3d(0, -100%, 0);
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
+    -moz-transform: translate3d(0, -35%, 0);
+    -webkit-transform: translate3d(0, -35%, 0);
+    transform: translate3d(0, -35%, 0);
   }
 
-  /* line 30, ../sass/_animate.scss */
+  /* line 44, ../sass/_animate.scss */
   100% {
     opacity: 1;
     -moz-transform: none;
@@ -457,7 +472,7 @@ textarea {
     transform: none;
   }
 }
-/* line 36, ../sass/_animate.scss */
+/* line 50, ../sass/_animate.scss */
 .fadeInUp {
   -moz-animation-name: fadeInUp;
   -webkit-animation-name: fadeInUp;
@@ -465,14 +480,14 @@ textarea {
 }
 
 @-moz-keyframes fadeInUp {
-  /* line 41, ../sass/_animate.scss */
+  /* line 55, ../sass/_animate.scss */
   0% {
     opacity: 0;
-    -moz-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+    -moz-transform: translate3d(0, 35%, 0);
+    transform: translate3d(0, 35%, 0);
   }
 
-  /* line 45, ../sass/_animate.scss */
+  /* line 59, ../sass/_animate.scss */
   100% {
     opacity: 1;
     -moz-transform: none;
@@ -480,14 +495,14 @@ textarea {
   }
 }
 @-webkit-keyframes fadeInUp {
-  /* line 41, ../sass/_animate.scss */
+  /* line 55, ../sass/_animate.scss */
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+    -webkit-transform: translate3d(0, 35%, 0);
+    transform: translate3d(0, 35%, 0);
   }
 
-  /* line 45, ../sass/_animate.scss */
+  /* line 59, ../sass/_animate.scss */
   100% {
     opacity: 1;
     -webkit-transform: none;
@@ -495,15 +510,15 @@ textarea {
   }
 }
 @keyframes fadeInUp {
-  /* line 41, ../sass/_animate.scss */
+  /* line 55, ../sass/_animate.scss */
   0% {
     opacity: 0;
-    -moz-transform: translate3d(0, 100%, 0);
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+    -moz-transform: translate3d(0, 35%, 0);
+    -webkit-transform: translate3d(0, 35%, 0);
+    transform: translate3d(0, 35%, 0);
   }
 
-  /* line 45, ../sass/_animate.scss */
+  /* line 59, ../sass/_animate.scss */
   100% {
     opacity: 1;
     -moz-transform: none;
@@ -513,7 +528,7 @@ textarea {
     transform: none;
   }
 }
-/* line 51, ../sass/_animate.scss */
+/* line 65, ../sass/_animate.scss */
 .fadeOut {
   -moz-animation-name: fadeOut;
   -webkit-animation-name: fadeOut;
@@ -521,39 +536,39 @@ textarea {
 }
 
 @-moz-keyframes fadeOut {
-  /* line 56, ../sass/_animate.scss */
+  /* line 70, ../sass/_animate.scss */
   0% {
     opacity: 1;
   }
 
-  /* line 59, ../sass/_animate.scss */
+  /* line 73, ../sass/_animate.scss */
   100% {
     opacity: 0;
   }
 }
 @-webkit-keyframes fadeOut {
-  /* line 56, ../sass/_animate.scss */
+  /* line 70, ../sass/_animate.scss */
   0% {
     opacity: 1;
   }
 
-  /* line 59, ../sass/_animate.scss */
+  /* line 73, ../sass/_animate.scss */
   100% {
     opacity: 0;
   }
 }
 @keyframes fadeOut {
-  /* line 56, ../sass/_animate.scss */
+  /* line 70, ../sass/_animate.scss */
   0% {
     opacity: 1;
   }
 
-  /* line 59, ../sass/_animate.scss */
+  /* line 73, ../sass/_animate.scss */
   100% {
     opacity: 0;
   }
 }
-/* line 64, ../sass/_animate.scss */
+/* line 78, ../sass/_animate.scss */
 .fadeOutDown {
   -moz-animation-name: fadeOutDown;
   -webkit-animation-name: fadeOutDown;
@@ -561,46 +576,46 @@ textarea {
 }
 
 @-moz-keyframes fadeOutDown {
-  /* line 69, ../sass/_animate.scss */
+  /* line 83, ../sass/_animate.scss */
   0% {
     opacity: 1;
   }
 
-  /* line 72, ../sass/_animate.scss */
+  /* line 86, ../sass/_animate.scss */
   100% {
     opacity: 0;
-    -moz-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+    -moz-transform: translate3d(0, 35%, 0);
+    transform: translate3d(0, 35%, 0);
   }
 }
 @-webkit-keyframes fadeOutDown {
-  /* line 69, ../sass/_animate.scss */
+  /* line 83, ../sass/_animate.scss */
   0% {
     opacity: 1;
   }
 
-  /* line 72, ../sass/_animate.scss */
+  /* line 86, ../sass/_animate.scss */
   100% {
     opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+    -webkit-transform: translate3d(0, 35%, 0);
+    transform: translate3d(0, 35%, 0);
   }
 }
 @keyframes fadeOutDown {
-  /* line 69, ../sass/_animate.scss */
+  /* line 83, ../sass/_animate.scss */
   0% {
     opacity: 1;
   }
 
-  /* line 72, ../sass/_animate.scss */
+  /* line 86, ../sass/_animate.scss */
   100% {
     opacity: 0;
-    -moz-transform: translate3d(0, 100%, 0);
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+    -moz-transform: translate3d(0, 35%, 0);
+    -webkit-transform: translate3d(0, 35%, 0);
+    transform: translate3d(0, 35%, 0);
   }
 }
-/* line 78, ../sass/_animate.scss */
+/* line 92, ../sass/_animate.scss */
 .fadeOutUp {
   -moz-animation-name: fadeOutUp;
   -webkit-animation-name: fadeOutUp;
@@ -608,46 +623,46 @@ textarea {
 }
 
 @-moz-keyframes fadeOutUp {
-  /* line 83, ../sass/_animate.scss */
+  /* line 97, ../sass/_animate.scss */
   0% {
     opacity: 1;
   }
 
-  /* line 86, ../sass/_animate.scss */
+  /* line 100, ../sass/_animate.scss */
   100% {
     opacity: 0;
-    -moz-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
+    -moz-transform: translate3d(0, -35%, 0);
+    transform: translate3d(0, -35%, 0);
   }
 }
 @-webkit-keyframes fadeOutUp {
-  /* line 83, ../sass/_animate.scss */
+  /* line 97, ../sass/_animate.scss */
   0% {
     opacity: 1;
   }
 
-  /* line 86, ../sass/_animate.scss */
+  /* line 100, ../sass/_animate.scss */
   100% {
     opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
+    -webkit-transform: translate3d(0, -35%, 0);
+    transform: translate3d(0, -35%, 0);
   }
 }
 @keyframes fadeOutUp {
-  /* line 83, ../sass/_animate.scss */
+  /* line 97, ../sass/_animate.scss */
   0% {
     opacity: 1;
   }
 
-  /* line 86, ../sass/_animate.scss */
+  /* line 100, ../sass/_animate.scss */
   100% {
     opacity: 0;
-    -moz-transform: translate3d(0, -100%, 0);
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
+    -moz-transform: translate3d(0, -35%, 0);
+    -webkit-transform: translate3d(0, -35%, 0);
+    transform: translate3d(0, -35%, 0);
   }
 }
-/* line 92, ../sass/_animate.scss */
+/* line 106, ../sass/_animate.scss */
 .typed-cursor {
   -moz-animation-name: blink;
   -webkit-animation-name: blink;
@@ -662,51 +677,179 @@ textarea {
 }
 
 @-moz-keyframes blink {
-  /* line 100, ../sass/_animate.scss */
+  /* line 114, ../sass/_animate.scss */
   0% {
     opacity: 1;
   }
 
-  /* line 103, ../sass/_animate.scss */
+  /* line 117, ../sass/_animate.scss */
   50% {
     opacity: 0;
   }
 
-  /* line 106, ../sass/_animate.scss */
+  /* line 120, ../sass/_animate.scss */
   100% {
     opacity: 1;
   }
 }
 @-webkit-keyframes blink {
-  /* line 100, ../sass/_animate.scss */
+  /* line 114, ../sass/_animate.scss */
   0% {
     opacity: 1;
   }
 
-  /* line 103, ../sass/_animate.scss */
+  /* line 117, ../sass/_animate.scss */
   50% {
     opacity: 0;
   }
 
-  /* line 106, ../sass/_animate.scss */
+  /* line 120, ../sass/_animate.scss */
   100% {
     opacity: 1;
   }
 }
 @keyframes blink {
-  /* line 100, ../sass/_animate.scss */
+  /* line 114, ../sass/_animate.scss */
   0% {
     opacity: 1;
   }
 
-  /* line 103, ../sass/_animate.scss */
+  /* line 117, ../sass/_animate.scss */
   50% {
     opacity: 0;
   }
 
-  /* line 106, ../sass/_animate.scss */
+  /* line 120, ../sass/_animate.scss */
   100% {
     opacity: 1;
+  }
+}
+/* line 125, ../sass/_animate.scss */
+.spinFly {
+  -moz-animation-name: spinFly;
+  -webkit-animation-name: spinFly;
+  animation-name: spinFly;
+  -moz-animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -moz-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -moz-animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@-moz-keyframes spinFly {
+  /* line 134, ../sass/_animate.scss */
+  0% {
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+
+  /* line 138, ../sass/_animate.scss */
+  100% {
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spinFly {
+  /* line 134, ../sass/_animate.scss */
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+
+  /* line 138, ../sass/_animate.scss */
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spinFly {
+  /* line 134, ../sass/_animate.scss */
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+
+  /* line 138, ../sass/_animate.scss */
+  100% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+/* line 144, ../sass/_animate.scss */
+.flyOff {
+  -moz-animation-name: flyOff;
+  -webkit-animation-name: flyOff;
+  animation-name: flyOff;
+  -moz-animation-duration: 0.6s;
+  -webkit-animation-duration: 0.6s;
+  animation-duration: 0.6s;
+  -moz-animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -moz-animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  opacity: 1;
+}
+
+@-moz-keyframes flyOff {
+  /* line 153, ../sass/_animate.scss */
+  0% {
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* line 156, ../sass/_animate.scss */
+  100% {
+    -moz-transform: translate3d(1000%, 0, 0);
+    transform: translate3d(1000%, 0, 0);
+  }
+}
+@-webkit-keyframes flyOff {
+  /* line 153, ../sass/_animate.scss */
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* line 156, ../sass/_animate.scss */
+  100% {
+    -webkit-transform: translate3d(1000%, 0, 0);
+    transform: translate3d(1000%, 0, 0);
+  }
+}
+@keyframes flyOff {
+  /* line 153, ../sass/_animate.scss */
+  0% {
+    -moz-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* line 156, ../sass/_animate.scss */
+  100% {
+    -moz-transform: translate3d(1000%, 0, 0);
+    -webkit-transform: translate3d(1000%, 0, 0);
+    transform: translate3d(1000%, 0, 0);
   }
 }
 /* line 1, ../sass/_admin.scss */

@@ -1,6 +1,6 @@
 <?php
-$entries = $_at->getEntries(false, 'tweet_entries', 'dtime', 'DESC');
-$count = $_at->getEntries(true, 'tweet_entries');
+$entries = $_at->getEntries(false, 'tweet_flagged', 'dtime', 'DESC');
+$count = $_at->getEntries(true, 'tweet_flagged');
 ?>
 <section id="main-section">
 	<?php if($_at->hasMessages()): ?>
