@@ -63,13 +63,6 @@ $_ut->startSession();
 		</div><!--// .intro-page -->
 
 		<div class="section send-page" data-anchor="send">
-			<div class="hearty"></div>
-			<div class="hearty"></div>
-			<div class="hearty"></div>
-			<div class="hearty"></div>
-			<div class="hearty"></div>
-			<div class="hearty"></div>
-			<div class="hearty"></div>
 			<div class="page">
 				<div id="tweet-form">
 					<form id="send-tweet" novalidate method="post" action="post.php">
