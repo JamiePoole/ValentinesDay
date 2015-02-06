@@ -65,7 +65,6 @@ $_ut->startSession();
 		<div class="section send-page" data-anchor="send">
 			<div class="page">
 				<div id="tweet-form">
-  					<!-- <nav class="idealsteps-nav"></nav> -->
 					<form id="send-tweet" novalidate method="post" action="post.php">
 						<input type="hidden" name="nonce_token" value="<?php echo $_SESSION['token']; ?>" />
 						<div class="form-error"></div>
@@ -78,28 +77,43 @@ $_ut->startSession();
 					</form>
 					<p class="delay-time"><?php $_ut->getDelay($_tq->time()); ?></p>
 				</div>
-				<div id="tweet-image"></div>
-			</div><!--// .page -->
+			</div>
+			<div class="tweet-hearts">
+				<div class="tweet a"></div>
+				<div class="tweet b"></div>
+				<div class="tweet c"></div>
+				<div class="tweet d"></div>
+				<div class="tweet e"></div>
+				<div class="tweet f"></div>
+				<div class="tweet g"></div>
+			</div>
 		</div><!--// .send-page -->
 
 		<div class="section share-page" data-anchor="share">
 			<div class="page">
 				<h1 class="heading">£1,529</h1>
-				<h2 class="sub-heading">Has been donated to Save the Children</h2>
+				<h2 class="sub-heading">Aw, thanks for spreading the love.<br>You just helped us donate £1 to Save the Children.</h2>
 				<div class="share">
-					<p>Share on <a class="share-btn fb-btn" href="#">Facebook</a> / <a class="share-btn tw-btn" href="#">Twitter</a> / <a class="share-btn gp-btn" href="#">Google +</a></p>
+					<a class="share-btn fb-btn" href="#"><span class="wa-hidden">Share on Facebook</span></a> 
+					<a class="share-btn tw-btn" href="#"><span class="wa-hidden">Share on Twitter</span></a> 
+					<a class="share-btn gp-btn" href="#"><span class="wa-hidden">Share on Google +</span></a>
 				</div>
+			</div>
+			<div class="artwork">
+				<img src="assets/img/bird-bubble.svg">
 			</div>
 		</div>
 
 		<div class="section info-page" data-anchor="info">
 			<div class="page">
-				<div class="pic">
-					<img src="assets/original/09_1148892.jpg">
-				</div>
 				<div class="copy">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis egestas erat, sagittis dapibus elit. Aliquam a accumsan quam. Vestibulum cursus quam mi, eu hendrerit augue consequat eu. Pellentesque id tristique arcu.</p>
-					<p>DISCLAIMER: Donec non enim in risus consequat interdum. Aenean ut ultrices lacus, non maximus massa.</p>
+					<p>Show your Twitter crush how much they mean to you by sending them something really nice, something from the heart, and let us deliver the message for you. Nobody will know who sent it. Promise. Our Twitter Cupid will deliver your message by tweeting your crush on your behalf.</p>
+					<p>For each lovely tweet that gets sent we’re spreading the love even further and donating £1 to Save the Children.</p>
+					<p><strong>A project by</strong></p>
+				</div>
+				<div class="logos">
+					<img class="us" src="assets/img/360i-logo.svg" width="80" height="80">
+					<img class="savethechildren" src="assets/img/savethechildern-logo.svg" width="383" height="60">
 				</div>
 			</div><!--// .page -->
 		</div><!--// .info-page -->

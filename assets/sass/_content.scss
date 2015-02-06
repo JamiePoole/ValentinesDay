@@ -23,6 +23,10 @@ p {
 	margin-bottom: 1.25em;
 }
 
+strong {
+	font-weight: 700;
+}
+
 .wa-hidden {
 	@include wa-hide();
 }
@@ -286,10 +290,10 @@ p {
 			max-width: 70vw;
 		}
 		@include respond-to(l) {
-			max-width: 80vh;
+			max-width: 85vh;
 		}
 		@include respond-to(xl) {
-		
+			max-width: 100vh;
 		}
 		img {
 			display: block;
@@ -318,31 +322,16 @@ p {
 
 .send-page {
 	text-align: center;
+	.page {
+		width: 60%;
+		max-width: 570px;
+		position: relative;
+		z-index: 9;
+	}
 	.form-control {
 		position: relative;
-		width: 50%;
 		margin: 0 auto;
 		clear: both;
-		&:before {
-			position: absolute;
-			z-index: 4;
-			left: -109px;
-			bottom: -42px;
-			content: '';
-			width: 156px;
-			height: 87px;
-			background: url(../img/form-ribbon-left-156x87.png) 0 0 no-repeat;
-		}
-		&:after {
-			position: absolute;
-			z-index: 4;
-			right: -109px;
-			bottom: -42px;
-			content: '';
-			width: 156px;
-			height: 87px;
-			background: url(../img/form-ribbon-right-156x87.png) 0 0 no-repeat;
-		}
 		#tweet-target,
 		#tweet-message {
 			font-family: $special-font;
@@ -388,58 +377,231 @@ p {
 		padding: 0 0 38px;
 		margin-top: 30px;
 		text-decoration: none;
+		&:focus {
+			outline: none;
+		}
 	}
 	.delay-time {
 		display: none;
 	}
 }
 
+.tweet-hearts {
+  	position: absolute;
+  	z-index: 8;
+  	width: 100%;
+  	height: 100%;
+  	top: 0;
+	.tweet {
+		background: url(../img/heart-180x164.svg) 0 0 no-repeat;
+		background-size: contain;
+		position: absolute;
+		width: 10%;
+		height: 0;
+		max-width: 130px;
+		padding-bottom: 9%;
+		&.a {
+			top: 15%;
+			left: 8%;
+		}
+		&.b {
+			top: 7%;
+			left: 50%;
+		}
+		&.c {
+			top: 22%;
+			left: 78%;
+		}
+		&.d {
+			bottom: 10%;
+			left: 4%;
+		}
+		&.e {
+			bottom: 6%;
+			left: 62%;
+		}
+		&.f {
+			top: 60%;
+			left: 82%;
+		}
+		&.g {
+			top: 58%;
+			left: 22%;
+		}
+	}
+}
+
 .share-page {
+	.page {
+		padding-bottom: 80px;
+		@include respond-to(s) {
+			
+		}
+  		@include respond-to(m) {
+			padding-bottom: 24vh;
+		}
+		@include respond-to(l) {
+			
+		}
+		@include respond-to(xl) {
+		
+		}
+	}
 	.heading {
-		margin-bottom: 6px;
+		background: $white;
+		display: inline-block;
+		margin-bottom: 62px;
+		padding: 15px 35px;
+		position: relative;
+		&:before {
+			position: absolute;
+	  		z-index: 4;
+	  		left: -38px;
+	  		bottom: -59px;
+	  		content: '';
+	  		width: 71px;
+	  		height: 90px;
+	  		background: url(../img/banner-ribbon-left.svg) 0 0 no-repeat;
+	  		background-size: contain;
+		}
+		&:after {
+			position: absolute;
+	  		z-index: 4;
+	  		right: -38px;
+	  		bottom: -59px;
+	  		content: '';
+	  		width: 71px;
+	  		height: 90px;
+	  		background: url(../img/banner-ribbon-right.svg) 0 0 no-repeat;
+	  		background-size: contain;
+		}
 	}
 	.sub-heading {
-		margin-bottom: 36px;
+		margin-bottom: 16px;
+		line-height: 1.4;
+	}
+	.artwork {
+		position: absolute;
+		bottom: 1.5vw; // matches the bottom border
+		left: 20%;
+		right: 23%;
+		@include respond-to(s) {
+			
+		}
+  		@include respond-to(m) {
+			bottom: 0.5vh;
+		}
+		@include respond-to(l) {
+			bottom: 1vh;
+		}
+		@include respond-to(xl) {
+		
+		}
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			max-height: 30vh;
+			@include respond-to(s) {
+			
+			}
+	  		@include respond-to(m) {
+				
+			}
+			@include respond-to(l) {
+				max-height: 35vh;
+			}
+			@include respond-to(xl) {
+			
+			}
+		}
 	}
 	.share {
 		font-size: 22px;
 		font-weight: 300;
 	}
 	.share-btn {
-		color: $purple;
-		font-weight: 700;
-		text-decoration: none;
+		background: $hot-pink;
+		color: $white;
+		position: relative;
 		display: inline-block;
+		text-decoration: none;
+		margin: 4px;
+		padding: 0;
+		width: 32px;
+		height: 32px;
+		border-radius: 16px;
+		@include respond-to(m) {
+			
+		}
+		@include respond-to(l) {
+			
+		}
+		@include respond-to(xl) {
+			width: 48px;
+			height: 48px;
+			border-radius: 24px;
+		}
 	}
 	.fb-btn {
-
+		background: $hot-pink url(../img/facebook-icon-24x24.svg) 50% 50% no-repeat;
+		background-size: 18px 18px;
+		@include respond-to(xl) {
+			background-size: 22px 22px;
+		}
 	}
 	.tw-btn {
-		
+		background: $hot-pink url(../img/twitter-icon-24x24.svg) 50% 50% no-repeat;
+		background-size: 18px 18px;
+		@include respond-to(xl) {
+			background-size: 22px 22px;
+		}
 	}
 	.gp-btn {
-		
+		background: $hot-pink url(../img/google-icon-24x24.svg) 50% 50% no-repeat;
+		background-size: 18px 18px;
+		@include respond-to(xl) {
+			background-size: 22px 22px;
+		}
 	}
 }
 
 .info-page {
-	background: $white;
-	color: $black;
-	text-align: left;
-	.pic {
-		float: left;
-		width: 28%;
-		margin-left: 80px;
-		img {
-			border: 16px solid $light-pink;
-			width: 100%;
-			height: auto;
+	text-align: center;
+	.copy {
+		width: 90%;
+		margin: auto;
+		font-size: 12px;
+		@include respond-to(m) {
+			font-size: 21px;
+		}
+		@include respond-to(l) {
+			width: 70%;
+			font-size: 21px;
+		}
+		@include respond-to(xl) {
+			font-size: 21px;
 		}
 	}
-	.copy {
-		padding: 40px 80px 0 0;
-		margin-left: 38%;
-		font-size: 28px;
+	.logos {
+		img {
+			vertical-align: middle;
+			margin: 0 20px 20px;
+			&.us {
+				max-width: 50px;
+				height: auto;
+				@include respond-to(l) {
+					max-width: 100%;
+				}
+			}
+			&.savethechildren {
+				max-width: 180px;
+  				height: auto;
+  				@include respond-to(l) {
+					max-width: 100%;
+				}
+			}
+		}
 	}
 }
 
