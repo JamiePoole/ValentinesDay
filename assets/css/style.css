@@ -1125,22 +1125,25 @@ strong {
 
 /* line 323, ../sass/_content.scss */
 .send-page {
+  background-image: url("../img/heart-260x260.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
   text-align: center;
 }
-/* line 325, ../sass/_content.scss */
+/* line 329, ../sass/_content.scss */
 .send-page .page {
   width: 60%;
   max-width: 570px;
   position: relative;
   z-index: 9;
 }
-/* line 331, ../sass/_content.scss */
+/* line 335, ../sass/_content.scss */
 .send-page .form-control {
   position: relative;
   margin: 0 auto;
   clear: both;
 }
-/* line 335, ../sass/_content.scss */
+/* line 339, ../sass/_content.scss */
 .send-page .form-control #tweet-target,
 .send-page .form-control #tweet-message {
   font-family: "europa", sans-serif;
@@ -1152,18 +1155,18 @@ strong {
   padding: 20px;
   font-size: 22px;
 }
-/* line 345, ../sass/_content.scss */
+/* line 349, ../sass/_content.scss */
 .send-page .form-control #tweet-target:focus,
 .send-page .form-control #tweet-message:focus {
   outline: none;
 }
-/* line 349, ../sass/_content.scss */
+/* line 353, ../sass/_content.scss */
 .send-page .form-control #tweet-target {
   height: 70px;
   padding-left: 50px;
   margin-bottom: 2px;
 }
-/* line 354, ../sass/_content.scss */
+/* line 358, ../sass/_content.scss */
 .send-page .form-control .form-prepend {
   color: #f2206c;
   position: absolute;
@@ -1177,7 +1180,7 @@ strong {
   font-weight: 700;
   padding: 2px 0 0 0;
 }
-/* line 368, ../sass/_content.scss */
+/* line 372, ../sass/_content.scss */
 .send-page #submit-tweet {
   font-family: "europa", sans-serif;
   color: #f2206c;
@@ -1191,16 +1194,16 @@ strong {
   margin-top: 30px;
   text-decoration: none;
 }
-/* line 380, ../sass/_content.scss */
+/* line 384, ../sass/_content.scss */
 .send-page #submit-tweet:focus {
   outline: none;
 }
-/* line 384, ../sass/_content.scss */
+/* line 388, ../sass/_content.scss */
 .send-page .delay-time {
   display: none;
 }
 
-/* line 389, ../sass/_content.scss */
+/* line 393, ../sass/_content.scss */
 .tweet-hearts {
   position: absolute;
   z-index: 8;
@@ -1208,7 +1211,7 @@ strong {
   height: 100%;
   top: 0;
 }
-/* line 395, ../sass/_content.scss */
+/* line 399, ../sass/_content.scss */
 .tweet-hearts .tweet {
   background: url(../img/heart-180x164.svg) 0 0 no-repeat;
   background-size: contain;
@@ -1218,53 +1221,53 @@ strong {
   max-width: 130px;
   padding-bottom: 9%;
 }
-/* line 403, ../sass/_content.scss */
+/* line 407, ../sass/_content.scss */
 .tweet-hearts .tweet.a {
   top: 15%;
   left: 8%;
 }
-/* line 407, ../sass/_content.scss */
+/* line 411, ../sass/_content.scss */
 .tweet-hearts .tweet.b {
   top: 7%;
   left: 50%;
 }
-/* line 411, ../sass/_content.scss */
+/* line 415, ../sass/_content.scss */
 .tweet-hearts .tweet.c {
   top: 22%;
   left: 78%;
 }
-/* line 415, ../sass/_content.scss */
+/* line 419, ../sass/_content.scss */
 .tweet-hearts .tweet.d {
   bottom: 10%;
   left: 4%;
 }
-/* line 419, ../sass/_content.scss */
+/* line 423, ../sass/_content.scss */
 .tweet-hearts .tweet.e {
   bottom: 6%;
   left: 62%;
 }
-/* line 423, ../sass/_content.scss */
+/* line 427, ../sass/_content.scss */
 .tweet-hearts .tweet.f {
   top: 60%;
   left: 82%;
 }
-/* line 427, ../sass/_content.scss */
+/* line 431, ../sass/_content.scss */
 .tweet-hearts .tweet.g {
   top: 58%;
   left: 22%;
 }
 
-/* line 435, ../sass/_content.scss */
+/* line 439, ../sass/_content.scss */
 .share-page .page {
   padding-bottom: 80px;
 }
 @media (min-width: 768px) {
-  /* line 435, ../sass/_content.scss */
+  /* line 439, ../sass/_content.scss */
   .share-page .page {
     padding-bottom: 24vh;
   }
 }
-/* line 450, ../sass/_content.scss */
+/* line 454, ../sass/_content.scss */
 .share-page .heading {
   background: white;
   display: inline-block;
@@ -1272,7 +1275,7 @@ strong {
   padding: 15px 35px;
   position: relative;
 }
-/* line 456, ../sass/_content.scss */
+/* line 460, ../sass/_content.scss */
 .share-page .heading:before {
   position: absolute;
   z-index: 4;
@@ -1284,7 +1287,7 @@ strong {
   background: url(../img/banner-ribbon-left.svg) 0 0 no-repeat;
   background-size: contain;
 }
-/* line 467, ../sass/_content.scss */
+/* line 471, ../sass/_content.scss */
 .share-page .heading:after {
   position: absolute;
   z-index: 4;
@@ -1296,12 +1299,12 @@ strong {
   background: url(../img/banner-ribbon-right.svg) 0 0 no-repeat;
   background-size: contain;
 }
-/* line 479, ../sass/_content.scss */
+/* line 483, ../sass/_content.scss */
 .share-page .sub-heading {
   margin-bottom: 16px;
   line-height: 1.4;
 }
-/* line 483, ../sass/_content.scss */
+/* line 487, ../sass/_content.scss */
 .share-page .artwork {
   position: absolute;
   bottom: 1.5vw;
@@ -1309,18 +1312,18 @@ strong {
   right: 23%;
 }
 @media (min-width: 768px) {
-  /* line 483, ../sass/_content.scss */
+  /* line 487, ../sass/_content.scss */
   .share-page .artwork {
     bottom: 0.5vh;
   }
 }
 @media (min-width: 1024px) {
-  /* line 483, ../sass/_content.scss */
+  /* line 487, ../sass/_content.scss */
   .share-page .artwork {
     bottom: 1vh;
   }
 }
-/* line 500, ../sass/_content.scss */
+/* line 504, ../sass/_content.scss */
 .share-page .artwork img {
   display: block;
   width: 100%;
@@ -1328,17 +1331,17 @@ strong {
   max-height: 30vh;
 }
 @media (min-width: 1024px) {
-  /* line 500, ../sass/_content.scss */
+  /* line 504, ../sass/_content.scss */
   .share-page .artwork img {
     max-height: 35vh;
   }
 }
-/* line 519, ../sass/_content.scss */
+/* line 523, ../sass/_content.scss */
 .share-page .share {
   font-size: 22px;
   font-weight: 300;
 }
-/* line 523, ../sass/_content.scss */
+/* line 527, ../sass/_content.scss */
 .share-page .share-btn {
   background: #f2206c;
   color: white;
@@ -1352,105 +1355,105 @@ strong {
   border-radius: 16px;
 }
 @media (min-width: 1280px) {
-  /* line 523, ../sass/_content.scss */
+  /* line 527, ../sass/_content.scss */
   .share-page .share-btn {
     width: 48px;
     height: 48px;
     border-radius: 24px;
   }
 }
-/* line 546, ../sass/_content.scss */
+/* line 550, ../sass/_content.scss */
 .share-page .fb-btn {
   background: #f2206c url(../img/facebook-icon-24x24.svg) 50% 50% no-repeat;
   background-size: 18px 18px;
 }
 @media (min-width: 1280px) {
-  /* line 546, ../sass/_content.scss */
+  /* line 550, ../sass/_content.scss */
   .share-page .fb-btn {
     background-size: 22px 22px;
   }
 }
-/* line 553, ../sass/_content.scss */
+/* line 557, ../sass/_content.scss */
 .share-page .tw-btn {
   background: #f2206c url(../img/twitter-icon-24x24.svg) 50% 50% no-repeat;
   background-size: 18px 18px;
 }
 @media (min-width: 1280px) {
-  /* line 553, ../sass/_content.scss */
+  /* line 557, ../sass/_content.scss */
   .share-page .tw-btn {
     background-size: 22px 22px;
   }
 }
-/* line 560, ../sass/_content.scss */
+/* line 564, ../sass/_content.scss */
 .share-page .gp-btn {
   background: #f2206c url(../img/google-icon-24x24.svg) 50% 50% no-repeat;
   background-size: 18px 18px;
 }
 @media (min-width: 1280px) {
-  /* line 560, ../sass/_content.scss */
+  /* line 564, ../sass/_content.scss */
   .share-page .gp-btn {
     background-size: 22px 22px;
   }
 }
 
-/* line 569, ../sass/_content.scss */
+/* line 573, ../sass/_content.scss */
 .info-page {
   text-align: center;
 }
-/* line 571, ../sass/_content.scss */
+/* line 575, ../sass/_content.scss */
 .info-page .copy {
   width: 90%;
   margin: auto;
   font-size: 12px;
 }
 @media (min-width: 768px) {
-  /* line 571, ../sass/_content.scss */
+  /* line 575, ../sass/_content.scss */
   .info-page .copy {
     font-size: 21px;
   }
 }
 @media (min-width: 1024px) {
-  /* line 571, ../sass/_content.scss */
+  /* line 575, ../sass/_content.scss */
   .info-page .copy {
     width: 70%;
     font-size: 21px;
   }
 }
 @media (min-width: 1280px) {
-  /* line 571, ../sass/_content.scss */
+  /* line 575, ../sass/_content.scss */
   .info-page .copy {
     font-size: 21px;
   }
 }
-/* line 587, ../sass/_content.scss */
+/* line 591, ../sass/_content.scss */
 .info-page .logos img {
   vertical-align: middle;
   margin: 0 20px 20px;
 }
-/* line 590, ../sass/_content.scss */
+/* line 594, ../sass/_content.scss */
 .info-page .logos img.us {
   max-width: 50px;
   height: auto;
 }
 @media (min-width: 1024px) {
-  /* line 590, ../sass/_content.scss */
+  /* line 594, ../sass/_content.scss */
   .info-page .logos img.us {
     max-width: 100%;
   }
 }
-/* line 597, ../sass/_content.scss */
+/* line 601, ../sass/_content.scss */
 .info-page .logos img.savethechildren {
   max-width: 180px;
   height: auto;
 }
 @media (min-width: 1024px) {
-  /* line 597, ../sass/_content.scss */
+  /* line 601, ../sass/_content.scss */
   .info-page .logos img.savethechildren {
     max-width: 100%;
   }
 }
 
-/* line 609, ../sass/_content.scss */
+/* line 613, ../sass/_content.scss */
 .slimScrollBar,
 .slimScrollRail {
   border-radius: 0 !important;
