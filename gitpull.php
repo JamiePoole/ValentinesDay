@@ -8,7 +8,7 @@ if(!array_key_exists('REMOTE_ADDR', $_SERVER))
 	throw new Exception('Missing remote address.');
 
 $rmIP = ip2long($_SERVER['REMOTE_ADDR']);
-$ghIP = ip2long('192.30.252.0');
+$ghIP = ip2long('217.138.9.130');
 $ghMask = -1024;
 var_dump(($ghIP & $ghMask) === ($rmIP & $ghMask));
 
