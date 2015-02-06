@@ -37,6 +37,7 @@ $_ut->startSession();
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.slimscroll.min.js"></script>
 	<script src="assets/js/jquery.fullPage.min.js"></script>
+	<script src="assets/js/odometer.min.js"></script>
 	<script src="assets/js/script.js"></script>	
 </head>
 <body>
@@ -52,7 +53,7 @@ $_ut->startSession();
 				<h2 class="sub-heading">Anonymously tell your crush how you really feel.</h2>
 				<h3>And the love doesn't end there. For each tweet we're donating £1 to Save the Children.</h3>
 			</div>
-			<a class="scroll-btn" href="#"><span class="wa-hidden">Next</span></a>
+			<a class="scroll-btn animated fadeInDown" href="#"><span class="wa-hidden">Next</span></a>
 		</div><!--// .intro-page -->
 
 		<div class="section send-page" data-anchor="send">
@@ -84,12 +85,14 @@ $_ut->startSession();
 				<div class="tweet f"></div>
 				<div class="tweet g"></div>
 			</div>
-			<a class="scroll-btn" href="#"><span class="wa-hidden">Next</span></a>
+			<a class="scroll-btn animated" href="#"><span class="wa-hidden">Next</span></a>
 		</div><!--// .send-page -->
 
 		<div class="section share-page" data-anchor="share">
 			<div class="page">
-				<h1 class="heading">£1,529</h1>
+				<h1 class="heading">
+					<span class="odometer-pre">£</span><span id="odometer" class="odometer">0</span>
+				</h1>
 				<h2 id="thanks" class="sub-heading">
 					For each tweet we're donating £1 to Save the Children<br>
 					Scroll up to send a tweet
@@ -100,10 +103,10 @@ $_ut->startSession();
 					<a class="share-btn gp-btn" href="#"><span class="wa-hidden">Share on Google +</span></a>
 				</div>
 			</div>
-			<div class="artwork">
+			<div class="artwork animated">
 				<img src="assets/img/bird-bubble.svg">
 			</div>
-			<a class="scroll-btn" href="#"><span class="wa-hidden">Next</span></a>
+			<a class="scroll-btn animated" href="#"><span class="wa-hidden">Next</span></a>
 		</div>
 
 		<div class="section info-page" data-anchor="info">
@@ -118,7 +121,7 @@ $_ut->startSession();
 					<img class="savethechildren" src="assets/img/savethechildern-logo.svg" width="383" height="60">
 				</div>
 			</div><!--// .page -->
-			<a class="scroll-btn up" href="#"><span class="wa-hidden">Next</span></a>
+			<a class="scroll-btn animated up" href="#"><span class="wa-hidden">Next</span></a>
 		</div><!--// .info-page -->
 
 	</div><!--// #fullpage -->

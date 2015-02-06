@@ -1,6 +1,6 @@
 
 .animated {
-  @include animation-duration(0.6s);
+  @include animation-duration(0.3s);
   @include animation-fill-mode(both);
   @include animation-timing-function($curve-anim);
 }
@@ -39,7 +39,7 @@
 @include keyframes(fadeInDown) {
   0% {
     opacity: 0;
-    @include translate3d(0, -50%, 0);
+    @include translate3d(0, -35%, 0);
   }
   100% {
     opacity: 1;
@@ -54,7 +54,7 @@
 @include keyframes(fadeInUp) {
   0% {
     opacity: 0;
-    @include translate3d(0, 100%, 0);
+    @include translate3d(0, 35%, 0);
   }
   100% {
     opacity: 1;
@@ -85,7 +85,7 @@
   }
   100% {
     opacity: 0;
-    @include translate3d(0, 100%, 0);
+    @include translate3d(0, 35%, 0);
   }
 }
 
@@ -99,7 +99,7 @@
   }
   100% {
     opacity: 0;
-    @include translate3d(0, -100%, 0);
+    @include translate3d(0, -35%, 0);
   }
 }
 

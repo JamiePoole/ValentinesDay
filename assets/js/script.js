@@ -17,14 +17,21 @@ jQuery(document).ready(function($) {
         scrollOverflow: true,
         // Events
         onLeave: function(index, nextIndex, direction){
-            if(index == 1){
-                $('.info-nav, .home-nav, .share-nav').show();
-                $('.info-nav, .share-nav').removeClass('fadeOutDown').addClass('fadeInUp');
+        	$('.scroll-btn').addClass('fadeOutUp');
+        	if(index == 2){
+        		
+        	}
+            if(index == 3){
+                
             }
         },
         afterLoad: function(anchorLink, index){
+        	$('.scroll-btn').removeClass('fadeOutUp').addClass('fadeInDown');
         	if(index == 2){
-            	$('#submit-tweet').removeClass('flyOff').addClass('animated fadeInDown');
+            	$('#submit-tweet').removeClass('flyOff fadeOutUp').addClass('animated fadeInDown');
+         	}
+         	if(index == 3){
+         		odometer.innerHTML = '1529';
          	}
         },
         afterRender: function(){
