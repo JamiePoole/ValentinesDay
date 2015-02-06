@@ -6,5 +6,7 @@ array_push($phrases,
 		'from behind',
 		'die',
 		'kill',
-		'murder'
+		'murder',
+		'white children',
+		'bottom inspector'
 );

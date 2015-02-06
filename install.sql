@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 05, 2015 at 12:16 PM
+-- Generation Time: Feb 06, 2015 at 01:27 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -46,7 +46,20 @@ CREATE TABLE IF NOT EXISTS `tweet_archive` (
   `dtime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Delivery Time (default Now)',
   `duser` text NOT NULL COMMENT 'Delivery Recipient',
   `dmessage` text NOT NULL COMMENT 'Message',
-  `dmedia` int(11) DEFAULT NULL
+  `delivered` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tweet_flagged`
+--
+
+CREATE TABLE IF NOT EXISTS `tweet_flagged` (
+`tid` int(11) NOT NULL COMMENT 'ID',
+  `dtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Delivery Time (default Now)',
+  `duser` text NOT NULL COMMENT 'Delivery Recipient',
+  `dmessage` text NOT NULL COMMENT 'Message'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -104,7 +117,13 @@ ALTER TABLE `log`
 -- Indexes for table `tweet_archive`
 --
 ALTER TABLE `tweet_archive`
- ADD UNIQUE KEY `tid` (`tid`), ADD KEY `dmedia` (`dmedia`);
+ ADD UNIQUE KEY `tid` (`tid`), ADD KEY `dmedia` (`delivered`), ADD KEY `delivered` (`delivered`);
+
+--
+-- Indexes for table `tweet_flagged`
+--
+ALTER TABLE `tweet_flagged`
+ ADD PRIMARY KEY (`tid`), ADD KEY `dtime` (`dtime`);
 
 --
 -- Indexes for table `tweet_queue`
@@ -133,6 +152,11 @@ ALTER TABLE `tweet_sender`
 --
 ALTER TABLE `log`
 MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tweet_flagged`
+--
+ALTER TABLE `tweet_flagged`
+MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID';
 --
 -- AUTO_INCREMENT for table `tweet_queue`
 --

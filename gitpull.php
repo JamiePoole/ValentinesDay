@@ -16,6 +16,11 @@ function validIP(){
 	return ($ghIP & $ghMask) === ($rmIP & $ghMask);
 }
 
+/* Check if request contains valid signature
+ * matched from the secret key attached to the
+ * webhook.
+ * @return		boolean
+ */
 function validSignature($secret, $payload){
 	if(!array_key_exists('HTTP_X_HUB_SIGNATURE', $_SERVER))
 		throw new Exception('Missing X-Hub-Signature header. Did you configure a secret token in hook settings?');
