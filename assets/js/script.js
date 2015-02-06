@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
 		//Scrolling
 		css3: true,
 		scrollingSpeed: 1000,
-        loopBottom: false,
+        loopBottom: true,
         loopTop: false,
         scrollOverflow: true,
         // Design
