@@ -28,6 +28,11 @@ function validSignature($secret, $payload){
 	return 'sha1=' . hash_hmac('sha1', $payload, $secret, false) === $_SERVER['HTTP_X_HUB_SIGNATURE'];
 }
 
+/* Process the Payload data sent by GitHub.
+ * Only the POST event is sent so no need to
+ * parse different event types.
+ * @return		object
+ */
 function processPayload(){
 	$type = $_SERVER['CONTENT_TYPE'];
 	if($type === 'application/x-www-form-urlencoded'):
