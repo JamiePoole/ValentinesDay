@@ -263,9 +263,10 @@ strong {
 .sub-heading {
 	font-size: 12px;
 	font-weight: 400;
+	margin-bottom: 4px;
 	@include respond-to(m) {
 		font-size: 24px;
-  		font-weight: 300;
+		margin-bottom: 10px;
 	}
 	@include respond-to(l) {
 		font-size: 30px;
@@ -279,6 +280,20 @@ strong {
 }
 
 .intro-page {
+	h3 {
+		font-size: 12px;
+		font-weight: 400;
+		@include respond-to(m) {
+			font-size: 17px;
+			font-weight: 300;
+		}
+		@include respond-to(l) {
+			font-size: 22px;
+		}
+		@include respond-to(xl) {
+			
+		}
+	}
 	.artwork {
 		width: 80%;
 		margin: 0 auto 16px;
@@ -287,6 +302,7 @@ strong {
 			
 		}
   		@include respond-to(m) {
+  			margin-bottom: 0;
 			max-width: 70vw;
 		}
 		@include respond-to(l) {

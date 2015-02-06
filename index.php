@@ -58,7 +58,8 @@ $_ut->startSession();
 			</div>
 			<div class="page">
 				<h1 class="heading">Tweet the love</h1>
-				<h2 class="sub-heading">Anonymously tell your crush how you really feel</h2>
+				<h2 class="sub-heading">Anonymously tell your crush how you really feel.</h2>
+				<h3>And the love doesn't end there. For each tweet we're donating £1 to Save the Children.</h3>
 			</div>
 		</div><!--// .intro-page -->
 
