@@ -452,7 +452,6 @@ textarea {
     opacity: 1;
     -moz-transform: none;
     -ms-transform: none;
-    -o-transform: none;
     -webkit-transform: none;
     transform: none;
   }
@@ -508,7 +507,6 @@ textarea {
     opacity: 1;
     -moz-transform: none;
     -ms-transform: none;
-    -o-transform: none;
     -webkit-transform: none;
     transform: none;
   }
@@ -1114,16 +1112,19 @@ p {
 
 /* line 319, ../sass/_content.scss */
 .send-page {
+  background-image: url("../img/heart-260x260.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
   text-align: center;
 }
-/* line 321, ../sass/_content.scss */
+/* line 325, ../sass/_content.scss */
 .send-page .form-control {
   position: relative;
   width: 50%;
   margin: 0 auto;
   clear: both;
 }
-/* line 326, ../sass/_content.scss */
+/* line 330, ../sass/_content.scss */
 .send-page .form-control:before {
   position: absolute;
   z-index: 4;
@@ -1134,7 +1135,7 @@ p {
   height: 87px;
   background: url(../img/form-ribbon-left-156x87.png) 0 0 no-repeat;
 }
-/* line 336, ../sass/_content.scss */
+/* line 340, ../sass/_content.scss */
 .send-page .form-control:after {
   position: absolute;
   z-index: 4;
@@ -1145,7 +1146,7 @@ p {
   height: 87px;
   background: url(../img/form-ribbon-right-156x87.png) 0 0 no-repeat;
 }
-/* line 346, ../sass/_content.scss */
+/* line 350, ../sass/_content.scss */
 .send-page .form-control #tweet-target,
 .send-page .form-control #tweet-message {
   font-family: "europa", sans-serif;
@@ -1157,18 +1158,18 @@ p {
   padding: 20px;
   font-size: 22px;
 }
-/* line 356, ../sass/_content.scss */
+/* line 360, ../sass/_content.scss */
 .send-page .form-control #tweet-target:focus,
 .send-page .form-control #tweet-message:focus {
   outline: none;
 }
-/* line 360, ../sass/_content.scss */
+/* line 364, ../sass/_content.scss */
 .send-page .form-control #tweet-target {
   height: 70px;
   padding-left: 50px;
   margin-bottom: 2px;
 }
-/* line 365, ../sass/_content.scss */
+/* line 369, ../sass/_content.scss */
 .send-page .form-control .form-prepend {
   color: #f2206c;
   position: absolute;
@@ -1182,7 +1183,7 @@ p {
   font-weight: 700;
   padding: 2px 0 0 0;
 }
-/* line 379, ../sass/_content.scss */
+/* line 383, ../sass/_content.scss */
 .send-page #submit-tweet {
   font-family: "europa", sans-serif;
   color: #f2206c;
@@ -1196,25 +1197,25 @@ p {
   margin-top: 30px;
   text-decoration: none;
 }
-/* line 392, ../sass/_content.scss */
+/* line 396, ../sass/_content.scss */
 .send-page .delay-time {
   display: none;
 }
 
-/* line 398, ../sass/_content.scss */
+/* line 402, ../sass/_content.scss */
 .share-page .heading {
   margin-bottom: 6px;
 }
-/* line 401, ../sass/_content.scss */
+/* line 405, ../sass/_content.scss */
 .share-page .sub-heading {
   margin-bottom: 36px;
 }
-/* line 404, ../sass/_content.scss */
+/* line 408, ../sass/_content.scss */
 .share-page .share {
   font-size: 22px;
   font-weight: 300;
 }
-/* line 408, ../sass/_content.scss */
+/* line 412, ../sass/_content.scss */
 .share-page .share-btn {
   color: #931658;
   font-weight: 700;
@@ -1222,32 +1223,32 @@ p {
   display: inline-block;
 }
 
-/* line 425, ../sass/_content.scss */
+/* line 429, ../sass/_content.scss */
 .info-page {
   background: white;
   color: #040201;
   text-align: left;
 }
-/* line 429, ../sass/_content.scss */
+/* line 433, ../sass/_content.scss */
 .info-page .pic {
   float: left;
   width: 28%;
   margin-left: 80px;
 }
-/* line 433, ../sass/_content.scss */
+/* line 437, ../sass/_content.scss */
 .info-page .pic img {
   border: 16px solid #ffc5c5;
   width: 100%;
   height: auto;
 }
-/* line 439, ../sass/_content.scss */
+/* line 443, ../sass/_content.scss */
 .info-page .copy {
   padding: 40px 80px 0 0;
   margin-left: 38%;
   font-size: 28px;
 }
 
-/* line 447, ../sass/_content.scss */
+/* line 451, ../sass/_content.scss */
 .slimScrollBar,
 .slimScrollRail {
   border-radius: 0 !important;

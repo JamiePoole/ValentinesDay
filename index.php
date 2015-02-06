@@ -1,6 +1,6 @@
 <?php
-require_once('require.php');
-$_ut->startSession();
+//require_once('require.php');
+//$_ut->startSession();
 ?>
 
 <!doctype html>
@@ -63,6 +63,13 @@ $_ut->startSession();
 		</div><!--// .intro-page -->
 
 		<div class="section send-page" data-anchor="send">
+			<div class="hearty"></div>
+			<div class="hearty"></div>
+			<div class="hearty"></div>
+			<div class="hearty"></div>
+			<div class="hearty"></div>
+			<div class="hearty"></div>
+			<div class="hearty"></div>
 			<div class="page">
 				<div id="tweet-form">
   					<!-- <nav class="idealsteps-nav"></nav> -->
@@ -74,9 +81,9 @@ $_ut->startSession();
 							<input type="text" id="tweet-target" name="tweet_target" placeholder="twitterhandle" />
 							<textarea id="tweet-message" name="tweet_message" placeholder="Roses are red, tweets are nice..." rows="3"></textarea>
 						</div>
-						<input type="submit" id="submit-tweet" value="Send" />
+						<button type="submit" id="submit-tweet"><span>Send</span></button>
 					</form>
-					<p class="delay-time"><?php $_ut->getDelay($_tq->time()); ?></p>
+					<p class="delay-time"><?php //$_ut->getDelay($_tq->time()); ?></p>
 				</div>
 				<div id="tweet-image"></div>
 			</div><!--// .page -->
