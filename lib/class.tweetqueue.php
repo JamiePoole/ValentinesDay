@@ -234,13 +234,14 @@ class tweetQueue {
 		 		if($msg['flag']):
 		 			$return->tweet['code'] = 9;
 		 			$return->tweet['status'] = 'Tweet flagged.';
+		 			$return->tweet['message'] = $msg['orig'];
 		 		else:
 			 		$return->tweet['code'] = 100;
 			 		$return->tweet['status'] = 'Tweet validated.';
+			 		$return->tweet['message'] = $msg['clean'];
 			 	endif;
 
 			 	$return->tweet['target'] = $target;
-			 	$return->tweet['message'] = $msg['clean'];
 			 	$return->tweet['flag'] = $msg['flag'];
 
 			} else {
