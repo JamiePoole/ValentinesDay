@@ -1,8 +1,22 @@
 
 .animated {
-  @include animation-duration(0.6s);
+  @include animation-duration(0.3s);
   @include animation-fill-mode(both);
-  @include animation-timing-function(ease);
+  @include animation-timing-function($curve-anim);
+}
+
+.cssanimations {
+  .fadeIn,
+  .fadeInUp,
+  .fadeInDown {
+    opacity: 0;
+  }
+  #submit-tweet {
+    opacity: 0;
+    &.flyOff {
+      opacity: 1;
+    }
+  } 
 }
 
 .fadeIn {
@@ -25,7 +39,7 @@
 @include keyframes(fadeInDown) {
   0% {
     opacity: 0;
-    @include translate3d(0, -100%, 0);
+    @include translate3d(0, -35%, 0);
   }
   100% {
     opacity: 1;
@@ -40,7 +54,7 @@
 @include keyframes(fadeInUp) {
   0% {
     opacity: 0;
-    @include translate3d(0, 100%, 0);
+    @include translate3d(0, 35%, 0);
   }
   100% {
     opacity: 1;
@@ -71,7 +85,7 @@
   }
   100% {
     opacity: 0;
-    @include translate3d(0, 100%, 0);
+    @include translate3d(0, 35%, 0);
   }
 }
 
@@ -85,7 +99,7 @@
   }
   100% {
     opacity: 0;
-    @include translate3d(0, -100%, 0);
+    @include translate3d(0, -35%, 0);
   }
 }
 
@@ -105,5 +119,41 @@
   }
   100% { 
     opacity: 1; 
+  }
+}
+
+.spinFly {
+  @include animation-name(spinFly);
+  @include animation-duration(2s);
+  @include animation-fill-mode(both);
+  @include animation-timing-function(linear);
+  @include animation-iteration-count(infinite);
+}
+
+@include keyframes(spinFly) {
+  0% {
+    @include rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    @include rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.flyOff {
+  @include animation-name(flyOff);
+  @include animation-duration(0.6s);
+  @include animation-fill-mode(both);
+  @include animation-timing-function(ease);
+  opacity: 1;
+}
+
+@include keyframes(flyOff) {
+  0% {
+    @include translate3d(0, 0, 0);
+  }
+  100% {
+    @include translate3d(1000%, 0, 0);
   }
 }
