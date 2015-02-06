@@ -2,7 +2,7 @@
 // This ready handler passes the $ alias in to avoid conflict with other libraries.
 // ------------------------------------------------------------
 jQuery(document).ready(function($) {
-		
+
 	$('#fullpage').fullpage({
 		//Navigation
         menu: true,
@@ -23,8 +23,8 @@ jQuery(document).ready(function($) {
             }
         },
         afterLoad: function(anchorLink, index){
-        	if(index == 1){
-            	//$('.info-nav, .share-nav').removeClass('fadeInUp').addClass('fadeOutDown');
+        	if(index == 2){
+            	$('#submit-tweet').removeClass('flyOff').addClass('animated fadeInDown');
          	}
         },
         afterRender: function(){
@@ -51,6 +51,7 @@ jQuery(document).ready(function($) {
 				$('#char-count').text('');
 				$('#tweet-message').attr('maxlength', 120);
 				$('#thanks').html('Aw, thanks for spreading the love.<br>You just helped us donate £1 to Save the Children.');
+				$('#submit-tweet').removeClass('animated fadeInDown').addClass('flyOff');
 				$.fn.fullpage.moveSectionDown();
 			}, 
 			error: function( jqXhr, textStatus, errorThrown ){ 

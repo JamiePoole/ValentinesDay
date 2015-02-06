@@ -67,7 +67,9 @@ $_ut->startSession();
 							<textarea id="tweet-message" maxlength="120" name="tweet_message" placeholder="Roses are red, tweets are nice..." rows="3"></textarea>
 						</div>
 						<div id="char-count"></div>
-						<button type="submit" id="submit-tweet"><span>Send</span></button>
+						<button type="submit" id="submit-tweet">
+							<span class="animated">Send</span>
+						</button>
 					</form>
 					<p class="delay-time"><?php //$_ut->getDelay($_tq->time()); ?></p>
 					<div id="response"></div>
