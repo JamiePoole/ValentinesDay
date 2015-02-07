@@ -1,6 +1,6 @@
 <?php
-$entries = $_at->getEntries(false, 'tweet_flagged', 'dtime', 'DESC');
-$count = $_at->getEntries(true, 'tweet_flagged');
+$entries = $_at->getEntries(false, 'tweet_archive', 'dtime', 'DESC');
+$count = $_at->getEntries(true, 'tweet_archive');
 ?>
 <section id="main-section">
 	<?php if($_at->hasMessages()): ?>
@@ -11,8 +11,8 @@ $count = $_at->getEntries(true, 'tweet_flagged');
 	<?php endif; ?>
 	<div id="content">
 		<header id="main-header">
-			<h1>Flagged Tweets</h1>
-			<p>This is an overview of Tweets <strong>that have been flagged inappropriate</strong>.</p>
+			<h1>Tweet Archive</h1>
+			<p>This is an archive of all Tweets <strong>submitted to the queue. These may or may not have been delivered</strong>.</p>
 		</header>
 		<section id="main-column">
 			<div id="entries" class="full-view">
@@ -25,7 +25,7 @@ $count = $_at->getEntries(true, 'tweet_flagged');
 							<th>Time</th>
 							<th>Recipient</th>
 							<th>Message</th>
-							<th>Actions</th>
+							<th>Status</th>
 						</tr>
 					</thead>
 					<?php foreach($entries as $tweet){
@@ -34,12 +34,12 @@ $count = $_at->getEntries(true, 'tweet_flagged');
 						echo '<td>'.$_at->getTime($tweet['dtime'], 1).'</td>';
 						echo '<td>'.$tweet['duser'].'</td>';
 						echo '<td>'.$tweet['dmessage'].'</td>';
-						echo '<td>Delete | Flag</td>';
+						echo '<td>'.$tweet['delivered'].'</td>';
 						echo '</tr>';
 					} ?>
 				</table>
 				<?php else: ?>
-					<p>There are no flagged Tweets.</p>
+					<p>There are no Tweets in the archive.</p>
 				<?php endif; ?>
 			</div>
 		</section>

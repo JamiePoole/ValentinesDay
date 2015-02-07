@@ -20,6 +20,9 @@ else:
 	$_ut->log((object)$return->error);
 endif;
 
-echo json_encode($return);
+if(isset($return->error))
+	throw new Exception($return->error['code'] . ': ' . $return->error['message']);
+else
+	echo json_encode($return);
 
 $_ut->closeSession();

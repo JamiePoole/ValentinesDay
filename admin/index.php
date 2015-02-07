@@ -46,7 +46,7 @@
 				<li><a href="index.php?page=dash">Home</a></li>
 				<li><a href="index.php?page=queue">Queue</a></li>
 				<li><a href="index.php?page=flagged">Flagged</a></li>
-				<li>Archive</li>
+				<li><a href="index.php?page=archive">Archive</a></li>
 				<li>Recipients</li>
 				<li>Senders</li>
 				<li>Log</li>
