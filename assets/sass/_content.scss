@@ -101,11 +101,13 @@ strong {
 }
 
 .scroll-btn {
+	@include transition(all 0.15s $curve-anim);
 	background: $hot-pink;
 	color: $white;
 	width: 24px;
 	height: 24px;
 	position: absolute;
+	bottom: 30px;
 	bottom: 6vh;
 	left: 50%;
 	z-index: 999;
@@ -117,6 +119,9 @@ strong {
 		width: 32px;
 		height: 32px;
 		border-radius: 16px;
+	}
+	&:hover {
+		background: $baby-blue;
 	}
 	&:before {
 		content: '';
@@ -153,9 +158,10 @@ strong {
 }
 
 .section {
-	background: $light-pink;
+	background-color: $light-pink;
 	text-align: center;
 	.page {
+		width: 86%;
 		width: 86vw;
 		margin: auto;
 		@include respond-to(s) {
@@ -233,6 +239,7 @@ strong {
 		}
   		@include respond-to(m) {
   			margin-bottom: 0;
+  			max-width: 600px;
 			max-width: 70vw;
 		}
 		@include respond-to(l) {
@@ -260,9 +267,6 @@ strong {
 			
 			}
 		}
-	}
-	.page {
-
 	}
 }
 
@@ -338,6 +342,14 @@ strong {
 	}
 }
 
+.no-svg {
+	.send-page {
+		#submit-tweet {
+			background: transparent url(../img/arrow-170x32.png) 50% 100% no-repeat;
+		}
+	}
+}
+
 .tweet-hearts {
   	position: absolute;
   	z-index: 8;
@@ -350,7 +362,7 @@ strong {
 		position: absolute;
 		width: 10%;
 		height: 0;
-		max-width: 130px;
+		max-width: 180px;
 		padding-bottom: 9%;
 		&.a {
 			top: 15%;
@@ -379,6 +391,16 @@ strong {
 		&.g {
 			top: 58%;
 			left: 22%;
+		}
+	}
+}
+
+.no-svg {
+	.tweet-hearts {
+		.tweet {
+			background: url(../img/heart-96x96.png) 0 0 no-repeat;
+			width: 96px;
+			height: 96px;
 		}
 	}
 }
@@ -434,6 +456,7 @@ strong {
 	}
 	.artwork {
 		position: absolute;
+		bottom: 0;
 		bottom: 1.5vw; // matches the bottom border
 		left: 20%;
 		right: 23%;
@@ -454,6 +477,7 @@ strong {
 			width: 100%;
 			height: auto;
 			max-height: 30vh;
+			margin: 0 auto;
 			@include respond-to(s) {
 			
 			}
@@ -473,8 +497,12 @@ strong {
 		font-weight: 300;
 	}
 	.share-btn {
-		background: $hot-pink;
+		@include transition(all 0.15s $curve-anim);
 		color: $white;
+		background-color: $hot-pink;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		border: 0 none;
 		position: relative;
 		display: inline-block;
 		text-decoration: none;
@@ -483,42 +511,80 @@ strong {
 		width: 32px;
 		height: 32px;
 		border-radius: 16px;
+		&:hover {
+			background-color: $baby-blue;
+		}
+		&:focus {
+			outline: none;
+		}
 		@include respond-to(m) {
-			
-		}
-		@include respond-to(l) {
-			
-		}
-		@include respond-to(xl) {
 			width: 48px;
 			height: 48px;
 			border-radius: 24px;
 		}
 	}
 	.fb-btn {
-		background: $hot-pink url(../img/facebook-icon-24x24.svg) 50% 50% no-repeat;
+		background-image: url(../img/facebook-icon-24x24.svg);
 		background-size: 18px 18px;
-		@include respond-to(xl) {
+		@include respond-to(m) {
 			background-size: 22px 22px;
 		}
 	}
 	.tw-btn {
-		background: $hot-pink url(../img/twitter-icon-24x24.svg) 50% 50% no-repeat;
+		background-image: url(../img/twitter-icon-24x24.svg);
 		background-size: 18px 18px;
-		@include respond-to(xl) {
+		@include respond-to(m) {
 			background-size: 22px 22px;
 		}
 	}
 	.gp-btn {
-		background: $hot-pink url(../img/google-icon-24x24.svg) 50% 50% no-repeat;
+		background-image: url(../img/google-icon-24x24.svg);
 		background-size: 18px 18px;
-		@include respond-to(xl) {
+		@include respond-to(m) {
 			background-size: 22px 22px;
 		}
 	}
 }
 
+.no-svg {
+	.share-page {
+		.heading {
+			margin-bottom: 95px;
+			&:before {
+		  		left: -68px;
+		  		bottom: -102px;
+		  		width: 127px;
+		  		height: 158px;
+		  		background: url(../img/banner-ribbon-left.png) 0 0 no-repeat;
+			}
+			&:after {
+		  		right: -68px;
+		  		bottom: -102px;
+		  		width: 127px;
+		  		height: 158px;
+		  		background: url(../img/banner-ribbon-right.png) 0 0 no-repeat;
+			}
+		}
+		.fb-btn {
+			background-image: url(../img/facebook-icon-24x24.png);
+		}
+		.tw-btn {
+			background-image: url(../img/twitter-icon-24x24.png);
+		}
+		.gp-btn {
+			background-image: url(../img/google-icon-24x24.png);
+		}
+		.artwork {
+			img {
+				width: auto;
+				max-width: 30%;
+			}
+		}
+	}
+}
+
 .info-page {
+	background: $white;
 	text-align: center;
 	.copy {
 		width: 90%;
@@ -554,6 +620,26 @@ strong {
 				}
 			}
 		}
+	}
+}
+
+.page-break {
+	@include box-sizing(content-box);
+	background: url(../img/page-break.svg) 50% 0 repeat-x;
+	background-size: 227px 49px;
+	position: absolute;
+	z-index: 999;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 49px;
+	border-bottom: 10px solid $white;
+	border-bottom: 1vw solid $white; // For the bottom page border
+}
+
+.no-svg {
+	.page-break {
+		background: url(../img/page-break.png) 50% 0 repeat-x;
 	}
 }
 

@@ -3,6 +3,19 @@
 // ------------------------------------------------------------
 jQuery(document).ready(function($) {
 
+	// SVG Fallbacks
+	if (!Modernizr.svg) {
+	    var imgs = document.getElementsByTagName('img');
+	    var svgExtension = /.*\.svg$/
+	    var l = imgs.length;
+	    for(var i = 0; i < l; i++) {
+	        if(imgs[i].src.match(svgExtension)) {
+	            imgs[i].src = imgs[i].src.slice(0, -3) + 'png';
+	            //console.log(imgs[i].src);
+	        }
+	    }
+	}
+
 	$('#fullpage').fullpage({
 		//Navigation
         menu: true,
@@ -33,9 +46,6 @@ jQuery(document).ready(function($) {
          	if(index == 3){
          		odometer.innerHTML = '1529';
          	}
-        },
-        afterRender: function(){
-			
         }
 	});
 
@@ -44,7 +54,13 @@ jQuery(document).ready(function($) {
 		$.fn.fullpage.moveSectionDown();
 	});
 
-	// Submit the form
+	
+	// Send Tweet Form
+	// ------------------------------------------------------------
+
+	// Validate the form
+
+	// Process the form
 	function processForm(e){ 
 		$.ajax({ 
 			url: 'post.php', 
@@ -84,5 +100,32 @@ jQuery(document).ready(function($) {
     		$('#char-count').text(characters + ' characters left');
   		}
     });
+
+
+    // Social Share Buttons
+	// ------------------------------------------------------------
+
+	// Facebook share
+    $('.fb-btn').on('click', function(e) {
+    	e.preventDefault();
+    	FB.ui({
+			method: 'share',
+		  	href: 'http://www.mytwittercrush.com',
+		}, function(response){});
+    });
+
+    // Twitter share
+
+
+    // Google+ share
+
+
+    // Google Analytics Events
+	// ------------------------------------------------------------
+
+	// Send tweet button
+    $('#submit-tweet').on('click', function() {
+  		ga('send', 'event', 'button', 'click', 'Form Submit');
+	});
 
 });

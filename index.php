@@ -7,9 +7,11 @@ $_ut->startSession();
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<title>My Twitter Crush</title>
+	<meta name="description" content="Anonymously tell your crush how you really feel. For each tweet we're donating £1 to Save the Children.">
+
 	<link rel="apple-touch-icon" sizes="57x57" href="assets/img/icons/apple-touch-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="assets/img/icons/apple-touch-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="assets/img/icons/apple-touch-icon-72x72.png">
@@ -30,17 +32,53 @@ $_ut->startSession();
 	<meta name="msapplication-TileImage" content="assets/img/icons/mstile-144x144.png">
 	<meta name="msapplication-config" content="assets/img/icons/browserconfig.xml">
 	<meta name="theme-color" content="#f2206c">
+
+	<meta property="og:title" content="My Twitter Crush">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://www.mytwittercrush.com">
+	<meta property="og:image" content="http://www.mytwittercrush.com/assets/img/icons/favicon-194x194.png">
+	<meta property="og:image:type" content="image/png">
+	<meta property="og:image:width" content="194">
+	<meta property="og:image:height" content="194">
+	<meta property="og:description" content="Anonymously tell your crush how you really feel. For each tweet we're donating £1 to Save the Children.">
+	<meta property="fb:app_id" content="1416098885351185">
+
 	<link type="text/css" href="assets/css/style.css" rel="stylesheet">
+	<script src="assets/js/respond.min.js"></script>
 	<script src="//use.typekit.net/sbe5mrr.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
 	<script src="assets/js/modernizr.custom.js"></script>
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.slimscroll.min.js"></script>
-	<script src="assets/js/jquery.fullPage.min.js"></script>
-	<script src="assets/js/odometer.min.js"></script>
-	<script src="assets/js/script.js"></script>	
 </head>
 <body>
+
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W2THBQ"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-W2THBQ');</script>
+	<!-- End Google Tag Manager -->
+
+	<!-- Facebook SDK -->
+	<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '1416098885351185',
+	      xfbml      : true,
+	      version    : 'v2.2'
+	    });
+	  };
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "//connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>
+	<!-- End Facebook SDK -->
 
 	<div id="fullpage">
 
@@ -72,7 +110,7 @@ $_ut->startSession();
 							<span class="animated">Send</span>
 						</button>
 					</form>
-					<p class="delay-time"><?php //$_ut->getDelay($_tq->time()); ?></p>
+					<p class="delay-time"><?php $_ut->getDelay($_tq->time()); ?></p>
 					<div id="response"></div>
 				</div>
 			</div>
@@ -89,6 +127,7 @@ $_ut->startSession();
 		</div><!--// .send-page -->
 
 		<div class="section share-page" data-anchor="share">
+			<div class="page-break"></div>
 			<div class="page">
 				<h1 class="heading">
 					<span class="odometer-pre">£</span><span id="odometer" class="odometer">0</span>
@@ -98,9 +137,20 @@ $_ut->startSession();
 					Scroll up to send a tweet
 				</h2>
 				<div class="share">
-					<a class="share-btn fb-btn" href="#"><span class="wa-hidden">Share on Facebook</span></a> 
-					<a class="share-btn tw-btn" href="#"><span class="wa-hidden">Share on Twitter</span></a> 
-					<a class="share-btn gp-btn" href="#"><span class="wa-hidden">Share on Google +</span></a>
+					<a class="share-btn fb-btn" href="">
+						<span class="wa-hidden">Share on Facebook</span>
+					</a> 
+					<a class="share-btn tw-btn" href="https://twitter.com/share" 
+						data-url="http://www.mytwittercrush.com" 
+						data-hashtags="somehashtag" 
+						onclick="javascript:window.open(this.href,
+  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;">
+						<span class="wa-hidden">Share on Twitter</span>
+					</a>
+					<a class="share-btn gp-btn" href="https://plus.google.com/share?url=http://www.mytwittercrush.com" onclick="javascript:window.open(this.href,
+  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+						<span class="wa-hidden">Share on Google +</span>
+					</a>
 				</div>
 			</div>
 			<div class="artwork animated">
@@ -118,7 +168,7 @@ $_ut->startSession();
 				</div>
 				<div class="logos">
 					<img class="us" src="assets/img/360i-logo.svg" width="80" height="80">
-					<img class="savethechildren" src="assets/img/savethechildern-logo.svg" width="383" height="60">
+					<img class="savethechildren" src="assets/img/savethechildern-logo.svg" height="60" width="383">
 				</div>
 			</div><!--// .page -->
 			<a class="scroll-btn animated up" href="#"><span class="wa-hidden">Next</span></a>
@@ -131,7 +181,28 @@ $_ut->startSession();
 	<div class="page-border bottom"></div>
 	<div class="page-border left"></div>
 
-	
+	<!-- Twitter Widgets  -->
+	<script>window.twttr = (function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0],
+	    t = window.twttr || {};
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s);
+	  js.id = id;
+	  js.src = "https://platform.twitter.com/widgets.js";
+	  fjs.parentNode.insertBefore(js, fjs);
+	  t._e = [];
+	  t.ready = function(f) {
+	    t._e.push(f);
+	  };
+	  return t;
+	}(document, "script", "twitter-wjs"));</script>
+	<!-- End Twitter Widgets  -->
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.slimscroll.min.js"></script>
+	<script src="assets/js/jquery.fullPage.min.js"></script>
+	<script src="assets/js/odometer.min.js"></script>
+	<script src="assets/js/script.js"></script>	
 
 </body>
 </html>
