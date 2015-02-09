@@ -62,15 +62,19 @@ class generateImage {
 		// Image Settings
 		$width = 700;
 		$height = 700;
-		$bgColor = 'FFC5C5';
+		$bgColor = 'FFC4C6';
 		$fontDirectory = 'assets/fonts/';
 		// Border Settings
 		$border = 9;
 		$borderColor = 'FFFFFF';
 		// Recipient Settings
-		$toColor = 'FC196B';
+		$toColor = 'f51e6b';
 		$toFontSize = 25;
 		$toGreeting = 'Dear';
+		// Sender Settings
+		$fromColor = 'f51e6b';
+		$fromFontSize = 16;
+		$fromMessage = 'an Admirer';
 		// Message Settings
 		$message = $this->parseMessage($this->message);
 		$msgColor = 'FFFFFF';
@@ -81,6 +85,7 @@ class generateImage {
 		// Footer
 		$footerLayer = ImageWorkshop::initVirginLayer($bgLayer->getWidth(), $bgLayer->getHeight());
 		$footerBird = ImageWorkshop::initFromPath('assets/img/shareable/footer-bird.png');
+		$footerFrom = ImageWorkshop::initTextLayer(strtoupper($fromMessage), $fontDirectory.'Proxima_Nova/PROXIMANOVA-SEMIBOLD.OTF', $fromFontSize, $fromColor, 0);
 		// Border
 		$borderLayer = ImageWorkshop::initVirginLayer($bgLayer->getWidth(), $bgLayer->getHeight());
 		$hBorder = ImageWorkshop::initVirginLayer($width, $border, $borderColor);
@@ -95,24 +100,23 @@ class generateImage {
 		$msgLayer = ImageWorkshop::initVirginLayer($bgLayer->getWidth(), $bgLayer->getHeight());
 		$msgText = ImageWorkshop::initTextLayer(strtoupper($message), $fontDirectory.'Proxima_Nova/PROXIMANOVA-SEMIBOLD.OTF', $msgFontSize, $msgColor, 0);
 
-		// Add Recipient
+		// Add Layers
+		// Recipient
 		$toLayer->addLayer(1, $toBackground, 0, 100 - ($toFontSize/2), 'MT');
 		$toLayer->addLayer(2, $toText, 0, 100, 'MT');
 		$toLayer->addLayer(3, $toLeftBorder, 0 - (($toBackground->getWidth()/2) + ($toLeftBorder->getWidth()/2)), 100 - ($toFontSize/2), 'MT');
 		$toLayer->addLayer(3, $toRightBorder, 0 - 1 + (($toBackground->getWidth()/2) + ($toLeftBorder->getWidth()/2)), 100 - ($toFontSize/2), 'MT');
-
 		// Add Message
 		$msgLayer->addLayer(1, $msgText, 0, -50 + ($msgText->getHeight() / (substr_count($message, "\n") + 1)), 'MM');
-
 		// Add Borders
 		$borderLayer->addLayer(1, $hBorder, 0, 0);
 		$borderLayer->addLayer(1, $hBorder, 0, 0, 'LB');
 		$borderLayer->addLayer(1, $vBorder, 0, 0);
 		$borderLayer->addLayer(1, $vBorder, 0, 0, 'RT');
-
 		// Add Footer
 		$footerLayer->addLayer(1, $footerBird, 0, 0, 'MB');
-
+		$footerLayer->addLayer(1, $footerFrom, $fromFontSize*5.5, $fromFontSize*5, 'RM');
+		
 		// Create Image
 		$bgLayer->addLayer(1, $footerLayer);
 		$bgLayer->addLayer(2, $toLayer);
