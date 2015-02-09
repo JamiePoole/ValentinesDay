@@ -118,7 +118,14 @@ strong {
 	@include respond-to(m) {
 		width: 32px;
 		height: 32px;
+		margin-left: -16px;
 		border-radius: 16px;
+	}
+	@include respond-to(l) {
+		width: 48px;
+		height: 48px;
+		margin-left: -24px;
+		border-radius: 24px;
 	}
 	&:hover {
 		background: $baby-blue;
@@ -140,6 +147,13 @@ strong {
 			border-right-width: 6px;
 			border-top-width: 8px;
 		}
+		@include respond-to(l) {
+			left: 15px;
+			top: 19px;
+			border-left-width: 9px;
+			border-right-width: 9px;
+			border-top-width: 13px;
+		}
 	}
 	&.up {
 		&:before {
@@ -152,6 +166,12 @@ strong {
 				border-left-width: 6px;
 				border-right-width: 6px;
 				border-bottom-width: 8px;
+			}
+			@include respond-to(l) {
+				top: 16px;
+				border-left-width: 9px;
+				border-right-width: 9px;
+				border-bottom-width: 13px;
 			}
 		}
 	}
@@ -169,12 +189,6 @@ strong {
 		}
 		@include respond-to(m) {
 			padding-bottom: 60px;
-		}
-		@include respond-to(l) {
-			
-		}
-		@include respond-to(xl) {
-		
 		}
 	}
 }
@@ -254,17 +268,8 @@ strong {
 			max-width: 65vh;
 			margin: 0 auto;
 			height: auto;
-			@include respond-to(s) {
-			
-			}
 	  		@include respond-to(m) {
 				max-width: none;
-			}
-			@include respond-to(l) {
-				
-			}
-			@include respond-to(xl) {
-			
 			}
 		}
 	}
