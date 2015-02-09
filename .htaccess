@@ -2,3 +2,7 @@
 	Order deny,allow
 	Deny from all
 </Files>
+<Files .*>
+	Order deny,allow
+	Deny from all
+</Files>
