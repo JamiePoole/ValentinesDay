@@ -63,7 +63,7 @@ class generateImage {
 		$width = 700;
 		$height = 700;
 		$bgColor = 'FFC5C5';
-		$fontDirectory = '../assets/fonts/';
+		$fontDirectory = 'assets/fonts/';
 		// Border Settings
 		$border = 9;
 		$borderColor = 'FFFFFF';
@@ -80,7 +80,7 @@ class generateImage {
 		$bgLayer = ImageWorkshop::initVirginLayer($width, $height, $bgColor);
 		// Footer
 		$footerLayer = ImageWorkshop::initVirginLayer($bgLayer->getWidth(), $bgLayer->getHeight());
-		$footerBird = ImageWorkshop::initFromPath('../assets/img/shareable/footer-bird.png');
+		$footerBird = ImageWorkshop::initFromPath('assets/img/shareable/footer-bird.png');
 		// Border
 		$borderLayer = ImageWorkshop::initVirginLayer($bgLayer->getWidth(), $bgLayer->getHeight());
 		$hBorder = ImageWorkshop::initVirginLayer($width, $border, $borderColor);
@@ -89,8 +89,8 @@ class generateImage {
 		$toLayer = ImageWorkshop::initVirginLayer($bgLayer->getWidth(), $bgLayer->getHeight());
 		$toText = ImageWorkshop::initTextLayer(strtoupper($toGreeting. ' ' . $this->recipient), $fontDirectory.'Proxima_Nova/PROXIMANOVA-REGULAR.OTF', $toFontSize, $toColor, 0, $borderColor);
 		$toBackground = ImageWorkshop::initVirginlayer($toText->getWidth() + ($toFontSize*2), $toFontSize*2, $borderColor);
-		$toLeftBorder = ImageWorkshop::initFromPath('../assets/img/shareable/to-bookend-left.png');
-		$toRightBorder = ImageWorkshop::initFromPath('../assets/img/shareable/to-bookend-right.png');
+		$toLeftBorder = ImageWorkshop::initFromPath('assets/img/shareable/to-bookend-left.png');
+		$toRightBorder = ImageWorkshop::initFromPath('assets/img/shareable/to-bookend-right.png');
 		// Message
 		$msgLayer = ImageWorkshop::initVirginLayer($bgLayer->getWidth(), $bgLayer->getHeight());
 		$msgText = ImageWorkshop::initTextLayer(strtoupper($message), $fontDirectory.'Proxima_Nova/PROXIMANOVA-SEMIBOLD.OTF', $msgFontSize, $msgColor, 0);
@@ -102,7 +102,7 @@ class generateImage {
 		$toLayer->addLayer(3, $toRightBorder, 0 - 1 + (($toBackground->getWidth()/2) + ($toLeftBorder->getWidth()/2)), 100 - ($toFontSize/2), 'MT');
 
 		// Add Message
-		$msgLayer->addLayer(1, $msgText, 0, -50, 'MM');
+		$msgLayer->addLayer(1, $msgText, 0, -50 + ($msgText->getHeight() / (substr_count($message, "\n") + 1)), 'MM');
 
 		// Add Borders
 		$borderLayer->addLayer(1, $hBorder, 0, 0);
@@ -123,8 +123,3 @@ class generateImage {
 	}
 
 }
-$gi = new generateImage();
-$gi->setDetails($_GET['user'], $_GET['message']);
-$gi->paintImage();
-header('Content-type: image/jpeg');
-imagejpeg($gi->paintImage(), null, 95);
