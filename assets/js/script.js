@@ -78,6 +78,8 @@ jQuery(document).ready(function($) {
 				$.fn.fullpage.moveSectionDown();
 			}, 
 			error: function( jqXhr, textStatus, errorThrown ){ 
+				console.error( jqXhr );
+				console.error( textStatus );
 				console.log( errorThrown );
 			} 
 		}); 

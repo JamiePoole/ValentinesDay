@@ -1,0 +1,118 @@
+html, body {
+	background: $white;
+	color: $black;
+	font-family: $special-font;
+	font-weight: 400;
+	line-height: 1.4;
+	font-smooth: always;
+  	-webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $special-font;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 1.1;
+}
+
+strong {
+	font-weight: 700;
+}
+
+.wa-hidden {
+	@include wa-hide();
+}
+
+#container {
+	width: 900px;
+	height: 100%;
+	margin: 0 auto;
+	padding: 1em;
+}
+
+#main-navigation {
+	width: 200px;
+	height: 100%;
+	float: left;
+	padding: 1em;
+	border-right: 1px solid $blue-grey;
+	ul {
+		list-style: none;
+	}
+}
+
+#main-section {
+	margin-left: 200px;
+	padding: 1em;
+	#messages {
+		padding: 1em;
+		margin-bottom: 1em;
+		background: $baby-blue;
+		.error {
+
+		}
+		.alert {
+
+		}
+		.success {
+
+		}
+	}
+
+	#content {
+		#main-header {
+			margin-bottom: 1em;
+			h1 {
+				font-size: 2em;
+				border-bottom: 1px solid $blue-grey;
+				margin-bottom: 0.5em;
+			}
+		}
+		.col {
+			float: left;
+			width: 49%;
+			margin-left: 1%;
+			&:first-of-type {
+				margin-left: 0;
+				margin-right: 1%;
+			}
+			.overview {
+				padding: 1em;
+				margin-bottom: 1em;
+				width: 100%;
+				border: 1px solid $blue-grey;
+			}
+		}
+		.title {
+			margin-bottom: 0.5em;
+		}
+		table {
+			width: 100%;
+			thead {
+				background: $blue-grey;
+			}
+			th, td {
+				padding: 0 0.5em;
+				border: 1px solid $white;
+			}
+			td {
+				&.index {
+					color: $baby-blue;
+					cursor: help;
+				}
+			}
+		}
+	}
+}
+
+.clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
