@@ -53,13 +53,13 @@ class sendTweet {
 				// Generate Tweet
 				$tweet = '@'.$recipient.' '.$message;
 				$param = array('status'	=> $tweet);
-				
+
 				// If Image Generated Upload and add to Parameters
 				if(isset($file['filename']) && isset($file['filetype'])){
 					$media = $twitter->upload('media/upload', array('media' => $dir.$file['filename'].'.'.$file['filetype']));
 					if(isset($media->media_id_string)){
 						$mediaID = $media->media_id_string;
-						$param['media_ids'] => $mediaID;
+						$param['media_ids'] = $mediaID;
 					}
 				}
 
