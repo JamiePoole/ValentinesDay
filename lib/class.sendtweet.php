@@ -32,7 +32,7 @@ class sendTweet {
 		// Get values
 		$recipient = filter_var($recipient, FILTER_SANITIZE_STRING);
 		$message = filter_var($message, FILTER_SANITIZE_STRING);
-		// $token = $_SESSION['token'];
+		$token = $this->ut->getSession();
 
 		// Twitter Connection
 		$twitter = new TwitterOAuth($this->consumer_key, $this->consumer_secret, $this->access_token, $this->access_secret);
@@ -41,29 +41,27 @@ class sendTweet {
 		if(isset($recipient) && trim($recipient) != ''){
 			if(isset($message) && trim($message) != ''){
 				// Generate Image
-				//$dir = '/path/to/images/';
-				//$this->gi->setDetails($recipient, $message);
-				//$image = $this->gi->paintImage();
-				//$file = $this->gi->saveImage($image, $dir, $token);
+				$dir = '../images/';
+				$this->gi->setDetails($recipient, $message);
+				$image = $this->gi->paintImage();
+				$file = $this->gi->saveImage($image, $dir, $token);
 
 				// Generate Tweet
 				$tweet = '@'.$recipient.' '.$message;
 				
 				// If Image Generated Upload and add to Parameters
-				// if(isset($file['filename'] && isset($file['filetype'])){
-				// 	$media = $twitter->upload('media/upload', array('media' => $dir.$file['filename'].'.'.$file['filetype']));
-				// 	$param = array(
-				// 		'status'	=> $tweet,
-				// 		'media_ids'	=> $media->media_id_string,
-				// 	);
-				// } else {
-				// 	// If not, just send Tweet as status
-				// 	$param = array(
-				// 		'status'	=> $tweet,
-				// 	);
-				// }
-				// remove once image ready
-				$param = array('status'	=> $tweet);
+				if(isset($file['filename'] && isset($file['filetype'])){
+					$media = $twitter->upload('media/upload', array('media' => $dir.$file['filename'].'.'.$file['filetype']));
+					$param = array(
+						'status'	=> $tweet,
+						'media_ids'	=> $media->media_id_string,
+					);
+				} else {
+					// If not, just send Tweet as status
+					$param = array(
+						'status'	=> $tweet,
+					);
+				}
 
 				// Send Tweet
 				$twitter->post('statuses/update', $param);
@@ -120,4 +118,3 @@ class sendTweet {
 	}
 
 }
-var_dump($_SESSION);

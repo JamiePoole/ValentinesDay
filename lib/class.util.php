@@ -29,6 +29,15 @@ class util {
 		session_write_close();
 	}
 
+	public function getSession(){
+		if(isset($this->token))
+			return $this->token;
+		elseif(isset($_SESSION['token'])
+			return $_SESSION['token'];
+		else
+			return false;
+	}
+
 	public function checkSession($token){
 		if((isset($token) && isset($_SESSION['token']))
 		 && ($token == $_SESSION['token'])):
