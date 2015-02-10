@@ -123,7 +123,22 @@ class generateImage {
 		$bgLayer->addLayer(2, $msgLayer);
 		$bgLayer->addLayer(3, $borderLayer);
 
+		// Resize
+		$bgLayer->resizeInPixel(440, null, true);
+
 		return $bgLayer->getResult('FFFFFF');
+	}
+
+	public function saveImage($image, $token){
+		$filename = md5(uniqid($token, true));
+		$filetype = 'png';
+		$createFolders = false;
+		$backgroundColor = null;
+		$imageQuality = 95;
+
+		$image->save($dir, $filename.'.'.$filetype, $createFolders, $backgroundColor, $imageQuality);
+
+		return $filename;
 	}
 
 }

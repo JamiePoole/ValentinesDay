@@ -33,6 +33,9 @@ class sendTweet {
 		$twitter = new TwitterOAuth($this->consumer_key, $this->consumer_secret, $this->access_token, $this->access_secret);
 		if(isset($recipient) && trim($recipient) != ''){
 			if(isset($message) && trim($message) != ''){
+				$this->gi->setDetails($recipient, $message);
+				$image = $this->gi->paintImage();
+				$filename = $this->gi->saveImage($image, $token);
 				$tweet = '@'.$recipient.' '.$message;
 				$twitter->post('statuses/update', array('status' => $tweet));
 				if(!isset($twitter->errors)){
