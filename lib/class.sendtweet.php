@@ -59,7 +59,7 @@ class sendTweet {
 
 				// Generate Image
 				$dir = dirname(dirname(__FILE__)) . '/images/';
-				$this->gi->setDetails($fname, $message);
+				$this->gi->setDetails($name, $message);
 				$image = $this->gi->paintImage();
 				$file = $this->gi->saveImage($image, $dir, $token);
 
