@@ -1,5 +1,41 @@
 
-<?php require_once('require.php'); ?>
+<?php require_once('require.php');
+
+// Run actions
+if(isset($_GET['action']) && !empty($_GET['action'])){
+	// DELETE
+	if($_GET['action'] == 'delete'){
+		// Check variables
+		if(isset($_GET['page']) && isset($_GET['id']) && ctype_digit($_GET['id'])){
+			switch($_GET['page']){
+				case 'queue':
+					$id = 'tid';
+				break;
+				case 'flagged':
+					$id = 'tid';
+				break;
+				case 'archive':
+					$id = 'tid';
+				break;
+				case 'recipients':
+					$id = 'uid';
+				break;
+				case 'senders':
+					$id = 'id';
+				break;
+				case 'log':
+					$id = 'eid';
+				break;
+				default:
+					return;
+				break;
+			}
+			$_at->deleteEntry($_GET['page'], )
+		}
+
+	}
+}
+?>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -47,10 +83,10 @@
 				<li><a href="index.php?page=queue">Queue</a></li>
 				<li><a href="index.php?page=flagged">Flagged</a></li>
 				<li><a href="index.php?page=archive">Archive</a></li>
-				<li>Recipients</li>
-				<li>Senders</li>
-				<li>Log</li>
-				<li>Statistics</li>
+				<li><a href="index.php?page=recipients">Recipients</a></li>
+				<li><a href="index.php?page=senders">Senders</a></li>
+				<li><a href="index.php?page=log">Log</a></li>
+				<li><a href="index.php?page=stats">Statistics</a></li>
 			</ul>
 		</nav>
 		<?php

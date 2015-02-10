@@ -49,6 +49,25 @@ class adminTasks {
 		return (isset($rows)) ? $rows : false;
 	}
 
+	/* Delete an entry from the database
+	 * @param 	$table 		string
+	 *			$column 	string 		WHERE
+	 *			$id 		int 		Identifier
+	 *
+	 * @return  $success 	boolean
+	 */
+	public function deleteEntry($table, $column, $id){
+		try {
+			$sql = "DELETE FROM `$table` WHERE `$column` = `$id`";
+			$result = $this->db->prepare($sql);
+			$result->execute();
+			return true;
+		} catch(PDOException $e){
+			$this->ut->log($e);
+			return false;
+		}
+	}
+
 	public function getStatistics(){
 		// TO DO
 	}
