@@ -40,9 +40,9 @@ class sendTweet {
 		if(isset($recipient) && trim($recipient) != ''){
 			if(isset($message) && trim($message) != ''){
 				// Generate Image
-				$this->gi->setDetails($recipient, $message);
-				$image = $this->gi->paintImage();
-				$filename = $this->gi->saveImage($image, $token);
+				//$this->gi->setDetails($recipient, $message);
+				//$image = $this->gi->paintImage();
+				//$filename = $this->gi->saveImage($image, $token);
 
 				// Generate Tweet
 				$tweet = '@'.$recipient.' '.$message;
