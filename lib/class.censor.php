@@ -124,7 +124,7 @@ class CensorWords
 	 */
 	private function checkPhrases($string){
 		foreach($this->phrases as $phrase){
-			$flag = (stripos($string, $phrase) === false) ? false : true;
+			$flag = (preg_match('/\b'.$phrase.'\b/', $string, $match) === 1) ? true : false;
 			if($flag) return true;
 		}
 		return false;
