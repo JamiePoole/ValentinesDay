@@ -40,13 +40,32 @@ class sendTweet {
 		if(isset($recipient) && trim($recipient) != ''){
 			if(isset($message) && trim($message) != ''){
 				// Generate Image
+				//$dir = '/path/to/images/';
 				//$this->gi->setDetails($recipient, $message);
 				//$image = $this->gi->paintImage();
-				//$filename = $this->gi->saveImage($image, $token);
+				//$file = $this->gi->saveImage($image, $dir, $token);
 
 				// Generate Tweet
 				$tweet = '@'.$recipient.' '.$message;
-				$twitter->post('statuses/update', array('status' => $tweet));
+				
+				// If Image Generated Upload and add to Parameters
+				// if(isset($file['filename'] && isset($file['filetype'])){
+				// 	$media = $twitter->upload('media/upload', array('media' => $dir.$file['filename'].'.'.$file['filetype']));
+				// 	$param = array(
+				// 		'status'	=> $tweet,
+				// 		'media_ids'	=> $media->media_id_string,
+				// 	);
+				// } else {
+				// 	// If not, just send Tweet as status
+				// 	$param = array(
+				// 		'status'	=> $tweet,
+				// 	);
+				// }
+				// remove once image ready
+				$param = array('status'	=> $tweet);
+
+				// Send Tweet
+				$twitter->post('statuses/update', $param);
 
 				// Check for Twitter Response
 				if(!isset($twitter->errors)){

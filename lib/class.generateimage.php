@@ -136,9 +136,13 @@ class generateImage {
 		$backgroundColor = null;
 		$imageQuality = 95;
 
-		$image->save($dir, $filename.'.'.$filetype, $createFolders, $backgroundColor, $imageQuality);
+		try {
+			$image->save($dir, $filename.'.'.$filetype, $createFolders, $backgroundColor, $imageQuality);
+		} catch(Exception $e){
+			return $e;
+		}
 
-		return $filename;
+		return array('filename' => $filename, 'filetype' => $filetype);
 	}
 
 }
