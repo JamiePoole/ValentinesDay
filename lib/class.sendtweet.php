@@ -50,7 +50,7 @@ class sendTweet {
 				$tweet = '@'.$recipient.' '.$message;
 				
 				// If Image Generated Upload and add to Parameters
-				if(isset($file['filename'] && isset($file['filetype'])){
+				if(isset($file['filename']) && isset($file['filetype'])){
 					$media = $twitter->upload('media/upload', array('media' => $dir.$file['filename'].'.'.$file['filetype']));
 					$param = array(
 						'status'	=> $tweet,
