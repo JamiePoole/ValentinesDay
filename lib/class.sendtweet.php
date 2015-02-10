@@ -1,5 +1,7 @@
 <?php
-require('twitteroauth/twitteroauth.php');
+require('twitteroauth/autoloader.php');
+use Abraham\TwitterOAuth\TwitterOAuth;
+
 class sendTweet {
 
 	protected static $instance;
