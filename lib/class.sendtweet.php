@@ -28,22 +28,35 @@ class sendTweet {
 	}
 
 	public function postTweet($recipient, $message){
+		// Get values
 		$recipient = filter_var($recipient, FILTER_SANITIZE_STRING);
 		$message = filter_var($message, FILTER_SANITIZE_STRING);
+		// $token = $_SESSION['token'];
+
+		// Twitter Connection
 		$twitter = new TwitterOAuth($this->consumer_key, $this->consumer_secret, $this->access_token, $this->access_secret);
+		
+		// Validate values
 		if(isset($recipient) && trim($recipient) != ''){
 			if(isset($message) && trim($message) != ''){
+				// Generate Image
 				$this->gi->setDetails($recipient, $message);
 				$image = $this->gi->paintImage();
 				$filename = $this->gi->saveImage($image, $token);
+
+				// Generate Tweet
 				$tweet = '@'.$recipient.' '.$message;
 				$twitter->post('statuses/update', array('status' => $tweet));
+
+				// Check for Twitter Response
 				if(!isset($twitter->errors)){
+					// Success
 					$this->ut->log((object)array(
 						'code'	=> 103,
 						'message' => 'Tweet "' . $message . '" sent successfully to '. $recipient
 					));
 				} else {
+					// Fail
 					foreach($twitter->errors as $error){
 						$this->ut->log((object)array(
 							'code'	=> $error->code,
@@ -53,6 +66,7 @@ class sendTweet {
 				}
 			}
 		} else {
+			// Validation Fail
 			$this->ut->log((object)array(
 				'code'	=> 3,
 				'message' => 'Tweet failed. No recipient specified'
