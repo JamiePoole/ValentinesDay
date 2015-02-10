@@ -137,7 +137,7 @@ $counts['log'] = $_at->getEntries(true, 'log');
 					</thead>
 					<?php foreach($log as $error){
 						echo '<tr>';
-						echo '<td class="index" title="'.$error['message'].'">'.$error['code'].'</td>';
+						echo '<td class="index" title="'.htmlspecialchars($error['message']).'">'.$error['code'].'</td>';
 						echo '<td>'.$_at->getTime($error['etime'], 1).'</td>';
 						echo '<td>'.$error['file'].'</td>';
 						echo '</tr>';
