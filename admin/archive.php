@@ -3,12 +3,6 @@ $entries = $_at->getEntries(false, 'tweet_archive', 'dtime', 'DESC');
 $count = $_at->getEntries(true, 'tweet_archive');
 ?>
 <section id="main-section">
-	<?php if($_at->hasMessages()): ?>
-		<div id="messages">
-			<h3>Message Title</h3>
-			<p>Message content and description of error/notice.</p>
-		</div>
-	<?php endif; ?>
 	<div id="content">
 		<header id="main-header">
 			<h1>Tweet Archive</h1>

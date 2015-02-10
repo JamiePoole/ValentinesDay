@@ -3,12 +3,6 @@ $entries = $_at->getEntries(false, 'tweet_flagged', 'dtime', 'DESC');
 $count = $_at->getEntries(true, 'tweet_flagged');
 ?>
 <section id="main-section">
-	<?php if($_at->hasMessages()): ?>
-		<div id="messages">
-			<h3>Message Title</h3>
-			<p>Message content and description of error/notice.</p>
-		</div>
-	<?php endif; ?>
 	<div id="content">
 		<header id="main-header">
 			<h1>Flagged Tweets</h1>

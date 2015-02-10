@@ -14,12 +14,6 @@ $counts['senders'] = $_at->getEntries(true, 'tweet_sender');
 $counts['log'] = $_at->getEntries(true, 'log');
 ?>
 <section id="main-section">
-	<?php if($_at->hasMessages()): ?>
-		<div id="messages">
-			<h3>Message Title</h3>
-			<p>Message content and description of error/notice.</p>
-		</div>
-	<?php endif; ?>
 	<div id="content">
 		<header id="main-header">
 			<h1>Dashboard</h1>

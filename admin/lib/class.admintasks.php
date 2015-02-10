@@ -5,10 +5,12 @@ class adminTasks {
 
 	private $db;
 	private $ut;
+	private $messages;
 
 	public function __construct($db, $ut){
 		$this->db = $db;
 		$this->ut = $ut;
+		$this->messages = array();
 	}
 
 	public static function getInstance(dbConnection $db, util $ut){
@@ -58,7 +60,7 @@ class adminTasks {
 	 */
 	public function deleteEntry($table, $column, $id){
 		try {
-			$sql = "DELETE FROM `$table` WHERE `$column` = `$id`";
+			$sql = "DELETE FROM `$table` WHERE `$column` = $id";
 			$result = $this->db->prepare($sql);
 			$result->execute();
 			return true;
@@ -100,8 +102,21 @@ class adminTasks {
 		return $return;
 	}
 
+	public function setMessages($messages){
+		$old = $this->messages;
+		$old['title'] = $messages['title'];
+		$old['message'] = $messages['message'];
+		$this->messages = $old;
+	}
+
 	public function hasMessages(){
-		// TO DO
+		if(!empty($this->messages))
+			return true;
+		return false;
+	}
+
+	public function getMessages(){
+		return $this->messages;
 	}
 
 

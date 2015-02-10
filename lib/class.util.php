@@ -60,10 +60,17 @@ class util {
 		 * string $file;
 		 * int $line;
 		 */
-		$code = (isset($e->code)) ? $e->code : null;
-		$message = (isset($e->message)) ? $e->message : null;
-		$file = (isset($e->file)) ? $e->file : null;
-		$line = (isset($e->line)) ? $e->line : null;
+		if($e instanceof PDOException){
+			$code = $e->getCode();
+			$message = $e->getMessage();
+			$file = $e->getFile();
+			$line = $e->getLine();
+		} else {
+			$code = (isset($e->code)) ? $e->code : null;
+			$message = (isset($e->message)) ? $e->message : null;
+			$file = (isset($e->file)) ? $e->file : null;
+			$line = (isset($e->line)) ? $e->line : null;
+		}
 
 		try {
 			$sql = "INSERT INTO `log` (`eid`, `code`, `message`, `file`, `line`) VALUES (NULL, '$code', '$message', '$file', '$line')";
