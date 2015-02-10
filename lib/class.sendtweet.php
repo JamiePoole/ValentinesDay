@@ -46,7 +46,7 @@ class sendTweet {
 			if(isset($message) && trim($message) != ''){
 				// Get User
 				$user = $this->getUser($recipient);
-				$fname = $user['name'];
+				$fname = (isset($user->name)) ? $user->name : $recipient;
 
 				// Generate Image
 				$dir = dirname(dirname(__FILE__)) . '/images/';
@@ -108,7 +108,7 @@ class sendTweet {
 			$user_object = $twitter->get('users/show', array('screen_name' => $user));
 			if(!isset($twitter->errors)){
 				$this->tweet_data->saveUser($user, $user_object);
-				return json_decode($user_object);
+				return $user_object;
 			} else {
 				foreach($twitter->errors as $error){
 					$this->ut->log((object)array(
