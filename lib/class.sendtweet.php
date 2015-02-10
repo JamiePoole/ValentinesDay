@@ -44,9 +44,13 @@ class sendTweet {
 		// Validate values
 		if(isset($recipient) && trim($recipient) != ''){
 			if(isset($message) && trim($message) != ''){
+				// Get User
+				$user = $this->getUser($recipient);
+				$fname = $user['name'];
+
 				// Generate Image
 				$dir = dirname(dirname(__FILE__)) . '/images/';
-				$this->gi->setDetails($recipient, $message);
+				$this->gi->setDetails($fname, $message);
 				$image = $this->gi->paintImage();
 				$file = $this->gi->saveImage($image, $dir, $token);
 
@@ -104,6 +108,7 @@ class sendTweet {
 			$user_object = $twitter->get('users/show', array('screen_name' => $user));
 			if(!isset($twitter->errors)){
 				$this->tweet_data->saveUser($user, $user_object);
+				return json_decode($user_object);
 			} else {
 				foreach($twitter->errors as $error){
 					$this->ut->log((object)array(
@@ -113,6 +118,8 @@ class sendTweet {
 				}
 			}
 		}
+
+		return false;
 	}
 
 	public static function getInstance(tweetData $td, util $ut, generateImage $gi){
