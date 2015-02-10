@@ -75,7 +75,7 @@ class sendTweet {
 					// Success
 					$this->ut->log((object)array(
 						'code'	=> 103,
-						'message' => 'Tweet "' . $message . '" sent successfully to '. $recipient . $fileDesc;
+						'message' => 'Tweet "' . $message . '" sent successfully to '. $recipient . $fileDesc,
 					));
 				} else {
 					// Fail
