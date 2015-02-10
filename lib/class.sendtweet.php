@@ -12,8 +12,9 @@ class sendTweet {
 	private $tweet_data;
 	private $ut;
 
-	public function __construct(tweetData $td){
+	public function __construct(tweetData $td, util $ut){
 		$this->tweet_data = $td;
+		$this->ut = $ut;
 	}
 
 	public function setOAuth($ckey, $csec, $atok, $asec){
@@ -112,9 +113,9 @@ class sendTweet {
 		}
 	}
 
-	public static function getInstance(tweetData $td){
+	public static function getInstance(tweetData $td, util $ut){
 		if(!self::$instance)
-			self::$instance = new self($td);
+			self::$instance = new self($td, $ut);
 		return self::$instance;
 	}
 
