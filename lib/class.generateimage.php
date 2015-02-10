@@ -126,7 +126,7 @@ class generateImage {
 		// Resize
 		$bgLayer->resizeInPixel(440, null, true);
 
-		return $bgLayer->getResult('FFFFFF');
+		return $bgLayer;
 	}
 
 	public function saveImage($image, $token){
