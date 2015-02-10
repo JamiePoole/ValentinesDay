@@ -32,6 +32,14 @@ class sendTweet {
 			$this->access_secret = $asec;
 	}
 
+	private function parseName($name, $handle){
+		$name = explode(' ', $name);
+		$fname = $name[0];
+		if(preg_match("/^[A-Za-z0-9\-]+$/", $fname) === 1)
+			return $fname;
+		return $handle;
+	}
+
 	public function postTweet($recipient, $message){
 		// Get values
 		$recipient = filter_var($recipient, FILTER_SANITIZE_STRING);
@@ -46,7 +54,8 @@ class sendTweet {
 			if(isset($message) && trim($message) != ''){
 				// Get User
 				$user = $this->getUser($recipient);
-				$fname = (isset($user->name)) ? $user->name : $recipient;
+				// Parse first name - if fail, use @handle
+				$name = (($user !== false) ? $this->parseName($user->name, $recipient) : $recipient);
 
 				// Generate Image
 				$dir = dirname(dirname(__FILE__)) . '/images/';
