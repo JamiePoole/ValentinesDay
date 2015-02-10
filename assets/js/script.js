@@ -65,6 +65,12 @@ jQuery(document).ready(function($) {
 
 		s.append( loadedBirds );
 
+		// Timings
+		var tHead 		= 500,
+			tWing  		= 1000,
+			tHeart 		= 500;
+
+		// Elements
 		var LoveHeart 	= s.select('#LoveHeart'),
 			LeftHead 	= s.select('#LeftHead'),
 			RightHead 	= s.select('#RightHead'),
@@ -75,9 +81,9 @@ jQuery(document).ready(function($) {
 			LeftWing	= s.select('#LeftWing'),
 			RightWing 	= s.select('#RightWing');
 
-		// LeftHead.animate({
-		// 	transform: 't0,150'
-		// }, 500, mina.ease );
+		LeftHead.animate({
+			transform: 't0,150'
+		}, tHead, mina.ease );
 
 	});
 

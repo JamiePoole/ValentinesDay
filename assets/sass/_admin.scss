@@ -45,24 +45,24 @@ strong {
 	}
 }
 
+#messages {
+	padding: 1em;
+	margin-bottom: 1em;
+	background: $baby-blue;
+	.error {
+
+	}
+	.alert {
+
+	}
+	.success {
+
+	}
+}
+
 #main-section {
 	margin-left: 200px;
 	padding: 1em;
-	#messages {
-		padding: 1em;
-		margin-bottom: 1em;
-		background: $baby-blue;
-		.error {
-
-		}
-		.alert {
-
-		}
-		.success {
-
-		}
-	}
-
 	#content {
 		#main-header {
 			height: 100%;

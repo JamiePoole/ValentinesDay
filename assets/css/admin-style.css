@@ -921,15 +921,16 @@ strong {
 }
 
 /* line 48, ../sass/_admin.scss */
-#main-section {
-  margin-left: 200px;
-  padding: 1em;
-}
-/* line 51, ../sass/_admin.scss */
-#main-section #messages {
+#messages {
   padding: 1em;
   margin-bottom: 1em;
   background: #5facf9;
+}
+
+/* line 63, ../sass/_admin.scss */
+#main-section {
+  margin-left: 200px;
+  padding: 1em;
 }
 /* line 67, ../sass/_admin.scss */
 #main-section #content #main-header {
