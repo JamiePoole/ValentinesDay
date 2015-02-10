@@ -120,3 +120,4 @@ class sendTweet {
 	}
 
 }
+var_dump($_SESSION);
