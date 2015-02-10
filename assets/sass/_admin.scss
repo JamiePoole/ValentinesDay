@@ -65,6 +65,8 @@ strong {
 
 	#content {
 		#main-header {
+			height: 100%;
+			overflow: auto;
 			margin-bottom: 1em;
 			h1 {
 				font-size: 2em;

@@ -48,6 +48,7 @@ $_ut->startSession();
 	<script src="//use.typekit.net/sbe5mrr.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
 	<script src="assets/js/modernizr.custom.js"></script>
+	<script src="assets/js/snap.svg-min.js"></script>
 </head>
 <body>
 
@@ -84,12 +85,14 @@ $_ut->startSession();
 
 		<div class="section intro-page" data-anchor="intro">
 			<div class="artwork">
-				<img src="assets/img/intro-birds.svg">
+				<svg id="birds" width="100%" height="100%"></svg>
 			</div>
 			<div class="page">
 				<h1 class="heading">Tweet the love</h1>
-				<h2 class="sub-heading">Anonymously tell your crush how you really feel.</h2>
-				<h3>And the love doesn't end there. For each tweet we're donating £1 to Save the Children.</h3>
+				<h2 class="sub-heading">
+					Anonymously tell your crush how you really feel.<br>
+					And the love doesn't end there. For each tweet we're donating £1 to Save the Children.
+				</h2>
 			</div>
 			<a class="scroll-btn animated fadeInDown" href="#"><span class="wa-hidden">Next</span></a>
 		</div><!--// .intro-page -->
@@ -97,7 +100,7 @@ $_ut->startSession();
 		<div class="section send-page" data-anchor="send">
 			<div class="page">
 				<div id="tweet-form">
-					<form id="send-tweet" novalidate>
+					<form id="send-tweet" action="post.php" methos="post">
 						<input type="hidden" name="nonce_token" value="<?php echo $_SESSION['token']; ?>" />
 						<div class="form-error"></div>
 						<div class="form-control">
@@ -127,14 +130,14 @@ $_ut->startSession();
 		</div><!--// .send-page -->
 
 		<div class="section share-page" data-anchor="share">
-			<div class="page-break"></div>
+			<!-- <div class="page-break"></div> -->
 			<div class="page">
 				<h1 class="heading">
 					<span class="odometer-pre">£</span><span id="odometer" class="odometer">0</span>
 				</h1>
 				<h2 id="thanks" class="sub-heading">
-					For each tweet we're donating £1 to Save the Children<br>
-					Scroll up to send a tweet
+					For each tweet we're donating £1 to Save the Children.<br>
+					Scroll up to send a tweet and check out previous ones <a href="https://twitter.com/mytweetercrush" target="_blank">here</a>.
 				</h2>
 				<div class="share">
 					<a class="share-btn fb-btn" href="">
@@ -162,8 +165,8 @@ $_ut->startSession();
 		<div class="section info-page" data-anchor="info">
 			<div class="page">
 				<div class="copy">
-					<p>Show your Twitter crush how much they mean to you by sending them something really nice, something from the heart, and let us deliver the message for you. Nobody will know who sent it. Promise. Our Twitter Cupid will deliver your message by tweeting your crush on your behalf.</p>
-					<p>For each lovely tweet that gets sent we’re spreading the love even further and donating £1 to Save the Children.</p>
+					<p>Show your Twitter crush how much they mean to you by sending them something nice, something from the heart. Our tweeting Cupid will deliver your message by tweeting your crush on your behalf. Nobody will know it's you who sent it. Promise.</p>
+					<p>For each lovely tweet that gets sent we're spreading the love even further and donating £1 until we reach our goal of £5000.</p>
 					<p><strong>A project by</strong></p>
 				</div>
 				<div class="logos">

@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: $special-font;
 	font-style: normal;
 	font-weight: 700;
-	line-height: 1.1;
+	line-height: 1.3;
 }
 
 p {
@@ -25,6 +25,18 @@ p {
 
 strong {
 	font-weight: 700;
+}
+
+button, input, select, textarea {
+	color: $grey;
+}
+
+a {
+	@include transition(all 0.15s $curve-anim);
+	color: $hot-pink;
+	&:hover {
+		color: $baby-blue;
+	}
 }
 
 .wa-hidden {
@@ -195,18 +207,18 @@ strong {
 
 .heading {
 	font-size: 24px;
-	margin-bottom: 4px;
+	margin-bottom: 6px;
 	@include respond-to(m) {
 		font-size: 52px;
 	}
 	@include respond-to(l) {
-		font-size: 62px;
+		
 	}
 	@include respond-to(xl) {
-		font-size: 62px;
+		
 	}
 	@include respond-to(xxl) {
-		font-size: 72px;
+		
 	}
 }
 
@@ -218,15 +230,6 @@ strong {
 		font-size: 24px;
 		margin-bottom: 10px;
 	}
-	@include respond-to(l) {
-		font-size: 30px;
-	}
-	@include respond-to(xl) {
-		font-size: 30px;
-	}
-	@include respond-to(xxl) {
-		font-size: 34px;
-	}
 }
 
 .intro-page {
@@ -234,14 +237,8 @@ strong {
 		font-size: 12px;
 		font-weight: 400;
 		@include respond-to(m) {
-			font-size: 17px;
-			font-weight: 300;
-		}
-		@include respond-to(l) {
-			font-size: 22px;
-		}
-		@include respond-to(xl) {
-			
+			font-size: 24px;
+			font-weight: 400;
 		}
 	}
 	.artwork {
@@ -262,7 +259,8 @@ strong {
 		@include respond-to(xl) {
 			max-width: 100vh;
 		}
-		img {
+		img,
+		svg {
 			display: block;
 			width: 100%;
 			max-width: 65vh;
@@ -589,7 +587,6 @@ strong {
 }
 
 .info-page {
-	background: $white;
 	text-align: center;
 	.copy {
 		width: 90%;
