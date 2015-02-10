@@ -32,7 +32,7 @@ class util {
 	public function getSession(){
 		if(isset($this->token))
 			return $this->token;
-		elseif(isset($_SESSION['token'])
+		elseif(isset($_SESSION['token']))
 			return $_SESSION['token'];
 		else
 			return false;
