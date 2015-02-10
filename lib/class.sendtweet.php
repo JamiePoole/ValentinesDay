@@ -45,7 +45,7 @@ class sendTweet {
 		if(isset($recipient) && trim($recipient) != ''){
 			if(isset($message) && trim($message) != ''){
 				// Generate Image
-				$dir = '../../../images/';
+				$dir = basename(dirname(__FILE__)) . '/images/';
 				$this->gi->setDetails($recipient, $message);
 				$image = $this->gi->paintImage();
 				$file = $this->gi->saveImage($image, $dir, $token);
