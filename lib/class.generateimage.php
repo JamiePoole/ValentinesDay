@@ -129,7 +129,7 @@ class generateImage {
 		return $bgLayer;
 	}
 
-	public function saveImage($image, $token){
+	public function saveImage($image, $dir, $token){
 		$filename = md5(uniqid($token, true));
 		$filetype = 'png';
 		$createFolders = false;
