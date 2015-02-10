@@ -1,3 +1,14 @@
 User-agent: *
-Disallow: /
-Allow: /index.php
+Disallow: /admin/
+Disallow: /lib/
+Disallow: /assets/
+Disallow: /.git/
+Disallow: .htaccess
+Disallow: .gitignore
+Disallow: cron.php
+Disallow: post.php
+Disallow: require.php
+Disallow: config.rb
+Disallow: install.sql
+Disallow: README.html
+Disallow: README.md
