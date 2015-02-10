@@ -69,11 +69,13 @@ class sendTweet {
 				// Check for Twitter Response
 				if(!isset($twitter->errors)){
 					if(isset($media->media_id_string))
-						$fileDesc = $file['filename'] . $file['filetype'];
+						$fileDesc = ' with file ' . $file['filename'] . '.' . $file['filetype'] . ' attached';
+					else
+						$fileDesc = null;
 					// Success
 					$this->ut->log((object)array(
 						'code'	=> 103,
-						'message' => 'Tweet "' . $message . '" sent successfully to '. $recipient . (((isset($fileDesc))?$fileDesc:'');
+						'message' => 'Tweet "' . $message . '" sent successfully to '. $recipient . $fileDesc;
 					));
 				} else {
 					// Fail
