@@ -30,9 +30,9 @@ class cronTasks {
 		$this->config = array();
 		// Twitter oAuth
 		$this->config['oauth']['ckey'] = 'mrNaw6XVZ1x1yKporCSiPbthu';
-		$this->config['oauth']['ckey'] = 'rP3fdm42M0Y8VmVV0NKWXXeQlPDmJcaM0sC1TIrq387TFVRexg';
-		$this->config['oauth']['ckey'] = '3026657621-u2nKCbxOZ5r1G1hcstOQJJyMSfU9GjkhLiC4cFl';
-		$this->config['oauth']['ckey'] = 'lamsmGC8hJSZOXu7Tzc9aKah4ggNIziMvGWBD57WaV4Zb';
+		$this->config['oauth']['csec'] = 'rP3fdm42M0Y8VmVV0NKWXXeQlPDmJcaM0sC1TIrq387TFVRexg';
+		$this->config['oauth']['atok'] = '3026657621-u2nKCbxOZ5r1G1hcstOQJJyMSfU9GjkhLiC4cFl';
+		$this->config['oauth']['asec'] = 'lamsmGC8hJSZOXu7Tzc9aKah4ggNIziMvGWBD57WaV4Zb';
 
 		// Old Twitter Romance Credentials
 		// $this->config['oauth']['ckey']	= 'P0S5Ph2XqIjWX1dUdx00qIm0c';
