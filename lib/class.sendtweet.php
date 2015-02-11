@@ -65,7 +65,7 @@ class sendTweet {
 
 				// Generate Tweet
 				$message = htmlspecialchars_decode($message);
-				$tweet = '@'.$recipient.' '.urlencode($message);
+				$tweet = '@'.$recipient.' '.$message;
 				$param = array('status'	=> $tweet);
 
 				// If Image Generated Upload and add to Parameters
