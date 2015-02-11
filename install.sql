@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 06, 2015 at 01:27 PM
+-- Generation Time: Feb 11, 2015 at 06:45 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.16
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `log` (
   `message` text COMMENT '$e->message',
   `file` text COMMENT '$e->file',
   `line` int(8) DEFAULT NULL COMMENT '$e->line'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `tweet_queue` (
   `dtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Delivery Time (default Now)',
   `duser` text NOT NULL COMMENT 'Delivery Recipient',
   `dmessage` text NOT NULL COMMENT 'Message'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `tweet_sender` (
   `ip` varchar(15) NOT NULL,
   `agent` text NOT NULL,
   `location` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
@@ -151,7 +151,7 @@ ALTER TABLE `tweet_sender`
 -- AUTO_INCREMENT for table `log`
 --
 ALTER TABLE `log`
-MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `eid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=55;
 --
 -- AUTO_INCREMENT for table `tweet_flagged`
 --
@@ -161,7 +161,7 @@ MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID';
 -- AUTO_INCREMENT for table `tweet_queue`
 --
 ALTER TABLE `tweet_queue`
-MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID';
+MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `tweet_recipients`
 --
@@ -171,7 +171,7 @@ MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `tweet_sender`
 --
 ALTER TABLE `tweet_sender`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
