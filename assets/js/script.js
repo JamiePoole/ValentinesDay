@@ -61,29 +61,100 @@ jQuery(document).ready(function($) {
 
 	s.attr({ viewBox: "0 0 1600 890" }); // Need this for responsive svg - its the aspect ratio
 
-	Snap.load('assets/img/intro-birds.svg', function ( loadedBirds ) {
+	Snap.load('assets/img/intro-birds.svg', function (loadedBirds) {
 
-		s.append( loadedBirds );
-
-		// Timings
-		var tHead 		= 500,
-			tWing  		= 1000,
-			tHeart 		= 500;
+		// Place the SVG on the page
+		g = loadedBirds.select('g');
+		s.append(g);
 
 		// Elements
-		var LoveHeart 	= s.select('#LoveHeart'),
-			LeftHead 	= s.select('#LeftHead'),
-			RightHead 	= s.select('#RightHead'),
-			LeftEye 	= s.select('#LeftEye'),
-			RightEye 	= s.select('#RightEye'),
-			LeftBody 	= s.select('#LeftBody'),
-			RightBody 	= s.select('#RightBody'),
-			LeftWing	= s.select('#LeftWing'),
-			RightWing 	= s.select('#RightWing');
+		var loveHeart 		= s.select('#LoveHeart'),
+			leftHead 		= s.select('#LeftHead'),
+			rightHead 		= s.select('#RightHead'),
+			leftBeak 		= s.select('#LeftBeak'),
+			rightBeak 		= s.select('#RightBeak'),
+			leftBeakShadow 	= s.select('#LeftBeakShadow'),
+			rightBeakShadow = s.select('#RightBeakShadow'),
+			leftEye 		= s.select('#LeftEye'),
+			rightEye 		= s.select('#RightEye'),
+			leftBody 		= s.select('#LeftBody'),
+			rightBody 		= s.select('#RightBody'),
+			leftWing		= s.select('#LeftWing'),
+			rightWing 		= s.select('#RightWing'),
+			leftWingShadow	= s.select('#LeftWingShadow'),
+			rightWingShadow = s.select('#RightWingShadow');
 
-		// LeftHead.animate({
-		// 	transform: 't0,150'
-		// }, tHead, mina.ease );
+		// Groups
+		var leftHeadGroup	= s.group(leftHead, leftBeak, leftBeakShadow, leftEye),
+			rightHeadGroup 	= s.group(rightHead, rightBeak, rightBeakShadow, rightEye),
+			leftWingGroup	= s.group(leftWingShadow, leftWing),
+			rightWingGroup 	= s.group(rightWingShadow, rightWing),
+			leftBirdGroup 	= s.group(leftBody, leftHeadGroup, leftWingGroup),
+			rightBirdGroup 	= s.group(rightBody, rightHeadGroup, rightWingGroup);
+
+		// Animations
+		var headAnim = [
+			{ animation: { transform: 't0,12' }, dur: 120, ease: mina.easeout },
+            { animation: { transform: 't0,0' }, dur: 120, ease: mina.easeout }
+        ];
+
+        var leftWingAnim = [
+			{ animation: { transform: 'r7,531,233' }, dur: 60, ease: mina.easeout },
+            { animation: { transform: 'r0,531,233' }, dur: 60, ease: mina.easeout },
+            { animation: { transform: 'r7,531,233' }, dur: 60, ease: mina.easeout },
+            { animation: { transform: 'r0,531,233' }, dur: 60, ease: mina.easeout }
+        ];
+
+        var rightWingAnim = [
+			{ animation: { transform: 'r-7,1071,235' }, dur: 60, ease: mina.easeout },
+            { animation: { transform: 'r0,1071,235' }, dur: 60, ease: mina.easeout },
+            { animation: { transform: 'r-7,1071,235' }, dur: 60, ease: mina.easeout },
+            { animation: { transform: 'r0,1071,235' }, dur: 60, ease: mina.easeout }
+        ];
+
+        var leftBirdTiltAnim = [
+			{ animation: { transform: 't25,10r10,383,292' }, dur: 75, ease: mina.easeout },
+			{ animation: { transform: 't25,10r10,383,292' }, dur: 250, ease: mina.easeout },
+            { animation: { transform: 't0,0r0,383,292' }, dur: 25, ease: mina.easeout }
+        ];
+
+        var rightBirdTiltAnim = [
+			{ animation: { transform: 't-25,10r-10,1218,292' }, dur: 75, ease: mina.easeout },
+			{ animation: { transform: 't-25,10r-10,1218,292' }, dur: 250, ease: mina.easeout },
+            { animation: { transform: 't0,0r0,1218,292' }, dur: 25, ease: mina.easeout }
+        ];
+
+        var loveHeartAnim = [
+			{ animation: { opacity: '0', transform: 's0,800,64' }, dur: 0, ease: mina.easeout },
+			{ animation: { opacity: '1', transform: 's0.9,800,64' }, dur: 150, ease: mina.easeout },
+			{ animation: { opacity: '1', transform: 's0.9,800,64' }, dur: 200, ease: mina.easeout },
+			{ animation: { transform: 's1,800,64' }, dur: 100, ease: mina.easeout },
+			{ animation: { transform: 's0.9,800,64' }, dur: 100, ease: mina.easeout }
+        ];
+
+        function nextFrame(el, frameArray, whichFrame) {
+        	if( whichFrame >= frameArray.length ) { return }
+        	el.animate( frameArray[ whichFrame ].animation, frameArray[ whichFrame ].dur, frameArray[ whichFrame ].ease, nextFrame.bind( null, el, frameArray, whichFrame + 1 ) );
+    	}
+
+		var initAnim = function() {
+			nextFrame(leftHeadGroup, headAnim, 0); 					// 240 
+			nextFrame(leftWing, leftWingAnim, 0); 					// 240
+			window.setTimeout(function() {							// 300 Timeout
+		    	nextFrame(rightHeadGroup, headAnim, 0); 			// 240
+				nextFrame(rightWing, rightWingAnim, 0);				// 240
+			}, 300);												// TOTAL 1260
+			window.setTimeout(function() {							// 1260 Timeout					
+		    	nextFrame(leftBirdGroup, leftBirdTiltAnim, 0);		// 350
+				nextFrame(rightBirdGroup, rightBirdTiltAnim, 0);
+			}, 1260);												// TOTAL 1610
+			window.setTimeout(function() { 							
+		    	nextFrame(loveHeart, loveHeartAnim, 0);
+			}, 1610);
+		}
+
+		// Set the animation off just after page load
+		window.setTimeout(initAnim, 1000);
 
 	});
 
