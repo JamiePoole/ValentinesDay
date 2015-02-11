@@ -38,10 +38,10 @@ $_ut->startSession();
 	<meta property="og:title" content="My Twitter Crush">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="http://www.mytwittercrush.com">
-	<meta property="og:image" content="http://www.mytwittercrush.com/assets/img/icons/favicon-194x194.png">
-	<meta property="og:image:type" content="image/png">
-	<meta property="og:image:width" content="194">
-	<meta property="og:image:height" content="194">
+	<meta property="og:image" content="http://www.mytwittercrush.com/assets/img/sharing-image-300x300.jpg">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:image:width" content="300">
+	<meta property="og:image:height" content="300">
 	<meta property="og:description" content="Anonymously tell your crush how you really feel. For each tweet we're donating £1 to Save the Children.">
 	<meta property="fb:app_id" content="1416098885351185">
 
