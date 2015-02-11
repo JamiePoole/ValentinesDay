@@ -96,7 +96,7 @@ $counts['log'] = $_at->getEntries(true, 'log');
 		</section>
 		<section id="col2" class="col">
 			<div id="senders" class="overview">
-				<h3 class="title">Recipients (<?php echo $counts['senders']; ?>)</h3>
+				<h3 class="title">Senders (<?php echo $counts['senders']; ?>)</h3>
 				<?php if($counts['senders'] > 0): ?>
 				<table>
 					<thead>
