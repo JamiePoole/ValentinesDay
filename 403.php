@@ -11,7 +11,7 @@ $_ut->startSession();
 
 	<link rel="canonical" href="http://www.mytwittercrush.com">
 
-	<title>My Twitter Crush :: 404</title>
+	<title>My Twitter Crush :: 403</title>
 	<meta name="description" content="Anonymously tell your crush how you really feel. For each tweet we're donating £1 to Save the Children.">
 
 	<link rel="apple-touch-icon" sizes="57x57" href="assets/img/icons/apple-touch-icon-57x57.png">

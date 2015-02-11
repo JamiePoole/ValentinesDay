@@ -13,5 +13,5 @@ array_push($phrases,
 		'bottom inspector',
 		'raping',
 		'rapping',
-		'rape',
+		'rape'
 );
