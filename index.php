@@ -134,11 +134,11 @@ $_ut->startSession();
 		<div class="section share-page" data-anchor="share">
 			<!-- <div class="page-break"></div> -->
 			<div class="page">
-				<h1 class="heading">
+				<h1 id="thanks" class="heading">
 					Share the love
 				</h1>
-				<h2 id="thanks" class="sub-heading">
-					Scroll up to send a tweet and check out previous ones <a href="https://twitter.com/mytweetercrush" target="_blank">here</a>.
+				<h2 id="thanks-sub" class="sub-heading">
+					Check out previous ones <a href="https://twitter.com/mytweetercrush" target="_blank">here</a>.
 				</h2>
 				<div class="share">
 					<a class="share-btn fb-btn" href="">
