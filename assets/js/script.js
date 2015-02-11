@@ -32,10 +32,13 @@ jQuery(document).ready(function($) {
         onLeave: function(index, nextIndex, direction){
         	$('.scroll-btn').addClass('fadeOutUp');
         	if(index == 2){
-        		ga('send', 'event', 'pageview', 'scroll', 'sendpage');
+        		ga('send', 'event', 'Virtual page view', 'Scroll', 'Send page');
         	}
             if(index == 3){
-                
+                ga('send', 'event', 'Virtual page view', 'Scroll', 'Share page');
+            }
+            if(index == 4){
+                ga('send', 'event', 'Virtual page view', 'Scroll', 'Info page');
             }
         },
         afterLoad: function(anchorLink, index){
