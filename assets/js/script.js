@@ -32,7 +32,7 @@ jQuery(document).ready(function($) {
         onLeave: function(index, nextIndex, direction){
         	$('.scroll-btn').addClass('fadeOutUp');
         	if(index == 2){
-        		
+        		ga('send', 'event', 'pageview', 'scroll', 'sendpage');
         	}
             if(index == 3){
                 
@@ -112,7 +112,6 @@ jQuery(document).ready(function($) {
 					$('#tweet-message').attr('maxlength', 120);
 					$('#thanks').html('Aw, thanks for spreading the love.<br>You just helped us donate £1 to Save the Children. See your tweet <a href="https://twitter.com/mytweetercrush" target="_blank">here</a>');
 					$.fn.fullpage.moveSectionDown();
-					ga('send', 'event', 'Form', 'Submit', 'send-tweet');
 				}
 			}, 
 			error: function( jqXhr, textStatus, errorThrown ){ 
@@ -160,14 +159,5 @@ jQuery(document).ready(function($) {
 
 
     // Google+ share
-
-
-    // Google Analytics Events
-	// ------------------------------------------------------------
-
-	// Send tweet button
-    $('#submit-tweet').on('click', function() {
-  		ga('send', 'event', 'button', 'click', 'Form Submit');
-	});
 
 });
