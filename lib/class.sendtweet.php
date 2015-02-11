@@ -64,8 +64,7 @@ class sendTweet {
 				$file = $this->gi->saveImage($image, $dir, $token);
 
 				// Generate Tweet
-				$message = htmlspecialchars_decode($message, ENT_QUOTES);
-				$tweet = '@'.$recipient.' '.$message;
+				$tweet = '@'.$recipient.' '.htmlspecialchars_decode($message, ENT_QUOTES);
 				$param = array('status'	=> urlencode($tweet));
 
 				// If Image Generated Upload and add to Parameters
