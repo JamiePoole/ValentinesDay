@@ -197,8 +197,8 @@ jQuery(document).ready(function($) {
 					$('#tweet-target, #tweet-message').val('');
 					$('#char-count').text('');
 					$('#tweet-message').attr('maxlength', 120);
-					$('#thanks').html('Aw, thanks for spreading the love');
-					$('#thanks-sub').html('See your tweet <a href="https://twitter.com/mytweetercrush" target="_blank">here</a>');
+					$('#thanks').html('Aw, thanks');
+					$('#thanks-sub').html('Thanks for spreading the love. See your tweet <a href="https://twitter.com/mytweetercrush" target="_blank">here</a>');
 					$.fn.fullpage.moveSectionDown();
 					ga('send', 'event', 'Forms', 'Submit', 'Send Tweet');
 				}
