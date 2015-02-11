@@ -18,5 +18,6 @@ array_push($phrases,
 		'pink balloon',
 		'tear off',
 		'poor excuse',
-		'nail you'
+		'nail you',
+		'hate'
 );
