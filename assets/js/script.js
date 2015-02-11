@@ -5,6 +5,7 @@ jQuery(document).ready(function($) {
 
 	// SVG Fallbacks
 	if (!Modernizr.svg) {
+		// Replace <img> with an .svg set as src
 	    var imgs = document.getElementsByTagName('img');
 	    var svgExtension = /.*\.svg$/
 	    var l = imgs.length;
@@ -14,6 +15,9 @@ jQuery(document).ready(function($) {
 	            //console.log(imgs[i].src);
 	        }
 	    }
+	    // Replace the intro bird animation
+	    $('.intro-page .artwork #birds').hide();
+	    $('.intro-page .artwork').html("<img src='assets/img/intro-birds.png'>");
 	}
 
 	$('#fullpage').fullpage({
@@ -31,9 +35,15 @@ jQuery(document).ready(function($) {
         // Events
         onLeave: function(index, nextIndex, direction){
         	$('.scroll-btn').addClass('fadeOutUp');
+        	if(index == 1) {
+        		resetIntroBirdAnim();
+        	}
         },
         afterLoad: function(anchorLink, index){
         	$('.scroll-btn').removeClass('fadeOutUp').addClass('fadeInDown');
+        	if(index == 1) {
+        		introBirdAnim();
+        	}
         	if(index == 2){
         		ga('send', 'pageview', '/#send');
             	$('#submit-tweet').removeClass('flyOff fadeOutUp').addClass('animated fadeInDown');
@@ -56,16 +66,20 @@ jQuery(document).ready(function($) {
 
 	// SVG Animations
 	// ------------------------------------------------------------
+
+	// Set the stage
 	var	s = Snap('#birds');
-
 	s.attr({ viewBox: "0 0 1600 890" }); // Need this for responsive svg - its the aspect ratio
-
 	Snap.load('assets/img/intro-birds.svg', function (loadedBirds) {
-
 		// Place the SVG on the page
 		g = loadedBirds.select('g');
 		s.append(g);
+		// Play the intro bird animation
+		introBirdAnim();
+	});
 
+	// Intro bird animation
+	function introBirdAnim() {
 		// Elements
 		var loveHeart 		= s.select('#LoveHeart'),
 			leftHead 		= s.select('#LeftHead'),
@@ -131,31 +145,38 @@ jQuery(document).ready(function($) {
 			{ animation: { transform: 's0.9,800,64' }, dur: 100, ease: mina.easeout }
         ];
 
-        function nextFrame(el, frameArray, whichFrame) {
+        // Playu the animation frames
+        function playFrames(el, frameArray, whichFrame) {
         	if( whichFrame >= frameArray.length ) { return }
-        	el.animate( frameArray[ whichFrame ].animation, frameArray[ whichFrame ].dur, frameArray[ whichFrame ].ease, nextFrame.bind( null, el, frameArray, whichFrame + 1 ) );
+        	el.animate( frameArray[ whichFrame ].animation, frameArray[ whichFrame ].dur, frameArray[ whichFrame ].ease, playFrames.bind( null, el, frameArray, whichFrame + 1 ) );
     	}
 
+    	// Chain the animations
 		var initAnim = function() {
-			nextFrame(leftHeadGroup, headAnim, 0); 					// 240 
-			nextFrame(leftWing, leftWingAnim, 0); 					// 240
+			playFrames(leftHeadGroup, headAnim, 0); 				// 240 
+			playFrames(leftWing, leftWingAnim, 0); 					// 240
 			window.setTimeout(function() {							// 300 Timeout
-		    	nextFrame(rightHeadGroup, headAnim, 0); 			// 240
-				nextFrame(rightWing, rightWingAnim, 0);				// 240
+		    	playFrames(rightHeadGroup, headAnim, 0); 			// 240
+				playFrames(rightWing, rightWingAnim, 0);				// 240
 			}, 300);												// TOTAL 1260
 			window.setTimeout(function() {							// 1260 Timeout					
-		    	nextFrame(leftBirdGroup, leftBirdTiltAnim, 0);		// 350
-				nextFrame(rightBirdGroup, rightBirdTiltAnim, 0);
+		    	playFrames(leftBirdGroup, leftBirdTiltAnim, 0);		// 350
+				playFrames(rightBirdGroup, rightBirdTiltAnim, 0);
 			}, 1260);												// TOTAL 1610
 			window.setTimeout(function() { 							
-		    	nextFrame(loveHeart, loveHeartAnim, 0);
+		    	playFrames(loveHeart, loveHeartAnim, 0);
 			}, 1610);
 		}
 
 		// Set the animation off just after page load
 		window.setTimeout(initAnim, 1000);
+	}
 
-	});
+	// Reset the intro bird animation
+	function resetIntroBirdAnim() {
+		var loveHeart = s.select('#LoveHeart');
+		loveHeart.attr({ opacity: 0 });
+	}
 
 	
 	// Send Tweet Form

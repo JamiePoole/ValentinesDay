@@ -12,7 +12,7 @@ $_ut->startSession();
 	<link rel="canonical" href="http://www.mytwittercrush.com">
 
 	<title>My Twitter Crush</title>
-	<meta name="description" content="Anonymously tell your crush how you really feel. For each tweet we're donating £1 to Save the Children.">
+	<meta name="description" content="Anonymously tell your crush how you really feel.">
 
 	<link rel="apple-touch-icon" sizes="57x57" href="assets/img/icons/apple-touch-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="assets/img/icons/apple-touch-icon-60x60.png">
@@ -42,7 +42,7 @@ $_ut->startSession();
 	<meta property="og:image:type" content="image/jpeg">
 	<meta property="og:image:width" content="300">
 	<meta property="og:image:height" content="300">
-	<meta property="og:description" content="Anonymously tell your crush how you really feel. For each tweet we're donating £1 to Save the Children.">
+	<meta property="og:description" content="Anonymously tell your crush how you really feel.">
 	<meta property="fb:app_id" content="1416098885351185">
 
 	<link type="text/css" href="assets/css/style.css" rel="stylesheet">
@@ -93,8 +93,7 @@ $_ut->startSession();
 			<div class="page">
 				<h1 class="heading">Tweet the love</h1>
 				<h2 class="sub-heading">
-					Anonymously tell your crush how you really feel.<br>
-					And the love doesn't end there. For each tweet we're donating £1 to Save the Children.
+					Anonymously tell your crush how you really feel.
 				</h2>
 			</div>
 			<a class="scroll-btn animated fadeInDown" href="#"><span class="wa-hidden">Next</span></a>
@@ -136,10 +135,9 @@ $_ut->startSession();
 			<!-- <div class="page-break"></div> -->
 			<div class="page">
 				<h1 class="heading">
-					<span class="odometer-pre">£</span><span id="odometer" class="odometer">0</span>
+					<span id="odometer" class="odometer">0</span>
 				</h1>
 				<h2 id="thanks" class="sub-heading">
-					For each tweet we're donating £1 to Save the Children.<br>
 					Scroll up to send a tweet and check out previous ones <a href="https://twitter.com/mytweetercrush" target="_blank">here</a>.
 				</h2>
 				<div class="share">
@@ -169,12 +167,6 @@ $_ut->startSession();
 			<div class="page">
 				<div class="copy">
 					<p>Show your Twitter crush how much they mean to you by sending them something nice, something from the heart. Our tweeting Cupid will deliver your message by tweeting your crush on your behalf. Nobody will know it's you who sent it. Promise.</p>
-					<p>For each lovely tweet that gets sent we're spreading the love even further and donating £1 until we reach our goal of £5000.</p>
-					<p><strong>A project by</strong></p>
-				</div>
-				<div class="logos">
-					<img class="us" src="assets/img/360i-logo.svg" width="80" height="80">
-					<img class="savethechildren" src="assets/img/savethechildern-logo.svg" height="60" width="383">
 				</div>
 			</div><!--// .page -->
 			<a class="scroll-btn animated up" href="#"><span class="wa-hidden">Next</span></a>
