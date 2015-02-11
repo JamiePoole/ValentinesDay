@@ -13,5 +13,10 @@ array_push($phrases,
 		'bottom inspector',
 		'raping',
 		'rapping',
-		'rape'
+		'rape',
+		'stab',
+		'pink balloon',
+		'tear off',
+		'poor excuse',
+		'nail you'
 );
