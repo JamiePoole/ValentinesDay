@@ -9,6 +9,8 @@ $_ut->startSession();
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<link rel="canonical" href="http://www.mytwittercrush.com">
+
 	<title>My Twitter Crush</title>
 	<meta name="description" content="Anonymously tell your crush how you really feel. For each tweet we're donating £1 to Save the Children.">
 

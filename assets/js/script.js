@@ -112,6 +112,7 @@ jQuery(document).ready(function($) {
 					$('#tweet-message').attr('maxlength', 120);
 					$('#thanks').html('Aw, thanks for spreading the love.<br>You just helped us donate £1 to Save the Children. See your tweet <a href="https://twitter.com/mytweetercrush" target="_blank">here</a>');
 					$.fn.fullpage.moveSectionDown();
+					ga('send', 'event', 'Form', 'Submit', 'send-tweet');
 				}
 			}, 
 			error: function( jqXhr, textStatus, errorThrown ){ 
