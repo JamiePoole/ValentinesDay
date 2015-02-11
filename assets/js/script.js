@@ -23,7 +23,7 @@ jQuery(document).ready(function($) {
 	$('#fullpage').fullpage({
 		//Navigation
         menu: true,
-        anchors:['intro', 'send', 'share', 'info'],
+        anchors:['intro', 'send', 'share'],
         navigation: true,
         navigationPosition: 'right',
 		//Scrolling
@@ -50,11 +50,7 @@ jQuery(document).ready(function($) {
          	}
          	if(index == 3){
          		ga('send', 'pageview', '/#share');
-         		odometer.innerHTML = '1529';
          	}
-         	if(index == 4){
-                ga('send', 'pageview', '/#info');
-            }
         }
 	});
 
@@ -201,7 +197,7 @@ jQuery(document).ready(function($) {
 					$('#tweet-target, #tweet-message').val('');
 					$('#char-count').text('');
 					$('#tweet-message').attr('maxlength', 120);
-					$('#thanks').html('Aw, thanks for spreading the love.<br>You just helped us donate £1 to Save the Children. See your tweet <a href="https://twitter.com/mytweetercrush" target="_blank">here</a>');
+					$('#thanks').html('Aw, thanks for spreading the love. See your tweet <a href="https://twitter.com/mytweetercrush" target="_blank">here</a>');
 					$.fn.fullpage.moveSectionDown();
 					ga('send', 'event', 'Forms', 'Submit', 'Send Tweet');
 				}
