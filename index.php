@@ -135,7 +135,7 @@ $_ut->startSession();
 			<!-- <div class="page-break"></div> -->
 			<div class="page">
 				<h1 class="heading">
-					<span id="odometer" class="odometer">0</span>
+					Share the love
 				</h1>
 				<h2 id="thanks" class="sub-heading">
 					Scroll up to send a tweet and check out previous ones <a href="https://twitter.com/mytweetercrush" target="_blank">here</a>.
@@ -160,17 +160,8 @@ $_ut->startSession();
 			<div class="artwork animated">
 				<img src="assets/img/bird-bubble.svg">
 			</div>
-			<a class="scroll-btn animated" href="#"><span class="wa-hidden">Next</span></a>
-		</div>
-
-		<div class="section info-page" data-anchor="info">
-			<div class="page">
-				<div class="copy">
-					<p>Show your Twitter crush how much they mean to you by sending them something nice, something from the heart. Our tweeting Cupid will deliver your message by tweeting your crush on your behalf. Nobody will know it's you who sent it. Promise.</p>
-				</div>
-			</div><!--// .page -->
 			<a class="scroll-btn animated up" href="#"><span class="wa-hidden">Next</span></a>
-		</div><!--// .info-page -->
+		</div>
 
 	</div><!--// #fullpage -->
 	
@@ -199,7 +190,6 @@ $_ut->startSession();
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/jquery.slimscroll.min.js"></script>
 	<script src="assets/js/jquery.fullPage.min.js"></script>
-	<script src="assets/js/odometer.min.js"></script>
 	<script src="assets/js/script.js"></script>	
 
 </body>
