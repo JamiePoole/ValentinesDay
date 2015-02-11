@@ -41,15 +41,15 @@ jQuery(document).ready(function($) {
         afterLoad: function(anchorLink, index){
         	$('.scroll-btn').removeClass('fadeOutUp').addClass('fadeInDown');
         	if(index == 2){
-        		ga('send', 'event', 'Virtual page view', 'Scroll', 'Send page');
+        		ga('send', 'pageview', '/#send');
             	$('#submit-tweet').removeClass('flyOff fadeOutUp').addClass('animated fadeInDown');
          	}
          	if(index == 3){
-         		ga('send', 'event', 'Virtual page view', 'Scroll', 'Share page');
+         		ga('send', 'pageview', '/#share');
          		odometer.innerHTML = '1529';
          	}
          	if(index == 4){
-                ga('send', 'event', 'Virtual page view', 'Scroll', 'Info page');
+                ga('send', 'pageview', '/#info');
             }
         }
 	});
