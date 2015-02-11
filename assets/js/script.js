@@ -81,9 +81,9 @@ jQuery(document).ready(function($) {
 			LeftWing	= s.select('#LeftWing'),
 			RightWing 	= s.select('#RightWing');
 
-		LeftHead.animate({
-			transform: 't0,150'
-		}, tHead, mina.ease );
+		// LeftHead.animate({
+		// 	transform: 't0,150'
+		// }, tHead, mina.ease );
 
 	});
 
