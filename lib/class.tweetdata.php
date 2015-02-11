@@ -14,7 +14,7 @@ class tweetData {
 
 	public function saveUser($user, $user_object){
 		try {
-			$user_object = mysql_real_escape_string(serialize($user_object));
+			$user_object = filter_var(serialize($recipient), FILTER_SANITIZE_STRING);
 			$sql = "INSERT INTO `$this->table` (`uid`, `tdate`, `sname`, `tobject`) VALUES (NULL, CURRENT_TIMESTAMP, '$user', '$user_object')";
 			$result = $this->db->prepare($sql);
 			$result->execute();
