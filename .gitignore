@@ -2,3 +2,4 @@ lib/conf/*
 .sass-cache/*
 .sass-cache/*/*
 images/*
+.htaccess
