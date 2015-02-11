@@ -32,23 +32,25 @@ jQuery(document).ready(function($) {
         onLeave: function(index, nextIndex, direction){
         	$('.scroll-btn').addClass('fadeOutUp');
         	if(index == 2){
-        		ga('send', 'event', 'Virtual page view', 'Scroll', 'Send page');
+        		
         	}
             if(index == 3){
-                ga('send', 'event', 'Virtual page view', 'Scroll', 'Share page');
-            }
-            if(index == 4){
-                ga('send', 'event', 'Virtual page view', 'Scroll', 'Info page');
+                
             }
         },
         afterLoad: function(anchorLink, index){
         	$('.scroll-btn').removeClass('fadeOutUp').addClass('fadeInDown');
         	if(index == 2){
+        		ga('send', 'event', 'Virtual page view', 'Scroll', 'Send page');
             	$('#submit-tweet').removeClass('flyOff fadeOutUp').addClass('animated fadeInDown');
          	}
          	if(index == 3){
+         		ga('send', 'event', 'Virtual page view', 'Scroll', 'Share page');
          		odometer.innerHTML = '1529';
          	}
+         	if(index == 4){
+                ga('send', 'event', 'Virtual page view', 'Scroll', 'Info page');
+            }
         }
 	});
 
