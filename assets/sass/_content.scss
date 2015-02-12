@@ -223,7 +223,7 @@ a {
 }
 
 .sub-heading {
-	font-size: 12px;
+	font-size: 18px;
 	font-weight: 400;
 	margin-bottom: 4px;
 	@include respond-to(m) {
@@ -276,7 +276,6 @@ a {
 .send-page {
 	text-align: center;
 	.page {
-		width: 60%;
 		max-width: 570px;
 		position: relative;
 		z-index: 9;
@@ -293,29 +292,45 @@ a {
 			z-index: 5;
 			border: none;
 			width: 100%;
-			padding: 20px;
-			font-size: 22px;
+			padding: 10px;
+			font-size: 16px;
+			@include respond-to(m) {
+				font-size: 22px;
+				padding: 20px;
+			}
 			&:focus {
 				outline: none;
 			}
 		}
 		#tweet-target {
-			height: 70px;
-			padding-left: 50px;
+			height: 50px;
+			padding-left: 36px;
 			margin-bottom: 2px;
+			@include respond-to(m) {
+				height: 70px;
+				padding-left: 50px;
+			}
 		}
 		.form-prepend {
 			color: $hot-pink;
 			position: absolute;
 			z-index: 6;
-			top: 18px;
-			left: 5px;
-			height: 50px;
-			width: 50px;
+			top: 8px;
+			left: 2px;
+			height: 35px;
+			width: 35px;
 			text-align: center;
 			font-size: 24px;
 			font-weight: 700;
 			padding: 2px 0 0 0;	
+			@include respond-to(m) {
+				top: 0;
+				left: 0;
+				width: 50px;
+				height: 50px;
+				top: 18px;
+				left: 5px;
+			}
 		}
 	}
 	#char-count {
@@ -327,17 +342,25 @@ a {
 	#submit-tweet {
 		font-family: $special-font;
 		color: $hot-pink;
-		font-size: 26px;
-		font-weight: 400;
+		font-size: 20px;
+		font-weight: 700;
 		background: transparent url(../img/arrow-170x32.svg) 50% 100% no-repeat;
+		background-size: contain;
 		border: none;
 		display: inline-block;
-		width: 170px;
-		padding: 0 0 38px;
-		margin-top: 30px;
+		width: 130px;
+		padding: 0 0 28px;
+		margin-top: 10px;
 		text-decoration: none;
 		&:focus {
 			outline: none;
+		}
+		@include respond-to(m) {
+			font-size: 26px;
+			font-weight: 400;
+			margin-top: 30px;
+			width: 170px;
+			padding: 0 0 38px;
 		}
 	}
 	.delay-time {
@@ -349,6 +372,7 @@ a {
 	.send-page {
 		#submit-tweet {
 			background: transparent url(../img/arrow-170x32.png) 50% 100% no-repeat;
+			background-size: contain;
 		}
 	}
 }
@@ -411,24 +435,15 @@ a {
 .share-page {
 	.page {
 		padding-bottom: 80px;
-		@include respond-to(s) {
-			
-		}
   		@include respond-to(m) {
 			padding-bottom: 24vh;
-		}
-		@include respond-to(l) {
-			
-		}
-		@include respond-to(xl) {
-		
 		}
 	}
 	.heading {
 		background: $white;
 		display: inline-block;
 		margin-bottom: 62px;
-		padding: 15px 35px;
+		padding: 15px;
 		position: relative;
 		&:before {
 			position: absolute;
@@ -451,6 +466,9 @@ a {
 	  		height: 90px;
 	  		background: url(../img/banner-ribbon-right.svg) 0 0 no-repeat;
 	  		background-size: contain;
+		}
+		@include respond-to(m) {
+			padding: 15px 35px;
 		}
 	}
 	.sub-heading {
