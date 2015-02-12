@@ -178,7 +178,21 @@ jQuery(document).ready(function($) {
 	// ------------------------------------------------------------
 
 	// Process the form
-	function processForm(e){ 
+	function processForm(e){
+
+		// var target = $.trim( $('#tweet-target').val() ),
+		// 	tweet  = $.trim( $('#tweet-message').val() );
+
+		// if(target === '') {
+		// 	alert('target empty');
+		// 	return false;
+		// }
+
+		// if(tweet === '') {
+		// 	alert('tweet empty');
+		// 	return false;
+		// }
+
 		$.ajax({ 
 			url: 'post.php', 
 			dataType: 'text', 
@@ -209,7 +223,7 @@ jQuery(document).ready(function($) {
 				$('#response').html( errorThrown );
 			}
 		}); 
-		e.preventDefault(); 
+		e.preventDefault();
 	} 
 
 	$('#send-tweet').submit(processForm);
