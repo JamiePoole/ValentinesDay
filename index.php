@@ -106,7 +106,7 @@ $_ut->startSession();
 						<input type="hidden" id="nonce" name="nonce_token" value="<?php echo $_SESSION['token']; ?>" />
 						<div class="form-control">
 							<span class="form-prepend">@</span>
-							<input type="text" id="tweet-target" name="tweet_target" placeholder="twitterhandle" />
+							<input type="text" id="tweet-target" maxlength="15" name="tweet_target" placeholder="twitterhandle" />
 							<textarea id="tweet-message" maxlength="120" name="tweet_message" placeholder="Roses are red, tweets are nice..." rows="3"></textarea>
 						</div>
 						<div class="form-response">
