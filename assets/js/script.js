@@ -31,7 +31,7 @@ jQuery(document).ready(function($) {
 		scrollingSpeed: 1000,
         loopBottom: true,
         loopTop: false,
-        scrollOverflow: true,
+        scrollOverflow: false,
         // Events
         onLeave: function(index, nextIndex, direction){
         	$('.scroll-btn').addClass('fadeOutUp');

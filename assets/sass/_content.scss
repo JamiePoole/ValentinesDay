@@ -51,14 +51,8 @@ a {
 		left: 0;
 		right: 0;
 		height: 10px;
-		height: 2vw;
-		@include respond-to(m) {
-			height: 1vw;
-		}
-		@include respond-to(l) {
-			height: 1vw;
-		}
-		@include respond-to(xl) {
+		height: 3vw;
+		@include respond-to(s) {
 			height: 1vw;
 		}
 	}
@@ -67,14 +61,8 @@ a {
 		bottom: 0;
 		right: 0;
 		width: 10px;
-		width: 2vw;
-		@include respond-to(m) {
-			width: 1vw;
-		}
-		@include respond-to(l) {
-			width: 1vw;
-		}
-		@include respond-to(xl) {
+		width: 3vw;
+		@include respond-to(s) {
 			width: 1vw;
 		}
 	}
@@ -83,14 +71,8 @@ a {
 		left: 0;
 		right: 0;
 		height: 10px;
-		height: 2vw;
-		@include respond-to(m) {
-			height: 1vw;
-		}
-		@include respond-to(l) {
-			height: 1vw;
-		}
-		@include respond-to(xl) {
+		height: 3vw;
+		@include respond-to(s) {
 			height: 1vw;
 		}
 	}
@@ -99,14 +81,8 @@ a {
 		bottom: 0;
 		left: 0;
 		width: 10px;
-		width: 2vw;
-		@include respond-to(m) {
-			width: 1vw;
-		}
-		@include respond-to(l) {
-			width: 1vw;
-		}
-		@include respond-to(xl) {
+		width: 3vw;
+		@include respond-to(s) {
 			width: 1vw;
 		}
 	}
@@ -116,23 +92,17 @@ a {
 	@include transition(all 0.15s $curve-anim);
 	background: $hot-pink;
 	color: $white;
-	width: 24px;
-	height: 24px;
+	width: 32px;
+	height: 32px;
 	position: absolute;
 	bottom: 30px;
-	bottom: 6vh;
+	bottom: 7vh;
 	left: 50%;
 	z-index: 999;
-	margin-left: -12px;
+	margin-left: -16px;
 	display: block;
 	text-decoration: none;
-	border-radius: 12px;
-	@include respond-to(m) {
-		width: 32px;
-		height: 32px;
-		margin-left: -16px;
-		border-radius: 16px;
-	}
+	border-radius: 16px;
 	@include respond-to(l) {
 		width: 48px;
 		height: 48px;
@@ -145,20 +115,13 @@ a {
 	&:before {
 		content: '';
 		position: absolute;
-		left: 8px;
-		top: 10px;
+		left: 10px;
+		top: 13px;
 		width: 0; 
 		height: 0; 
-		border-left: 4px solid transparent;
-		border-right: 4px solid transparent;
-		border-top: 6px solid $white;
-		@include respond-to(m) {
-			left: 10px;
-			top: 13px;
-			border-left-width: 6px;
-			border-right-width: 6px;
-			border-top-width: 8px;
-		}
+		border-left: 6px solid transparent;
+		border-right: 6px solid transparent;
+		border-top: 8px solid $white;
 		@include respond-to(l) {
 			left: 15px;
 			top: 19px;
@@ -169,22 +132,26 @@ a {
 	}
 	&.up {
 		&:before {
-			border-left: 4px solid transparent;
-			border-right: 4px solid transparent;
+			top: 11px;
+			border-left: 6px solid transparent;
+			border-right: 6px solid transparent;
 			border-top: none;
-			border-bottom: 6px solid $white;
-			@include respond-to(m) {
-				top: 11px;
-				border-left-width: 6px;
-				border-right-width: 6px;
-				border-bottom-width: 8px;
-			}
+			border-bottom: 8px solid $white;
 			@include respond-to(l) {
 				top: 16px;
 				border-left-width: 9px;
 				border-right-width: 9px;
 				border-bottom-width: 13px;
 			}
+		}
+	}
+}
+.send-page,
+.share-page {
+	.scroll-btn {
+		display: none;
+		@include respond-to(m) {
+			display: block;
 		}
 	}
 }
@@ -357,7 +324,6 @@ a {
 		}
 		@include respond-to(m) {
 			font-size: 26px;
-			font-weight: 400;
 			margin-top: 30px;
 			width: 170px;
 			padding: 0 0 38px;
@@ -478,20 +444,14 @@ a {
 	.artwork {
 		position: absolute;
 		bottom: 0;
-		bottom: 1.5vw; // matches the bottom border
+		bottom: 1vw; // matches the bottom border
 		left: 20%;
 		right: 23%;
-		@include respond-to(s) {
-			
-		}
   		@include respond-to(m) {
 			bottom: 0.5vh;
 		}
 		@include respond-to(l) {
 			bottom: 1vh;
-		}
-		@include respond-to(xl) {
-		
 		}
 		img {
 			display: block;
