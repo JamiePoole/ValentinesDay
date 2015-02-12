@@ -180,18 +180,18 @@ jQuery(document).ready(function($) {
 	// Process the form
 	function processForm(e){
 
-		// var target = $.trim( $('#tweet-target').val() ),
-		// 	tweet  = $.trim( $('#tweet-message').val() );
+		var target = $.trim( $('#tweet-target').val() ),
+			tweet  = $.trim( $('#tweet-message').val() );
 
-		// if(target === '') {
-		// 	alert('target empty');
-		// 	return false;
-		// }
+		if(target === '') {
+			$('#response').html('Enter the twitter username of your crush');
+			return false;
+		}
 
-		// if(tweet === '') {
-		// 	alert('tweet empty');
-		// 	return false;
-		// }
+		if(tweet === '') {
+			$('#response').html('Enter a tweet to send to your crush');
+			return false;
+		}
 
 		$.ajax({ 
 			url: 'post.php', 
@@ -231,7 +231,7 @@ jQuery(document).ready(function($) {
 	// Tweet character countdown	
 	$('#tweet-target').on('keyup', function(event){
 		var len = $(this).val().length;
-		$('#tweet-message').attr('maxlength', 139-len);
+		$('#tweet-message').attr('maxlength', 124-len);
 	});
     $('#tweet-message').on('keyup', function(event){
     	var max = $(this).attr('maxlength');
