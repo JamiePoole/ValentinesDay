@@ -103,7 +103,7 @@ $_ut->startSession();
 			<div class="page">
 				<div id="tweet-form">
 					<form id="send-tweet" action="post.php" methos="post">
-						<input type="hidden" name="nonce_token" value="<?php echo $_SESSION['token']; ?>" />
+						<input type="hidden" id="nonce" name="nonce_token" value="<?php echo $_SESSION['token']; ?>" />
 						<div class="form-control">
 							<span class="form-prepend">@</span>
 							<input type="text" id="tweet-target" name="tweet_target" placeholder="twitterhandle" />
