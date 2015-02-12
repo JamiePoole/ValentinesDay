@@ -1309,6 +1309,51 @@ a:hover {
   left: 0;
   right: 0;
 }
+/* line 364, ../sass/_content.scss */
+.tweet-hearts .tweet {
+  background: url(../img/heart-180x164.svg) 0 0 no-repeat;
+  background-size: contain;
+  position: absolute;
+  width: 10%;
+  height: 0;
+  max-width: 180px;
+  padding-bottom: 9%;
+}
+/* line 372, ../sass/_content.scss */
+.tweet-hearts .tweet.a {
+  top: 15%;
+  left: 8%;
+}
+/* line 376, ../sass/_content.scss */
+.tweet-hearts .tweet.b {
+  top: 7%;
+  left: 50%;
+}
+/* line 380, ../sass/_content.scss */
+.tweet-hearts .tweet.c {
+  top: 22%;
+  left: 78%;
+}
+/* line 384, ../sass/_content.scss */
+.tweet-hearts .tweet.d {
+  bottom: 10%;
+  left: 4%;
+}
+/* line 388, ../sass/_content.scss */
+.tweet-hearts .tweet.e {
+  bottom: 6%;
+  left: 62%;
+}
+/* line 392, ../sass/_content.scss */
+.tweet-hearts .tweet.f {
+  top: 60%;
+  left: 82%;
+}
+/* line 396, ../sass/_content.scss */
+.tweet-hearts .tweet.g {
+  top: 58%;
+  left: 22%;
+}
 
 /* line 405, ../sass/_content.scss */
 .no-svg .tweet-hearts .tweet {
