@@ -297,7 +297,7 @@ textarea {
 /* line 181, ../sass/_fullpage.scss */
 #fp-nav ul li a:hover span,
 .fp-slidesNav ul li a:hover span {
-  background: #5facf9;
+  background: #874789;
 }
 
 /* line 187, ../sass/_fullpage.scss */
@@ -931,7 +931,7 @@ strong {
 #messages {
   padding: 1em;
   margin-bottom: 1em;
-  background: #5facf9;
+  background: #874789;
 }
 
 /* line 65, ../sass/_admin.scss */
@@ -989,7 +989,7 @@ strong {
 }
 /* line 108, ../sass/_admin.scss */
 #main-section #content table td.index {
-  color: #5facf9;
+  color: #874789;
   cursor: help;
 }
 
