@@ -19,5 +19,6 @@ array_push($phrases,
 		'tear off',
 		'poor excuse',
 		'nail you',
-		'hate'
+		'hate',
+		'finger you'
 );
