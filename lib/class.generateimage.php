@@ -74,7 +74,7 @@ class generateImage {
 		// Sender Settings
 		$fromColor = 'f51e6b';
 		$fromFontSize = 16;
-		$fromMessage = 'an Admirer';
+		$fromMessage = 'your secret crush';
 		// Message Settings
 		$message = $this->parseMessage($this->message);
 		$msgColor = 'FFFFFF';
