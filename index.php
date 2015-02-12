@@ -93,7 +93,7 @@ $_ut->startSession();
 			<div class="page">
 				<h1 class="heading">Tweet the love</h1>
 				<h2 class="sub-heading">
-					Anonymously tell your crush how you really feel.
+					Anonymously tell your crush how you really feel
 				</h2>
 			</div>
 			<a class="scroll-btn animated fadeInDown" href="#"><span class="wa-hidden">Next</span></a>
@@ -104,19 +104,21 @@ $_ut->startSession();
 				<div id="tweet-form">
 					<form id="send-tweet" action="post.php" methos="post">
 						<input type="hidden" name="nonce_token" value="<?php echo $_SESSION['token']; ?>" />
-						<div class="form-error"></div>
 						<div class="form-control">
 							<span class="form-prepend">@</span>
 							<input type="text" id="tweet-target" name="tweet_target" placeholder="twitterhandle" />
 							<textarea id="tweet-message" maxlength="120" name="tweet_message" placeholder="Roses are red, tweets are nice..." rows="3"></textarea>
 						</div>
-						<div id="char-count"></div>
+						<div class="form-response">
+							<div id="response"></div>
+							<div id="char-count"></div>
+						</div>
 						<button type="submit" id="submit-tweet">
 							<span class="animated">Send</span>
 						</button>
 					</form>
 					<p class="delay-time"><?php $_ut->getDelay($_tq->time()); ?></p>
-					<div id="response"></div>
+					
 				</div>
 			</div>
 			<div class="tweet-hearts">
@@ -134,11 +136,9 @@ $_ut->startSession();
 		<div class="section share-page" data-anchor="share">
 			<!-- <div class="page-break"></div> -->
 			<div class="page">
-				<h1 id="thanks" class="heading">
-					Share the love
-				</h1>
+				<h1 id="thanks" class="heading">Share the love</h1>
 				<h2 id="thanks-sub" class="sub-heading">
-					Check out previous ones <a href="https://twitter.com/mytweetercrush" target="_blank">here</a>.
+					Check out previous ones <a href="https://twitter.com/mytweetercrush" target="_blank">here</a>
 				</h2>
 				<div class="share">
 					<a class="share-btn fb-btn" href="">
