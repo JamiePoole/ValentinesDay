@@ -35,7 +35,7 @@ class sendTweet {
 	private function parseName($name, $handle){
 		$name = explode(' ', $name);
 		$fname = $name[0];
-		if(preg_match("/^[A-Za-z0-9\-]+$/", $fname) === 1)
+		if(ctype_alpha($fname))
 			return $fname;
 		return $handle;
 	}
