@@ -15,7 +15,7 @@ if(isset($_POST['nonce_token']) && $_ut->checkSession($_POST['nonce_token'])):
 	endif;
 else:
 	$return->error['code'] = 2;
-	$return->error['message'] = 'Invalid token.';
+	$return->error['message'] = 'Sorry! You\'ll need to refresh the page to send another.';
 	$return->error['file'] = $user['ip'];
 	$_ut->log((object)$return->error);
 endif;
