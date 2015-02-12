@@ -325,7 +325,7 @@ textarea {
 
 /* line 205, ../sass/_fullpage.scss */
 #fp-nav ul li .fp-tooltip {
-  color: #931658;
+  color: #874789;
   position: absolute;
   top: 0;
   font-size: 16px;
@@ -1249,13 +1249,13 @@ a:hover {
   }
 }
 /* line 303, ../sass/_content.scss */
-.send-page #char-count {
+.send-page .form-response {
   background: #f2206c;
   color: white;
   margin-top: 2px;
   padding: 5px;
 }
-/* line 309, ../sass/_content.scss */
+/* line 312, ../sass/_content.scss */
 .send-page #submit-tweet {
   font-family: "europa", sans-serif;
   color: #f2206c;
@@ -1270,12 +1270,16 @@ a:hover {
   margin-top: 10px;
   text-decoration: none;
 }
-/* line 322, ../sass/_content.scss */
+/* line 325, ../sass/_content.scss */
 .send-page #submit-tweet:focus {
   outline: none;
 }
+/* line 328, ../sass/_content.scss */
+.send-page #submit-tweet:hover {
+  color: #874789;
+}
 @media (min-width: 768px) {
-  /* line 309, ../sass/_content.scss */
+  /* line 312, ../sass/_content.scss */
   .send-page #submit-tweet {
     font-size: 26px;
     margin-top: 30px;
@@ -1283,18 +1287,18 @@ a:hover {
     padding: 0 0 38px;
   }
 }
-/* line 332, ../sass/_content.scss */
+/* line 338, ../sass/_content.scss */
 .send-page .delay-time {
   display: none;
 }
 
-/* line 339, ../sass/_content.scss */
+/* line 345, ../sass/_content.scss */
 .no-svg .send-page #submit-tweet {
   background: transparent url(../img/arrow-170x32.png) 50% 100% no-repeat;
   background-size: contain;
 }
 
-/* line 346, ../sass/_content.scss */
+/* line 352, ../sass/_content.scss */
 .tweet-hearts {
   position: absolute;
   z-index: 8;
@@ -1302,7 +1306,7 @@ a:hover {
   height: 100%;
   top: 0;
 }
-/* line 352, ../sass/_content.scss */
+/* line 358, ../sass/_content.scss */
 .tweet-hearts .tweet {
   background: url(../img/heart-180x164.svg) 0 0 no-repeat;
   background-size: contain;
@@ -1312,60 +1316,60 @@ a:hover {
   max-width: 180px;
   padding-bottom: 9%;
 }
-/* line 360, ../sass/_content.scss */
+/* line 366, ../sass/_content.scss */
 .tweet-hearts .tweet.a {
   top: 15%;
   left: 8%;
 }
-/* line 364, ../sass/_content.scss */
+/* line 370, ../sass/_content.scss */
 .tweet-hearts .tweet.b {
   top: 7%;
   left: 50%;
 }
-/* line 368, ../sass/_content.scss */
+/* line 374, ../sass/_content.scss */
 .tweet-hearts .tweet.c {
   top: 22%;
   left: 78%;
 }
-/* line 372, ../sass/_content.scss */
+/* line 378, ../sass/_content.scss */
 .tweet-hearts .tweet.d {
   bottom: 10%;
   left: 4%;
 }
-/* line 376, ../sass/_content.scss */
+/* line 382, ../sass/_content.scss */
 .tweet-hearts .tweet.e {
   bottom: 6%;
   left: 62%;
 }
-/* line 380, ../sass/_content.scss */
+/* line 386, ../sass/_content.scss */
 .tweet-hearts .tweet.f {
   top: 60%;
   left: 82%;
 }
-/* line 384, ../sass/_content.scss */
+/* line 390, ../sass/_content.scss */
 .tweet-hearts .tweet.g {
   top: 58%;
   left: 22%;
 }
 
-/* line 393, ../sass/_content.scss */
+/* line 399, ../sass/_content.scss */
 .no-svg .tweet-hearts .tweet {
   background: url(../img/heart-96x96.png) 0 0 no-repeat;
   width: 96px;
   height: 96px;
 }
 
-/* line 402, ../sass/_content.scss */
+/* line 408, ../sass/_content.scss */
 .share-page .page {
   padding-bottom: 80px;
 }
 @media (min-width: 768px) {
-  /* line 402, ../sass/_content.scss */
+  /* line 408, ../sass/_content.scss */
   .share-page .page {
     padding-bottom: 24vh;
   }
 }
-/* line 408, ../sass/_content.scss */
+/* line 414, ../sass/_content.scss */
 .share-page .heading {
   background: white;
   display: inline-block;
@@ -1373,7 +1377,7 @@ a:hover {
   padding: 15px;
   position: relative;
 }
-/* line 414, ../sass/_content.scss */
+/* line 420, ../sass/_content.scss */
 .share-page .heading:before {
   position: absolute;
   z-index: 4;
@@ -1385,7 +1389,7 @@ a:hover {
   background: url(../img/banner-ribbon-left.svg) 0 0 no-repeat;
   background-size: contain;
 }
-/* line 425, ../sass/_content.scss */
+/* line 431, ../sass/_content.scss */
 .share-page .heading:after {
   position: absolute;
   z-index: 4;
@@ -1398,17 +1402,17 @@ a:hover {
   background-size: contain;
 }
 @media (min-width: 768px) {
-  /* line 408, ../sass/_content.scss */
+  /* line 414, ../sass/_content.scss */
   .share-page .heading {
     padding: 15px 35px;
   }
 }
-/* line 440, ../sass/_content.scss */
+/* line 446, ../sass/_content.scss */
 .share-page .sub-heading {
   margin-bottom: 16px;
   line-height: 1.4;
 }
-/* line 444, ../sass/_content.scss */
+/* line 450, ../sass/_content.scss */
 .share-page .artwork {
   position: absolute;
   bottom: 0;
@@ -1417,18 +1421,18 @@ a:hover {
   right: 23%;
 }
 @media (min-width: 768px) {
-  /* line 444, ../sass/_content.scss */
+  /* line 450, ../sass/_content.scss */
   .share-page .artwork {
     bottom: 0.5vh;
   }
 }
 @media (min-width: 1024px) {
-  /* line 444, ../sass/_content.scss */
+  /* line 450, ../sass/_content.scss */
   .share-page .artwork {
     bottom: 1vh;
   }
 }
-/* line 456, ../sass/_content.scss */
+/* line 462, ../sass/_content.scss */
 .share-page .artwork img {
   display: block;
   width: 100%;
@@ -1437,17 +1441,17 @@ a:hover {
   margin: 0 auto;
 }
 @media (min-width: 1024px) {
-  /* line 456, ../sass/_content.scss */
+  /* line 462, ../sass/_content.scss */
   .share-page .artwork img {
     max-height: 35vh;
   }
 }
-/* line 476, ../sass/_content.scss */
+/* line 482, ../sass/_content.scss */
 .share-page .share {
   font-size: 22px;
   font-weight: 300;
 }
-/* line 480, ../sass/_content.scss */
+/* line 486, ../sass/_content.scss */
 .share-page .share-btn {
   -moz-transition: all 0.15s cubic-bezier(0.055, 0.34, 0.09, 0.82);
   -o-transition: all 0.15s cubic-bezier(0.055, 0.34, 0.09, 0.82);
@@ -1467,61 +1471,61 @@ a:hover {
   height: 32px;
   border-radius: 16px;
 }
-/* line 495, ../sass/_content.scss */
+/* line 501, ../sass/_content.scss */
 .share-page .share-btn:hover {
   background-color: #874789;
 }
-/* line 498, ../sass/_content.scss */
+/* line 504, ../sass/_content.scss */
 .share-page .share-btn:focus {
   outline: none;
 }
 @media (min-width: 768px) {
-  /* line 480, ../sass/_content.scss */
+  /* line 486, ../sass/_content.scss */
   .share-page .share-btn {
     width: 48px;
     height: 48px;
     border-radius: 24px;
   }
 }
-/* line 507, ../sass/_content.scss */
+/* line 513, ../sass/_content.scss */
 .share-page .fb-btn {
   background-image: url(../img/facebook-icon-24x24.svg);
   background-size: 18px 18px;
 }
 @media (min-width: 768px) {
-  /* line 507, ../sass/_content.scss */
+  /* line 513, ../sass/_content.scss */
   .share-page .fb-btn {
     background-size: 22px 22px;
   }
 }
-/* line 514, ../sass/_content.scss */
+/* line 520, ../sass/_content.scss */
 .share-page .tw-btn {
   background-image: url(../img/twitter-icon-24x24.svg);
   background-size: 18px 18px;
 }
 @media (min-width: 768px) {
-  /* line 514, ../sass/_content.scss */
+  /* line 520, ../sass/_content.scss */
   .share-page .tw-btn {
     background-size: 22px 22px;
   }
 }
-/* line 521, ../sass/_content.scss */
+/* line 527, ../sass/_content.scss */
 .share-page .gp-btn {
   background-image: url(../img/google-icon-24x24.svg);
   background-size: 18px 18px;
 }
 @media (min-width: 768px) {
-  /* line 521, ../sass/_content.scss */
+  /* line 527, ../sass/_content.scss */
   .share-page .gp-btn {
     background-size: 22px 22px;
   }
 }
 
-/* line 532, ../sass/_content.scss */
+/* line 538, ../sass/_content.scss */
 .no-svg .share-page .heading {
   margin-bottom: 95px;
 }
-/* line 534, ../sass/_content.scss */
+/* line 540, ../sass/_content.scss */
 .no-svg .share-page .heading:before {
   left: -68px;
   bottom: -102px;
@@ -1529,7 +1533,7 @@ a:hover {
   height: 158px;
   background: url(../img/banner-ribbon-left.png) 0 0 no-repeat;
 }
-/* line 541, ../sass/_content.scss */
+/* line 547, ../sass/_content.scss */
 .no-svg .share-page .heading:after {
   right: -68px;
   bottom: -102px;
@@ -1537,82 +1541,82 @@ a:hover {
   height: 158px;
   background: url(../img/banner-ribbon-right.png) 0 0 no-repeat;
 }
-/* line 549, ../sass/_content.scss */
+/* line 555, ../sass/_content.scss */
 .no-svg .share-page .fb-btn {
   background-image: url(../img/facebook-icon-24x24.png);
 }
-/* line 552, ../sass/_content.scss */
+/* line 558, ../sass/_content.scss */
 .no-svg .share-page .tw-btn {
   background-image: url(../img/twitter-icon-24x24.png);
 }
-/* line 555, ../sass/_content.scss */
+/* line 561, ../sass/_content.scss */
 .no-svg .share-page .gp-btn {
   background-image: url(../img/google-icon-24x24.png);
 }
-/* line 559, ../sass/_content.scss */
+/* line 565, ../sass/_content.scss */
 .no-svg .share-page .artwork img {
   width: auto;
   max-width: 30%;
 }
 
-/* line 567, ../sass/_content.scss */
+/* line 573, ../sass/_content.scss */
 .info-page {
   text-align: center;
 }
-/* line 569, ../sass/_content.scss */
+/* line 575, ../sass/_content.scss */
 .info-page .copy {
   width: 90%;
   margin: auto;
   font-size: 12px;
 }
 @media (min-width: 768px) {
-  /* line 569, ../sass/_content.scss */
+  /* line 575, ../sass/_content.scss */
   .info-page .copy {
     font-size: 21px;
   }
 }
 @media (min-width: 1024px) {
-  /* line 569, ../sass/_content.scss */
+  /* line 575, ../sass/_content.scss */
   .info-page .copy {
     width: 70%;
     font-size: 21px;
   }
 }
 @media (min-width: 1280px) {
-  /* line 569, ../sass/_content.scss */
+  /* line 575, ../sass/_content.scss */
   .info-page .copy {
     font-size: 21px;
   }
 }
-/* line 585, ../sass/_content.scss */
+/* line 591, ../sass/_content.scss */
 .info-page .logos img {
   vertical-align: middle;
   margin: 0 20px 20px;
 }
-/* line 588, ../sass/_content.scss */
+/* line 594, ../sass/_content.scss */
 .info-page .logos img.us {
   max-width: 50px;
   height: auto;
 }
 @media (min-width: 1024px) {
-  /* line 588, ../sass/_content.scss */
+  /* line 594, ../sass/_content.scss */
   .info-page .logos img.us {
     max-width: 100%;
   }
 }
-/* line 595, ../sass/_content.scss */
+/* line 601, ../sass/_content.scss */
 .info-page .logos img.savethechildren {
   max-width: 180px;
   height: auto;
 }
 @media (min-width: 1024px) {
-  /* line 595, ../sass/_content.scss */
+  /* line 601, ../sass/_content.scss */
   .info-page .logos img.savethechildren {
     max-width: 100%;
   }
 }
 
-/* line 606, ../sass/_content.scss */
+/* line 612, ../sass/_content.scss */
 .page-break {
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
@@ -1629,12 +1633,12 @@ a:hover {
   border-bottom: 1vw solid white;
 }
 
-/* line 621, ../sass/_content.scss */
+/* line 627, ../sass/_content.scss */
 .no-svg .page-break {
   background: url(../img/page-break.png) 50% 0 repeat-x;
 }
 
-/* line 627, ../sass/_content.scss */
+/* line 633, ../sass/_content.scss */
 .slimScrollBar,
 .slimScrollRail {
   border-radius: 0 !important;
@@ -1642,114 +1646,4 @@ a:hover {
   opacity: 1 !important;
   top: 0 !important;
   right: 0 !important;
-}
-
-/* line 636, ../sass/_content.scss */
-.odometer.odometer-auto-theme, .odometer.odometer-theme-default, .odometer-pre {
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  *zoom: 1;
-  *display: inline;
-  position: relative;
-}
-
-/* line 644, ../sass/_content.scss */
-.odometer.odometer-auto-theme .odometer-digit, .odometer.odometer-theme-default .odometer-digit {
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  *zoom: 1;
-  *display: inline;
-  position: relative;
-}
-
-/* line 652, ../sass/_content.scss */
-.odometer.odometer-auto-theme .odometer-digit .odometer-digit-spacer, .odometer.odometer-theme-default .odometer-digit .odometer-digit-spacer {
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  *zoom: 1;
-  *display: inline;
-  visibility: hidden;
-}
-
-/* line 660, ../sass/_content.scss */
-.odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner, .odometer.odometer-theme-default .odometer-digit .odometer-digit-inner {
-  text-align: left;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-}
-
-/* line 670, ../sass/_content.scss */
-.odometer.odometer-auto-theme .odometer-digit .odometer-ribbon, .odometer.odometer-theme-default .odometer-digit .odometer-ribbon {
-  display: block;
-}
-
-/* line 673, ../sass/_content.scss */
-.odometer.odometer-auto-theme .odometer-digit .odometer-ribbon-inner, .odometer.odometer-theme-default .odometer-digit .odometer-ribbon-inner {
-  display: block;
-  -webkit-backface-visibility: hidden;
-}
-
-/* line 677, ../sass/_content.scss */
-.odometer.odometer-auto-theme .odometer-digit .odometer-value, .odometer.odometer-theme-default .odometer-digit .odometer-value {
-  display: block;
-  -webkit-transform: translateZ(0);
-}
-
-/* line 681, ../sass/_content.scss */
-.odometer.odometer-auto-theme .odometer-digit .odometer-value.odometer-last-value, .odometer.odometer-theme-default .odometer-digit .odometer-value.odometer-last-value {
-  position: absolute;
-}
-
-/* line 684, ../sass/_content.scss */
-.odometer.odometer-auto-theme.odometer-animating-up .odometer-ribbon-inner, .odometer.odometer-theme-default.odometer-animating-up .odometer-ribbon-inner {
-  -webkit-transition: -webkit-transform 2s;
-  -moz-transition: -moz-transform 2s;
-  -ms-transition: -ms-transform 2s;
-  -o-transition: -o-transform 2s;
-  transition: transform 2s;
-}
-
-/* line 691, ../sass/_content.scss */
-.odometer.odometer-auto-theme.odometer-animating-up.odometer-animating .odometer-ribbon-inner, .odometer.odometer-theme-default.odometer-animating-up.odometer-animating .odometer-ribbon-inner {
-  -webkit-transform: translateY(-100%);
-  -moz-transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  -o-transform: translateY(-100%);
-  transform: translateY(-100%);
-}
-
-/* line 698, ../sass/_content.scss */
-.odometer.odometer-auto-theme.odometer-animating-down .odometer-ribbon-inner, .odometer.odometer-theme-default.odometer-animating-down .odometer-ribbon-inner {
-  -webkit-transform: translateY(-100%);
-  -moz-transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  -o-transform: translateY(-100%);
-  transform: translateY(-100%);
-}
-
-/* line 705, ../sass/_content.scss */
-.odometer.odometer-auto-theme.odometer-animating-down.odometer-animating .odometer-ribbon-inner, .odometer.odometer-theme-default.odometer-animating-down.odometer-animating .odometer-ribbon-inner {
-  -webkit-transition: -webkit-transform 2s;
-  -moz-transition: -moz-transform 2s;
-  -ms-transition: -ms-transform 2s;
-  -o-transition: -o-transform 2s;
-  transition: transform 2s;
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
-  transform: translateY(0);
-}
-
-/* line 718, ../sass/_content.scss */
-.odometer.odometer-auto-theme, .odometer.odometer-theme-default {
-  line-height: 1.1em;
 }

@@ -233,11 +233,11 @@ class tweetQueue {
 		 		// Check if offensive phrase Flag
 		 		if($msg['flag']):
 		 			$return->tweet['code'] = 9;
-		 			$return->tweet['status'] = 'Tweet flagged.';
+		 			$return->tweet['status'] = 'Tweet flagged for moderation';
 		 			$return->tweet['message'] = $msg['orig'];
 		 		else:
 			 		$return->tweet['code'] = 100;
-			 		$return->tweet['status'] = 'Tweet validated.';
+			 		$return->tweet['status'] = 'Tweet validated';
 			 		$return->tweet['message'] = $msg['clean'];
 			 	endif;
 
@@ -246,14 +246,14 @@ class tweetQueue {
 
 			} else {
 				$return->error['code'] = 5;
-				$return->error['message'] = 'Empty message.';
+				$return->error['message'] = 'Please enter a message';
 				$return->error['file'] = (isset($user['ip'])) ? $user['ip'] : false;
 				$this->ut->log((object)$return->error);
 				return $return;
 			}
 		} else {
 			$return->error['code'] = 6;
-			$return->error['message'] = 'Empty recipient.';
+			$return->error['message'] = 'Please enter a twitter username';
 			$return->error['file'] = (isset($user['ip'])) ? $user['ip'] : false;
 			$this->ut->log((object)$return->error);
 			return $return;

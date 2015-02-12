@@ -24,8 +24,7 @@ jQuery(document).ready(function($) {
 		//Navigation
         menu: true,
         anchors:['intro', 'send', 'share'],
-        navigation: true,
-        navigationPosition: 'right',
+        navigation: true,        navigationPosition: 'right',
 		//Scrolling
 		css3: true,
 		scrollingSpeed: 1000,
@@ -35,21 +34,21 @@ jQuery(document).ready(function($) {
         // Events
         onLeave: function(index, nextIndex, direction){
         	$('.scroll-btn').addClass('fadeOutUp');
-        	if(index == 1) {
-        		resetIntroBirdAnim();
+        	if (index == 1) {
+        		//resetIntroBirdAnim();
         	}
         },
         afterLoad: function(anchorLink, index){
         	$('.scroll-btn').removeClass('fadeOutUp').addClass('fadeInDown');
-        	if(index == 1) {
+        	if (index == 1) {
         		introBirdAnim();
         	}
-        	if(index == 2){
-        		ga('send', 'pageview', '/#send');
+        	if (index == 2) {
+        		ga('send', 'event', 'Virtual page view', 'Scroll', 'Send');
             	$('#submit-tweet').removeClass('flyOff fadeOutUp').addClass('animated fadeInDown');
          	}
-         	if(index == 3){
-         		ga('send', 'pageview', '/#share');
+         	if (index == 3) {
+         		ga('send', 'event', 'Virtual page view', 'Scroll', 'Share');
          	}
         }
 	});
@@ -169,10 +168,10 @@ jQuery(document).ready(function($) {
 	}
 
 	// Reset the intro bird animation
-	function resetIntroBirdAnim() {
-		var loveHeart = s.select('#LoveHeart');
-		loveHeart.attr({ opacity: 0 });
-	}
+	// function resetIntroBirdAnim() {
+	// 	var $loveHeart = s.select('#LoveHeart');
+	// 	$loveHeart.attr({ opacity: 0 });
+	// }
 
 	
 	// Send Tweet Form
