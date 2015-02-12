@@ -65,7 +65,7 @@ class sendTweet {
 
 				// Generate Tweet
 				$hastag = '#tweetthelove';
-				$tweet = '@'.$recipient.' '.htmlspecialchars_decode($message, ENT_QUOTES) . ' ' . $hashtag;
+				$tweet = '@'.$recipient.' '.htmlspecialchars_decode($message, ENT_QUOTES).' '.$hashtag;
 				$param = array('status'	=> $tweet);
 
 				// If Image Generated Upload and add to Parameters
