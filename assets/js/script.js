@@ -24,13 +24,14 @@ jQuery(document).ready(function($) {
 		//Navigation
         menu: true,
         anchors:['intro', 'send', 'share'],
-        navigation: true,        navigationPosition: 'right',
+        navigation: true,        
+        navigationPosition: 'right',
 		//Scrolling
 		css3: true,
 		scrollingSpeed: 1000,
         loopBottom: true,
         loopTop: false,
-        scrollOverflow: false,
+        scrollOverflow: true,
         // Events
         onLeave: function(index, nextIndex, direction){
         	$('.scroll-btn').addClass('fadeOutUp');
@@ -59,10 +60,10 @@ jQuery(document).ready(function($) {
 	});
 
 
-	// SVG Animations
+	// Intro SVG Animation
 	// ------------------------------------------------------------
 
-	// Set the stage
+	// Set the intro stage
 	var	s = Snap('#birds');
 	s.attr({ viewBox: "0 0 1600 890" }); // Need this for responsive svg - its the aspect ratio
 	Snap.load('assets/img/intro-birds.svg', function (loadedBirds) {
@@ -172,6 +173,21 @@ jQuery(document).ready(function($) {
 	// 	var $loveHeart = s.select('#LoveHeart');
 	// 	$loveHeart.attr({ opacity: 0 });
 	// }
+
+
+	// Tweet Hearts SVG Animation
+	// ------------------------------------------------------------
+
+	// Set the intro stage
+	// var	t = Snap('#tweet-hearts');
+	// s.attr({ viewBox: "0 0 1600 890" }); // Need this for responsive svg - its the aspect ratio
+	// Snap.load('assets/img/intro-birds.svg', function (loadedBirds) {
+	// 	// Place the SVG on the page
+	// 	g = loadedBirds.select('g');
+	// 	s.append(g);
+	// 	// Play the intro bird animation
+	// 	introBirdAnim();
+	// });
 
 	
 	// Send Tweet Form
