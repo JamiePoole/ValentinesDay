@@ -64,7 +64,7 @@ class sendTweet {
 				$file = $this->gi->saveImage($image, $dir, $token);
 
 				// Generate Tweet
-				$hastag = '#tweetthelove';
+				$hashtag = '#tweetthelove';
 				$tweet = '@'.$recipient.' '.htmlspecialchars_decode($message, ENT_QUOTES).' '.$hashtag;
 				$param = array('status'	=> $tweet);
 
@@ -100,6 +100,10 @@ class sendTweet {
 						));
 					}
 				}
+
+				// Follow User (don't check for Twitter response)
+				$twitter->post('friendships/create', array('screen_name' => $recipient));
+
 			}
 		} else {
 			// Validation Fail
