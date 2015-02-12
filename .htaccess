@@ -5,8 +5,8 @@ Options +FollowSymLinks
 	RewriteBase /
 
 	# Rewrite Index
-	RewriteCond %{THE_REQUEST} ^.*/index\.php 
-	RewriteRule ^(.*)index.php$ / [R=301,L]
+	#RewriteCond %{THE_REQUEST} ^.*/index\.php 
+	#RewriteRule ^(.*)index.php$ / [R=301,L]
 
 	#Block users directed by these sites
 	#RewriteCond %{HTTP_REFERER} scumbag\.com [NC,OR]
