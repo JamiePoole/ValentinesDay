@@ -122,7 +122,7 @@ $_ut->startSession();
 				</div>
 			</div>
 			<!-- <div class="tweet-hearts">
-				<svg id="tweet-hearts" width="100%" width="100%"></svg>
+				<svg id="tweet-hearts" width="100%" height="100%"></svg>
 			</div> -->
 			<div class="tweet-hearts">
 				<div class="tweet a"></div>
@@ -157,7 +157,7 @@ $_ut->startSession();
 					</a>
 				</div>
 				<h2 id="thanks-sub" class="sub-heading">
-					Or get lost in a feed on love <a href="https://twitter.com/mytweetercrush" target="_blank">here</a>
+					Or get lost in a feed of love <a href="https://twitter.com/mytweetercrush" target="_blank">here</a>
 				</h2>
 			</div>
 			<div class="artwork animated">

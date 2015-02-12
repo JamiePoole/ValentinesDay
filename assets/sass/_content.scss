@@ -355,43 +355,49 @@ a {
   	width: 100%;
   	height: 100%;
   	top: 0;
-	.tweet {
-		background: url(../img/heart-180x164.svg) 0 0 no-repeat;
-		background-size: contain;
-		position: absolute;
-		width: 10%;
-		height: 0;
-		max-width: 180px;
-		padding-bottom: 9%;
-		&.a {
-			top: 15%;
-			left: 8%;
-		}
-		&.b {
-			top: 7%;
-			left: 50%;
-		}
-		&.c {
-			top: 22%;
-			left: 78%;
-		}
-		&.d {
-			bottom: 10%;
-			left: 4%;
-		}
-		&.e {
-			bottom: 6%;
-			left: 62%;
-		}
-		&.f {
-			top: 60%;
-			left: 82%;
-		}
-		&.g {
-			top: 58%;
-			left: 22%;
-		}
-	}
+  	bottom: 0;
+  	left: 0;
+  	right: 0;
+  	svg#tweet-hearts {
+
+  	}
+	// .tweet {
+	// 	background: url(../img/heart-180x164.svg) 0 0 no-repeat;
+	// 	background-size: contain;
+	// 	position: absolute;
+	// 	width: 10%;
+	// 	height: 0;
+	// 	max-width: 180px;
+	// 	padding-bottom: 9%;
+	// 	&.a {
+	// 		top: 15%;
+	// 		left: 8%;
+	// 	}
+	// 	&.b {
+	// 		top: 7%;
+	// 		left: 50%;
+	// 	}
+	// 	&.c {
+	// 		top: 22%;
+	// 		left: 78%;
+	// 	}
+	// 	&.d {
+	// 		bottom: 10%;
+	// 		left: 4%;
+	// 	}
+	// 	&.e {
+	// 		bottom: 6%;
+	// 		left: 62%;
+	// 	}
+	// 	&.f {
+	// 		top: 60%;
+	// 		left: 82%;
+	// 	}
+	// 	&.g {
+	// 		top: 58%;
+	// 		left: 22%;
+	// 	}
+	// }
 }
 
 .no-svg {
