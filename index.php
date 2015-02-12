@@ -140,9 +140,6 @@ $_ut->startSession();
 			<!-- <div class="page-break"></div> -->
 			<div class="page">
 				<h1 id="thanks" class="heading">Share the love</h1>
-				<h2 id="thanks-sub" class="sub-heading">
-					Check out previous ones <a href="https://twitter.com/mytweetercrush" target="_blank">here</a>
-				</h2>
 				<div class="share">
 					<a class="share-btn fb-btn" href="">
 						<span class="wa-hidden">Share on Facebook</span>
@@ -159,6 +156,9 @@ $_ut->startSession();
 						<span class="wa-hidden">Share on Google +</span>
 					</a>
 				</div>
+				<h2 id="thanks-sub" class="sub-heading">
+					Or get lost in a feed on love <a href="https://twitter.com/mytweetercrush" target="_blank">here</a>
+				</h2>
 			</div>
 			<div class="artwork animated">
 				<img src="assets/img/bird-bubble.svg">

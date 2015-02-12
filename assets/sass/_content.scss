@@ -414,7 +414,7 @@ a {
 	.heading {
 		background: $white;
 		display: inline-block;
-		margin-bottom: 62px;
+		margin-bottom: 36px;
 		padding: 15px;
 		position: relative;
 		&:before {
@@ -482,6 +482,7 @@ a {
 	.share {
 		font-size: 22px;
 		font-weight: 300;
+		margin-bottom: 10px;
 	}
 	.share-btn {
 		@include transition(all 0.15s $curve-anim);
