@@ -187,15 +187,13 @@ jQuery(document).ready(function($) {
 	// Tweet Hearts SVG Animation
 	// ------------------------------------------------------------
 
-	// Set the intro stage
-	// var	t = Snap('#tweet-hearts');
-	// s.attr({ viewBox: "0 0 1600 890" }); // Need this for responsive svg - its the aspect ratio
-	// Snap.load('assets/img/intro-birds.svg', function (loadedBirds) {
-	// 	// Place the SVG on the page
-	// 	g = loadedBirds.select('g');
-	// 	s.append(g);
-	// 	// Play the intro bird animation
-	// 	introBirdAnim();
+	// Set the heart stage
+	// var	h = Snap('#tweet-hearts');
+	// //h.attr({ viewBox: "0 0 1600 890" }); // Need this for responsive svg - its the aspect ratio 
+	// // set dynamically based on viewport size???
+	// Snap.load('assets/img/heart-180x164.svg', function (loadedHeart) {
+	// 	g = loadedHeart.select('g');
+	// 	h.append(g);
 	// });
 
 	
@@ -236,7 +234,7 @@ jQuery(document).ready(function($) {
 					$('#char-count').text('');
 					$('#tweet-message').attr('maxlength', 120);
 					$('#thanks').html('Aw, thanks');
-					$('#thanks-sub').html('Share the love and get lost in a feed on love <a href="https://twitter.com/mytweetercrush" target="_blank">here</a>');
+					$('#thanks-sub').html('Share the love and get lost in a feed of love <a href="https://twitter.com/mytweetercrush" target="_blank">here</a>');
 					$.fn.fullpage.moveSectionDown();
 					ga('send', 'event', 'Forms', 'Submit', 'Send Tweet');
 				}
