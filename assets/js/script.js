@@ -31,7 +31,7 @@ jQuery(document).ready(function($) {
 		scrollingSpeed: 1000,
         loopBottom: true,
         loopTop: false,
-        scrollOverflow: true,
+        scrollOverflow: false,
         // Events
         onLeave: function(index, nextIndex, direction){
         	$('.scroll-btn').addClass('fadeOutUp');
@@ -57,6 +57,15 @@ jQuery(document).ready(function($) {
 	$('.scroll-btn').click(function(e) {
 		e.preventDefault();
 		$.fn.fullpage.moveSectionDown();
+	});
+
+	// Make it scroll like normal when we are entering text into the form
+	$('.touch #tweet-target, .touch #tweet-message').on('focus', function() {
+		$.fn.fullpage.setAutoScrolling(false);
+	});
+
+	$('.touch #tweet-target, .touch #tweet-message').on('blur', function() {
+		$.fn.fullpage.setAutoScrolling(true);
 	});
 
 
