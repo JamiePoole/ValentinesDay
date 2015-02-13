@@ -33,5 +33,6 @@ array_push($phrases,
 		'electrocute',
 		'choke',
 		'in your house',
+		'#gamergate',
 		'gamergate'
 );
