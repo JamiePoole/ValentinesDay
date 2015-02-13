@@ -6,8 +6,10 @@ jQuery(document).ready(function($){
 		$.ajax({
 			url: tag.attr('href'),
 			success: function(){
-				console.log($(tag));
-				$(tag).closest('tr').remove();
+				$(tag).animate({backgroundColor: ''})
+				$(tag).closest('tr').fadeOut(400, function(){
+					$(this).remove();
+				});
 			},
 		});
 	});
