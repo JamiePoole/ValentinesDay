@@ -29,7 +29,6 @@ strong {
 }
 
 #container {
-	width: 900px;
 	margin: 0 auto;
 	padding: 1em;
 }
@@ -92,10 +91,15 @@ strong {
 		table {
 			width: 100%;
 			thead {
-				background: $blue-grey;
+				tr {
+					background: #C8C8C8;
+					th {
+						font-weight: bold;
+					}
+				}
 			}
 			th, td {
-				padding: 0 0.5em;
+				padding: 0.5em;
 				border: 1px solid $white;
 			}
 			tr:nth-child(odd) {

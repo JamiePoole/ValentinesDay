@@ -907,91 +907,94 @@ strong {
 
 /* line 31, ../sass/_admin.scss */
 #container {
-  width: 900px;
   margin: 0 auto;
   padding: 1em;
 }
 
-/* line 37, ../sass/_admin.scss */
+/* line 36, ../sass/_admin.scss */
 #main-navigation {
   width: 200px;
   float: left;
   padding: 1em;
   border-right: 1px solid #a1a7b2;
 }
-/* line 42, ../sass/_admin.scss */
+/* line 41, ../sass/_admin.scss */
 #main-navigation ul {
   list-style: none;
 }
 
-/* line 47, ../sass/_admin.scss */
+/* line 46, ../sass/_admin.scss */
 #messages {
   padding: 1em;
   margin-bottom: 1em;
   background: #874789;
 }
 
-/* line 62, ../sass/_admin.scss */
+/* line 61, ../sass/_admin.scss */
 #main-section {
   margin-left: 200px;
   padding: 1em;
 }
-/* line 66, ../sass/_admin.scss */
+/* line 65, ../sass/_admin.scss */
 #main-section #content #main-header {
   margin-bottom: 1em;
 }
-/* line 68, ../sass/_admin.scss */
+/* line 67, ../sass/_admin.scss */
 #main-section #content #main-header h1 {
   font-size: 2em;
   border-bottom: 1px solid #a1a7b2;
   margin-bottom: 0.5em;
 }
-/* line 74, ../sass/_admin.scss */
+/* line 73, ../sass/_admin.scss */
 #main-section #content .col {
   float: left;
   width: 49%;
   margin-left: 1%;
 }
-/* line 78, ../sass/_admin.scss */
+/* line 77, ../sass/_admin.scss */
 #main-section #content .col:first-of-type {
   margin-left: 0;
   margin-right: 1%;
 }
-/* line 82, ../sass/_admin.scss */
+/* line 81, ../sass/_admin.scss */
 #main-section #content .col .overview {
   padding: 1em;
   margin-bottom: 1em;
   width: 100%;
   border: 1px solid #a1a7b2;
 }
-/* line 89, ../sass/_admin.scss */
+/* line 88, ../sass/_admin.scss */
 #main-section #content .title {
   margin-bottom: 0.5em;
 }
-/* line 92, ../sass/_admin.scss */
+/* line 91, ../sass/_admin.scss */
 #main-section #content table {
   width: 100%;
 }
 /* line 94, ../sass/_admin.scss */
-#main-section #content table thead {
-  background: #a1a7b2;
+#main-section #content table thead tr {
+  background: #C8C8C8;
 }
-/* line 97, ../sass/_admin.scss */
-#main-section #content table th, #main-section #content table td {
-  padding: 0 0.5em;
-  border: 1px solid white;
+/* line 96, ../sass/_admin.scss */
+#main-section #content table thead tr th {
+  font-weight: bold;
 }
 /* line 101, ../sass/_admin.scss */
+#main-section #content table th, #main-section #content table td {
+  padding: 0.5em;
+  border: 1px solid white;
+}
+/* line 105, ../sass/_admin.scss */
 #main-section #content table tr:nth-child(odd) {
   background: #f3f3f3;
 }
-/* line 105, ../sass/_admin.scss */
+/* line 109, ../sass/_admin.scss */
 #main-section #content table td.index {
   color: #874789;
   cursor: help;
 }
 
-/* line 115, ../sass/_admin.scss */
+/* line 119, ../sass/_admin.scss */
 .clearfix:after {
   content: "";
   display: table;
