@@ -20,7 +20,8 @@ jQuery(document).ready(function($){
 		$.ajax({
 			url: loc,
 			success: function(data){
-				console.log(data);
+				var fullView = data.find('.full-view');
+				$('.full-view').replace(fullView);
 			},
 		});
 	}, refreshTime);
