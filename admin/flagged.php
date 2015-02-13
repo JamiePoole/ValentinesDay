@@ -3,12 +3,6 @@ $entries = $_at->getEntries(false, 'tweet_flagged', 'dtime', 'DESC');
 $count = $_at->getEntries(true, 'tweet_flagged');
 ?>
 <section id="main-section">
-	<?php if($_at->hasMessages()): ?>
-		<div id="messages">
-			<h3>Message Title</h3>
-			<p>Message content and description of error/notice.</p>
-		</div>
-	<?php endif; ?>
 	<div id="content">
 		<header id="main-header">
 			<h1>Flagged Tweets</h1>
@@ -16,7 +10,7 @@ $count = $_at->getEntries(true, 'tweet_flagged');
 		</header>
 		<section id="main-column">
 			<div id="entries" class="full-view">
-				<h3 class="title">Entries (<?php echo $count?:0; ?>)</h3>
+				<h3 class="title">Tweets (<?php echo $count?:0; ?>)</h3>
 				<?php if($count > 0): ?>
 				<table>
 					<thead>
@@ -34,7 +28,7 @@ $count = $_at->getEntries(true, 'tweet_flagged');
 						echo '<td>'.$_at->getTime($tweet['dtime'], 1).'</td>';
 						echo '<td>'.$tweet['duser'].'</td>';
 						echo '<td>'.$tweet['dmessage'].'</td>';
-						echo '<td>Delete | Flag</td>';
+						echo '<td>Delete | Queue</td>';
 						echo '</tr>';
 					} ?>
 				</table>

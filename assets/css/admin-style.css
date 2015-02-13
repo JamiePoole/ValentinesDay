@@ -294,10 +294,19 @@ textarea {
   cursor: pointer;
   text-decoration: none;
 }
+/* line 181, ../sass/_fullpage.scss */
+#fp-nav ul li a:hover span,
+.fp-slidesNav ul li a:hover span {
+  background: #874789;
+}
 
-/* line 182, ../sass/_fullpage.scss */
+/* line 187, ../sass/_fullpage.scss */
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
+  -moz-transition: all 0.15s cubic-bezier(0.055, 0.34, 0.09, 0.82);
+  -o-transition: all 0.15s cubic-bezier(0.055, 0.34, 0.09, 0.82);
+  -webkit-transition: all 0.15s cubic-bezier(0.055, 0.34, 0.09, 0.82);
+  transition: all 0.15s cubic-bezier(0.055, 0.34, 0.09, 0.82);
   background: #f2206c;
   top: 3px;
   left: 3px;
@@ -308,15 +317,15 @@ textarea {
   border-radius: 6px;
 }
 
-/* line 194, ../sass/_fullpage.scss */
+/* line 200, ../sass/_fullpage.scss */
 #fp-nav ul li a.active span,
 .fp-slidesNav ul li a.active span {
   background: white;
 }
 
-/* line 199, ../sass/_fullpage.scss */
+/* line 205, ../sass/_fullpage.scss */
 #fp-nav ul li .fp-tooltip {
-  color: #931658;
+  color: #874789;
   position: absolute;
   top: 0;
   font-size: 16px;
@@ -330,7 +339,7 @@ textarea {
   width: 0;
 }
 
-/* line 214, ../sass/_fullpage.scss */
+/* line 220, ../sass/_fullpage.scss */
 #fp-nav ul li:hover .fp-tooltip {
   -webkit-transition: opacity 0.2s ease-in;
   transition: opacity 0.2s ease-in;
@@ -338,12 +347,12 @@ textarea {
   opacity: 1;
 }
 
-/* line 221, ../sass/_fullpage.scss */
+/* line 227, ../sass/_fullpage.scss */
 #fp-nav ul li .fp-tooltip.right {
   right: 27px;
 }
 
-/* line 225, ../sass/_fullpage.scss */
+/* line 231, ../sass/_fullpage.scss */
 #fp-nav ul li .fp-tooltip.left {
   left: 30px;
 }
@@ -853,6 +862,13 @@ textarea {
   }
 }
 /* line 1, ../sass/_admin.scss */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 3, ../sass/_admin.scss */
 html, body {
   background: white;
   color: #040201;
@@ -867,7 +883,7 @@ html, body {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* line 15, ../sass/_admin.scss */
+/* line 17, ../sass/_admin.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "europa", sans-serif;
   font-style: normal;
@@ -875,12 +891,12 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
 }
 
-/* line 22, ../sass/_admin.scss */
+/* line 24, ../sass/_admin.scss */
 strong {
   font-weight: 700;
 }
 
-/* line 26, ../sass/_admin.scss */
+/* line 28, ../sass/_admin.scss */
 .wa-hidden {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px);
@@ -890,7 +906,7 @@ strong {
   height: 1px;
 }
 
-/* line 30, ../sass/_admin.scss */
+/* line 32, ../sass/_admin.scss */
 #container {
   width: 900px;
   height: 100%;
@@ -898,7 +914,7 @@ strong {
   padding: 1em;
 }
 
-/* line 37, ../sass/_admin.scss */
+/* line 39, ../sass/_admin.scss */
 #main-navigation {
   width: 200px;
   height: 100%;
@@ -906,75 +922,78 @@ strong {
   padding: 1em;
   border-right: 1px solid #a1a7b2;
 }
-/* line 43, ../sass/_admin.scss */
+/* line 45, ../sass/_admin.scss */
 #main-navigation ul {
   list-style: none;
 }
 
-/* line 48, ../sass/_admin.scss */
+/* line 50, ../sass/_admin.scss */
+#messages {
+  padding: 1em;
+  margin-bottom: 1em;
+  background: #874789;
+}
+
+/* line 65, ../sass/_admin.scss */
 #main-section {
   margin-left: 200px;
   padding: 1em;
-  width: 100%;
+  height: 100%;
+  overflow: auto;
 }
-/* line 52, ../sass/_admin.scss */
-#main-section #messages {
-  padding: 1em;
-  margin-bottom: 1em;
-  background: #5facf9;
-}
-/* line 68, ../sass/_admin.scss */
+/* line 71, ../sass/_admin.scss */
 #main-section #content #main-header {
+  overflow: auto;
   margin-bottom: 1em;
 }
-/* line 70, ../sass/_admin.scss */
+/* line 74, ../sass/_admin.scss */
 #main-section #content #main-header h1 {
   font-size: 2em;
   border-bottom: 1px solid #a1a7b2;
   margin-bottom: 0.5em;
 }
-/* line 76, ../sass/_admin.scss */
+/* line 80, ../sass/_admin.scss */
 #main-section #content .col {
   float: left;
   width: 49%;
   margin-left: 1%;
 }
-/* line 80, ../sass/_admin.scss */
+/* line 84, ../sass/_admin.scss */
 #main-section #content .col:first-of-type {
   margin-left: 0;
   margin-right: 1%;
 }
-/* line 84, ../sass/_admin.scss */
+/* line 88, ../sass/_admin.scss */
 #main-section #content .col .overview {
   padding: 1em;
   margin-bottom: 1em;
   width: 100%;
   border: 1px solid #a1a7b2;
 }
-/* line 91, ../sass/_admin.scss */
+/* line 95, ../sass/_admin.scss */
 #main-section #content .title {
   margin-bottom: 0.5em;
 }
-/* line 94, ../sass/_admin.scss */
+/* line 98, ../sass/_admin.scss */
 #main-section #content table {
   width: 100%;
 }
-/* line 96, ../sass/_admin.scss */
+/* line 100, ../sass/_admin.scss */
 #main-section #content table thead {
   background: #a1a7b2;
 }
-/* line 99, ../sass/_admin.scss */
+/* line 103, ../sass/_admin.scss */
 #main-section #content table th, #main-section #content table td {
   padding: 0 0.5em;
   border: 1px solid white;
 }
-/* line 104, ../sass/_admin.scss */
+/* line 108, ../sass/_admin.scss */
 #main-section #content table td.index {
-  color: #5facf9;
+  color: #874789;
   cursor: help;
 }
 
-/* line 114, ../sass/_admin.scss */
+/* line 118, ../sass/_admin.scss */
 .clearfix:after {
   content: "";
   display: table;

@@ -14,12 +14,6 @@ $counts['senders'] = $_at->getEntries(true, 'tweet_sender');
 $counts['log'] = $_at->getEntries(true, 'log');
 ?>
 <section id="main-section">
-	<?php if($_at->hasMessages()): ?>
-		<div id="messages">
-			<h3>Message Title</h3>
-			<p>Message content and description of error/notice.</p>
-		</div>
-	<?php endif; ?>
 	<div id="content">
 		<header id="main-header">
 			<h1>Dashboard</h1>
@@ -102,7 +96,7 @@ $counts['log'] = $_at->getEntries(true, 'log');
 		</section>
 		<section id="col2" class="col">
 			<div id="senders" class="overview">
-				<h3 class="title">Recipients (<?php echo $counts['senders']; ?>)</h3>
+				<h3 class="title">Senders (<?php echo $counts['senders']; ?>)</h3>
 				<?php if($counts['senders'] > 0): ?>
 				<table>
 					<thead>
@@ -137,7 +131,7 @@ $counts['log'] = $_at->getEntries(true, 'log');
 					</thead>
 					<?php foreach($log as $error){
 						echo '<tr>';
-						echo '<td class="index" title="'.$error['message'].'">'.$error['code'].'</td>';
+						echo '<td class="index" title="'.htmlspecialchars($error['message']).'">'.$error['code'].'</td>';
 						echo '<td>'.$_at->getTime($error['etime'], 1).'</td>';
 						echo '<td>'.$error['file'].'</td>';
 						echo '</tr>';

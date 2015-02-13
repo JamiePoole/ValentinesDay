@@ -1,3 +1,5 @@
+* { @include box-sizing(border-box); }
+
 html, body {
 	background: $white;
 	color: $black;
@@ -45,27 +47,29 @@ strong {
 	}
 }
 
+#messages {
+	padding: 1em;
+	margin-bottom: 1em;
+	background: $purple;
+	.error {
+
+	}
+	.alert {
+
+	}
+	.success {
+
+	}
+}
+
 #main-section {
 	margin-left: 200px;
 	padding: 1em;
-	width: 100%;
-	#messages {
-		padding: 1em;
-		margin-bottom: 1em;
-		background: $baby-blue;
-		.error {
-
-		}
-		.alert {
-
-		}
-		.success {
-
-		}
-	}
-
+	height: 100%;
+	overflow: auto;
 	#content {
 		#main-header {
+			overflow: auto;
 			margin-bottom: 1em;
 			h1 {
 				font-size: 2em;
@@ -102,7 +106,7 @@ strong {
 			}
 			td {
 				&.index {
-					color: $baby-blue;
+					color: $purple;
 					cursor: help;
 				}
 			}

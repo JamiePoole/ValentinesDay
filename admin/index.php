@@ -1,5 +1,51 @@
 
-<?php require_once('require.php'); ?>
+<?php require_once('require.php');
+
+// Run actions
+if(isset($_GET['action']) && !empty($_GET['action'])){
+	// DELETE
+	if($_GET['action'] == 'delete'){
+		$col = null;
+		$id = null;
+		// Check variables
+		if(isset($_GET['page']) && isset($_GET['id']) && ctype_digit($_GET['id'])){
+			switch($_GET['page']){
+				case 'queue':
+					$col = 'tweet_queue';
+					$id = 'tid';
+				break;
+				case 'flagged':
+					$col = 'tweet_flagged';
+					$id = 'tid';
+				break;
+				case 'archive':
+					$col = 'tweet_archive';
+					$id = 'tid';
+				break;
+				case 'recipients':
+					$col = 'tweet_recipients';
+					$id = 'uid';
+				break;
+				case 'senders':
+					$col = 'tweet_sender';
+					$id = 'id';
+				break;
+				case 'log':
+					$col = 'log';
+					$id = 'eid';
+				break;
+				default:
+					return;
+				break;
+			}
+			$result = $_at->deleteEntry($col, $id, $_GET['id']);
+			if($result) $_at->setMessages(array('title' => 'Success', 'message' => 'Entry deleted successfully.'));
+			else $_at->setMessages(array('title' => 'Failure', 'message' => 'Deletion failed.'));
+		}
+
+	}
+}
+?>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -41,16 +87,22 @@
 </head>
 <body class="admin">
 	<div id="container" class="clearfix">
+		<?php if($_at->hasMessages()): ?>
+			<div id="messages">
+				<h3><?php echo $_at->getMessages()['title']; ?></h3>
+				<p><?php echo $_at->getMessages()['message']; ?></p>
+			</div>
+		<?php endif; ?>
 		<nav id="main-navigation">
 			<ul>
 				<li><a href="index.php?page=dash">Home</a></li>
 				<li><a href="index.php?page=queue">Queue</a></li>
 				<li><a href="index.php?page=flagged">Flagged</a></li>
-				<li>Archive</li>
-				<li>Recipients</li>
-				<li>Senders</li>
-				<li>Log</li>
-				<li>Statistics</li>
+				<li><a href="index.php?page=archive">Archive</a></li>
+				<li><a href="index.php?page=recipients">Recipients</a></li>
+				<li><a href="index.php?page=senders">Senders</a></li>
+				<li><a href="index.php?page=log">Log</a></li>
+				<li><a href="index.php?page=stats">Statistics</a></li>
 			</ul>
 		</nav>
 		<?php

@@ -32,7 +32,7 @@ class tweetQueue {
 
 		if(!isset($recipient) || !isset($message) || !isset($user)){
 			$return->error['code'] = 7;
-			$return->error['message'] = 'Invalid values to insert into queue.';
+			$return->error['message'] = 'Invalid values to insert into queue';
 			$return->error['file'] = $user_ip;
 			$this->ut->log((object)$return->error);
 			return $return;
@@ -48,7 +48,7 @@ class tweetQueue {
 				$lastid = $this->db->lastInsertId();
 
 				$return->tweet['code'] = 101;
-				$return->tweet['status'] = 'Tweet has been flagged.';
+				$return->tweet['status'] = 'Tweet has been flagged';
 				$return->tweet['tid'] = $lastid;
 				$return->tweet['target'] = $recipient;
 				$return->tweet['message'] = $message;
@@ -72,7 +72,7 @@ class tweetQueue {
 
 				// Return Data
 				$return->tweet['code'] = 102;
-				$return->tweet['status'] = 'Tweet successfully added to queue.';
+				$return->tweet['status'] = 'Tweet successfully added to queue';
 				$return->tweet['tid'] = $lastid;
 				$return->tweet['target'] = $recipient;
 				$return->tweet['message'] = $message;
@@ -80,7 +80,7 @@ class tweetQueue {
 
 		} catch(PDOException $e){
 			$return->error['code'] = 8;
-			$return->error['message'] = 'Unable to add Tweet to Queue. ' . $e->getMessage();
+			$return->error['message'] = 'Unable to add tweet to queue' . $e->getMessage();
 			$return->error['file'] = $user_ip;
 			$this->ut->log((object)$return->error);
 		}
@@ -212,7 +212,7 @@ class tweetQueue {
 			$message = $form['tweet_message'];
 		} else {
 			$return->error['code'] = 4;
-			$return->error['message'] = 'Incomplete form data.';
+			$return->error['message'] = 'Incomplete form data';
 			$return->error['file'] = (isset($user['ip'])) ? $user['ip'] : false;
 			$this->ut->log((object)$return->error);
 			return $return;
@@ -233,11 +233,11 @@ class tweetQueue {
 		 		// Check if offensive phrase Flag
 		 		if($msg['flag']):
 		 			$return->tweet['code'] = 9;
-		 			$return->tweet['status'] = 'Tweet flagged.';
+		 			$return->tweet['status'] = 'Tweet flagged for moderation';
 		 			$return->tweet['message'] = $msg['orig'];
 		 		else:
 			 		$return->tweet['code'] = 100;
-			 		$return->tweet['status'] = 'Tweet validated.';
+			 		$return->tweet['status'] = 'Tweet validated';
 			 		$return->tweet['message'] = $msg['clean'];
 			 	endif;
 
@@ -246,14 +246,14 @@ class tweetQueue {
 
 			} else {
 				$return->error['code'] = 5;
-				$return->error['message'] = 'Empty message.';
+				$return->error['message'] = 'Please enter a tweet';
 				$return->error['file'] = (isset($user['ip'])) ? $user['ip'] : false;
 				$this->ut->log((object)$return->error);
 				return $return;
 			}
 		} else {
 			$return->error['code'] = 6;
-			$return->error['message'] = 'Empty recipient.';
+			$return->error['message'] = 'Enter the username of your twitter crush';
 			$return->error['file'] = (isset($user['ip'])) ? $user['ip'] : false;
 			$this->ut->log((object)$return->error);
 			return $return;

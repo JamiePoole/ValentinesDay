@@ -4,9 +4,21 @@
  */
 array_push($phrases,
 		'from behind',
+		'dying',
 		'die',
+		'killing',
 		'kill',
 		'murder',
 		'white children',
-		'bottom inspector'
+		'bottom inspector',
+		'raping',
+		'rapping',
+		'rape',
+		'stab',
+		'pink balloon',
+		'tear off',
+		'poor excuse',
+		'nail you',
+		'hate',
+		'finger you'
 );

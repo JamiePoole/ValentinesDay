@@ -5,10 +5,12 @@ class adminTasks {
 
 	private $db;
 	private $ut;
+	private $messages;
 
 	public function __construct($db, $ut){
 		$this->db = $db;
 		$this->ut = $ut;
+		$this->messages = array();
 	}
 
 	public static function getInstance(dbConnection $db, util $ut){
@@ -49,6 +51,25 @@ class adminTasks {
 		return (isset($rows)) ? $rows : false;
 	}
 
+	/* Delete an entry from the database
+	 * @param 	$table 		string
+	 *			$column 	string 		WHERE
+	 *			$id 		int 		Identifier
+	 *
+	 * @return  $success 	boolean
+	 */
+	public function deleteEntry($table, $column, $id){
+		try {
+			$sql = "DELETE FROM `$table` WHERE `$column` = $id";
+			$result = $this->db->prepare($sql);
+			$result->execute();
+			return true;
+		} catch(PDOException $e){
+			$this->ut->log($e);
+			return false;
+		}
+	}
+
 	public function getStatistics(){
 		// TO DO
 	}
@@ -61,21 +82,19 @@ class adminTasks {
 		$return = '';
 		$periods = array(
 			//'decade'	=> 315360000,
-			'year'		=> 31536000,
-			'month'		=> 2628000,
-			'week'		=> 604800,
-			'day'		=> 86400,
-			'hour'		=> 3600,
-			'minute'	=> 60,
-			'second'	=> 1);
+			'y'		=> 31536000,
+			'mo'	=> 2628000,
+			'w'		=> 604800,
+			'd'		=> 86400,
+			'h'		=> 3600,
+			'm'		=> 60,
+			's'		=> 1);
 
 		foreach($periods as $abbr => $seconds){
 			if($diff >= $seconds){
 				$time = floor($diff/$seconds);
 				$diff %= $seconds;
-				$return .= ($return ? ' ' : '') . $time . ' ';
-				$return .= (($time > 1) ? $abbr.'s' : $abbr) . ' ago';
-				//$return .= $time.$abbr;
+				$return = $time . $abbr . ' ago';
 				$granularity--;
 			}
 			if($granularity == '0'){ break; }
@@ -83,8 +102,21 @@ class adminTasks {
 		return $return;
 	}
 
+	public function setMessages($messages){
+		$old = $this->messages;
+		$old['title'] = $messages['title'];
+		$old['message'] = $messages['message'];
+		$this->messages = $old;
+	}
+
 	public function hasMessages(){
-		// TO DO
+		if(!empty($this->messages))
+			return true;
+		return false;
+	}
+
+	public function getMessages(){
+		return $this->messages;
 	}
 
 

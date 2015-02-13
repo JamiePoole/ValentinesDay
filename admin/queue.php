@@ -3,12 +3,6 @@ $queue = $_at->getEntries(false, 'tweet_queue', 'dtime', 'DESC');
 $count = $_at->getEntries(true, 'tweet_queue');
 ?>
 <section id="main-section">
-	<?php if($_at->hasMessages()): ?>
-		<div id="messages">
-			<h3>Message Title</h3>
-			<p>Message content and description of error/notice.</p>
-		</div>
-	<?php endif; ?>
 	<div id="content">
 		<header id="main-header">
 			<h1>Tweet Queue</h1>
@@ -34,7 +28,7 @@ $count = $_at->getEntries(true, 'tweet_queue');
 						echo '<td>'.$_at->getTime($tweet['dtime'], 1).'</td>';
 						echo '<td>'.$tweet['duser'].'</td>';
 						echo '<td>'.$tweet['dmessage'].'</td>';
-						echo '<td>Delete | Flag</td>';
+						echo '<td><a href="index.php?action=delete&page=queue&id='.$tweet['tid'].'">Delete</a> | Flag</td>';
 						echo '</tr>';
 					} ?>
 				</table>

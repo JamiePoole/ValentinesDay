@@ -7,9 +7,13 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="canonical" href="http://www.mytwittercrush.com">
+
 	<title>My Twitter Crush</title>
+	<meta name="description" content="Anonymously tell your crush how you really feel.">
+
 	<link rel="apple-touch-icon" sizes="57x57" href="assets/img/icons/apple-touch-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="assets/img/icons/apple-touch-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="assets/img/icons/apple-touch-icon-72x72.png">
@@ -30,28 +34,67 @@
 	<meta name="msapplication-TileImage" content="assets/img/icons/mstile-144x144.png">
 	<meta name="msapplication-config" content="assets/img/icons/browserconfig.xml">
 	<meta name="theme-color" content="#f2206c">
+
+	<meta property="og:title" content="My Twitter Crush">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://www.mytwittercrush.com">
+	<meta property="og:image" content="http://www.mytwittercrush.com/assets/img/sharing-image-300x300.jpg">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:image:width" content="300">
+	<meta property="og:image:height" content="300">
+	<meta property="og:description" content="Anonymously tell your crush how you really feel.">
+	<meta property="fb:app_id" content="1416098885351185">
+
 	<link type="text/css" href="assets/css/style.css" rel="stylesheet">
+	<script src="assets/js/respond.min.js"></script>
 	<script src="//use.typekit.net/sbe5mrr.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
 	<script src="assets/js/modernizr.custom.js"></script>
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.slimscroll.min.js"></script>
-	<script src="assets/js/jquery.fullPage.min.js"></script>
-	<script src="assets/js/odometer.min.js"></script>
-	<script src="assets/js/script.js"></script>	
+	<script src="assets/js/snap.svg-min.js"></script>
 </head>
 <body>
+
+	<!-- Google Analytics -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-59532215-1', 'auto');
+	  ga('send', 'pageview');
+	</script>
+	<!-- End Google Analytics -->
+
+	<!-- Facebook SDK -->
+	<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '1416098885351185',
+	      xfbml      : true,
+	      version    : 'v2.2'
+	    });
+	  };
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "//connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>
+	<!-- End Facebook SDK -->
 
 	<div id="fullpage">
 
 		<div class="section intro-page" data-anchor="intro">
 			<div class="artwork">
-				<img src="assets/img/intro-birds.svg">
+				<svg id="birds" width="100%" height="100%"></svg>
 			</div>
 			<div class="page">
 				<h1 class="heading">Tweet the love</h1>
-				<h2 class="sub-heading">Anonymously tell your crush how you really feel.</h2>
-				<h3>And the love doesn't end there. For each tweet we're donating £1 to Save the Children.</h3>
+				<h2 class="sub-heading">
+					Anonymously tell your crush how you really feel
+				</h2>
 			</div>
 			<a class="scroll-btn animated fadeInDown" href="#"><span class="wa-hidden">Next</span></a>
 		</div><!--// .intro-page -->
@@ -59,23 +102,28 @@
 		<div class="section send-page" data-anchor="send">
 			<div class="page">
 				<div id="tweet-form">
-					<form id="send-tweet" novalidate>
-						<input type="hidden" name="nonce_token" value="<?php echo $_SESSION['token']; ?>" />
-						<div class="form-error"></div>
+					<form id="send-tweet" action="post.php" methos="post">
+						<input type="hidden" id="nonce" name="nonce_token" value="<?php echo $_SESSION['token']; ?>" />
 						<div class="form-control">
 							<span class="form-prepend">@</span>
-							<input type="text" id="tweet-target" name="tweet_target" placeholder="twitterhandle" />
+							<input type="text" id="tweet-target" maxlength="15" name="tweet_target" placeholder="twitterhandle" />
 							<textarea id="tweet-message" maxlength="120" name="tweet_message" placeholder="Roses are red, tweets are nice..." rows="3"></textarea>
 						</div>
-						<div id="char-count"></div>
+						<div class="form-response">
+							<div id="response"></div>
+							<div id="char-count"></div>
+						</div>
 						<button type="submit" id="submit-tweet">
 							<span class="animated">Send</span>
 						</button>
 					</form>
-					<p class="delay-time"><?php //$_ut->getDelay($_tq->time()); ?></p>
-					<div id="response"></div>
+					<p class="delay-time"><?php $_ut->getDelay($_tq->time()); ?></p>
+					
 				</div>
 			</div>
+			<!-- <div class="tweet-hearts">
+				<svg id="tweet-hearts" width="100%" height="100%"></svg>
+			</div> -->
 			<div class="tweet-hearts">
 				<div class="tweet a"></div>
 				<div class="tweet b"></div>
@@ -89,40 +137,34 @@
 		</div><!--// .send-page -->
 
 		<div class="section share-page" data-anchor="share">
+			<!-- <div class="page-break"></div> -->
 			<div class="page">
-				<h1 class="heading">
-					<span class="odometer-pre">£</span><span id="odometer" class="odometer">0</span>
-				</h1>
-				<h2 id="thanks" class="sub-heading">
-					For each tweet we're donating £1 to Save the Children<br>
-					Scroll up to send a tweet
-				</h2>
+				<h1 id="thanks" class="heading">Share the love</h1>
 				<div class="share">
-					<a class="share-btn fb-btn" href="#"><span class="wa-hidden">Share on Facebook</span></a> 
-					<a class="share-btn tw-btn" href="#"><span class="wa-hidden">Share on Twitter</span></a> 
-					<a class="share-btn gp-btn" href="#"><span class="wa-hidden">Share on Google +</span></a>
+					<a class="share-btn fb-btn" href="">
+						<span class="wa-hidden">Share on Facebook</span>
+					</a> 
+					<a class="share-btn tw-btn" href="https://twitter.com/share" 
+						data-url="http://www.mytwittercrush.com" 
+						data-hashtags="somehashtag" 
+						onclick="javascript:window.open(this.href,
+  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;">
+						<span class="wa-hidden">Share on Twitter</span>
+					</a>
+					<a class="share-btn gp-btn" href="https://plus.google.com/share?url=http://www.mytwittercrush.com" onclick="javascript:window.open(this.href,
+  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+						<span class="wa-hidden">Share on Google +</span>
+					</a>
 				</div>
+				<h2 id="thanks-sub" class="sub-heading">
+					Or get lost in a feed of love <a href="https://twitter.com/mytweetercrush" target="_blank">here</a>
+				</h2>
 			</div>
 			<div class="artwork animated">
 				<img src="assets/img/bird-bubble.svg">
 			</div>
-			<a class="scroll-btn animated" href="#"><span class="wa-hidden">Next</span></a>
-		</div>
-
-		<div class="section info-page" data-anchor="info">
-			<div class="page">
-				<div class="copy">
-					<p>Show your Twitter crush how much they mean to you by sending them something really nice, something from the heart, and let us deliver the message for you. Nobody will know who sent it. Promise. Our Twitter Cupid will deliver your message by tweeting your crush on your behalf.</p>
-					<p>For each lovely tweet that gets sent we’re spreading the love even further and donating £1 to Save the Children.</p>
-					<p><strong>A project by</strong></p>
-				</div>
-				<div class="logos">
-					<img class="us" src="assets/img/360i-logo.svg" width="80" height="80">
-					<img class="savethechildren" src="assets/img/savethechildern-logo.svg" width="383" height="60">
-				</div>
-			</div><!--// .page -->
 			<a class="scroll-btn animated up" href="#"><span class="wa-hidden">Next</span></a>
-		</div><!--// .info-page -->
+		</div>
 
 	</div><!--// #fullpage -->
 	
@@ -131,7 +173,27 @@
 	<div class="page-border bottom"></div>
 	<div class="page-border left"></div>
 
-	
+	<!-- Twitter Widgets  -->
+	<script>window.twttr = (function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0],
+	    t = window.twttr || {};
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s);
+	  js.id = id;
+	  js.src = "https://platform.twitter.com/widgets.js";
+	  fjs.parentNode.insertBefore(js, fjs);
+	  t._e = [];
+	  t.ready = function(f) {
+	    t._e.push(f);
+	  };
+	  return t;
+	}(document, "script", "twitter-wjs"));</script>
+	<!-- End Twitter Widgets  -->
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.slimscroll.min.js"></script>
+	<script src="assets/js/jquery.fullPage.min.js"></script>
+	<script src="assets/js/script.js"></script>	
 
 </body>
 </html>
