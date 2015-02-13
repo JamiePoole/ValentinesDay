@@ -3,46 +3,58 @@
 
 // Run actions
 if(isset($_GET['action']) && !empty($_GET['action'])){
-	// DELETE
-	if($_GET['action'] == 'delete'){
-		$col = null;
-		$id = null;
-		// Check variables
-		if(isset($_GET['page']) && isset($_GET['id']) && ctype_digit($_GET['id'])){
-			switch($_GET['page']){
-				case 'queue':
-					$col = 'tweet_queue';
-					$id = 'tid';
-				break;
-				case 'flagged':
-					$col = 'tweet_flagged';
-					$id = 'tid';
-				break;
-				case 'archive':
-					$col = 'tweet_archive';
-					$id = 'tid';
-				break;
-				case 'recipients':
-					$col = 'tweet_recipients';
-					$id = 'uid';
-				break;
-				case 'senders':
-					$col = 'tweet_sender';
-					$id = 'id';
-				break;
-				case 'log':
-					$col = 'log';
-					$id = 'eid';
-				break;
-				default:
-					return;
-				break;
-			}
+	if(isset($_GET['page']) && isset($_GET['id']) && ctype_digit($_GET['id'])){
+		switch($_GET['page']){
+			case 'queue':
+				$col = 'tweet_queue';
+				$id = 'tid';
+			break;
+			case 'flagged':
+				$col = 'tweet_flagged';
+				$id = 'tid';
+			break;
+			case 'archive':
+				$col = 'tweet_archive';
+				$id = 'tid';
+			break;
+			case 'recipients':
+				$col = 'tweet_recipients';
+				$id = 'uid';
+			break;
+			case 'senders':
+				$col = 'tweet_sender';
+				$id = 'id';
+			break;
+			case 'log':
+				$col = 'log';
+				$id = 'eid';
+			break;
+			default:
+				$col = null;
+				$id = null;
+				return;
+			break;
+		}
+
+		// DELETE
+		if($_GET['action'] == 'delete'){
 			$result = $_at->deleteEntry($col, $id, $_GET['id']);
 			if($result) $_at->setMessages(array('title' => 'Success', 'message' => 'Entry deleted successfully.'));
 			else $_at->setMessages(array('title' => 'Failure', 'message' => 'Deletion failed.'));
 		}
 
+		// REQUEUE
+		if($_GET['action'] == 'requeue'){
+			$result = $_at->reQueue($_GET['id']);
+			if($result) $_at->setMessages(array('title' => 'Success', 'message' => 'Entry readded to queue.'));
+			else $_at->setMessages(array('title' => 'Failure', 'message' => 'Action failed.'));
+		}
+
+		if($_GET['action'] == 'flag'){
+			$result = $_at->flag($_GET['id']);
+			if($result) $_at->setMessages(array('title' => 'Success', 'message' => 'Entry flagged.'));
+			else $_at->setMessages(array('title' => 'Failure', 'message' => 'Action failed.'));
+		}
 	}
 }
 ?>

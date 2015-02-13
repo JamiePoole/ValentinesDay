@@ -28,7 +28,7 @@ $count = $_at->getEntries(true, 'tweet_flagged');
 						echo '<td>'.$_at->getTime($tweet['dtime'], 1).'</td>';
 						echo '<td>'.$tweet['duser'].'</td>';
 						echo '<td>'.$tweet['dmessage'].'</td>';
-						echo '<td>Delete | Queue</td>';
+						echo '<td><a href="index.php?action=delete&page=flagged&id='.$tweet['tid'].'">Delete</a> | Queue</td>';
 						echo '</tr>';
 					} ?>
 				</table>
