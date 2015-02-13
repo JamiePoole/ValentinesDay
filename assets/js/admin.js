@@ -6,6 +6,8 @@ jQuery(document).ready(function($){
 			url: $(this).attr('href'),
 		}).done(function(){
 			$(this).parent('tr').remove();
+		}).fail(function(){
+			$.alert('Failed');
 		});
 	});
 
