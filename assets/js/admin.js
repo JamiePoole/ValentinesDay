@@ -21,7 +21,7 @@ jQuery(document).ready(function($){
 			url: loc,
 			success: function(response){
 				var fullView = $(response).find('.full-view');
-				$('.full-view').replace($(fullView));
+				$('.full-view').html(fullView);
 			},
 		});
 	}, refreshTime);
