@@ -1,6 +1,6 @@
 <?php
-require_once('require.php');
-$_ut->startSession();
+//require_once('require.php');
+//$_ut->startSession();
 ?>
 
 <!doctype html>
