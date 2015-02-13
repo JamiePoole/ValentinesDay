@@ -4,7 +4,7 @@ jQuery(document).ready(function($){
 		e.preventDefault();
 		var tag = this;
 		$.ajax({
-			url: this.attr('href'),
+			url: tag.attr('href'),
 			success: function(){
 				console.log($(tag));
 				$(tag).closest('tr').remove();
