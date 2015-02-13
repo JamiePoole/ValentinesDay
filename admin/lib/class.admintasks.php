@@ -80,7 +80,7 @@ class adminTasks {
 
 		try {
 			// Add to Queue
-			$sql = "INSERT INTO `tweet_queue` (`tid`, `dtime`, `duser`, `dmessage`) SELECT `tid`, `dtime`, `duser`, `dmessage` FROM `tweet_flagged` WHERE `tid` = $tid";
+			$sql = "INSERT INTO `tweet_queue` (`dtime`, `duser`, `dmessage`) SELECT `dtime`, `duser`, `dmessage` FROM `tweet_flagged` WHERE `tid` = $tid";
 			$result = $this->db->prepare($sql);
 			$result->execute();
 			$lastid = $this->db->lastInsertId();
