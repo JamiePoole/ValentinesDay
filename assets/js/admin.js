@@ -19,9 +19,9 @@ jQuery(document).ready(function($){
 		var loc = window.location.pathname;
 		$.ajax({
 			url: loc,
-			success: function(data){
-				var fullView = data.find('.full-view');
-				console.log(fullView);
+			success: function(response){
+				var fullView = $(response).find('.full-view');
+				$('.full-view').replace(fullView);
 			},
 		});
 	}, refreshTime);
