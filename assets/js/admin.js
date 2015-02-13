@@ -5,9 +5,7 @@ jQuery(document).ready(function($){
 		$.ajax({
 			url: $(this).attr('href'),
 		}).done(function(){
-			$(this).animate({background: 'red'}, 'slow', function(){
-				$(this).remove();
-			});
+			$(this).remove();
 		});
 	});
 
