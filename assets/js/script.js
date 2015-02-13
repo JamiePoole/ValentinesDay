@@ -23,7 +23,7 @@ jQuery(document).ready(function($) {
 	$('#fullpage').fullpage({
 		//Navigation
         menu: true,
-        anchors:['intro', 'send', 'share'],
+        anchors:['intro', 'send', 'share', 'info'],
         navigation: true,        
         navigationPosition: 'right',
 		//Scrolling
@@ -50,6 +50,9 @@ jQuery(document).ready(function($) {
          	}
          	if (index == 3) {
          		ga('send', 'event', 'Virtual page view', 'Scroll', 'Share');
+         	}
+         	if (index == 4) {
+         		ga('send', 'event', 'Virtual page view', 'Scroll', 'Info');
          	}
         }
 	});

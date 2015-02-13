@@ -579,6 +579,38 @@ a {
 
 .info-page {
 	text-align: center;
+	.heading {
+		background: $white;
+		display: inline-block;
+		margin-bottom: 85px;
+		padding: 15px;
+		position: relative;
+		&:before {
+			position: absolute;
+	  		z-index: 4;
+	  		left: -38px;
+	  		bottom: -59px;
+	  		content: '';
+	  		width: 71px;
+	  		height: 90px;
+	  		background: url(../img/banner-ribbon-left.svg) 0 0 no-repeat;
+	  		background-size: contain;
+		}
+		&:after {
+			position: absolute;
+	  		z-index: 4;
+	  		right: -38px;
+	  		bottom: -59px;
+	  		content: '';
+	  		width: 71px;
+	  		height: 90px;
+	  		background: url(../img/banner-ribbon-right.svg) 0 0 no-repeat;
+	  		background-size: contain;
+		}
+		@include respond-to(m) {
+			padding: 15px 35px;
+		}
+	}
 	.copy {
 		width: 90%;
 		margin: auto;

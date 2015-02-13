@@ -138,7 +138,6 @@ $_ut->startSession();
 		</div><!--// .send-page -->
 
 		<div class="section share-page" data-anchor="share">
-			<!-- <div class="page-break"></div> -->
 			<div class="page">
 				<h1 id="thanks" class="heading">Share the love</h1>
 				<div class="share">
@@ -163,6 +162,17 @@ $_ut->startSession();
 			</div>
 			<div class="artwork animated">
 				<img src="assets/img/bird-bubble.svg">
+			</div>
+			<a class="scroll-btn animated" href="#"><span class="wa-hidden">Next</span></a>
+		</div>
+
+		<div class="section info-page" data-anchor="info">
+			<!-- <div class="page-break"></div> -->
+			<div class="page">
+				<h1 class="heading">Hey love birds</h1>
+				<div class="copy">
+					<p>We just wanted to say that we're not responsible for any of the words in the tweets, we're simply Cupid the messenger in all this. We're moderating best we can but some things might slip through so please be nice and make love not war! DM us if you feel someone has crossed the line.</p>
+				</div>
 			</div>
 			<a class="scroll-btn animated up" href="#"><span class="wa-hidden">Next</span></a>
 		</div>
