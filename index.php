@@ -122,10 +122,10 @@ $_ut->startSession();
 					
 				</div>
 			</div>
-			<div class="tweet-hearts">
+			<?php /*<div class="tweet-hearts">
 				<svg id="tweet-hearts" width="100%" height="100%"></svg>
-			</div>
-			<!-- <div class="tweet-hearts">
+			</div> */ ?>
+			<div class="tweet-hearts">
 				<div class="tweet a"></div>
 				<div class="tweet b"></div>
 				<div class="tweet c"></div>
@@ -133,7 +133,7 @@ $_ut->startSession();
 				<div class="tweet e"></div>
 				<div class="tweet f"></div>
 				<div class="tweet g"></div>
-			</div> -->
+			</div>
 			<a class="scroll-btn animated" href="#"><span class="wa-hidden">Next</span></a>
 		</div><!--// .send-page -->
 
