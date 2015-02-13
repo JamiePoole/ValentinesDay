@@ -5,7 +5,7 @@ jQuery(document).ready(function($){
 		$.ajax({
 			url: $(this).attr('href'),
 			success: function(){
-				alert('CLICKED!');
+				console.log($(this));
 				$(this).closest('tr').remove();
 			},
 		});
