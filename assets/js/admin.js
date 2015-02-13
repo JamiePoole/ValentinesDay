@@ -20,7 +20,7 @@ jQuery(document).ready(function($){
 		$.ajax({
 			url: loc,
 			success: function(response){
-				var fullView = $(response).find('.full-view');
+				var fullView = response.find('.full-view');
 				$('.full-view').html(fullView);
 			},
 		});
