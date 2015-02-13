@@ -102,8 +102,10 @@ strong {
 				padding: 0.5em;
 				border: 1px solid $white;
 			}
-			tr:nth-child(odd) {
-				background: #f3f3f3;
+			tbody {
+				tr:nth-child(odd) {
+					background: #f3f3f3;
+				}
 			}
 			td {
 				&.index {

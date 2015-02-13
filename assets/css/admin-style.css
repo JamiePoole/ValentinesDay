@@ -984,17 +984,17 @@ strong {
   padding: 0.5em;
   border: 1px solid white;
 }
-/* line 105, ../sass/_admin.scss */
-#main-section #content table tr:nth-child(odd) {
+/* line 106, ../sass/_admin.scss */
+#main-section #content table tbody tr:nth-child(odd) {
   background: #f3f3f3;
 }
-/* line 109, ../sass/_admin.scss */
+/* line 111, ../sass/_admin.scss */
 #main-section #content table td.index {
   color: #874789;
   cursor: help;
 }
 
-/* line 119, ../sass/_admin.scss */
+/* line 121, ../sass/_admin.scss */
 .clearfix:after {
   content: "";
   display: table;
