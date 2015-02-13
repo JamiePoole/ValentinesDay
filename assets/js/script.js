@@ -187,10 +187,10 @@ jQuery(document).ready(function($) {
 	// Tweet Hearts SVG Animation
 	// ------------------------------------------------------------
 
-	// Set the heart stage
-	// var	h = Snap('#tweet-hearts');
-	// //h.attr({ viewBox: "0 0 1600 890" }); // Need this for responsive svg - its the aspect ratio 
-	// // set dynamically based on viewport size???
+	//Set the heart stage
+	//var	h = Snap('#tweet-hearts');
+	//h.attr({ viewBox: "0 0 1600 890" }); // Need this for responsive svg - its the aspect ratio 
+	// set dynamically based on viewport size???
 	// Snap.load('assets/img/heart-180x164.svg', function (loadedHeart) {
 	// 	g = loadedHeart.select('g');
 	// 	h.append(g);

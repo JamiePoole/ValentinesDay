@@ -879,11 +879,10 @@ html, body {
   -webkit-font-smoothing: antialiased;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   -webkit-tap-highlight-color: transparent;
 }
 
-/* line 17, ../sass/_admin.scss */
+/* line 16, ../sass/_admin.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "europa", sans-serif;
   font-style: normal;
@@ -891,12 +890,12 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
 }
 
-/* line 24, ../sass/_admin.scss */
+/* line 23, ../sass/_admin.scss */
 strong {
   font-weight: 700;
 }
 
-/* line 28, ../sass/_admin.scss */
+/* line 27, ../sass/_admin.scss */
 .wa-hidden {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px);
@@ -906,94 +905,89 @@ strong {
   height: 1px;
 }
 
-/* line 32, ../sass/_admin.scss */
+/* line 31, ../sass/_admin.scss */
 #container {
   width: 900px;
-  height: 100%;
   margin: 0 auto;
   padding: 1em;
 }
 
-/* line 39, ../sass/_admin.scss */
+/* line 37, ../sass/_admin.scss */
 #main-navigation {
   width: 200px;
-  height: 100%;
   float: left;
   padding: 1em;
   border-right: 1px solid #a1a7b2;
 }
-/* line 45, ../sass/_admin.scss */
+/* line 42, ../sass/_admin.scss */
 #main-navigation ul {
   list-style: none;
 }
 
-/* line 50, ../sass/_admin.scss */
+/* line 47, ../sass/_admin.scss */
 #messages {
   padding: 1em;
   margin-bottom: 1em;
   background: #874789;
 }
 
-/* line 65, ../sass/_admin.scss */
+/* line 62, ../sass/_admin.scss */
 #main-section {
   margin-left: 200px;
   padding: 1em;
-  height: 100%;
-  overflow: auto;
 }
-/* line 71, ../sass/_admin.scss */
+/* line 66, ../sass/_admin.scss */
 #main-section #content #main-header {
-  overflow: auto;
   margin-bottom: 1em;
 }
-/* line 74, ../sass/_admin.scss */
+/* line 68, ../sass/_admin.scss */
 #main-section #content #main-header h1 {
   font-size: 2em;
   border-bottom: 1px solid #a1a7b2;
   margin-bottom: 0.5em;
 }
-/* line 80, ../sass/_admin.scss */
+/* line 74, ../sass/_admin.scss */
 #main-section #content .col {
   float: left;
   width: 49%;
   margin-left: 1%;
 }
-/* line 84, ../sass/_admin.scss */
+/* line 78, ../sass/_admin.scss */
 #main-section #content .col:first-of-type {
   margin-left: 0;
   margin-right: 1%;
 }
-/* line 88, ../sass/_admin.scss */
+/* line 82, ../sass/_admin.scss */
 #main-section #content .col .overview {
   padding: 1em;
   margin-bottom: 1em;
   width: 100%;
   border: 1px solid #a1a7b2;
 }
-/* line 95, ../sass/_admin.scss */
+/* line 89, ../sass/_admin.scss */
 #main-section #content .title {
   margin-bottom: 0.5em;
 }
-/* line 98, ../sass/_admin.scss */
+/* line 92, ../sass/_admin.scss */
 #main-section #content table {
   width: 100%;
 }
-/* line 100, ../sass/_admin.scss */
+/* line 94, ../sass/_admin.scss */
 #main-section #content table thead {
   background: #a1a7b2;
 }
-/* line 103, ../sass/_admin.scss */
+/* line 97, ../sass/_admin.scss */
 #main-section #content table th, #main-section #content table td {
   padding: 0 0.5em;
   border: 1px solid white;
 }
-/* line 108, ../sass/_admin.scss */
+/* line 102, ../sass/_admin.scss */
 #main-section #content table td.index {
   color: #874789;
   cursor: help;
 }
 
-/* line 118, ../sass/_admin.scss */
+/* line 112, ../sass/_admin.scss */
 .clearfix:after {
   content: "";
   display: table;

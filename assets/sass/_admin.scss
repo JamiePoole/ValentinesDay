@@ -10,7 +10,6 @@ html, body {
   	-webkit-font-smoothing: antialiased;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
@@ -31,14 +30,12 @@ strong {
 
 #container {
 	width: 900px;
-	height: 100%;
 	margin: 0 auto;
 	padding: 1em;
 }
 
 #main-navigation {
 	width: 200px;
-	height: 100%;
 	float: left;
 	padding: 1em;
 	border-right: 1px solid $blue-grey;
@@ -58,18 +55,15 @@ strong {
 
 	}
 	.success {
-
+		
 	}
 }
 
 #main-section {
 	margin-left: 200px;
 	padding: 1em;
-	height: 100%;
-	overflow: auto;
 	#content {
 		#main-header {
-			overflow: auto;
 			margin-bottom: 1em;
 			h1 {
 				font-size: 2em;
