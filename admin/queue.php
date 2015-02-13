@@ -28,7 +28,7 @@ $count = $_at->getEntries(true, 'tweet_queue');
 						echo '<td>'.$_at->getTime($tweet['dtime'], 1).'</td>';
 						echo '<td>'.$tweet['duser'].'</td>';
 						echo '<td>'.$tweet['dmessage'].'</td>';
-						echo '<td class="actions"><a href="index.php?action=delete&page=queue&id='.$tweet['tid'].'">Delete</a> | Flag</td>';
+						echo '<td class="actions"><a href="index.php?action=delete&page=queue&id='.$tweet['tid'].'">Delete</a> | <a href="index.php?action=flag&page=queue&id='.$tweet['tid'].'">Flag</a></td>';
 						echo '</tr>';
 					} ?>
 				</table>

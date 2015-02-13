@@ -85,6 +85,11 @@ class adminTasks {
 			$result->execute();
 			$lastid = $this->db->lastInsertId();
 
+			// Delete from Flagged
+			$sql = "DELETE FROM `tweet_flagged` WHERE `tid` = $tid";
+			$result = $this->db->prepare($sql);
+			$result->execute();
+
 			// Return Data
 			$return->tweet['code'] = 102;
 			$return->tweet['status'] = 'Tweet successfully added to queue';
@@ -94,7 +99,43 @@ class adminTasks {
 
 		} catch(PDOException $e){
 			$return->error['code'] = 8;
-			$return->error['message'] = 'Unable to add tweet to queue' . $e->getMessage();
+			$return->error['message'] = 'Unable to add tweet to queue: ' . $e->getMessage();
+			$this->ut->log((object)$return->error);
+		}
+
+		return $return;
+	}
+
+	/* Add a flagged entry back to the queue
+	 * @param 	$tid 		int
+	 *
+	 * @return  $return 	object
+	 */
+	public function flagTweet($tid){
+		$return = new stdClass();
+
+		try {
+			// Add to Flagged
+			$sql = "INSERT INTO `tweet_flagged` (`dtime`, `duser`, `dmessage`) SELECT `dtime`, `duser`, `dmessage` FROM `tweet_queue` WHERE `tid` = $tid";
+			$result = $this->db->prepare($sql);
+			$result->execute();
+			$lastid = $this->db->lastInsertId();
+
+			// Delete from Queue
+			$sql = "DELETE FROM `tweet_queue` WHERE `tid` = $tid";
+			$result = $this->db->prepare($sql);
+			$result->execute();
+
+			// Return Data
+			$return->tweet['code'] = 102;
+			$return->tweet['status'] = 'Tweet successfully flagged.';
+			$return->tweet['tid'] = $lastid;
+			$return->tweet['target'] = $recipient;
+			$return->tweet['message'] = $message;
+
+		} catch(PDOException $e){
+			$return->error['code'] = 8;
+			$return->error['message'] = 'Unable to flag the tweet: ' . $e->getMessage();
 			$this->ut->log((object)$return->error);
 		}
 

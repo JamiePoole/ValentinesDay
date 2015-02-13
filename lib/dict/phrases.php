@@ -34,5 +34,9 @@ array_push($phrases,
 		'choke',
 		'in your house',
 		'#gamergate',
-		'gamergate'
+		'gamergate',
+		'sexually assault',
+		'sexual assault',
+		'sexual assualt',
+		'sexually assualt'
 );

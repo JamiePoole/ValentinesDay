@@ -51,7 +51,7 @@ if(isset($_GET['action']) && !empty($_GET['action'])){
 		}
 
 		if($_GET['action'] == 'flag'){
-			$result = $_at->flag($_GET['id']);
+			$result = $_at->flagTweet($_GET['id']);
 			if($result) $_at->setMessages(array('title' => 'Success', 'message' => 'Entry flagged.'));
 			else $_at->setMessages(array('title' => 'Failure', 'message' => 'Action failed.'));
 		}
