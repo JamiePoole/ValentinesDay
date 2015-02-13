@@ -2,7 +2,7 @@ jQuery(document).ready(function($){
 	
 	$('.full-view table .actions a').on('click', function(e){
 		e.preventDefault();
-		var tag = this;
+		var tag = $(this);
 		$.ajax({
 			url: tag.attr('href'),
 			success: function(){
