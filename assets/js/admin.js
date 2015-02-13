@@ -1,13 +1,12 @@
 jQuery(document).ready(function($){
 	
-	$('.full-view table .actions a').live('click', function(e){
+	$('.full-view table .actions a').click(function(e){
 		e.preventDefault();
 		$.ajax({
 			url: $(this).attr('href'),
-		}).done(function(){
-			$(this).parent().parent().remove();
-		}).fail(function(){
-			$.alert('Failed');
+			success: function(){
+				$(this).parent().parent().remove();
+			},
 		});
 	});
 
