@@ -30,5 +30,7 @@ array_push($phrases,
 		'white powah',
 		'white powa',
 		'corpse',
-		'electrocute'
+		'electrocute',
+		'choke',
+		'in your house'
 );
