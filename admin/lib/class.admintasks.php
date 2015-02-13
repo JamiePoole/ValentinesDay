@@ -70,6 +70,37 @@ class adminTasks {
 		}
 	}
 
+	/* Add a flagged entry back to the queue
+	 * @param 	$tid 		int
+	 *
+	 * @return  $return 	object
+	 */
+	public function reQueue($tid){
+		$return = new stdClass();
+
+		try {
+			// Add to Queue
+			$sql = "INSERT INTO `tweet_queue` (`tid`, `dtime`, `duser`, `dmessage`) SELECT `tid`, `dtime`, `duser`, `dmessage` FROM `tweet_flagged` WHERE `tid` = $tid";
+			$result = $this->db->prepare($sql);
+			$result->execute();
+			$lastid = $this->db->lastInsertId();
+
+			// Return Data
+			$return->tweet['code'] = 102;
+			$return->tweet['status'] = 'Tweet successfully added to queue';
+			$return->tweet['tid'] = $lastid;
+			$return->tweet['target'] = $recipient;
+			$return->tweet['message'] = $message;
+
+		} catch(PDOException $e){
+			$return->error['code'] = 8;
+			$return->error['message'] = 'Unable to add tweet to queue' . $e->getMessage();
+			$this->ut->log((object)$return->error);
+		}
+
+		return $return;
+	}
+
 	public function getStatistics(){
 		// TO DO
 	}

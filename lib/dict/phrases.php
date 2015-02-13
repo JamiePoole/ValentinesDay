@@ -20,5 +20,13 @@ array_push($phrases,
 		'poor excuse',
 		'nail you',
 		'hate',
-		'finger you'
+		'finger you',
+		'coming for you',
+		'delete your account',
+		'stupid bitch',
+		'whitegenocide',
+		'white genocide',
+		'white power',
+		'white powah',
+		'white powa'
 );

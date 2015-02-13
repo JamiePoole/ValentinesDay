@@ -222,6 +222,7 @@ class tweetQueue {
 		$target = filter_var($target, FILTER_SANITIZE_STRING);
 		$target = str_replace('@', '', $target);
 		$message = filter_var($message, FILTER_SANITIZE_STRING);
+		$message = preg_replace( "/\r|\n/", "", $message);
 
 		// Check Empty
 		if(trim($target) != ''){
