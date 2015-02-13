@@ -91,16 +91,15 @@ $_ut->startSession();
 				<svg id="birds" width="100%" height="100%"></svg>
 			</div>
 			<div class="page">
-				<?php // <h1 class="heading">Tweet the love</h1> ?>
-				<h1 class="heading">Love overload</h1>
+				<h1 class="heading">Tweet the love</h1>
+				<?php //<h1 class="heading">Love overload</h1> ?>
 				<h2 class="sub-heading">
-					<?php // Anonymously tell your crush how you really feel ?>
-					We'll be back shortly
+					Anonymously tell your crush how you really feel
+					<?php // We'll be back shortly ?>
 				</h2>
 			</div>
 			<!-- <a class="scroll-btn animated fadeInDown" href="#"><span class="wa-hidden">Next</span></a> -->
 		</div><!--// .intro-page -->
-		<?php /*
 		<div class="section send-page" data-anchor="send">
 			<div class="page">
 				<div id="tweet-form">
@@ -167,8 +166,6 @@ $_ut->startSession();
 			</div>
 			<a class="scroll-btn animated up" href="#"><span class="wa-hidden">Next</span></a>
 		</div>
-
-		*/ ?>
 
 	</div><!--// #fullpage -->
 	
