@@ -14,4 +14,15 @@ jQuery(document).ready(function($){
 		});
 	});
 
+	var refreshTime = 1000;
+	refresh = setInterval(function(){
+		var loc = window.location.pathname;
+		$.ajax({
+			url: loc,
+			success: function(data){
+				console.log(data);
+			},
+		});
+	}, refreshTime);
+
 });
