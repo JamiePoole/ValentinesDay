@@ -28,5 +28,7 @@ array_push($phrases,
 		'white genocide',
 		'white power',
 		'white powah',
-		'white powa'
+		'white powa',
+		'corpse',
+		'electrocute'
 );
