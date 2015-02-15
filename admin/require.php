@@ -2,6 +2,7 @@
 require_once('../lib/class.dbconnection.php');
 require_once('../lib/class.util.php');
 require_once('lib/class.admintasks.php');
+require_once('lib/class.statistics.php');
 
 $_db = dbConnection::getInstance();
 $_ut = util::getInstance($_db);
