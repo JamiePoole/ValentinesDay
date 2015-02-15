@@ -1,6 +1,5 @@
 <?php
 $statistics = $_sa->getStatistics();
-var_dump($statistics);
 ?>
 <section id="main-section">
 	<div id="content">
@@ -11,7 +10,7 @@ var_dump($statistics);
 		<section id="main-column">
 			<div id="queue" class="full-view">
 				<h3 class="title">Statistics</h3>
-				<?php if(count($statistics) < 1): ?>
+				<?php if(count($statistics) > 1): ?>
 				<table>
 					<thead>
 						<tr>
