@@ -7,7 +7,7 @@ $senders = $_at->getEntries(false, 'tweet_sender', 'tid', 'DESC', 5);
 $log = $_at->getEntries(false, 'log', 'etime', 'DESC', 5);
 
 // Twitter Limits
-$limits = $_at->getTwitterLimit();
+// $limits = $_at->getTwitterLimit();
 
 // Get Row counts
 $counts['queue'] = $_at->getEntries(true, 'tweet_queue');
