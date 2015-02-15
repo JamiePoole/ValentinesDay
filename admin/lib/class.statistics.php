@@ -37,6 +37,12 @@ class statistics {
 		}
 	}
 
+	public function getStatistics(){
+		return array(
+			'total_count'	=> $this->countTweets('tweet_archive')
+		);
+	}
+
 	// Location
 	private function setRomanticLocation(){
 
