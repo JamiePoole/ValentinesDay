@@ -18,6 +18,7 @@ class adminTasks {
 		$this->messages = array();
 
 		$settings = parse_ini_file('../../lib/conf/settings.ini', true);
+		var_dump($settings);
 		$this->ckey = $settings['twitter']['ckey'];
 		$this->csec = $settings['twitter']['csec'];
 		$this->atok = $settings['twitter']['atok'];

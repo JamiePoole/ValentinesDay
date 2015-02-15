@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
 	
-	$('.full-view table .actions a').on('click', function(e){
+	$('.full-view table .actions a').live('click', function(e){
 		e.preventDefault();
 		var tag = $(this);
 		$.ajax({
@@ -14,7 +14,7 @@ jQuery(document).ready(function($){
 		});
 	});
 
-	var refreshTime = 1000;
+	var refreshTime = 5000;
 	refresh = setInterval(function(){
 		var loc = window.location;
 		$.ajax({
