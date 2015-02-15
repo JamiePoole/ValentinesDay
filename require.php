@@ -13,4 +13,4 @@ $_gi = generateImage::getInstance();
 $_td = tweetData::getInstance($_db);
 $_st = sendTweet::getInstance($_td, $_ut, $_gi);
 $_tq = tweetQueue::getInstance($_db, $_td);
-$_ct = cronTasks::getInstance($_st, $_tq, $_sa);
+$_ct = cronTasks::getInstance($_st, $_tq);
