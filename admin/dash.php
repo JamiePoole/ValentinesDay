@@ -6,6 +6,9 @@ $archive = $_at->getEntries(false, 'tweet_archive', 'dtime', 'DESC', 5);
 $senders = $_at->getEntries(false, 'tweet_sender', 'tid', 'DESC', 5);
 $log = $_at->getEntries(false, 'log', 'etime', 'DESC', 5);
 
+// Twitter Limits
+$limits = $_at->getTwitterLimit();
+
 // Get Row counts
 $counts['queue'] = $_at->getEntries(true, 'tweet_queue');
 $counts['flagged'] = $_at->getEntries(true, 'tweet_flagged');
@@ -16,6 +19,7 @@ $counts['log'] = $_at->getEntries(true, 'log');
 <section id="main-section">
 	<div id="content">
 		<header id="main-header">
+			<?php var_dump($limits); ?>
 			<h1>Dashboard</h1>
 			<p>Overview of activity will go here.</p>
 		</header>

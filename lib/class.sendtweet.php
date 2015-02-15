@@ -6,10 +6,7 @@ class sendTweet {
 
 	protected static $instance;
 
-	public $consumer_key;
-	public $consumer_secret;
-	public $access_token;
-	public $access_secret;
+	public $consumer_key, $consumer_secret, $access_token, $access_secret;
 
 	private $tweet_data;
 	private $ut;

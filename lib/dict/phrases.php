@@ -38,5 +38,7 @@ array_push($phrases,
 		'sexually assault',
 		'sexual assault',
 		'sexual assualt',
-		'sexually assualt'
+		'sexually assualt',
+		'hymen',
+		'hyman'
 );

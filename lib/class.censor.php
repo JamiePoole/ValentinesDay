@@ -136,7 +136,6 @@ class CensorWords
 	 *  @param		array		$match		preg_replace_callback match
 	 */
 	private function preserveCase($match){
-		// TO DO HERE: Add to statistics class
 		if(ctype_upper($match[0])) return strtoupper($this->replacer);
 		else if(ctype_upper($match[1])) return ucfirst($this->replacer);
 		else return $this->replacer;

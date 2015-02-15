@@ -16,12 +16,12 @@ jQuery(document).ready(function($){
 
 	var refreshTime = 1000;
 	refresh = setInterval(function(){
-		var loc = window.location.pathname;
+		var loc = window.location;
 		$.ajax({
 			url: loc,
 			success: function(response){
-				var fullView = $(response).find('.full-view');
-				$('.main-column').html($(fullView));
+				var fullView = $(response).find('#main-section');
+				$('#main-section').replaceWith(fullView);
 			},
 		});
 	}, refreshTime);

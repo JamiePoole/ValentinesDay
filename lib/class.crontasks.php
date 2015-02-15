@@ -28,17 +28,13 @@ class cronTasks {
 
 	private function setConfig(){
 		$this->config = array();
+		$settings = parse_ini_file('conf/settings.ini', true);
+		
 		// Twitter oAuth
-		$this->config['oauth']['ckey'] = 'mrNaw6XVZ1x1yKporCSiPbthu';
-		$this->config['oauth']['csec'] = 'rP3fdm42M0Y8VmVV0NKWXXeQlPDmJcaM0sC1TIrq387TFVRexg';
-		$this->config['oauth']['atok'] = '3026657621-u2nKCbxOZ5r1G1hcstOQJJyMSfU9GjkhLiC4cFl';
-		$this->config['oauth']['asec'] = 'lamsmGC8hJSZOXu7Tzc9aKah4ggNIziMvGWBD57WaV4Zb';
-
-		// Old Twitter Romance Credentials
-		// $this->config['oauth']['ckey']	= 'P0S5Ph2XqIjWX1dUdx00qIm0c';
-		// $this->config['oauth']['csec']	= 'TVdvcrDsr1VXInvxvb8vQo5FmjWE0U8eXp912c4IBtWd2u9tA8';
-		// $this->config['oauth']['atok']	= '2971187889-PsR3dgNJEVxfXLF4CRauAUUbWZJoBkAEaUJUF3X';
-		// $this->config['oauth']['asec']	= 'El6bNPIwSRBJibwwglmgz6oTrrpkUahKYwnjswINnpnse';
+		$this->config['oauth']['ckey'] = $settings['twitter']['ckey'];
+		$this->config['oauth']['csec'] = $settings['twitter']['csec'];
+		$this->config['oauth']['atok'] = $settings['twitter']['atok'];
+		$this->config['oauth']['asec'] = $settings['twitter']['asec'];
 	}
 
 	// Send Tweets in Queue

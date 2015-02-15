@@ -1,4 +1,7 @@
 <?php
+require('twitteroauth/autoloader.php');
+use Abraham\TwitterOAuth\TwitterOAuth;
+
 class adminTasks {
 
 	protected static $instance;
@@ -7,10 +10,18 @@ class adminTasks {
 	private $ut;
 	private $messages;
 
+	private $ckey, $csec, $atok, $asec;
+
 	public function __construct($db, $ut){
 		$this->db = $db;
 		$this->ut = $ut;
 		$this->messages = array();
+
+		$settings = parse_ini_file('../../lib/conf/settings.ini', true);
+		$this->ckey = $settings['twitter']['ckey'];
+		$this->csec = $settings['twitter']['csec'];
+		$this->atok = $settings['twitter']['atok'];
+		$this->asec = $settings['twitter']['asec'];
 	}
 
 	public static function getInstance(dbConnection $db, util $ut){
@@ -142,8 +153,11 @@ class adminTasks {
 		return $return;
 	}
 
-	public function getStatistics(){
-		// TO DO
+	public function getTwitterLimit(){
+		$twitter = new TwitterOAuth($this->ckey, $this->csec, $this->atok, $this->asec);
+
+		$limits = $twitter->get('application/rate_limit_status');
+		return $limits;
 	}
 
 	public function getTime($date, $granularity = 2){
