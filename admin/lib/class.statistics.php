@@ -39,8 +39,8 @@ class statistics {
 
 	public function getStatistics(){
 		$total_count = $this->countTweets('tweet_archive');
-		$total_delivered = $this->countTweets('tweet_archive', 'delivered', 'IS', 'TRUE'),
-		$total_removed = $this->countTweets('tweet_archive', 'delivered', 'IS NOT', 'TRUE'),
+		$total_delivered = $this->countTweets('tweet_archive', 'delivered', 'IS', 'TRUE');
+		$total_removed = $this->countTweets('tweet_archive', 'delivered', 'IS NOT', 'TRUE');
 		$percent_removed = floor(($total_removed / $total_count) * 100); 
 		$total_flagged = $this->countTweets('tweet_flagged');
 
