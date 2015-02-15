@@ -18,11 +18,10 @@ class statistics {
 		$this->db = $db;
 		$this->ut = $ut;
 
-		$settings = parse_ini_file('../../lib/conf/settings.ini', true);
-		$this->ckey = $settings['twitter']['ckey'];
-		$this->csec = $settings['twitter']['csec'];
-		$this->atok = $settings['twitter']['atok'];
-		$this->asec = $settings['twitter']['asec'];
+		$this->ckey = 'mrNaw6XVZ1x1yKporCSiPbthu';
+		$this->csec = 'rP3fdm42M0Y8VmVV0NKWXXeQlPDmJcaM0sC1TIrq387TFVRexg';
+		$this->atok = '3026657621-u2nKCbxOZ5r1G1hcstOQJJyMSfU9GjkhLiC4cFl';
+		$this->asec = 'lamsmGC8hJSZOXu7Tzc9aKah4ggNIziMvGWBD57WaV4Zb';
 	}
 
 	// Count Tweets
