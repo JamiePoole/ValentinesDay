@@ -28,7 +28,7 @@ class statistics {
 	private function countTweets($table, $col = null, $mod = null, $search = null){
 		try {
 			$sql = "SELECT COUNT(*) FROM `$table`";
-			if($col && $mod && $search) $sql .= "WHERE `$col` $mod `$search`";
+			if($col && $mod && $search) $sql .= "WHERE `$col` $mod $search";
 			$result = $this->db->prepare($sql);
 			$result->execute();
 			return $result->fetchColumn();
