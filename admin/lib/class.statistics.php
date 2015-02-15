@@ -39,7 +39,7 @@ class statistics {
 
 	public function getStatistics(){
 		return array(
-			'total_count'		=> $this->countTweets('tweet_archive')
+			'total_count'		=> $this->countTweets('tweet_archive'),
 			'total_delivered'	=> $this->countTweets('tweet_archive', 'delivered', 'IS', 'TRUE')
 		);
 	}
