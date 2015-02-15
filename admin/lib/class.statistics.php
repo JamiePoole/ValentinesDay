@@ -48,7 +48,7 @@ class statistics {
 			'total_count'		=> $total_count,
 			'total_delivered' 	=> $total_delivered,
 			'total_removed'		=> $total_removed,
-			'percent_removed'	=> $percent_removed,
+			'percent_removed'	=> $percent_removed . '%',
 			'total_flagged'		=> $total_flagged
 		);
 	}
