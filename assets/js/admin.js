@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
 	
-	$('.full-view table .actions').on('click', function(e){
+	$('.full-view table .actions a').on('click', function(e){
 		e.preventDefault();
 		var tag = $(this);
 		$.ajax({
