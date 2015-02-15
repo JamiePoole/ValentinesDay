@@ -38,11 +38,18 @@ class statistics {
 	}
 
 	public function getStatistics(){
+		$total_count = $this->countTweets('tweet_archive');
+		$total_delivered = $this->countTweets('tweet_archive', 'delivered', 'IS', 'TRUE'),
+		$total_removed = $this->countTweets('tweet_archive', 'delivered', 'IS NOT', 'TRUE'),
+		$percent_removed = floor(($total_removed / $total_count) * 100); 
+		$total_flagged = $this->countTweets('tweet_flagged');
+
 		return array(
-			'total_count'		=> $this->countTweets('tweet_archive'),
-			'total_delivered'	=> $this->countTweets('tweet_archive', 'delivered', 'IS', 'TRUE'),
-			'total_removed'		=> $this->countTweets('tweet_archive', 'delivered', 'IS NOT', 'TRUE'),
-			'total_flagged'		=> $this->countTweets('tweet_flagged')
+			'total_count'		=> $total_count,
+			'total_delivered' 	=> $total_delivered,
+			'total_removed'		=> $total_removed,
+			'percent_removed'	=> $percent_removed,
+			'total_flagged'		=> $total_flagged
 		);
 	}
 
