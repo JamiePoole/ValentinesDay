@@ -1,5 +1,6 @@
 <?php
 $statistics = $_sa->getStatistics();
+var_dump($statistics);
 ?>
 <section id="main-section">
 	<div id="content">
