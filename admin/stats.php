@@ -20,8 +20,10 @@ $statistics = $_sa->getStatistics();
 					</thead>
 					<tbody>
 						<?php foreach($statistics as $stat => $value){ ?>
-							<td><?php echo $stat; ?></td>
-							<td><?php echo $value; ?>
+							<tr>
+								<td><?php echo $stat; ?></td>
+								<td><?php echo $value; ?></td>
+							</tr>
 						<?php } ?>
 					</tbody>
 				</table>
