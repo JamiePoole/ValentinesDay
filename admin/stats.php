@@ -4,13 +4,13 @@ $statistics = $_sa->getStatistics();
 <section id="main-section">
 	<div id="content">
 		<header id="main-header">
-			<h1>Tweet Queue</h1>
-			<p>This is an overview of Tweets <strong>that have NOT yet been delivered</strong>.</p>
+			<h1>Statistics</h1>
+			<p>Statistics gathered from data analysis of activity.</p>
 		</header>
 		<section id="main-column">
 			<div id="queue" class="full-view">
-				<h3 class="title">Queue (<?php echo $count; ?>)</h3>
-				<?php if($count > 0): ?>
+				<h3 class="title">Statistics</h3>
+				<?php if(count($statistics) < 1): ?>
 				<table>
 					<thead>
 						<tr>
