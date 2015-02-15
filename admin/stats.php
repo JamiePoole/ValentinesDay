@@ -10,7 +10,7 @@ $statistics = $_sa->getStatistics();
 		<section id="main-column">
 			<div id="queue" class="full-view">
 				<h3 class="title">Statistics</h3>
-				<?php if(count($statistics) > 1): ?>
+				<?php if(count($statistics) > 0): ?>
 				<table>
 					<thead>
 						<tr>
