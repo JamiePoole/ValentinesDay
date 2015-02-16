@@ -21,7 +21,6 @@ $counts['log'] = $_at->getEntries(true, 'log');
 		<header id="main-header">
 			<h1>Dashboard</h1>
 			<p>Overview of activity will go here.</p>
-			<?php if($limits) echo '<pre>'; var_dump($limits); echo '</pre>'; ?>
 		</header>
 		<section id="col1" class="col">
 			<div id="queue" class="overview">
@@ -148,6 +147,39 @@ $counts['log'] = $_at->getEntries(true, 'log');
 			<div id="stats" class="overview">
 				<h3 class="title">Statistics</h3>
 				<p>Overview of Statistics here.</p>
+			</div>
+		</section>
+		<section id="row2" class="main-column">
+			<div id="twitter_limits" class="full-view">
+				<?php if($limits): ?>
+					<table>
+						<thead>
+							<tr>
+								<th>Twitter API Call</th>
+								<th>Limit</th>
+								<th>Remaining</th>
+								<th>Reset</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php foreach($limits->resources as $resource => $items){ ?>
+								<tr>
+									<td colspan="4">
+										<?php echo $resource; ?>
+									</td>
+								</tr>
+								<?php foreach ($items as $item => $values){ ?>
+									<tr>
+										<td><?php echo $item; ?></td>
+										<td><?php echo $values->limit; ?></td>
+										<td><?php echo $values->remaining; ?></td>
+										<td><?php echo date("m.d.y", $values->reset); ?></td>
+									</tr>
+								<?php } ?>
+							<?php } ?>
+						</tbody>
+					</table>
+				<?php endif; ?>
 			</div>
 		</section>
 	</div>
