@@ -173,7 +173,7 @@ $counts['log'] = $_at->getEntries(true, 'log');
 										<td><?php echo $item; ?></td>
 										<td><?php echo $values->limit; ?></td>
 										<td><?php echo $values->remaining; ?></td>
-										<td><?php echo $_at->getTime($values->reset); ?></td>
+										<td><?php echo date("H:i:s", $values->reset); ?></td>
 									</tr>
 								<?php } ?>
 							<?php } ?>
