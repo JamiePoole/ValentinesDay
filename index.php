@@ -104,7 +104,7 @@ $_ut->startSession();
 					<?php // We'll be back shortly ?>
 				</h2>
 			</div>
-			<a class="scroll-btn animated fadeInDown" href="#"><span class="wa-hidden">Next</span></a>
+			<?php // <a class="scroll-btn animated fadeInDown" href="#"><span class="wa-hidden">Next</span></a> ?>
 		</div><!--// .intro-page -->
 		<?php /*
 		<div class="section send-page" data-anchor="send">
