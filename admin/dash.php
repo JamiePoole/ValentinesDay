@@ -21,7 +21,7 @@ $counts['log'] = $_at->getEntries(true, 'log');
 		<header id="main-header">
 			<h1>Dashboard</h1>
 			<p>Overview of activity will go here.</p>
-			<?php if($limits) var_dump($limits); ?>
+			<?php if($limits) echo '<pre>'; var_dump($limits); echo '</pre>'; ?>
 		</header>
 		<section id="col1" class="col">
 			<div id="queue" class="overview">
