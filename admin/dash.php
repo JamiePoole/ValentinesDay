@@ -165,7 +165,7 @@ $counts['log'] = $_at->getEntries(true, 'log');
 							<?php foreach($limits->resources as $resource => $items){ ?>
 								<tr>
 									<td colspan="4">
-										<?php echo $resource; ?>
+										<?php echo '<strong>' . $resource . '</strong>'; ?>
 									</td>
 								</tr>
 								<?php foreach ($items as $item => $values){ ?>
