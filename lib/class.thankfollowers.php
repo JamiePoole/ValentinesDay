@@ -11,6 +11,8 @@ class thankFollowers {
 	private $db;
 	private $ut;
 	private $gi;
+	private $twitter_api_limit = 2400;
+	private $cron_time = 5;
 
 	public function __construct(dbConnection $db, util $ut, generateImage $gi){
 		$this->db = $db;
