@@ -38,7 +38,7 @@ class thankFollowers {
 		return $handle;
 	}
 
-	public function postFarewell($screen_name, $full_name = false, $fid){
+	public function postFarewell($full_name = false, $screen_name, $fid){
 		$full_name = filter_var($full_name, FILTER_SANITIZE_STRING);
 		$screen_name = filter_var($screen_name, FILTER_SANITIZE_STRING);
 
