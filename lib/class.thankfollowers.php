@@ -12,7 +12,7 @@ class thankFollowers {
 	private $ut;
 	private $gi;
 
-	public function __construct(dabatase $db, util $ut, generateImage $gi){
+	public function __construct(dbConnection $db, util $ut, generateImage $gi){
 		$this->db = $db;
 		$this->ut = $ut;
 		$this->gi = $gi;
@@ -153,7 +153,7 @@ class thankFollowers {
 		} while($cursor != 0);
 	}
 
-	public static function getInstance(database $db, util $ut, generateImage $gi){
+	public static function getInstance(dbConnection $db, util $ut, generateImage $gi){
 		if(!self::$instance)
 			self::$instance = new self($db, $ut, $gi);
 		return self::$instance;
