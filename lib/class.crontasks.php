@@ -50,4 +50,16 @@ class cronTasks {
 			$this->_tq->delete($tweet['tid']);
 		}
 	}
+
+	// Send to Followers
+	private function sendFarewell(){
+		$this->_st->setOAuth($this->config['oauth']['ckey'], $this->config['oauth']['csec'], $this->config['oauth']['atok'], $this->config['oauth']['asec']);
+
+		$next = $this->_tq->nextFollowers(); 
+
+		foreach($next as $follower){
+			$this->_st->postFarewell($follower['name'], $follower['user']);
+			$this->_tq->updateFarewell($follower['tid']);
+		}
+	}
 }
