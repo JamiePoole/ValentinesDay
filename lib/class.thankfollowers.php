@@ -38,7 +38,7 @@ class thankFollowers {
 		return $handle;
 	}
 
-	public function postFarewell($screen_name, $full_name = false){
+	public function postFarewell($screen_name, $full_name = false, $fid){
 		$full_name = filter_var($full_name, FILTER_SANITIZE_STRING);
 		$screen_name = filter_var($screen_name, FILTER_SANITIZE_STRING);
 
@@ -47,7 +47,7 @@ class thankFollowers {
 		// Validate
 		if(isset($screen_name) && trim($screen_name) != ''){
 			// Parse first name - if fail, use @handle
-			$name = (($full_name !== false) ? $this->parseName($user->name, $full_name) : $full_name);
+			$name = (($full_name !== false) ? $this->parseName($full_name, $screen_name) : $screen_name);
 		
 			// Generate Image
 			$dir = dirname(dirname(__FILE__)) . '/images/thanks/';
@@ -83,6 +83,9 @@ class thankFollowers {
 					'code'	=> 105,
 					'message' => 'Thank you sent to ' . $full_name . $fileDesc,
 				));
+				// Update Row
+				$this->updateFollower($fid);
+
 			} else {
 				// Fail
 				foreach($twitter->errors as $error){
