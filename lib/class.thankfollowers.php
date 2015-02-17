@@ -57,7 +57,7 @@ class thankFollowers {
 
 			// Generate Tweet
 			$hashtag = '#tweetthelove';
-			$tweet = 'Hi @' . $full_name . '! I just wanted to say thanks for helping me '.$hashtag.' See you next year!';
+			$tweet = 'Hi @' . $screen_name . '! I just wanted to say thanks for helping me '.$hashtag.' See you next year!';
 			$param = array('status'	=> $tweet);
 
 			// If Image Generated
@@ -81,7 +81,7 @@ class thankFollowers {
 				// Success
 				$this->ut->log((object)array(
 					'code'	=> 105,
-					'message' => 'Thank you sent to ' . $full_name . $fileDesc,
+					'message' => 'Thank you sent to ' . $screen_name . $fileDesc,
 				));
 				// Update Row
 				$this->updateFollower($fid);
