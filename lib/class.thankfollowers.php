@@ -142,7 +142,7 @@ class thankFollowers {
 			$followers = $twitter->get('followers/list', array('cursor' => $cursor, 'count'	=> 200));
 			foreach($followers->users as $follower){
 				try {
-					$sql = "INSERT INTO `follower_list` VALUES (null, $follower->id, $follower->name, $follower->screen_name, $follower->lang, 0, $followers->next_cursor)";		
+					$sql = "INSERT INTO `follower_list` VALUES (null, $follower->id, '$follower->name', '$follower->screen_name', '$follower->lang', 0, $followers->next_cursor)";		
 					$result = $this->db->prepare($sql);
 					$result->execute();
 				} catch(PDOException $e){
