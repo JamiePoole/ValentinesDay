@@ -37,70 +37,6 @@ class sendTweet {
 		return $handle;
 	}
 
-	public function postFarewell($screen_name, $full_name = false){
-		$full_name = filter_var($full_name, FILTER_SANITIZE_STRING);
-		$screen_name = filter_var($screen_name, FILTER_SANITIZE_STRING);
-
-		$twitter = new TwitterOAuth($this->consumer_key, $this->consumer_secret, $this->access_token, $this->access_secret);
-
-		// Validate
-		if(isset($screen_name) && trim($screen_name) != ''){
-			// Parse first name - if fail, use @handle
-			$name = (($full_name !== false) ? $this->parseName($user->name, $full_name) : $full_name);
-		
-			// Generate Image
-			$dir = dirname(dirname(__FILE__)) . '/images/thanks/';
-			$this->gi->setDetails($name);
-			$image = $this->gi->paintFarewell();
-			$file = $this->gi->saveImage($image, $dir, $name);
-
-			// Generate Tweet
-			$hashtag = '#tweetthelove';
-			$tweet = 'Hi @' . $full_name . '! I just wanted to say thanks for helping me '.$hashtag.' See you next year!';
-			$param = array('status'	=> $tweet);
-
-			// If Image Generated
-			if(isset($file['filename']) && isset($file['filetype'])){
-				$media = $twitter->upload('media/upload', array('media'	=> $dir.$file['filename'].'.'.$file['filetype']));
-				if(isset($media->media_id_string)){
-					$mediaID = $media->media_id_string;
-					$param['media_ids'] = $mediaID;
-				}
-			}
-
-			// Send Tweet
-			$twitter->post('statuses/update', $param);
-
-			// Check Twitter Response
-			if(!isset($twitter->errors) || $twitter->getLastHttpCode() == 200){
-				if(isset($media->media_id_string))
-					$fileDesc = ' with file ' . $file['filename'] . '.' . $file['filetype'] . ' attached';
-				else
-					$fileDesc = null;
-				// Success
-				$this->ut->log((object)array(
-					'code'	=> 105,
-					'message' => 'Thank you sent to ' . $full_name . $fileDesc,
-				));
-			} else {
-				// Fail
-				foreach($twitter->errors as $error){
-					$this->ut->log((object)array(
-						'code'	=> $error->code,
-						'message' => $error->message
-					));
-				}
-			}
-		} else {
-			// Validation Fail
-			$this->ut->log((object)array(
-				'code'	=> 3,
-				'message' => 'Tweet failed. No recipient specified'
-			));
-			die('Tweet failed. No recipient specified');
-		}
-	}
-
 	public function postTweet($recipient, $message){
 		// Get values
 		$recipient = filter_var($recipient, FILTER_SANITIZE_STRING);
@@ -196,23 +132,4 @@ class sendTweet {
 
 		return false;
 	}
-
-	public function getFollowers(){
-		$twitter = new TwitterOAuth($this->consumer_key, $this->consumer_secret, $this->access_token, $this->access_secret);
-		$followers = $twitter->get('followers/list', array('cursor' => -1));
-
-		do {
-			$next_followers = $twitter->get('followers/list', array('cursor' => $followers['next_cursor']));
-			array_push($followers['users'], $next_followers['users']);
-		} while($followers['next_cursor'] != 0);
-
-		var_dump($followers);
-	}
-
-	public static function getInstance(tweetData $td, util $ut, generateImage $gi){
-		if(!self::$instance)
-			self::$instance = new self($td, $ut, $gi);
-		return self::$instance;
-	}
-
 }

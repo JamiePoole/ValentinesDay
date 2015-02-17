@@ -132,26 +132,6 @@ class tweetQueue {
 		}
 	}
 
-	public function updateFollower($fid){
-		if(!isset($fid)){
-			$this->ut->log((object)array(
-				'code'	=> 1,
-				'message'	=> 'No ID Specified',
-				'file'		=> __FILE__,
-				'line'		=> __LINE__
-			));
-			die('No ID specified.');
-		}
-
-		try {
-			$sql = "UPDATE `follower_list` SET `sent` = 1 WHERE `fid` = $fid";
-			$result = $this->db->prepare($sql);
-			$result->execute();
-		} catch(PDOException $e){
-			$this->ut->log($e);
-		}
-	}
-
 	public function select($tid = null){
 		try {
 			$data = $this->db_options['data'];
@@ -204,20 +184,6 @@ class tweetQueue {
 		$limit = floor(($this->twitter_api_limit / 24 / 60) * $this->cron_time);
 		try {
 			$sql = "SELECT * FROM `$this->queue_table` ORDER BY `dtime` ASC LIMIT $limit";
-			$result = $this->db->prepare($sql);
-			$result->execute();
-			$rows = $result->fetchAll(PDO::FETCH_ASSOC);
-		} catch(PDOException $e){
-			$this->ut->log($e);
-		}
-
-		return $rows;
-	}
-
-	public function nextFollowers(){
-		$limit = floor(($this->twitter_api_limit / 24 / 60) * $this->cron_time);
-		try {
-			$sql = "SELECT * FROM `follower_list` WHERE `sent` = 0 LIMIT $limit";
 			$result = $this->db->prepare($sql);
 			$result->execute();
 			$rows = $result->fetchAll(PDO::FETCH_ASSOC);
