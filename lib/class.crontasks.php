@@ -59,7 +59,7 @@ class cronTasks {
 		$next = $this->_tf->nextFollowers(); 
 
 		foreach($next as $follower){
-			$this->_tf->postFarewell($follower['name'], $follower['user']);
+			$this->_tf->postFarewell($follower['name'], $follower['user'], $follower['fid']);
 		}
 	}
 }

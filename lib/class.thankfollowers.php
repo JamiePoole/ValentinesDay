@@ -105,7 +105,7 @@ class thankFollowers {
 		}
 	}
 
-	public function updateFollower($fid){
+	private function updateFollower($fid){
 		if(!isset($fid)){
 			$this->ut->log((object)array(
 				'code'	=> 1,
