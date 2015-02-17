@@ -140,19 +140,27 @@ class thankFollowers {
 
 		do {
 			$followers = $twitter->get('followers/list', array('cursor' => $cursor, 'count'	=> 200));
-			foreach($followers->users as $follower){
-				try {
-					$name = filter_var($follower->name, FILTER_SANITIZE_STRING);
-					$screen_name = filter_var($follower->screen_name, FILTER_SANITIZE_STRING);
-					$sql = "INSERT INTO `follower_list` VALUES (null, $follower->id, '$name', '$screen_name', '$follower->lang', 0, $followers->next_cursor)";		
-					$result = $this->db->prepare($sql);
-					$result->execute();
-				} catch(PDOException $e){
-					$this->ut->log($e);
+			if(200 == $twitter->getLastHttpCode()){
+				foreach($followers->users as $follower){
+					try {
+						$name = filter_var($follower->name, FILTER_SANITIZE_STRING);
+						$screen_name = filter_var($follower->screen_name, FILTER_SANITIZE_STRING);
+						$sql = "INSERT INTO `follower_list` VALUES (null, $follower->id, '$name', '$screen_name', '$follower->lang', 0, $followers->next_cursor)";		
+						$result = $this->db->prepare($sql);
+						$result->execute();
+					} catch(PDOException $e){
+						$this->ut->log($e);
+					}
 				}
+
+				$cursor = $followers->next_cursor;
+			} else {
+				$followers = 'Twitter API Limit';
+				break;
 			}
-			$cursor = $followers->next_cursor;
 		} while($cursor != 0);
+
+		return $followers;
 	}
 
 	public static function getInstance(dbConnection $db, util $ut, generateImage $gi){
