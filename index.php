@@ -1,6 +1,6 @@
 <?php
-require_once('require.php');
-$_ut->startSession();
+//require_once('require.php');
+//$_ut->startSession();
 ?>
 
 <!doctype html>
@@ -91,22 +91,22 @@ $_ut->startSession();
 				<svg id="birds" width="100%" height="100%"></svg>
 			</div>
 			<div class="page">
-				<h1 class="heading">Thanks for spreading the love!</h1>
-				<?php //<h1 class="heading">Tweet the love</h1> ?>
+				<?php //<h1 class="heading">Thanks for spreading the love!</h1> ?>
+				<h1 class="heading">Tweet the love</h1>
 				<?php //<h1 class="heading">Love overload</h1> ?>
 				<h2 class="sub-heading">
-					After delivering thousands of romantic tweets this Valentine's we're going to call it a day.
+					<?php /* After delivering thousands of romantic tweets this Valentine's we're going to call it a day.
 					<br />
 					<br />
 					Until next year, <br />
-					Cupid
-					<?php // Anonymously tell your crush how you really feel ?>
+					Cupid */ ?>
+					Anonymously tell your crush how you really feel
 					<?php // We'll be back shortly ?>
 				</h2>
 			</div>
-			<?php // <a class="scroll-btn animated fadeInDown" href="#"><span class="wa-hidden">Next</span></a> ?>
+			<a class="scroll-btn animated fadeInDown" href="#"><span class="wa-hidden">Next</span></a>
 		</div><!--// .intro-page -->
-		<?php /*
+		<?php /* */ ?>
 		<div class="section send-page" data-anchor="send">
 			<div class="page">
 				<div id="tweet-form">
@@ -125,7 +125,7 @@ $_ut->startSession();
 							<span class="animated">Send</span>
 						</button>
 					</form>
-					<p class="delay-time"><?php $_ut->getDelay($_tq->time()); ?></p>
+					<p class="delay-time"><?php // $_ut->getDelay($_tq->time()); ?></p>
 					
 				</div>
 			</div>
@@ -180,7 +180,7 @@ $_ut->startSession();
 			</div>
 			<a class="scroll-btn animated up" href="#"><span class="wa-hidden">Next</span></a>
 		</div>
-		*/ ?>
+		<?php /* */ ?>
 
 	</div><!--// #fullpage -->
 	
