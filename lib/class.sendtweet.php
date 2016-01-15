@@ -18,6 +18,12 @@ class sendTweet {
 		$this->gi = $gi;
 	}
 
+	public static function getInstance(tweetData $td, util $ut, generateImage $gi){
+		if(!self::$instance)
+			self::$instance = new self($td, $ut, $gi);
+		return self::$instance;
+	}
+
 	public function setOAuth($ckey, $csec, $atok, $asec){
 		if($ckey)
 			$this->consumer_key = $ckey;
@@ -132,11 +138,4 @@ class sendTweet {
 
 		return false;
 	}
-
-	public static function getInstance(tweetData $td, util $ut, generateImage $gi){
-		if(!self::$instance)
-			self::$instance = new self($td, $ut, $gi);
-		return self::$instance;
-	}
-
 }

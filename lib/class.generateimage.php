@@ -19,7 +19,7 @@ class generateImage {
 		return self::$instance;
 	}
 
-	public function setDetails($to, $msg){
+	public function setDetails($to, $msg = null){
 		$this->recipient = $to;
 		$this->message = $msg;
 	}
@@ -122,6 +122,48 @@ class generateImage {
 		$bgLayer->addLayer(2, $toLayer);
 		$bgLayer->addLayer(2, $msgLayer);
 		$bgLayer->addLayer(3, $borderLayer);
+
+		// Resize
+		$bgLayer->resizeInPixel(440, null, true);
+
+		return $bgLayer;
+	}
+
+	public function paintFarewell(){
+		// Image Settings;
+		$width = 702;
+		$height = 703;
+		$fontDirectory = 'assets/fonts/';
+
+		$borderColor = 'FFFFFF';
+		$nameColor = '874789';
+		$nameFontSize = 25;
+
+		// Layers
+		$bgLayer = ImageWorkshop::initFromPath('assets/img/shareable/thanks_blank.jpg');
+		$nameLayer = ImageWorkshop::initVirginLayer($bgLayer->getWidth(), $bgLayer->getHeight());
+		$nameText = ImageWorkshop::initTextLayer(strtoupper($this->recipient), $fontDirectory.'Proxima_Nova/PROXIMANOVA-SEMIBOLD.OTF', $nameFontSize, $nameColor, 0);
+		$nameBackground = ImageWorkshop::initVirginlayer($nameText->getWidth() + ($nameFontSize*2), $nameFontSize*1.85, $borderColor);
+		$nameLeftBorder = ImageWorkshop::initFromPath('assets/img/shareable/leftFlag.png');
+		$nameRightBorder = ImageWorkshop::initFromPath('assets/img/shareable/rightFlag.png');
+
+		$shadowLayer = ImageWorkshop::initVirginLayer($nameBackground->getWidth() + ($nameLeftBorder->getWidth()), $nameBackground->getHeight(), 'DAD9D9');
+	
+		// Add Layers
+		$nameLayer->addLayer(1, $shadowLayer, 0, 4, 'MM');
+		$nameLayer->addLayer(2, $nameBackground, 0, 0, 'MM');
+		$nameLayer->addLayer(3, $nameText, 0, 0, 'MM');
+		$nameLayer->addLayer(4, $nameLeftBorder, 0 - (($nameBackground->getWidth()/2) + ($nameLeftBorder->getWidth()/2) - 1), 0 - 1 + ($nameLeftBorder->getHeight()/4), 'MM');
+		$nameLayer->addLayer(4, $nameRightBorder, 0 - 1 + (($nameBackground->getWidth()/2) + ($nameLeftBorder->getWidth()/2)), 0 - 1 + ($nameLeftBorder->getHeight()/4), 'MM');
+		
+		$max_length = 8;
+		$name_letter_count = strlen($this->recipient);
+		$oversize = $name_letter_count - $max_length;
+		if($oversize > 0) $resize = 150 - ($oversize * 8);
+		else $resize = 150;
+		$nameLayer->resizeByNarrowSideInPercent($resize, true);
+
+		$bgLayer->addLayer(1, $nameLayer, 0, 35, 'MM');
 
 		// Resize
 		$bgLayer->resizeInPixel(440, null, true);

@@ -6,16 +6,18 @@ class cronTasks {
 	private $config;
 	private $_st;
 	private $_tq;
+	private $_tf;
 
-	public function __construct(sendTweet $_st, tweetQueue $_tq){
+	public function __construct(sendTweet $_st, tweetQueue $_tq, thankFollowers $_tf){
 		$this->_st = $_st;
 		$this->_tq = $_tq;
+		$this->_tf = $_tf;
 		$this->setConfig();
 	}
 
-	public static function getInstance(sendTweet $_st, tweetQueue $_tq){
+	public static function getInstance(sendTweet $_st, tweetQueue $_tq, thankFollowers $_tf){
 		if(!self::$instance)
-			self::$instance = new self($_st, $_tq);
+			self::$instance = new self($_st, $_tq, $_tf);
 		return self::$instance;
 	}
 
@@ -23,7 +25,8 @@ class cronTasks {
 	 * All calls in here are defined in this class
 	 */
 	public function run(){
-		$this->sendTweets();
+		//$this->sendTweets();
+		$this->sendFarewell();
 	}
 
 	private function setConfig(){
@@ -48,6 +51,15 @@ class cronTasks {
 			$this->_st->getUser($tweet['duser']);
 			$this->_tq->updateSent($tweet['tid']);
 			$this->_tq->delete($tweet['tid']);
+		}
+	}
+
+	// Send to Followers
+	private function sendFarewell(){
+		$next = $this->_tf->nextFollowers(); 
+
+		foreach($next as $follower){
+			$this->_tf->postFarewell($follower['name'], $follower['user'], $follower['fid']);
 		}
 	}
 }

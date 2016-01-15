@@ -156,6 +156,7 @@ class adminTasks {
 		$twitter = new TwitterOAuth($this->ckey, $this->csec, $this->atok, $this->asec);
 
 		$limits = $twitter->get('application/rate_limit_status');
+		
 		return (isset($limits->errors) ? false : $limits);
 	}
 
